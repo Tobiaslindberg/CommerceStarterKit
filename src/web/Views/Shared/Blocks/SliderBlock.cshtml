@@ -1,0 +1,42 @@
+﻿@using OxxCommerceStarterKit.Web.Extensions
+@using OxxCommerceStarterKit.Web.Models.Files
+@model OxxCommerceStarterKit.Web.Models.Blocks.SliderBlock
+@{
+	Layout = null;
+}
+@Html.FullRefreshPropertiesMetaData(new[] { "Images" })
+<div @Html.EditAttributes(x => x.Images)>
+	@if (Model != null && Model.Images != null && Model.Images.Count > 0)
+	{
+		<div class="big-slider-container">
+			<div class="big-slider">
+				<div class="big-slider-inner">
+					<ul class="slides">
+						@foreach (var image in Model.Images.ToMedia<ImageFile>())
+						{
+							<li>
+								@if (!string.IsNullOrEmpty(image.VideoUrl))
+								{
+									<div class="container">
+										<div class="col-xs-12">
+										    @Html.Action("Index", "ImageFile", new { currentContent = image })
+										</div>
+									</div>
+								}
+								else
+								{
+									<div class="image-container">
+										<div class="image-centerer">
+										    @Html.Action("Index", "ImageFile", new { currentContent = image })
+										</div>
+									</div>
+								}
+							</li>
+						}
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	}
+</div>

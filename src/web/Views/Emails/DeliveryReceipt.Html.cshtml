@@ -1,0 +1,39 @@
+﻿@model OxxCommerceStarterKit.Web.Services.Email.Models.DeliveryReceipt
+@{ Layout = "_Layout.Html.cshtml"; }
+@section Subject { @Model.Subject }
+@section BodyClass { receipt }
+
+<table class="row">
+	<tr>
+		<td class="wrapper">
+			<table class="eight columns">
+				<tr>
+					<td class="text-pad receipt-header">
+						<h1>Forsendelses-bekreftelse</h1>
+						<p>
+                            Vi kan herved bekrefte at din ordre (@(Model.PurchaseOrderNumber)) har blitt sendt fra vårt lager.
+
+                            @{
+                                var trackingNumber = Model.TrackingNumber;
+								var trackingUrl = "http://www.postnordlogistics.no/minside/SOPS/" + trackingNumber;
+                            }
+
+                            Ordren har blitt tildelt sporingsnummeret @trackingNumber hos PostNord.
+                            Du kan spore ordren ved å klikke på følgende lenke: <a href="@(trackingUrl)">@(trackingUrl)</a>.
+                        </p>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="wrapper last">
+			<table class="four columns">
+				<tr>
+					<td class="text-pad receipt-header">
+						<p>Dato: @Model.PurchaseOrder.Created.ToString("dd.MM.yyyy")</p>
+					</td>
+				</tr>
+			</table>
+
+		</td>
+	</tr>
+</table>

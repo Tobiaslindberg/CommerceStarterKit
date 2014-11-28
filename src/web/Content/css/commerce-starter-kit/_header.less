@@ -1,0 +1,87 @@
+﻿@import "_variables.less";
+.header {
+    .top-menues {
+        position: relative;
+        z-index: 2;
+    }
+
+    .menu-top-right {
+        float: right;
+    }
+
+    .menu-top-left {
+        float: left;
+    }
+
+    .menu-top {
+        padding-top: 78px;
+
+        li {
+            float: left;
+        }
+    }
+
+    .logo {        
+        left: 0;        
+        text-align: center;
+        z-index: 1;
+        width: 100%;
+        margin: 0;
+
+        img {
+            margin-top:30px;
+            display: inline;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        .menu-top {
+            padding-top: 30px;
+        }
+
+        .logo {
+            top: 5px;
+
+            img {
+                width: 200px;
+            }
+        }
+    }
+
+    .nav > li > a {
+        padding: 0px 5px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .header .logo {
+        top: 43px;
+
+        img {
+            width: 400px;
+        }
+    }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+    .header .logo {
+        top: 35px;
+
+        img {
+            width: 500px;
+        }
+    }
+}
+
+.nav.navbar-nav.navbar-right {
+    margin-right: 0;
+}
+
+@media only screen and (max-width: 767px) {
+    header .menu-top {
+        padding-top: 5px;
+        padding-bottom: 3px;
+    }
+}

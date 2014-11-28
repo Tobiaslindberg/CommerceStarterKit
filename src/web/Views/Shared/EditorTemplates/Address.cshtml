@@ -1,0 +1,38 @@
+﻿@model OxxCommerceStarterKit.Core.Objects.Address
+@{
+    Layout = null;
+}
+@Html.HiddenFor(m => m.CountryCode)
+<div class="form-group">
+    @Html.LabelFor(m => m.FirstName)
+    @Html.EditorFor(m => m.FirstName, new { @class = "form-control firstname" })
+	@Html.ValidationMessageFor(m => m.FirstName)
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.LastName)
+    @Html.EditorFor(m => m.LastName, new { @class = "form-control lastname" })
+	@Html.ValidationMessageFor(m => m.LastName)
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.StreetAddress)
+    @Html.EditorFor(m => m.StreetAddress, new { @class = "form-control streetaddress" })
+	@Html.ValidationMessageFor(m => m.StreetAddress)
+</div>
+<div class="form-group form-inline zip">
+	<div class="form-group">
+		@Html.LabelFor(m => m.ZipCode)
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.City)
+	</div>
+</div>
+<div class="form-group form-inline">
+	<div class="form-group">
+		@Html.EditorFor(m => m.ZipCode, new { @class = "form-control zipcode" })
+		@Html.ValidationMessageFor(m => m.ZipCode)
+	</div>
+	<div class="form-group">
+		@Html.EditorFor(m => m.City, new { @class = "form-control city" })
+		@Html.ValidationMessageFor(m => m.City)
+	</div>
+</div>

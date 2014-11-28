@@ -1,0 +1,23 @@
+﻿@using OxxCommerceStarterKit.Web.Extensions
+@using OxxCommerceStarterKit.Web.Helpers
+@model OxxCommerceStarterKit.Web.Models.ViewModels.LoginViewModel
+
+<div id="loginRegistration">
+
+    @using (Html.BeginForm("Logout", "Login", ViewContext.GetCombinedRouteValues(new { }), FormMethod.Post, UrlHelpers.AnonymousObjectToHtmlAttributes(new { id = "logoutForm" })))
+    {
+        <input type="submit" style="display:none;" value="@Html.Translate("/common/account/signout")"/>
+
+    }
+</div>
+@section scripts{
+	@* Do not automatically redirect when editing page *@
+	@if (!EPiServer.Editor.PageEditing.PageIsInEditMode)
+	{
+		<script type="text/javascript">
+			$(function () {
+				$('#logoutForm').submit();
+			});
+		</script>
+	}
+}

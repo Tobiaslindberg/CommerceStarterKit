@@ -1,0 +1,48 @@
+﻿@import "variables.less";
+
+.Sleek {
+    .epi-createContent {
+        background: transparent;
+
+        .epi-listingTopContainer {
+            background: @epi-toolbar-background;
+
+            h2 {
+                color: Gray;
+            }
+
+            .epi-cancelLink {
+                float: right;
+            }
+
+            .epi-breadCrumb {
+                margin-bottom: 20px;
+            }
+
+            .epi-contentName {
+                font-size: medium;
+            }
+
+            .epi-localToolbar {
+                padding: 0;
+                background: none;
+                border: none;
+            }
+        }
+
+        .dijitStackContainer-child {
+            overflow: auto;
+        }
+    }
+
+    .epiStringList {
+        .dijitTextArea {
+            width: 300px;
+            white-space: pre !important;
+        }
+
+        .epiStringListError .dijitTextArea {
+            border: solid 1px @error-border-color;
+        }
+    }
+}

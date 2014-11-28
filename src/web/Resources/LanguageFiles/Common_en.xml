@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+	<language name="English" id="en">
+		<common>
+			<validation>
+				<required>{0} is required</required>
+				<compare>{0} and {1} are not equal.</compare>
+				<compare_passwords>The passwords are not equal</compare_passwords>
+			</validation>
+			<layout>
+				<search_label>Search</search_label>
+				<search_placeholder>Search</search_placeholder>
+				<search_button>Search</search_button>
+				<open_menu>Open menu</open_menu>
+				<close_dialog>Close</close_dialog>
+			</layout>
+			<account>
+				<loginheader>Existing account</loginheader>
+				<registerheader>Registrer new account</registerheader>
+				<username>Email:</username>
+				<password>Password:</password>
+				<password_repeat>Confirm password:</password_repeat>
+				<username_placeholder>Enter email address</username_placeholder>
+				<password_placeholder>Enter password</password_placeholder>
+				<password_repeat_placeholder>Repeat password</password_repeat_placeholder>
+				<rememberme>Remember me</rememberme>
+				<signin>Log in</signin>
+				<signout>Log out</signout>
+				<register>Register user</register>
+				<forgot_password>Forgot passord</forgot_password>
+				<reset_password>Reset password</reset_password>
+				<login_error>Incorrect username or password</login_error>
+				<register_error_unique_username>The email address is already registered</register_error_unique_username>
+				<register_error>Invalid username</register_error>
+				<too_weak_password>The password is too weak</too_weak_password>
+				<nonexisting_account>Your email address is not registered</nonexisting_account>
+				<interests>
+					<title>Interests areas:</title>
+					<man>Men</man>
+					<woman>Women</woman>
+				</interests>
+				<memberclub>
+					<join_label>Join member club:</join_label>
+					<join_club_option>Yes</join_club_option>
+					<dont_join_club_option>No</dont_join_club_option>
+				</memberclub>
+			</account>
+			<cart>
+				<move_to_wishlist>Move to wishlist</move_to_wishlist>
+				<move_wishlist_to_cart>Move entire wishlist to the shopping cart</move_wishlist_to_cart>
+				<share_wishlist>Share wishlist</share_wishlist>
+				<move_to_cart>Move to cart</move_to_cart>
+				<remove_from_cart>Remove</remove_from_cart>
+				<product_table_headers>
+					<product>Product</product>
+					<description>Description</description>
+					<color>Color</color>
+					<size>Size</size>
+					<quantity>Amount</quantity>
+					<price>Price</price>
+					<article_number>Art.num.</article_number>
+				</product_table_headers>
+				<products>Products</products>
+				<shipping>Shipping</shipping>
+				<taxes>Tax</taxes>
+				<total>Total</total>
+				<discount>Discount</discount>
+				<empty_cart>Empty cart</empty_cart>
+				<goto_payment>To payment</goto_payment>
+				<personal_info>Personal information</personal_info>
+				<article_number>Art nr.:</article_number>
+				<no_products>The cart is empty</no_products>
+				<discount_code_label>Discount Code:</discount_code_label>
+				<discount_code_add>Add Discount Code</discount_code_add>
+				<quantity_one>item</quantity_one>
+				<quantity_many>items</quantity_many>
+				<quantity_suffix>Items</quantity_suffix>
+				<coupon_codes>
+					<add_label>Coupon code:</add_label>
+					<add>Add</add>
+					<applied_label>Applied coupon codes: </applied_label>
+					<error_already_used>Coupon code is already applied</error_already_used>
+					<error_invalid>The coupon code is invalid</error_invalid>
+				</coupon_codes>
+			</cart>
+			<accountpages>
+				<title>Hi {0}!</title>
+				<personal_data_title>Your account information</personal_data_title>
+				<change_password_title>Change password</change_password_title>
+				<shipping_address_title>Delivery Address:</shipping_address_title>
+				<billing_address_title>Invoce Address:</billing_address_title>
+				<placeholder>
+					<firstname>Enter first name</firstname>
+					<lastname>Enter surname</lastname>
+					<address>Enter address</address>
+					<zipcode>Zipcode</zipcode>
+					<city>City</city>
+					<email>Email</email>
+					<phone>Phone (with country prefix)</phone>
+					<old_password>Current Password</old_password>
+					<new_password>New Password</new_password>
+					<repeat_password>Repeat New Password</repeat_password>
+					<zip>Zipcode</zip>
+				</placeholder>
+				<firstname_label>First Name</firstname_label>
+				<lastname_label>Surname</lastname_label>
+				<address_label>Address</address_label>
+				<zipcode_label>Zip Code</zipcode_label>
+				<city_label>City</city_label>
+				<missing_delivery_service_point>Missing delivery service point</missing_delivery_service_point>
+				<no_delivery_service_point_found>No delivery service point found</no_delivery_service_point_found>
+				<delivery_service_point>Delivery service point:</delivery_service_point>
+				<email_label>Email:</email_label>
+				<phone_label>Phone:</phone_label>
+				<save>Save</save>
+				<send>Send</send>
+				<old_password_label>Current Password</old_password_label>
+				<new_password_label>New password</new_password_label>
+				<repeat_password_label>Repeat password</repeat_password_label>
+				<orders_title>Your orders:</orders_title>
+				<order_table_headers>
+					<number>Order number:</number>
+					<date>Date:</date>
+					<status>Status:</status>
+				</order_table_headers>
+			</accountpages>
+			<checkout>
+				<placeholder>
+					<socialsecuritynumber>Enter social security number</socialsecuritynumber>
+					<email>Enter email address</email>
+					<phone>Phone (with country prefix)</phone>
+					<password>Password</password>
+					<confirmpassword>Confirm password</confirmpassword>
+				</placeholder>
+				<payment_methods_title>Payment method</payment_methods_title>
+				<ssn_label>Social security number:</ssn_label>
+				<ssn_text>Social security number must be specified when paying with invoice or partial payments.</ssn_text>
+				<create_password>Create new password (optional):</create_password>
+				<place_order>Continue checkout</place_order>
+				<copy_address_fields>The same shipping address as billing address</copy_address_fields>
+				<terms_label>I accept the {terms and conditions}</terms_label>
+				<terms_error>You must accept the terms and conditions</terms_error>
+			</checkout>
+			<product>
+				<add_to_wishlist>Add to wishlist</add_to_wishlist>
+				<add_to_wishlist_complete>Added to wishlist</add_to_wishlist_complete>
+				<add_to_cart>Add to cart</add_to_cart>
+				<add_to_cart_complete>Added to cart</add_to_cart_complete>
+				<share>Share:</share>
+				<show_fullscreen>Show fullscreen</show_fullscreen>
+        			<cross_sell>Goes with</cross_sell>
+				<click_to_zoom>Click to zoom</click_to_zoom>
+				<member_price>Member price</member_price>
+				<sale_price>Sale</sale_price>
+				<out_of_stock>Out of stock</out_of_stock>
+				<in_stock>in stock</in_stock>
+				<similar_products>Similar products</similar_products>
+				<color>Color</color>
+				<colors>
+					<white>white</white>
+					<beige>beige</beige>
+					<yellow>yellow</yellow>
+					<red>red</red>
+					<blue>blue</blue>
+					<green>green</green>
+					<brown>brown</brown>
+					<grey>grey</grey>
+					<black>black</black>
+				</colors>
+				<about_the_product>About the product</about_the_product>
+        <details>Details</details>
+				<size_and_fit>Size &amp; fit</size_and_fit>
+				<details_and_treatment>Details &amp; treatment</details_and_treatment>
+				<delivery_and_return>Delivery &amp; returns</delivery_and_return>
+				<price>Price</price>
+				<sizeguide>Click here to see the size guide</sizeguide>
+                <wine>
+                  <about_the_product>About the wine</about_the_product>
+                  <year>Vintage</year>
+                  <grapemix>Grape mix</grapemix>
+                  <alcohol>Alcohol</alcohol>
+                  <closure>Closure</closure>
+                  <color>Color</color>
+                  <maturity>Maturity</maturity>
+                  <region>Region</region>
+                  <country>Country</country>
+                  <size>Size</size>
+                  <style>Country</style>
+                  <taste>Karakteristikk</taste>
+	              <brand>Brand</brand>
+                </wine>
+			</product>
+			<productlist>
+				<collections_title>Collections</collections_title>
+				<filters_title>Filters</filters_title>
+				<fit_title>Fit</fit_title>
+				<colors_title>Colors</colors_title>
+				<sizes_title>Sizes</sizes_title>
+				<show_more>Show more products</show_more>
+				<all_product_categories>All categories</all_product_categories>
+				<all_fits>All fits</all_fits>
+				<all_colors>All colors</all_colors>
+				<all_sizes>All sizes</all_sizes>       
+				<regions_title>Regions</regions_title>
+				<all_regions>All Regions</all_regions>
+				<grapemix_title>Grapemix</grapemix_title>
+				<all_grapes>All Grapemixes</all_grapes>
+				<countries_title>Countries</countries_title>
+				<all_countries>All countries</all_countries>
+			</productlist>
+
+			<articlelist>
+				<show_more>Show More Articles</show_more>
+			</articlelist>
+			<search>
+				<search_button>Search</search_button>
+				<search_textbox>Search</search_textbox>
+				<search_textbox_placeholder>Enter search word</search_textbox_placeholder>
+				<products_title>“{0}” We found &lt;strong&gt;{{{{totalResult}}}}&lt;strong&gt; results</products_title>
+				<articles_title>“{0}” We found &lt;strong&gt;{{{{articlesTotalResult}}}}&lt;strong&gt; articles</articles_title>
+				<read_more>Read more</read_more>
+			</search>
+			<receipt>
+				<print>Print the receipt</print>
+				<size_prefix>Size</size_prefix>
+				<email>
+					<subject>Order confirmation - Tracking number: {0}</subject>
+					<title>Receipt</title>
+				</email>
+				<shipment>
+					<title>Shipment tracking</title>
+				</shipment>
+			</receipt>
+			<store_search>
+				<button>Search</button>
+				<placeholder>Find your store</placeholder>
+				<validation>Required</validation>
+			</store_search>
+			<social>
+				<follow_title>Follow us</follow_title>
+			</social>
+			<newsletter_unsubscribe>
+				<email_label>Your email address</email_label>
+				<email_placeholder>Enter your email address</email_placeholder>
+				<email_validation_error>Must be a valid email address</email_validation_error>
+				<submit>Unsubscribe</submit>
+				<success_response>You are now unsubscribed</success_response>
+				<not_registered>Your email address is not registered in our system</not_registered>
+				<newsletter_text>Unsubscribe</newsletter_text>
+			</newsletter_unsubscribe>
+		</common>
+	</language>
+</languages>

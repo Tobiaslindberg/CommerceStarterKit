@@ -1,0 +1,17 @@
+﻿@model System.Text.StringBuilder
+
+@{
+    ViewBag.Title = "Sale latest 5 days";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h2>Sale latest 5 days</h2>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+@Html.Raw(Model.ToString())
+
+
+<div id="chart_div"></div>   
+
+   

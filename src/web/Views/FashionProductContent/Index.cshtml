@@ -1,0 +1,29 @@
+﻿@using OxxCommerceStarterKit.Web.Helpers
+@model OxxCommerceStarterKit.Web.Models.ViewModels.FashionProductViewModel
+@{ 
+	var urlResolver = EPiServer.ServiceLocation.ServiceLocator.Current.GetInstance<EPiServer.Web.Routing.UrlResolver>(); 
+	ViewBag.Title = Model.CatalogContent.DisplayName;
+}
+<div class="product-page">
+	@if (Html.IsInEditMode()) { 
+		<div class="row">
+			<div class="col-xs-2">Show In Search Result:</div>
+			<div class="col-xs-2">@Html.PropertyFor(m => m.CatalogContent.ShowInList)</div>
+		</div>
+	}
+	@Html.Partial("_Product", Model)
+
+	@Html.Partial("_SimilarProducts",Model.CatalogContent)
+</div>
+
+@section Head {
+	@if (Model != null) { 
+		<meta property="og:title" content="@Html.AttributeEncode(Model.CatalogContent.DisplayName)"/>
+		<meta property="og:description" content="@Html.AttributeEncode(Model.CatalogContent.Description)" />
+		if(Model.Media != null) { 
+			foreach (var file in Model.Media) {
+<meta property="og:image" content="@(urlResolver.GetUrl(file.ContentLink))?preset=listmedium" />
+			}
+		}
+	}
+}

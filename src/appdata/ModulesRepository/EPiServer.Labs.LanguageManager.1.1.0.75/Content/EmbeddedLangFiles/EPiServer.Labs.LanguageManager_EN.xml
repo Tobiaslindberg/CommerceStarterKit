@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+    <language name="English" id="en">
+        <languagemanager>
+            <gadget>
+                <title>Languages</title>
+                <description>Helps editors to manage multi-lingual content on the website.</description>
+                
+                <managewebsitelanguages>Manage Website Languages</managewebsitelanguages>
+                <languagesettings>Manage Editable Languages for this Page</languagesettings>
+                
+                <settings>Manage Add-on Settings</settings>
+
+                <master>Master</master>
+                <!--<language>Language</language>
+                <action>Action</action>-->
+                <back>Back</back>
+                
+                <create>Create</create>
+                <published>Published</published>
+                <draft>Draft</draft>
+                <notcreatedyet>Not created yet</notcreatedyet>
+
+                <clicktoswitchlanguage>Click to switch to this language branch</clicktoswitchlanguage>
+                <editingforlanguageisdisabled>Editing for this language is disabled</editingforlanguageisdisabled> 
+                
+                <!--Context menu-->
+                <createpagein>Create page in {name}</createpagein>
+                <create>Create</create>
+                <deletelanguagebranch>Delete All {name} Versions</deletelanguagebranch>
+                <createlanguagebranch>Start with a blank page</createlanguagebranch>
+                <comparewithmasterlanguage>Compare with {name} (Master)</comparewithmasterlanguage>
+                <replacecontent>Replace Content</replacecontent>
+                <copyfrommaster>Duplicate {name} content</copyfrommaster>
+                <translateandcopyfrommaster>Auto-translate from {name}</translateandcopyfrommaster>
+                <disableediting>Disable Editing for {name}</disableediting>
+                <enableediting>Enable Editing for {name}</enableediting>
+                
+                <!--dialog-->
+                <deletelanguagebranchtitle>Delete Language</deletelanguagebranchtitle>
+                <deletelanguagebranchconfirmation>
+                    You are about to delete the page {pageName} in {languageName}.The page including all its versions will be deleted. This action cannot be undone.
+                </deletelanguagebranchconfirmation>
+                <deleteconfirmactiontext>Delete {languageName}</deleteconfirmactiontext>
+                <replacecontent>Replace Content</replacecontent>
+                <autotranslateconfirmation>
+                    You are about to replace content on the page {pageName} in {toLanguage} with an auto-translation from {fromLanguage}.&lt;br&gt;&lt;br&gt;
+                    The content will be overwritten. This action cannot be undone.
+                </autotranslateconfirmation>
+                <duplicatecontentconfirmation>
+                    You are about to replace content on the page {pageName} in {toLanguage} with {fromLanguage}.&lt;br&gt;&lt;br&gt;
+                    The content will be overwritten. This action cannot be undone.
+                </duplicatecontentconfirmation>
+            </gadget>
+            
+            <compareediting>
+                <replaceselectedcontent>Replace Selected Content</replaceselectedcontent>
+                <duplicatecontent>Duplicate {name} Content</duplicatecontent>
+                <autotranslate>Auto-translate from {name}</autotranslate>
+                <closecompare>Close Compare</closecompare>
+                <comparing>Comparing &lt;strong&gt;{masterLanguageName}&lt;/strong&gt; with &lt;strong&gt;{languageName}&lt;/strong&gt;</comparing>
+                <reverttopublishconfirmation>
+                    <confirmquestion>Would you like to revert to the published version?</confirmquestion>
+                    <description>All changes that has been made so far in this version will be discarded.</description>
+                    <dialogtitle>Revert to Published</dialogtitle>
+                </reverttopublishconfirmation>
+            </compareediting>
+            
+            <settingview>
+                <title>Manage Add-on Settings</title>
+                <subtitle>Be careful when you change the configuration settings for the EPiServer Languages add-on. The add-on will not work properly if the settings are incorrect.</subtitle>
+                <name>Name</name>
+                <consumerkey>Consumer key</consumerkey>
+                <consumersecret>Consumer secret</consumersecret>
+                <desc>Description (optional)</desc>
+                <savebutton>Save</savebutton>
+                <savesuccess>Settings have been saved</savesuccess>
+                <savefailed>Could not save</savefailed>
+                <accessdenied>Access denied</accessdenied>
+                <subtitle>Be careful when you change the configuration settings for the EPiServer Languages add-on. The add-on will not work properly if the settings are incorrect.</subtitle>
+            </settingview>
+        </languagemanager>
+    </language>
+</languages>

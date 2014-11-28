@@ -1,0 +1,208 @@
+﻿@using EPiServer.Cms.Shell
+@using EPiServer.Core
+@using EPiServer.ServiceLocation
+@using EPiServer.Web
+@using EPiServer.Web.Routing
+@using OxxCommerceStarterKit.Web.Helpers
+@using OxxCommerceStarterKit.Web.Models.Files
+@model OxxCommerceStarterKit.Web.Models.ViewModels.WineSKUViewModel
+@{
+    var id = Guid.NewGuid();
+    var urlResolver = ServiceLocator.Current.GetInstance<UrlResolver>();
+    var currentLanguage = Model.CatalogContent.Language.TwoLetterISOLanguageName;
+    var media = Model.Media;
+    var defaultCollapsedState = "collapse";
+    bool isInEditMode = Html.IsInEditMode();
+    if (isInEditMode)
+    {
+        defaultCollapsedState = "collapse in";
+    }
+
+}
+
+@helper GetImageTag(MediaData media, string size, UrlResolver urlResolver)
+{
+    var url = urlResolver.GetUrl(media.ContentLink, null, new VirtualPathArguments() {ContextMode = ContextMode.Default}) + "?preset=" + size;
+    <img src="@url" />
+}
+
+
+<div class="product-page">
+    <div ng-controller="CartController" class="row product" id="@id">
+        <div class="col-sm-4">
+            @if (media != null && media.Count > 0)
+            {
+                <div class="box main-product-image-slider">
+                    <div class="slider" id="main-product-slider-@(id)">
+                        <ul class="slides" id="imageslider" ng-model="imageUrl">
+                            @foreach (var file in media)
+                            {
+                                <li>
+                                    @if (file is ImageFile && !string.IsNullOrEmpty(((ImageFile)file).VideoUrl))
+                                    {
+                                        @Html.Action("Image", "ImageFile", new { currentContent = file, extraImageUrlParameters = "?preset=listmedium" })
+                                    }
+                                    else
+                                    {
+                                        <div class="easyzoom easyzoom--overlay" title="@Html.Translate("/common/product/click_to_zoom")">
+                                            <a href="@(urlResolver.GetUrl(file.ContentLink))">
+                                                @GetImageTag(file, "width320", urlResolver)
+                                            </a>
+                                        </div>
+                                        <a class="full-screen" href="javascript:;">@Html.Translate("/common/product/show_fullscreen")</a>
+                                    }
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="box product-image-slider">
+                    <div class="slider">
+                        <ul class="slides">
+                            @foreach (var file in media)
+                            {
+                                <li>
+                                    <a href="javascript:;">
+                                        @if (file is ImageFile && !string.IsNullOrEmpty(((ImageFile)file).VideoUrl))
+                                        {
+                                            <div class="video-container">
+                                                <span class="starter disabled"></span>
+                                                @GetImageTag(file, "sliderimage", urlResolver)
+                                            </div>
+
+                                        }
+                                        else
+                                        {
+                                            @GetImageTag(file, "sliderimage", urlResolver)
+                                        }
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-sm-8 col-md-6 main-product-view" itemscope itemtype="http://schema.org/Product">
+
+            <div class="title">
+
+                <h1 itemprop="name">
+
+                    @Html.PropertyFor(x => x.CatalogContent.DisplayName)
+                    @*<small>@Html.PropertyFor(m => m.CatalogContent.NewItemText)</small>*@
+                </h1>
+
+            </div>
+            <div class="price">
+                @if (Model.CatalogContent != null)
+                {
+                    @Html.Partial("_Price", Model.PriceViewModel)
+                }
+            </div>
+            <div class="panel-group information">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a href="#@(id)-about" data-toggle="collapse" data-parent="#@(id) .information">@Html.Translate("/common/product/wine/about_the_product")<span class="glyphicon glyphicon-chevron-up pull-right"></span></a></h4>
+                    </div>
+                    <div id="@(id)-about" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            @Html.PropertyFor(p => p.CatalogContent.Info_Description)
+                            <p>
+                                Artnr:
+                                <span itemprop="productID">
+                                    @Model.CatalogContent.Name
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a href="#@(id)-sizes" data-toggle="collapse" data-parent="#@(id) .information">@Html.Translate("/common/product/details")<span class="glyphicon glyphicon-chevron-down pull-right"></span></a></h4>
+                    </div>
+                    <div id="@(id)-sizes" class="panel-collapse @(defaultCollapsedState)">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tr>
+                                        <td>@Html.Translate("/common/product/wine/year")</td>
+                                        <td>@Html.PropertyFor(p => p.CatalogContent.Vintage)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.Translate("/common/product/wine/country")</td>
+                                        <td>@Html.PropertyFor(p => p.CatalogContent.Country)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.Translate("/common/product/wine/region")</td>
+                                        <td>@Html.PropertyFor(p => p.CatalogContent.Region)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.Translate("/common/product/wine/brand")</td>
+                                        <td>@Html.PropertyFor(p => p.CatalogContent.Facet_Brand)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.Translate("/common/product/wine/grapemix")</td>
+                                        <td>@Html.PropertyFor(p => p.CatalogContent.GrapeMix)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.Translate("/common/product/wine/alcohol")</td>
+                                        <td>@Html.PropertyFor(p => p.CatalogContent.Alcohol)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.Translate("/common/product/wine/closure")</td>
+                                        <td>@Html.PropertyFor(p => p.CatalogContent.Closure)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.Translate("/common/product/wine/color")</td>
+                                        <td>@Html.PropertyFor(p => p.CatalogContent.Color)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.Translate("/common/product/wine/maturity")</td>
+                                        <td>@Html.PropertyFor(p => p.CatalogContent.Maturity)</td>
+                                    </tr>
+                                  
+                                    <tr>
+                                        <td>@Html.Translate("/common/product/wine/taste")</td>
+                                        <td>@Html.PropertyFor(p => p.CatalogContent.Taste)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Html.Translate("/common/product/wine/size")</td>
+                                        <td>@Html.PropertyFor(p => p.CatalogContent.Size)</td>
+                                    </tr>
+                                   
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="buttons clearfix">
+                @if (Model.CatalogContent != null)
+                {
+                    <div>
+                        @Html.Partial("_BuyItem",Model.CartItem)
+                    </div>
+                }
+            </div>
+            @Html.Partial("_SocialBar", new SocialBarViewModel(Html.Translate("/common/product/share")))
+
+
+
+
+        </div>
+
+
+    </div>
+    @Html.Partial("_SimilarProducts", Model.CatalogContent)
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var p = new commercestarterkit.Product('#@id');
+        });
+    </script>
+
+</div>

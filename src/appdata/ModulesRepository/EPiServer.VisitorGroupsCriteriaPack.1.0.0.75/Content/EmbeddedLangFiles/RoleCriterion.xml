@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+    <language name="English" id="en">
+        <enums>
+            <episerver>
+                <visitorgroupscriteriapack>
+                    <rolecomparecondition>
+                        <equal>In role</equal>
+                        <notequal>Not in role</notequal>
+                    </rolecomparecondition>
+                </visitorgroupscriteriapack>
+            </episerver>
+        </enums>
+        <visitorgroupscriteriapack>
+            <rolecriterion>
+                <category>Technical Criteria</category>
+                <displayname>Role</displayname>
+                <description>Criterion that matches the user's roles</description>
+                <condition>Condition</condition>
+                <rolename>Role Name</rolename>
+            </rolecriterion>
+        </visitorgroupscriteriapack>
+    </language>
+</languages>

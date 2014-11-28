@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+    <language name="English" id="en">
+        <episerver>
+            <googleanalytics>
+                <gadget>
+                    <title>Google Analytics</title>
+                    <description>Enables editors view analytics data in EPiServer.</description>
+                </gadget>
+
+                <administration>
+                    <name>Google Analytics Administration</name>
+                    <info>
+                        To use Google Analytics on your EPiServer site, you need to register your site with &lt;a href="http://www.google.com/analytics/"&gt;Google Analytics&lt;/a&gt;.
+                        You have the following options to read data:&lt;br /&gt;
+                        &#x2013; On the Google Analytics website by configuring the &lt;b&gt;Configure Tracking&lt;/b&gt; tab.&lt;br /&gt;
+                        &#x2013; In EPiServer by configuring both the &lt;b&gt;Configure Tracking&lt;/b&gt; and &lt;b&gt;Configure Analytics Gadget&lt;/b&gt; tabs, and adding the gadget to the dashboard.
+                    </info>
+                    <summary>
+                        <tab>Summary</tab>
+                        <trackingenabled>Your site has been successfully set up with Google Analytics.</trackingenabled>
+                        <trackingdisabled>Your site has not been configured with a Tracking ID. No tracking code is added to pages.</trackingdisabled>
+                        <authenticationconfigured>Your Google Analytics gadget is successfully set up, giving {0} access to read received data.</authenticationconfigured>
+                        <authenticationunconfigured>No global Google account has been set up, but users can use their personal account to read received data.</authenticationunconfigured>
+                    </summary>
+                    <tracking>
+                        <tab>Configure Tracking</tab>
+                        <sharing>
+                            <share>Share Tracking ID for all sites</share>
+                            <different>Use a unique Tracking ID for each site</different>
+                        </sharing>
+                        <scriptoption>
+                          <heading>Script Options</heading>
+                          <classic>Google Classic Analytics</classic>
+                          <universal>Google Universal Analytics</universal>
+                          <custom>Custom Tracking Script</custom>
+                          <autoscript>
+                            <heading>Tracking ID</heading>
+                            <info>Type the Tracking ID in the format UA-XXXXXXX-X that has been generated from Google Analytics.</info>
+                          </autoscript>
+                          <customscript>
+                            <info>Please type the custom tracking script into the text area.</info>
+                          </customscript>
+                        </scriptoption>
+                      <tabs>
+                            <domain>
+                                <tab>Domains</tab>
+                                <singledomain>
+                                    <label>A single domain (default).</label>
+                                    <info>Examples: www.example.com</info>
+                                </singledomain>
+                                <subdomains>
+                                    <label>One domain with multiple subdomains.</label>
+                                    <info>Examples: www.example.com, app.example.com, shop.example.com</info>
+                                </subdomains>
+                                <multidomains>
+                                    <label>Multiple top-level domains.</label>
+                                    <info>Examples: www.example.com, www.example.uk, www.example.net</info>
+                                    <errormessage>Please enter one or several domains addresses seperated by colons.</errormessage>
+                                </multidomains>
+                            </domain>
+                            <roles>
+                                <tab>Roles</tab>
+                                <include>Track selected roles</include>
+                                <exclude>Track everything except for selected roles</exclude>
+                            </roles>
+                            <links>
+                                <tab>Links &amp; Downloads</tab>
+                                <externallinks>
+                                    <label>Track clicks on external links</label>
+                                </externallinks>
+                                <trackexternalaspageviews>
+                                    <label>Track clicks on external links as page views</label>
+                                    <description>External links are tracked as events by default. Tracking goals requires to track external clicks as page views.</description>
+                                </trackexternalaspageviews>
+                                <mailto>
+                                    <label>Track clicks on e-mail links</label>
+                                </mailto>
+                                <downloads>
+                                    <label>Track clicks on download links for the following extensions:</label>
+                                    <description>Define the file extensions for download in a pipe-separated list (|). Regular expressions are supported.</description>
+                                </downloads>
+                            </links>
+                            <users>
+                                <tab>Users &amp; Interaction</tab>
+                                <logins>Track logins</logins>
+                                <visitorgroups>Track visitor groups</visitorgroups>
+                                <xforms>Track form postings</xforms>
+                                <authors>Track authors</authors>
+                            </users>
+                            <forms>
+
+                            </forms>
+                        </tabs>
+                        <save>Save</save>
+                    </tracking>
+                    <analytics>
+                        <tab>Configure Analytics Gadget</tab>
+                        <disconnected>
+                            <heading>Connect</heading>
+                            <description>To provide access for EPiServer to read data, click &lt;b&gt;Log in&lt;/b&gt; to connect to your Google Analytics account.</description>
+                            <signin>Log in</signin>
+                        </disconnected>
+                        <connected>
+                            <heading>Disconnect</heading>
+                            <description>EPiServer has access to read Google Analytics data, click &lt;b&gt;Log out&lt;/b&gt; to disconnect.</description>
+                            <signout>Log out</signout>
+                            <roles>
+                                <heading>EPiServer access rights</heading>
+                                <description>See who has access rights to read Google Analytics data in EPiServer:</description>
+                            </roles>
+                        </connected>
+                        <save>Save</save>
+                    </analytics>
+                </administration>
+                <authentication>
+                    <name>Google Analytics Authentication</name>
+                    <info>
+                        Sign in with an Google Analytics account to give this EPiServer site access to analytics data.
+                    </info>
+                    <username>Username</username>
+                    <password>Password</password>
+                    <signin>Sign in</signin>
+                    <cancel>Cancel</cancel>
+                    <captcharequired>You need to sign in with your &lt;a target="_blank" href="http://www.google.com/analytics/"a&gt;Google Account&lt;/a&gt; and enter captcha.</captcharequired>
+                    <back>Back</back>
+                    <invalidcredentials>The given username and password is incorrect.</invalidcredentials>
+
+                </authentication>
+                <dashboard>
+                    <title>Google Analytics</title>
+
+                    <configure>
+                        <title>Configure</title>
+                        <legend>Settings</legend>
+
+                        <account>
+                            <title>Account &amp; Profile</title>
+                            <header>Sign in with a Google Analytics account to provide access to analytics data for the gadgets.</header>
+                            <legend>Google Analytics</legend>
+                            <account>Account</account>
+                            <property>Property</property>
+                            <profile>Profile</profile>
+                            <selectaccount>Select account...</selectaccount>
+                            <singintoselect>Sign in to select profile...</singintoselect>
+                            <nowebproperties>Add sites to account, or change account...</nowebproperties>
+                            <signin>Sign in</signin>
+                            <signout>Sign out personal</signout>
+                            <shared>Shared</shared>
+                            <personal>Personal</personal>
+                        </account>
+
+                        <displaysettings>
+                            <title>Display Settings</title>
+                            <header>Set up how you want your data displayed.</header>
+
+                            <heading>
+                                <legend>Heading</legend>
+                                <displaylabel>Display heading</displaylabel>
+                                <label>Name</label>
+                                <placeholder>Name the gadgets to make it easier to distinguish between them.</placeholder>
+                            </heading>
+
+                            <graphs>
+                                <legend>Graphs</legend>
+                                <layout>
+                                    <heading>Layout</heading>
+                                    <tabbed>Tabbed</tabbed>
+                                    <stacked>Stacked</stacked>
+                                    <compare>Compare (all data in the same graph)</compare>
+                                </layout>
+                                <charttype>
+                                    <heading>Chart type</heading>
+                                    <line>Line</line>
+                                    <bar>Bar</bar>
+                                </charttype>
+                            </graphs>
+                            <lists>
+                                <legend>Lists</legend>
+                                <rowcount>Number of rows</rowcount>
+                            </lists>
+                        </displaysettings>
+
+                        <filterby>
+                            <title>Filter by</title>
+                            <header>Narrow your results by filtering your analytics data, for example, direct traffic, authors, browsers etc.</header>
+                            <legend>Filter by</legend>
+                            <segment>Segment</segment>
+                            <selectfilter>Select filter...</selectfilter>
+                            <defaultsegments>Google Analytics segments</defaultsegments>
+                            <advancedsegments>Advanced Segments from Google Analytics</advancedsegments>
+                            <visitorgroupsegments>EPiServer CMS visitor groups</visitorgroupsegments>
+                            <other>Other</other>
+                            <custom>Custom</custom>
+                            <customsegment>
+                                <settings>Custom segment settings</settings>
+                                <dimension>
+                                    <author>Author</author>
+                                    <visitcount>Visit count</visitcount>
+                                    <dayssincelastvisit>Days since last visit</dayssincelastvisit>
+                                    <referrer>Referrer</referrer>
+                                    <keyword>Search keyword</keyword>
+                                    <adgroup>AdWords group</adgroup>
+                                    <continent>Continent</continent>
+                                    <campaign>Campaign</campaign>
+                                    <country>Country</country>
+                                    <city>City</city>
+                                    <landingpage>Landing page path</landingpage>
+                                    <exitpage>Exit page path</exitpage>
+                                    <productname>Product name</productname>
+                                    <productsku>Product SKU</productsku>
+                                    <productcategory>Product category</productcategory>
+                                </dimension>
+                                <operators>
+                                    <startswith>Starts with</startswith>
+                                    <contains>Contains</contains>
+                                    <equals>Equals</equals>
+                                    <lessthan>Less than</lessthan>
+                                    <greaterthan>Greater than</greaterthan>
+                                </operators>
+                                <placeholder>text...</placeholder>
+                            </customsegment>
+                            <googleanalyticscustomsegment>
+                                <legend>Google Analytics Advanced Segments</legend>
+                                <description>
+                                    You can create your advanced segments at the &lt;a href="http://google.com/analytics"&gt;Google Analytics&lt;/a&gt; website. Sign in, select your website and click &lt;strong&gt;Advanced Segements&lt;/strong&gt;.
+                                </description>
+                            </googleanalyticscustomsegment>
+                        </filterby>
+
+                        <pathquery>
+                            <legend>Page filtering</legend>
+                            <description>In order to filter statistics for pages a filter is applied. By default this matches either page ID or page path. You can disable filter by path when statistics has been logged using the Google Analytics module.</description>
+                            <disablepathquery>Disable query by path</disablepathquery>
+                        </pathquery>
+
+                        <graphslists>
+                            <title>Graphs &amp; Lists</title>
+                            <header>Set up what analytics data you want to see.</header>
+                        </graphslists>
+                        <summary>
+                            <legend>Summary</legend>
+                            <label>Display summary at the top of gadget</label>
+                        </summary>
+                        <graphs>
+                            <title></title>
+                            <legend>Graphs</legend>
+                            <metrics>
+                                <heading>Metrics</heading>
+
+                                <bounces>Bounces</bounces>
+                                <newVisits>New Visits</newVisits>
+                                <percentNewVisits>New Visits %</percentNewVisits>
+                                <pageviews>Page Views</pageviews>
+                                <timeOnPage></timeOnPage>
+                                <timeOnSite>Time Spent</timeOnSite>
+                                <avgTimeOnSite>Time Spent</avgTimeOnSite>
+                                <avgTimeOnPage>Time Spent</avgTimeOnPage>
+                                <visitors>Visitors</visitors>
+                                <visits>Visits</visits>
+                                <exitRate>Exit Rate</exitRate>
+                                <goalCompletionsAll>Completed Goals</goalCompletionsAll>
+                                <totalevents>Total Events</totalevents>
+                                <itemRevenue>Revenue</itemRevenue>
+                                <uniquePurchases>Items purchased</uniquePurchases>
+                                <revenuePerTransaction>Avg. order value</revenuePerTransaction>
+                                <itemsPerPurchase>Avg. cart size</itemsPerPurchase>
+                            </metrics>
+                            <goals>
+                                <label>Goals Completed</label>
+                                <needssetup>You can create your goals at the &lt;a href="http://google.com/analytics"&gt;Google Analytics&lt;/a&gt; website. Sign in, select your website, click &lt;strong&gt;Admin&lt;/strong&gt; &gt; &lt;strong&gt;Goals&lt;/strong&gt; tab.</needssetup>
+                            </goals>
+                            <events>
+                                <label>Events</label>
+                                <mailto>E-mail Clicks</mailto>
+                                <download>Downloads</download>
+                                <external>External Link Clicks</external>
+                                <authentication>Logins</authentication>
+                                <xForm>Form Postings</xForm>
+                            </events>
+                            <visitorgroups>
+                                <label>Visitor Groups</label>
+                            </visitorgroups>
+                            <cannotcombine>Filters and events cannot be combined in the same graph. These events will not be filtered by the selected segment.</cannotcombine>
+                        </graphs>
+                        <lists>
+                            <legend>Lists</legend>
+                            <metrics>
+                                <heading>Metrics</heading>
+                                <performingProducts>Performing Products</performingProducts>
+                                <mostSoldProducts>Most Sold Products</mostSoldProducts>
+                                <performingReferrals>Performing Sources</performingReferrals>
+                                <performingCampaigns>Performing Campaigns</performingCampaigns>
+                                <performingCategories>Performing Product Categories</performingCategories>
+                                <performingKeywords>Performing Keywords</performingKeywords>
+                                <performingInternalSearches>Performing Internal Searches</performingInternalSearches>
+                                <pagepath>Top Pages (Page Views)</pagepath>
+                                <source>Top Referrers (Visits)</source>
+                                <medium>Top Mediums (Visits)</medium>
+                                <campaign>Top Campaigns (Visits)</campaign>
+                                <landingpagepath>Top Landing Pages (Visits)</landingpagepath>
+                                <country>Top Countries (Visits)</country>
+                                <continent>Top Continents (Visits)</continent>
+                                <browser>Top Browsers (Visits)</browser>
+                                <bottompages>Least Popular Pages</bottompages>
+                                <recentsessions>Most Recent Sessions</recentsessions>
+                                <keyword>Top Search Words (Visits)</keyword>
+                                <topsocial>Top Social Pages</topsocial>
+                                <exitpagepath>Top Exit Pages (Visits)</exitpagepath>
+                                <topVisitorGroups>Top Visitor Groups (Visitors)</topVisitorGroups>
+                                <topXForms>Top Form Postings</topXForms>
+                                <previousPagePath>Previous Page (Page Views)</previousPagePath>
+                                <nextPagePath>Next Page (Page Views)</nextPagePath>
+                                <pagesUserSpentTimeOn>Related Pages (Time Spent)</pagesUserSpentTimeOn>
+                            </metrics>
+                        </lists>
+                    </configure>
+                    <analyze>
+                        <graphby>
+                            <label>Graph by</label>
+                            <labelgraphs>Graphs by</labelgraphs>
+                            <day>Day</day>
+                            <week>Week</week>
+                            <month>Month</month>
+                        </graphby>
+                        <lists>
+                            <notset>(not set)</notset>
+                            <notprovided>(not provided)</notprovided>
+                            <direct>(direct visits)</direct>
+                            <none>(direct visits)</none>
+                        </lists>
+                        <signedout>
+                            <theaccount>The account</theaccount>
+                            <isloggedoff>is signed out or unauthorized</isloggedoff>
+                            <unauthorized>The google account is signed out or is unauthorized.</unauthorized>
+                            <login>Sign in</login>
+                            <toaccessdata>to access data</toaccessdata>
+                        </signedout>
+                        <summary>
+                            <visits>Visits</visits>
+                            <uniquevisits>Unique visitors</uniquevisits>
+                            <pageviews>Page views</pageviews>
+                            <avgtimeonesite>Average time on site</avgtimeonesite>
+                            <goalstotal>Total goals</goalstotal>
+                            <bouncerate>Bounce rate</bouncerate>
+                            <totalevents>Total events occurred</totalevents>
+                        </summary>
+                        <graphs>
+                            <notenoughdata>Not enough data points in the selected period</notenoughdata>
+                            <tooltip>
+                                <datelabel>Date</datelabel>
+                            </tooltip>
+                        </graphs>
+                    </analyze>
+                </dashboard>
+                <context>
+                    <title>Google Analytics</title>
+                    <plugin>
+                        <displayname>Google Analytics</displayname>
+                        <description>Display information from Google Analytics about this page.</description>
+                    </plugin>
+                    <heading>Google Analytics for page</heading>
+                    <settings>
+                    </settings>
+                    <addlinks>
+                        <text>Add links to page</text>
+                        <tooltip>Adds the internal links below to a link collection. You can review the added links before publishing the page version.</tooltip>
+                    </addlinks>
+                    <invalidcontenttype>Unsupported content type.</invalidcontenttype>
+                </context>
+                <shared>
+                    <message>
+                        <nodata>No data</nodata>
+                        <novalidgaaccount>No valid profile selected</novalidgaaccount>
+                        <invalidrequest>Please refresh the browser.</invalidrequest>
+                        <selectedsegment>Selected segment: </selectedsegment>
+                    </message>
+                    <analyze>
+                        <daterange>
+                            <period>Period</period>
+                            <selectrange>Select date range</selectrange>
+                            <invalidrange>Invalid date range</invalidrange>
+                            <select>Select</select>
+                            <cancel>Cancel</cancel>
+                        </daterange>
+                        <pagesummary>
+                            <pageviews>Pageviews</pageviews>
+                            <uniqpageviews>Unique Pageviews</uniqpageviews>
+                            <avgtimeonpage>Avg. Time on page</avgtimeonpage>
+                            <bouncerate>Bounce Rate</bouncerate>
+                            <exitrate>Exit Rate</exitrate>
+                            <percentoftotal>% of total</percentoftotal>
+                            <siteaverage>Site Avg</siteaverage>
+                        </pagesummary>
+                    </analyze>
+                    <section>
+                        <tables>
+                            <title>Acquisition</title>
+                        </tables>
+                        <segmentfilter>
+                            <title>Segment: </title>
+                        </segmentfilter>
+                    </section>
+                </shared>
+            </googleanalytics>
+        </episerver>
+    </language>
+</languages>

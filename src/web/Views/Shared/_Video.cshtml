@@ -1,0 +1,12 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.VideoViewModel
+@{
+    Layout = null;
+}
+<div class="video-container">
+	@if (Model.HasCoverImage)
+	{
+		<a href="javascript:;" class="starter"><span class="sr-only">Play video</span></a>
+		<img src="@Model.CoverImageUrl" />
+	}
+	<iframe @(string.IsNullOrEmpty(Model.IframeId) ? "" : "id=" + Model.IframeId) @(Model.HasCoverImage ? "src=about:blank data-" : "")src="@Model.IframeUrl" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>

@@ -1,0 +1,25 @@
+﻿@using Mediachase.Commerce.Website.Helpers
+@using OxxCommerceStarterKit.Web.Models.ViewModels
+@model OxxCommerceStarterKit.Web.Models.ViewModels.WishListModel
+@{
+	ViewBag.Title = Model.CurrentPage.Name;
+	string wishlistUrl = "";
+}
+
+<div class="cart-page wishlist-page">
+	<div ng-controller="CartController" ng-init="initCart('@(CartHelper.WishListName)')">
+
+		<h1>@Html.PropertyFor(m=>m.CurrentPage.Name)</h1>
+		<div class="cart">
+			@Html.Partial("PagePartials/_ItemList", new CartItemListViewModel() { CartName = CartHelper.WishListName, HideMoveToWishList = true })
+		</div>
+		<div class="">
+			<div ng-hide="!messages" class="alert alert-warning" role="alert" ng-bind-html="renderHtml(messages)"></div>
+		</div>
+		<div class="cart-commands buttons">
+
+			<button class="btn btn-default pull-right" ng-click="moveAllToCart('WishList')">@Html.Translate("/common/cart/move_wishlist_to_cart")</button>
+
+		</div>
+	</div>
+</div>

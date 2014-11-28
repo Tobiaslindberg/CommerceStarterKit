@@ -1,0 +1,37 @@
+﻿@model ProductListViewModel
+
+@{
+    Layout = null;
+}
+
+@{
+    var extraCssClass = ViewData["extraCssClass"] as string;
+}
+
+
+<div class="product @extraCssClass">
+    <div class="image">
+        <a href="@Url.ContentUrl(Model.ContentLink)">
+            @if (!string.IsNullOrWhiteSpace(Model.ImageUrl))
+            {
+                <img class="img-responsive" src="@(@Model.ImageUrl)?preset=listmedium" />
+            }
+            else
+            {
+                <img class="img-responsive no-image" src="/siteassets/system/no-image.png?preset=listmedium">
+            }
+        </a>
+    </div>
+    @if (!string.IsNullOrEmpty(Model.NewItemText))
+    {
+        <div class="newitemtext">@Model.NewItemText</div>
+    }
+    <h3>@Model.DisplayName</h3>
+    <div class="price">
+        <div class="price">@Model.PriceString</div>
+        @*@if (Model.Price != null)
+        {
+            @Html.Partial("_Price", Model.Price, new ViewDataDictionary(this.ViewData) { { "hideText", true } })
+        }*@
+    </div>
+</div>

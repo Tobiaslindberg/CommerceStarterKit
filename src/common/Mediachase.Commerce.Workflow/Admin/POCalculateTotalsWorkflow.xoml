@@ -1,0 +1,13 @@
+﻿<SequentialWorkflowActivity x:Class="EPiCode.Commerce.Workflow.Admin.POCalculateTotalsWorkflow" 
+                            x:Name="POCalculateTotalsWorkflow" 
+                            xmlns:ns0="clr-namespace:EPiCode.Commerce.Workflow.Activities;Assembly=EPiCode.Commerce.Workflow.Activities, Culture=neutral, PublicKeyToken=null"                         
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<ns0:ProcessShipmentsActivity Warnings="{ActivityBind POCalculateTotalsWorkflow,Path=Warnings}" OrderGroup="{ActivityBind POCalculateTotalsWorkflow,Path=OrderGroup}" x:Name="processShipmentsActivity1" />
+	<ns0:CalculateTotalsActivity x:Name="calculateTotalsActivity1" OrderGroup="{ActivityBind POCalculateTotalsWorkflow,Path=OrderGroup}" Warnings="{ActivityBind POCalculateTotalsWorkflow,Path=Warnings}" />
+	<ns0:RemoveDiscountsActivity x:Name="removeDiscountsActivity1" OrderGroup="{ActivityBind POCalculateTotalsWorkflow,Path=OrderGroup}" Warnings="{ActivityBind POCalculateTotalsWorkflow,Path=Warnings}" />
+	<ns0:CalculateDiscountsActivity x:Name="calculateDiscountsActivity1" OrderGroup="{ActivityBind POCalculateTotalsWorkflow,Path=OrderGroup}" Warnings="{ActivityBind POCalculateTotalsWorkflow,Path=Warnings}" />
+	<ns0:CalculateTaxActivity x:Name="calculateTaxActivity1" OrderGroup="{ActivityBind POCalculateTotalsWorkflow,Path=OrderGroup}" Warnings="{ActivityBind POCalculateTotalsWorkflow,Path=Warnings}" />
+	<ns0:CalculateTotalsActivity x:Name="calculateTotalsActivity2" OrderGroup="{ActivityBind POCalculateTotalsWorkflow,Path=OrderGroup}" Warnings="{ActivityBind POCalculateTotalsWorkflow,Path=Warnings}" />
+	<ns0:RecordPromotionUsageActivity UsageStatus="{ActivityBind POCalculateTotalsWorkflow,Path=UsageStatus}" Warnings="{ActivityBind POCalculateTotalsWorkflow,Path=Warnings}" OrderGroup="{ActivityBind POCalculateTotalsWorkflow,Path=OrderGroup}" x:Name="recordPromotionUsageActivity1" />
+</SequentialWorkflowActivity>

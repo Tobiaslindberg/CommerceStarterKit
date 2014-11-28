@@ -1,0 +1,75 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.CartItemListViewModel
+@{
+	bool CartNameSpecified = !string.IsNullOrEmpty(Model.CartName);
+}
+@*
+    NOTE! This view loads the contents of the cart using angularJs.
+    The ng-controller is the CartController and it runs the initCart('Default')
+    during construction. See the Scripts\app\shopping\CartController.js for
+    the implementation.
+*@
+<div class="row header hidden-xs">
+	<div class="col-sm-2">@Html.Translate("/common/cart/product_table_headers/product")</div>
+	<div class="col-sm-10">
+		<div class="row clearfix">
+			<div class="col-sm-3">
+				@Html.Translate("/common/cart/product_table_headers/description")
+			</div>
+			<div class="col-sm-2">
+				@Html.Translate("/common/cart/product_table_headers/color")
+			</div>
+			<div class="col-sm-2">
+				@Html.Translate("/common/cart/product_table_headers/size")
+			</div>
+			<div class="col-sm-3">
+				@Html.Translate("/common/cart/product_table_headers/quantity")
+			</div>
+			<div class="col-sm-2">
+				@Html.Translate("/common/cart/product_table_headers/price")
+			</div>
+		</div>
+	</div>
+</div>
+<div class="loader" ng-show="loaderVisible === true"><img src="@Url.Content("~/Content/Images/ajax-loader-lightbg-ts.gif")" /></div>
+<div class="product" ng-repeat="p in products">
+	<div class="row">
+		<div class="col-xs-4 col-sm-2 image">
+			<a href="{{p.Url}}">
+                <img ng-src="{{ p.ImageUrl ? p.ImageUrl + '?preset=listsmall' : 'about:blank' }}" ng-show="p.ImageUrl" /></a>
+		</div>
+		<div class="col-xs-8 col-sm-10">
+			<div class="row">
+				<div class="col-sm-3 name"><a href="{{p.Url}}">{{p.Name}}</a></div>
+				<div class="col-sm-2 color">
+					<span ng-if="p.ColorImageUrl !== ''"><img src="about:blank" width="20" height="20" class="img-circle" ng-src="{{p.ColorImageUrl}}" /></span>
+					{{p.Color}}
+				</div>
+				<div class="col-sm-2 size">{{p.Size}}</div>
+				<div class="col-xs-6 col-sm-3 quantity">
+					<input type="text" ng-model="p.Quantity" ng-blur="update(p@(CartNameSpecified ? ", '" + Model.CartName + "'" : ""))" />
+					<span>{{ p.Quantity === 1 ? '@Html.Translate("/common/cart/quantity_one")' : '@Html.Translate("/common/cart/quantity_many")' }}</span>
+				</div>
+				<div class="col-xs-6 col-sm-2 price">
+					<del ng-show="p.LineItemDiscount > 0">{{ formatMoney(p.LineItemTotal)}}<br/></del>
+						 {{ formatMoney(p.LineItemTotal - p.LineItemDiscount - p.LineItemOrderLevelDiscount) }}
+				</div>
+			</div>
+			<div class="row description">
+				<div class="col-sm-7">
+					{{p.Description}}
+                    <div class="sku">@Html.Translate("/common/cart/article_number") {{p.ArticleNumber}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix visible-xs"></div>
+		<div class="col-xs-12 buttons">
+			@if(!Model.HideMoveToCart) {
+				<button class="btn btn-default pull-right" ng-click="moveToCart(p)">@Html.Translate("/common/cart/move_to_cart")</button>
+			}
+			<button class="btn btn-default pull-right" ng-click="removeFromCart(p, $event@(CartNameSpecified ? ", '" + Model.CartName + "'": ""))">@Html.Translate("/common/cart/remove_from_cart")</button>
+			@if(!Model.HideMoveToWishList) {
+				<button class="btn btn-default pull-right" ng-click="moveToWishlist(p)">@Html.Translate("/common/cart/move_to_wishlist")</button>
+			}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+    <language name="English" id="en">
+        <enums>
+            <episerver>
+                <visitorgroupscriteriapack>
+                    <ipcomparecondition>
+                        <equal>=</equal>
+                        <gt>&gt;=</gt>
+                        <lt>&lt;=</lt>
+                    </ipcomparecondition>
+                </visitorgroupscriteriapack>
+            </episerver>
+        </enums>
+        <visitorgroupscriteriapack>
+            <iprangecriterion>
+                <category>Technical Criteria</category>
+                <displayname>IP Range</displayname>
+                <description>Criterion that matches certain IPv4 ranges</description>
+                <condition>Condition</condition>
+                <ip>IP (v4)</ip>
+            </iprangecriterion>
+        </visitorgroupscriteriapack>
+    </language>
+</languages>

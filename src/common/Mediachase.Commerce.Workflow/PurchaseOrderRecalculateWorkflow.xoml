@@ -1,0 +1,52 @@
+﻿<SequentialWorkflowActivity x:Class="EPiCode.Commerce.Workflow.PurchaseOrderRecalculateWorkflow"
+                            x:Name="PurchaseOrderRecalculateWorkflow"
+                            xmlns:ns0="clr-namespace:EPiCode.Commerce.Workflow.Activities;Assembly=EPiCode.Commerce.Workflow.Activities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+  <ns0:ValidateLineItemsActivity x:Name="validateLineItemsActivity1"
+                                 OrderGroup="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=OrderGroup}"
+                                 Warnings="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=Warnings}" />
+  <ns0:GetFulfillmentWarehouseActivity PickupWarehouseInShipment="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=PickupWarehouseInShipment}"
+                                       Warnings="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=Warnings}"
+                                       OrderGroup="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=OrderGroup}"
+                                       x:Name="getFulfillmentWarehouseActivity1" />
+  <IfElseActivity x:Name="ifElseActivity1">
+    <IfElseBranchActivity x:Name="ifElseBranchActivity1">
+      <IfElseBranchActivity.Condition>
+        <CodeCondition Condition="CheckInstoreInventory" />
+      </IfElseBranchActivity.Condition>
+      <ns0:CheckInstoreInventoryActivity PickupWarehouseInShipment="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=PickupWarehouseInShipment}"
+                                         Warnings="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=Warnings}"
+                                         Description="Checks Inventory for in-store pickup and reserves items accordingly."
+                                         OrderGroup="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=OrderGroup}"
+                                         x:Name="checkInstoreInventoryActivity1" />
+    </IfElseBranchActivity>
+    <IfElseBranchActivity x:Name="ifElseBranchActivity2">
+      <ns0:CheckInventoryActivity Description="Checks Inventory and removes items if needed."
+                                  x:Name="checkInventoryActivity1"
+                                  OrderGroup="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=OrderGroup}"
+                                  Warnings="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=Warnings}" />
+    </IfElseBranchActivity>
+  </IfElseActivity>
+  <ns0:ProcessShipmentsActivity Warnings="{x:Null}"
+                                OrderGroup="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=OrderGroup}"
+                                x:Name="processShipmentsActivity1" />
+  <ns0:RemoveDiscountsActivity x:Name="removeDiscountsActivity1"
+                               OrderGroup="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=OrderGroup}"
+                               Warnings="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=Warnings}" />
+  <ns0:CalculateTotalsActivity x:Name="calculateTotalsActivity1"
+                               OrderGroup="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=OrderGroup}"
+                               Warnings="{x:Null}" />
+  <ns0:CalculateDiscountsActivity x:Name="calculateDiscountsActivity1"
+                                  OrderGroup="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=OrderGroup}"
+                                  Warnings="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=Warnings}" />
+  <ns0:CalculateTaxIncludedActivity x:Name="calculateTaxIncludedActivity1"
+                                    OrderGroup="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=OrderGroup}"
+                                    Warnings="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=Warnings}" />
+  <ns0:CalculateTotalsActivity x:Name="calculateTotalsActivity2"
+                               OrderGroup="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=OrderGroup}"
+                               Warnings="{x:Null}" />
+  <ns0:CalculatePurchaseOrderStatusActivity Warnings="{x:Null}"
+                                            OrderGroup="{ActivityBind PurchaseOrderRecalculateWorkflow,Path=OrderGroup}"
+                                            x:Name="calculatePurchaseOrderStatusActivity1" />
+</SequentialWorkflowActivity>

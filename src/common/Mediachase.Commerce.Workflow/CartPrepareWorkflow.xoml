@@ -1,0 +1,49 @@
+﻿<SequentialWorkflowActivity x:Class="EPiCode.Commerce.Workflow.CartPrepareWorkflow"
+                            x:Name="CartPrepareWorkflow"
+                            xmlns:ns0="clr-namespace:EPiCode.Commerce.Workflow.Activities;Assembly=EPiCode.Commerce.Workflow.Activities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+  <ns0:ValidateLineItemsActivity x:Name="validateLineItemsActivity1"
+                                 OrderGroup="{ActivityBind CartPrepareWorkflow,Path=OrderGroup}"
+                                 Warnings="{ActivityBind CartPrepareWorkflow,Path=Warnings}" />
+  <ns0:GetFulfillmentWarehouseActivity PickupWarehouseInShipment="{ActivityBind CartPrepareWorkflow,Path=PickupWarehouseInShipment}"
+                                       Warnings="{ActivityBind CartPrepareWorkflow,Path=Warnings}"
+                                       OrderGroup="{ActivityBind CartPrepareWorkflow,Path=OrderGroup}"
+                                       x:Name="getFulfillmentWarehouseActivity1" />
+  <IfElseActivity x:Name="ifElseActivity1">
+    <IfElseBranchActivity x:Name="ifElseBranchActivity1">
+      <IfElseBranchActivity.Condition>
+        <CodeCondition Condition="CheckInstoreInventory" />
+      </IfElseBranchActivity.Condition>
+      <ns0:CheckInstoreInventoryActivity PickupWarehouseInShipment="{ActivityBind CartPrepareWorkflow,Path=PickupWarehouseInShipment}"
+                                         Warnings="{ActivityBind CartPrepareWorkflow,Path=Warnings}"
+                                         Description="Checks Inventory for in-store pickup and reserves items accordingly."
+                                         OrderGroup="{ActivityBind CartPrepareWorkflow,Path=OrderGroup}"
+                                         x:Name="checkInstoreInventoryActivity1" />
+    </IfElseBranchActivity>
+    <IfElseBranchActivity x:Name="ifElseBranchActivity2">
+      <ns0:CheckInventoryActivity Description="Checks Inventory and removes items if needed."
+                                  x:Name="checkInventoryActivity2"
+                                  OrderGroup="{ActivityBind CartPrepareWorkflow,Path=OrderGroup}"
+                                  Warnings="{ActivityBind CartPrepareWorkflow,Path=Warnings}" />
+    </IfElseBranchActivity>
+  </IfElseActivity>
+  <ns0:ProcessShipmentsActivity Warnings="{ActivityBind CartPrepareWorkflow,Path=Warnings}"
+                                OrderGroup="{ActivityBind CartPrepareWorkflow,Path=OrderGroup}"
+                                x:Name="processShipmentsActivity1" />
+  <ns0:CalculateTotalsActivity x:Name="calculateTotalsActivity1"
+                               OrderGroup="{ActivityBind CartPrepareWorkflow,Path=OrderGroup}"
+                               Warnings="{ActivityBind CartPrepareWorkflow,Path=Warnings}" />
+  <ns0:RemoveDiscountsActivity x:Name="removeDiscountsActivity1"
+                               OrderGroup="{ActivityBind CartPrepareWorkflow,Path=OrderGroup}"
+                               Warnings="{ActivityBind CartPrepareWorkflow,Path=Warnings}" />
+  <ns0:CalculateDiscountsActivity x:Name="calculateDiscountsActivity1"
+                                  OrderGroup="{ActivityBind CartPrepareWorkflow,Path=OrderGroup}"
+                                  Warnings="{ActivityBind CartPrepareWorkflow,Path=Warnings}" />
+  <ns0:CalculateTaxIncludedActivity x:Name="calculateTaxIncludedActivity1"
+                                    OrderGroup="{ActivityBind CartPrepareWorkflow,Path=OrderGroup}"
+                                    Warnings="{ActivityBind CartPrepareWorkflow,Path=Warnings}" />
+  <ns0:CalculateTotalsActivity x:Name="calculateTotalsActivity2"
+                               OrderGroup="{ActivityBind CartPrepareWorkflow,Path=OrderGroup}"
+                               Warnings="{ActivityBind CartPrepareWorkflow,Path=Warnings}" />
+</SequentialWorkflowActivity>

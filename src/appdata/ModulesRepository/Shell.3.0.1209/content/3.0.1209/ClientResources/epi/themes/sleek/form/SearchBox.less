@@ -1,0 +1,40 @@
+﻿@import "../variables";
+
+.Sleek 
+{
+    .epi-gadgetInnerToolbar {
+        
+        // Overrides default search input icon
+        .epi-searchInput {
+            width: 100%;
+            background-position: 3px center;
+            height: 22px;
+
+            .dijitInputContainer {
+                padding: 1px 5px;
+                margin-left: 18px;
+            }
+
+            .dijitPlaceHolder {
+                padding: 3px 0px 0px 6px;
+            }
+        }
+        
+        .epi-contentSearchBox {
+            &.dijitTextBoxDisabled {
+                background-color: @textbox-disabled-background-color;
+            }
+        
+            background-color: @epi-select-background-color-fallback;
+        
+            .epi-clearButton {
+                background: url("images/icons/clearButtonIcon.png") center center no-repeat;
+                height: 16px;
+                margin: 4px 3px 5px 0;
+                float: right;
+                cursor: pointer;
+                width: 16px;
+            }
+        }
+    }
+}

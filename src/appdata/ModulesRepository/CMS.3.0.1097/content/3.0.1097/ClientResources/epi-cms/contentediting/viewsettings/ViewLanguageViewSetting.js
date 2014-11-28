@@ -1,0 +1,2 @@
+//>>built
+define("epi-cms/contentediting/viewsettings/ViewLanguageViewSetting",["dojo/_base/declare","dojo/_base/lang","dojo/Deferred","epi-cms/contentediting/_ViewSetting"],function(_1,_2,_3,_4){return _1([_4],{key:"viewlanguage",usedForRendering:true,isTagItem:false,initialize:function(_5){_5.registerRequestInterceptor(_2.hitch(this,this._onContextChange));},_onContextChange:function(_6,_7){var _8=new _3();_8.resolve();if(this.get("enabled")&&this.value){_6.epslanguage=this.value;}return _8;}});});

@@ -1,0 +1,36 @@
+﻿@using EPiServer.ServiceLocation
+@using EPiServer.Shell
+@using EPiServer.Web
+@using EPiServer.Web.Routing
+@using OxxCommerceStarterKit.Web.Business
+@model OxxCommerceStarterKit.Web.Models.ViewModels.Payment.CancelPaymentViewModel
+@{
+    ViewBag.Title = "Payment Cancelled";
+    Chrome chrome = ViewBag.Chrome;
+
+    UrlResolver urlResolver = ServiceLocator.Current.GetInstance<UrlResolver>();
+    string checkoutPage = urlResolver.GetUrl(chrome.CheckoutPage, chrome.Language, new VirtualPathArguments() { ContextMode = ContextMode.Default });
+}
+
+<div class="article-page">
+    <div class="pre-content">
+
+    </div>
+    <h1>@Html.PropertyFor(p => p.CurrentPage.CancelPageTitle)</h1>
+    <div class="body">
+        @Html.PropertyFor(p => p.CurrentPage.CancelBodyText)
+    </div>
+</div>
+
+@section scripts{
+    @* Do not automatically redirect when editing page *@
+    @if (!EPiServer.Editor.PageEditing.PageIsInEditMode)
+    {
+        <script type="text/javascript">
+            $(function () {
+                // Allow automatic redirect back to checkout page
+                // window.location = '@checkoutPage';
+            });
+        </script>
+    }
+}

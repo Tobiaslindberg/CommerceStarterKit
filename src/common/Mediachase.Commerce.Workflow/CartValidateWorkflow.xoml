@@ -1,0 +1,48 @@
+﻿<SequentialWorkflowActivity x:Class="EPiCode.Commerce.Workflow.CartValidateWorkflow"
+                            x:Name="CartValidateWorkflow"
+                            xmlns:ns0="clr-namespace:EPiCode.Commerce.Workflow.Activities;Assembly=EPiCode.Commerce.Workflow.Activities, Culture=neutral, PublicKeyToken=null"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+  <ns0:ValidateLineItemsActivity x:Name="validateLineItemsActivity1"
+                                 OrderGroup="{ActivityBind CartValidateWorkflow,Path=OrderGroup}"
+                                 Warnings="{ActivityBind CartValidateWorkflow,Path=Warnings}" />
+  <ns0:GetFulfillmentWarehouseActivity x:Name="getFulfillmentWarehouseActivity1"
+                                       PickupWarehouseInShipment="{ActivityBind CartValidateWorkflow,Path=PickupWarehouseInShipment}"
+                                       Warnings="{ActivityBind CartValidateWorkflow,Path=Warnings}"
+                                       OrderGroup="{ActivityBind CartValidateWorkflow,Path=OrderGroup}" />
+  <IfElseActivity x:Name="ifElseActivity1">
+    <IfElseBranchActivity x:Name="ifElseBranchActivity1">
+      <IfElseBranchActivity.Condition>
+        <CodeCondition Condition="CheckInstoreInventory" />
+      </IfElseBranchActivity.Condition>
+      <ns0:CheckInstoreInventoryActivity PickupWarehouseInShipment="{ActivityBind CartValidateWorkflow,Path=PickupWarehouseInShipment}"
+                                         Warnings="{ActivityBind CartValidateWorkflow,Path=Warnings}"
+                                         Description="Checks Inventory for in-store pickup and reserves items accordingly."
+                                         OrderGroup="{ActivityBind CartValidateWorkflow,Path=OrderGroup}"
+                                         x:Name="checkInstoreInventoryActivity1" />
+    </IfElseBranchActivity>
+    <IfElseBranchActivity x:Name="ifElseBranchActivity2">
+      <ns0:CheckInventoryActivity Description="Checks Inventory and removes items if needed."
+                                  x:Name="checkInventoryActivity2"
+                                  OrderGroup="{ActivityBind CartValidateWorkflow,Path=OrderGroup}"
+                                  Warnings="{ActivityBind CartValidateWorkflow,Path=Warnings}" />
+    </IfElseBranchActivity>
+  </IfElseActivity>
+  <ns0:CalculateTotalsActivity x:Name="calculateTotalsActivity1"
+                               OrderGroup="{ActivityBind CartValidateWorkflow,Path=OrderGroup}"
+                               Warnings="{ActivityBind CartValidateWorkflow,Path=Warnings}" />
+  <ns0:RemoveDiscountsActivity x:Name="removeDiscountsActivity1"
+                               OrderGroup="{ActivityBind CartValidateWorkflow,Path=OrderGroup}"
+                               Warnings="{ActivityBind CartValidateWorkflow,Path=Warnings}" />
+  <ns0:CalculateDiscountsActivity x:Name="calculateDiscountsActivity1"
+                                  OrderGroup="{ActivityBind CartValidateWorkflow,Path=OrderGroup}"
+                                  Warnings="{ActivityBind CartValidateWorkflow,Path=Warnings}" />
+  <ns0:CalculateTotalsActivity x:Name="calculateTotalsActivity2"
+                               OrderGroup="{ActivityBind CartValidateWorkflow,Path=OrderGroup}"
+                               Warnings="{ActivityBind CartValidateWorkflow,Path=Warnings}" />
+  <ns0:RecordPromotionUsageActivity UsageStatus="Reserved"
+                                    Warnings="{x:Null}"
+                                    OrderGroup="{ActivityBind CartValidateWorkflow,Path=OrderGroup}"
+                                    x:Name="recordPromotionUsageActivity1" />
+  <FaultHandlersActivity x:Name="faultHandlersActivity1" />
+</SequentialWorkflowActivity>

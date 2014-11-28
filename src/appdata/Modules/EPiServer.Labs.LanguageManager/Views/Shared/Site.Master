@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<%@ Import Namespace="EPiServer.Shell.Web.Mvc.Html" %>
+<%@ Import Namespace="EPiServer.Framework.Web.Resources" %>
+<%@ Import Namespace="EPiServer.Shell" %>
+<%@ Import Namespace="EPiServer.Shell.Navigation" %>
+<%@ Import Namespace="EPiServer" %>
+<%@ Import Namespace="EPiServer.Labs.LanguageManager" %>
+<%@ Import Namespace="EPiServer.Labs.LanguageManager.Helpers" %>
+<%@ Assembly Name="EPiServer.Labs.LanguageManager" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <!-- Begin: Shell -->
+    <asp:PlaceHolder ID="cssLinkRegion" runat="server" />
+    <asp:PlaceHolder ID="clientScripts" runat="server" />
+    <asp:PlaceHolder ID="shellScripts" runat="server">
+        <%=Page.ClientResources("ShellCore")%>
+        <%=Page.ClientResources("ShellWidgets")%>
+        <%=Page.ClientResources("Navigation")%> <%--Load JS for handling Report dialog in GlobalNavigation--%>
+    </asp:PlaceHolder>
+    <link type="text/css" rel="stylesheet" href="<%= Paths.ToShellClientResource("ClientResources/epi/themes/sleek/sleek.css") %>" />
+    <!-- End: Shell -->
+
+    <link href="<%= ModuleHelper.ToClientResource("ClientResources/EPiServer.Labs.LanguageManager.css") %>" rel="stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder ID="HeadTagContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body class="Sleek epi-LanguageManagerSetting">
+    <asp:ContentPlaceHolder ID="GlobalNavigationContainer" runat="server"></asp:ContentPlaceHolder>
+
+    <div class="epi-contentContainer">
+        <div class="epi-padding epi-overflowHidden">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </div>
+
+    <%--TODO: remove those legacy script--%>
+    <script src="<%= UriSupport.ResolveUrlFromUIBySettings("javascript/system.js") %>" type="text/javascript"></script>
+    <script src="<%= UriSupport.ResolveUrlFromUtilBySettings("javascript/episerverscriptmanager.js") %>" type="text/javascript"></script>
+    <script src="<%= UriSupport.ResolveUrlFromUIBySettings("javascript/dialog.js") %>" type="text/javascript"></script>
+    <script src="<%= UriSupport.ResolveUrlFromUIBySettings("javascript/system.aspx") %>" type="text/javascript"></script>
+</body>
+</html>

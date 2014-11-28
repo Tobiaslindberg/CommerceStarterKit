@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>EPiServer.Commerce.AddOns.UI</id>
+    <version>2.0.721</version>
+    <title>EPiServer Commerce Core UI Components</title>
+    <authors>EPiServer AB</authors>
+    <owners>EPiServer AB</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Contains core UI components and integrations.</description>
+    <tags>EPiServerSystemModulePackage Commerce</tags>
+    <dependencies>
+      <dependency id="EPiServer" version="[7.5, 8.0)" />
+      <dependency id="EPiServer.Shell" version="[7.5, 8.0)" />
+      <dependency id="EPiServer.Business.Commerce" version="[7.5, 8.0)" />
+      <dependency id="Shell" version="[3.0, 4.0)" />
+      <dependency id="CMS" version="[3.0, 4.0)" />
+    </dependencies>
+  </metadata>
+</package>

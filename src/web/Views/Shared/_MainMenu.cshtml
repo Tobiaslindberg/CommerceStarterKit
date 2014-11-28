@@ -1,0 +1,38 @@
+﻿@using EPiServer.Core
+@using OxxCommerceStarterKit.Web.Helpers
+
+@{
+	Layout = null;
+	int max = ViewData["Max"] != null ? (int)ViewData["Max"] : 0;
+}
+
+@if (Model != null)
+{
+	<ul class="nav navbar-nav">
+		@Html.MenuList(ContentReference.StartPage, ItemTemplate, max)
+	</ul>
+}
+
+@helper ItemTemplate(HtmlHelpers.MenuItem firstLevelItem) {
+	bool hasChildren = firstLevelItem.HasChildren.Value;
+	<li class="@(firstLevelItem.Selected ? "active" : "") @(hasChildren ? "dropdown" : "")">
+			@if(hasChildren) {
+			<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">@firstLevelItem.Page.Name <b class="caret"></b></a>
+			<ul class="dropdown-menu">
+				@Html.MenuList(firstLevelItem.Page.ContentLink, SubLevelItemTemplate)
+			</ul>
+   } else {
+	   @Link(firstLevelItem.Page)
+   }
+	</li>
+}
+
+@helper SubLevelItemTemplate(HtmlHelpers.MenuItem subLevelItem) {
+    <li class="@(subLevelItem.Selected ? "active" : null)">
+		@Link(subLevelItem.Page)
+    </li>
+}
+
+@helper Link(PageData page) {
+	@Html.PageLink(page)
+}

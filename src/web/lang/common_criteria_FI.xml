@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="suomi" id="fi">
+    <common>
+      <visitorgroups>
+        <criteria>
+          <userattribute>
+            <anymonth>Mikä tahansa kuukausi</anymonth>
+            <anyyear>Mikä tahansa vuosi</anyyear>
+            <attributenamenotselected>Valitse määrite</attributenamenotselected>
+            <category>Yhteisön ehdot</category>
+            <description>Käyttäjämääritteen ehto</description>
+            <displayName>Käyttäjämäärite</displayName>
+            <false>epätosi</false>
+            <lowerboundgreaterthanupperbound>Alarajan arvon pitää olla pienempi tai yhtä suuri kuin kuin ylärajan arvo.</lowerboundgreaterthanupperbound>
+            <true>tosi</true>
+          </userattribute>
+        </criteria>
+      </visitorgroups>
+    </common>
+  </language>
+</languages>

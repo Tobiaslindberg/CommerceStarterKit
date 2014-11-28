@@ -1,0 +1,33 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.ErrorPageViewModel
+@{
+	if (!Model.HasDatabase)
+	{
+		Layout = "~/Views/Shared/_LayoutNoDb.cshtml";
+	}
+
+	string title = Html.TranslateFallback("/errors/error500/title", "An error occured");
+	string htmlText = Html.TranslateFallback("/errors/error500/text", "We're sorry, but the page you requested has generated an error. Please try again later.");
+
+	if (Model.CurrentPage != null)
+	{
+		if (!string.IsNullOrEmpty(Model.CurrentPage.Settings.ErrorPageTitle))
+		{
+			title = Model.CurrentPage.Settings.ErrorPageTitle;
+		}
+		if (Model.CurrentPage.Settings.ErrorPageText != null && !string.IsNullOrEmpty(Model.CurrentPage.Settings.ErrorPageText.ToString()))
+		{
+			htmlText = Model.CurrentPage.Settings.ErrorPageText.ToString();
+		}
+	}
+	ViewBag.Title = "500";
+}
+
+<div class="error-page">
+
+	<h1>@title</h1>
+
+	<div class="body">
+		@Html.Raw(htmlText)
+	</div>
+
+</div>

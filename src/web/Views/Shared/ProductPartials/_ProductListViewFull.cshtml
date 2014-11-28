@@ -1,0 +1,17 @@
+﻿@model ProductListViewModel
+
+@{
+    Layout = null;
+}
+<div class="productRow col-sm-12">
+    <div class="image img-responsive">
+        <a href="@Model.ProductUrl">
+            <img class="img-responsive" src="@Model.ImageUrl"/>
+        </a>
+    </div>
+    <div class="productInfo">
+        <h3>@Model.DisplayName</h3>
+        <p>@Model.Description</p>
+        <div class="price">@Model.PriceString</div>
+    </div>
+</div>

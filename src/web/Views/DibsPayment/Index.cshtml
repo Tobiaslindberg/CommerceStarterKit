@@ -1,0 +1,68 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.Payment.DibsPaymentViewModel
+<form id="paymentForm" action="@Model.ProcessingUrl" target="_top" method="post">
+    <div><input type="hidden" name="paymentprovider" value="@Model.DibsSystemName" /></div>
+    <div><input type="hidden" name="merchant" value="@Model.MerchantID" /></div>
+    <div><input type="hidden" name="amount" value="@Model.Amount" /></div>
+    <div><input type="hidden" name="currency" value="@Model.Currency.CurrencyCode" /></div>
+    <div><input type="hidden" name="orderid" value="@Model.OrderID" /></div>
+    <div><input type="hidden" name="acceptReturnurl" value="@Model.AcceptReturnUrl" /></div>
+    <div><input type="hidden" name="cancelReturnUrl" value="@Model.CancelReturnUrl" /></div>
+    <div><input type="hidden" name="expandOrderInformation" value="1" /></div>
+    @* Default value is en_US - we need to use one of these http://tech.dibspayment.com/input_parameters_dpw
+       This corresponds to the culture code     *@
+    @*<div><input type="hidden" name="language" value="en_US" /></div>*@
+    @if (Model.IsTest)
+    {
+        <div><input type="hidden" name="test" value="1" /></div>
+    }
+    @if (Model.Products.Any())
+    {
+        <input type="hidden" name="oiTypes" value="QUANTITY;UNITCODE;DESCRIPTION;AMOUNT;ITEMID;VATPERCENT" />
+        for (var i = 1; i <= @Model.Products.Count; i++)
+        {
+            var id = "oiRow" + @i;
+            <input type="hidden" name=@id value="@Model.Products[i-1]" />
+        }
+    }
+
+    <div><input type="hidden" name="lang" value="@Model.Language" /></div>
+    <div><input type="hidden" name="mac" value="@Model.MAC" /></div>
+    <div><input type="hidden" name="voucher" value="yes" /></div>
+    <div>
+        @* Do not automatically redirect when editing page *@
+        @if (!EPiServer.Editor.PageEditing.PageIsInEditMode)
+        {
+            <input type="submit" style="display: none;" />
+        }
+        else
+        {
+            <h1>Payment</h1>
+            <p>
+                This page holds the data that will be sent to the payment provider (see the source). Because you're
+                seeing this in edit mode, the automatic post is not performed. You can change payment
+                settings by going to Properties mode, or click the button below to continue to the
+                payment page.
+            </p>
+            <h2>Order Info for Mac Calculation</h2>
+            <p>
+                For Developers: This is the data used for MAC calculation. If you get MAC calculation errors from the
+                payment provider, please compare it to this, it should help you get started troubleshooting.
+            </p>
+            <pre>@Model.OrderInfo</pre>
+            <input type="submit" value="Continue to Payment" />
+        }
+    </div>
+</form>
+
+
+@section scripts{
+    @* Do not automatically redirect when editing page *@
+    @if (!EPiServer.Editor.PageEditing.PageIsInEditMode)
+    {
+        <script type="text/javascript">
+            $(function () {
+                $('#paymentForm').submit();
+            });
+        </script>
+    }
+}

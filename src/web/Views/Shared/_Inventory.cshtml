@@ -1,0 +1,11 @@
+﻿@using System.Globalization
+@model EPiServer.Commerce.SpecializedProperties.Inventory
+
+@if (Model != null && Model.InStockQuantity > 0)
+{
+    <div>In Stock: @Model.InStockQuantity.ToString(CultureInfo.CurrentCulture)</div>
+}
+else
+{
+    <div>Out of stock.</div>
+}

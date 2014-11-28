@@ -1,0 +1,33 @@
+﻿@using EPiServer.Core
+
+@model Chrome
+
+<div id="helpDialog" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<a href="javascript:;" class="close" role="button">@Html.Translate("/common/layout/close_dialog")</a>
+			<div class="modal-body"></div>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="container">
+		<div class="extra">
+			<div class="social-media">
+				<div>
+					<span class="title">@Html.Translate("/common/social/follow_title")</span>
+					<div class="icons">
+						@Html.PropertyFor(x=>x.SocialMediaIcons)
+					</div>
+				</div>
+			</div>
+			@Model.FooterButtons
+		</div>
+		@if (Model.FooterMenu != null)
+		{
+			<nav role="navigation" class="menu-footer">
+				@Html.Partial("_FooterMenu", Model.FooterMenu, new ViewDataDictionary())
+			</nav>
+		}
+	</div>
+</div>

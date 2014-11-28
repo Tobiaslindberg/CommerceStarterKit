@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+    <language name="English" id="en">
+        <enums>
+            <episerver>
+                <visitorgroupscriteriapack>
+                    <durationunit>
+                        <hours>Hours</hours>
+                        <minutes>Minutes</minutes>
+                        <seconds>Seconds</seconds>
+                    </durationunit>
+                </visitorgroupscriteriapack>
+            </episerver>
+        </enums>
+        <visitorgroupscriteriapack>
+            <timeonsitecriterion>
+                <category>Time and Place Criteria</category>
+                <displayname>Time on Site</displayname>
+                <description>Matches the total length of a user's visit</description>
+                <timeonsite>Time On Site</timeonsite>
+                <durationunit>Duration Unit</durationunit>
+            </timeonsitecriterion>
+        </visitorgroupscriteriapack>
+    </language>
+</languages>

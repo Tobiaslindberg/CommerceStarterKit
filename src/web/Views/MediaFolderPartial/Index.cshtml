@@ -1,0 +1,24 @@
+﻿@using OxxCommerceStarterKit.Web.Models.Files
+@using OxxCommerceStarterKit.Web.Models.ViewModels
+@model OxxCommerceStarterKit.Web.Models.ViewModels.ContentFolderViewModel
+@{
+	Layout = null;
+}
+<div class="clearfix">
+	@foreach (ContentFolderItemViewModel item in Model.Items)
+	{
+		string description = "", copyright = "";
+		if (item.Content is ImageFile)
+		{
+			var imageFile = item.Content as ImageFile;
+			description = imageFile.Description;
+			copyright = imageFile.Copyright;
+		}
+		<div class="image col-xs-6 col-sm-3 col-md-2">
+			<a href='@item.Url' target="_new">
+				<img src="@item.ThumbnailUrl" class="img-responsive" alt="@description @copyright" title="@description @copyright" />
+				<span class="name">@item.Content.Name</span>
+			</a>
+		</div>
+	}
+</div>

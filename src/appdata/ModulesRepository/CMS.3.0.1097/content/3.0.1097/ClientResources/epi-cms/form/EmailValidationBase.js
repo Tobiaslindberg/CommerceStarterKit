@@ -1,0 +1,2 @@
+//>>built
+define("epi-cms/form/EmailValidationBase",["dojo/_base/declare","dojo/_base/lang","dojox/validate/web","dijit/form/ValidationTextBox","epi/i18n!epi/cms/nls/episerver.cms.form.emailvalidation"],function(_1,_2,_3,_4,_5){return _1([_4],{validator:function(_6,_7){return (!this.required&&this._isEmpty(_6))||(_3.isEmailAddress(_6,_7));},invalidMessage:_5.invalidmessage});});

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+	<language name="English" id="en">
+		<hotspots>
+			<new-hotspot>New</new-hotspot>
+			<drop-to-delete>Drop here to delete</drop-to-delete>
+			<link-to-product>Link to product</link-to-product>
+		</hotspots>
+	</language>
+	<language name="Norwegian" id="no">
+		<hotspots>
+			<new-hotspot>Ny</new-hotspot>
+			<drop-to-delete>Dra hit for å slette</drop-to-delete>
+			<link-to-product>Lenke til produkt</link-to-product>
+		</hotspots>
+	</language>
+</languages>

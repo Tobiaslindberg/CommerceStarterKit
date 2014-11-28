@@ -1,0 +1,52 @@
+﻿@using OxxCommerceStarterKit.Web.Extensions
+@using OxxCommerceStarterKit.Web.Models.PageTypes
+@model OxxCommerceStarterKit.Web.Models.ViewModels.ShoppingCategoryViewModel
+@{
+	ViewBag.Title = Model.CurrentPage.Name;
+}
+<div class="product-list-page">
+
+    <div id="equalHeights" class="row" ng-controller="ProductAndSearchController" ng-init="init('@Model.CommerceCategoryIds','@Model.CommerceRootCategoryName', '@Model.Language', @Model.NumberOfProductsToShow)">
+        <div class="col-sm-3">
+            <aside class="box">
+                <div class="collection" ng-cloak>
+                    <h3>@Model.ParentName <a href="javascript:;" class="visible-xs glyphicon glyphicon-chevron-up" data-toggle="collapse" data-target="#id76123"> </a></h3>
+					<ul class="collapse in" id="id76123">
+						@foreach (var page in Model.CategoryPages)
+						{
+							var children = page.GetChildren<ShoppingCategoryPage>();
+							bool active = page.ContentLink.ID == Model.CurrentPage.ContentLink.ID || children.Any(x => x.ContentLink.ID == Model.CurrentPage.ContentLink.ID);
+							<li class="@(active ? "active" : "")">
+								<a href="@Url.ContentUrl(page.ContentLink)">@page.PageName</a>
+								@if (active && children.Count() > 0)
+								{
+									<ul>
+										@foreach (var childPage in children)
+										{
+											bool childActive = childPage.ContentLink.ID == Model.CurrentPage.ContentLink.ID;
+											<li class="@(childActive ? "active" : "")">
+												<a href="@Url.ContentUrl(childPage.ContentLink)">@childPage.PageName</a>
+											</li>
+										}
+									</ul>
+								}
+							</li>
+						}
+					</ul>
+
+                </div>
+                @Html.Partial("PagePartials/_Facets")
+            </aside>
+        </div>
+
+        <div class="col-sm-9 product-list" ng-cloak>
+            <h1 @Html.EditAttributes(x => x.CurrentPage.PageName)>@Model.CurrentPage.PageName</h1>
+			@Html.Partial("PagePartials/_PageColumnsControl")
+            @Html.PropertyFor(x => x.CurrentPage.PageSubHeader)
+			@Html.PropertyFor(x => x.CurrentPage.TopContentArea)
+            @Html.Partial("PagePartials/_ProductList")
+			<div class="loader" ng-show="loaderVisible === true"><img src="@Url.Content("~/Content/Images/ajax-loader-lightbg-ts.gif")" /></div>
+			@Html.PropertyFor(x => x.CurrentPage.BottomContentArea)
+        </div>
+    </div>
+</div>

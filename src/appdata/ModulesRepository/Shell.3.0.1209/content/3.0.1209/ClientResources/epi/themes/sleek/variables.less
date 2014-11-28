@@ -1,0 +1,674 @@
+// General
+@text-color: #333;				// Text color for enabled widgets
+@text-color-white: #ffffff;			// White text color
+
+@border-color: #b5bcc7;				// Border color for (enabled, unhovered) TextBox, Slider, Accordion, BorderContainer, TabContainer
+@popup-border-color: #666666;		// Border for Dialog, Menu, Tooltip.   Must also update tooltip.png (the arrow image file) to match
+@minor-border-color: #d3d3d3;		// Color of borders inside widgets: horizontal line in Calendar between weeks, around color swatches in ColorPalette, above Dialog action bar
+
+@disabled-border-color: #d3d3d3;	// Border color for disabled/readonly Button, TextBox etc. widgets
+@disabled-background-color: #efefef;// Disabled button, textbox, etc.
+@disabled-text-color: #818181;		// Text color for disabled/readonly widgets
+
+@unselected-background-color: #efefef;// Background color for unselected/unopened tab button, accordion pane, TitlePane, Menu items
+@unselected-text-color: #333333;	// Text color for unselected/unopened tab button, accordion pane, TitlePane, Menu items
+
+@hovered-border-color: #858585;		// Hover of textbox, tab label, BorderContainer splitter, Calendar, etc.
+@hovered-background-color: #abd6ff;	// Background color for hover of Button, MenuBar, Accordion pane, Calendar... anything that has a (non-white) color to start with and gets darker on hover
+@hovered-text-color: @text-color;	// Used for title of select Accordion pane, label of select tab, hovered Menu item, etc.
+
+@pressed-border-color: #769dc0;		// During click on Calendar day, Slider up/down buttons, tab button, etc.
+@pressed-background-color: #7dbefa;	// Background color while clicking on Accordion/TitlePane title bar, tab button, Calendar day, Toolbar button, Tree row.
+
+@selected-border-color: #769dc0;	// Selected AccordionPane, tab of nested TabContainer (but plain TabContainer is special)
+@selected-background-color: #cfe5fa;// Selected Accordion pane, nested tab label, Tree row
+@selected-text-color: @text-color;	// title of selected Accordion pane, label of selected tab, hovered Menu item, etc.
+
+@bar-background-color: #fafafa;		// MenuBar, Toolbar, action bar at bottom of dialog
+@pane-background-color: #fff;		// Background color of Accordion panes, Dialogs, etc.
+@popup-background-color: #fff;		// Background for Dialog.   TODO: currently use for ColorPalette, maybe should change.
+
+
+
+// Buttons
+@button-border-color: #888b8f;				// Border for (stand-alone) buttons in normal, hovered, or active state
+@button-background-color: #e9f4fe;			// Background color for (unhovered) buttons
+@button-hovered-background-color: #abd6ff;	// Background color for hovered buttons
+@button-pressed-background-color: #abd6ff;	// Background color for active buttons
+@button-border-radius: 3px;					// Rounded corner radius for buttons (except in toolbar)
+
+// Input widgets@epi-status-background-black
+// TODO: refactor after q4 2013 release
+@focused-border-color: #b4c600;	// Focused textbox, editor, select, etc.
+
+.epi-focused () {
+	-webkit-box-shadow: 0 0 0 1px @focused-border-color;
+	   -moz-box-shadow: 0 0 0 1px @focused-border-color;
+	    -ms-box-shadow: 0 0 0 1px @focused-border-color;
+		 -o-box-shadow: 0 0 0 1px @focused-border-color;
+			box-shadow: 0 0 0 1px @focused-border-color;
+
+	border-color: @epi-active-object;
+
+	.transition-duration(.1s);
+}
+
+@error-border-color: #d46464;				// Border for textbox in error state
+@error-focused-border-color: #ce4f4f;		// Border of textbox in error state, and focused
+@erroricon-background-color: #d46464;		// Background color for exclamation point validation icon (for TextBox in error state)
+@textbox-background-color: #fff;			// Default background color of TextBox based widgets
+@textbox-hovered-background-color: #fff;	// Background color when hovering a unfocused TextBox, Select, Editor, or other input widget
+@textbox-focused-background-color: @textbox-background-color;
+@textbox-error-background-color: @textbox-background-color;
+@textbox-disabled-background-color: #f0f0f0;
+
+@textbox-padding: 5px;						// Padding for Textbox, Textarea, etc.
+
+// CheckBox, RadioButton
+@focus-outline-color: #4a4a4a;				// Color for artificial focus outline around labels of checkboxes
+
+// TabContainer
+@nestedtab-hovered-background-color: @textbox-hovered-background-color;
+@nestedtab-hovered-border-color: #cfe5fa;
+@nestedtab-selected-border-color: @selected-border-color;
+@nestedtab-selected-background-color: #898989;
+@tab-disabled-background-color: #d3d3d3;		// For disabled tabs of a TabContainer (not officially supported)
+
+// Arrow buttons (stand alone, or inside ComboBox / ComboButton / Spinner / etc.
+@arrowbutton-background-color: -moz-linear-gradient( top, #f8f8f8, #dcdcdc );
+@arrowbutton-hovered-background-color: #abd6ff;	// Color of arrow when hovering ComboBox.   But hovering Spinner doesnt change arrow color (TODO)
+@arrowbutton-pressed-background-color: #abd6ff;
+@arrowbutton-inner-border-color: #fff;			// Typically the arrows have an inner white border (a.k.a. padding) and then an outer black-ish border
+
+// Slider
+// Note: any changes here require corresponding changes in form/images/sliderThumbs.png
+@slider-fullbar-background-color: #cfe5fa;			// Background color for part of slider bar before (to the left or below) the handle
+@slider-remainingbar-background-color: #fff;		// Background color for part of slider bar after (to the right or above) the handle
+@slider-hovered-fullbar-background-color: #abd6ff;	// Background color for part of bar of hovered slider before (to the left or below) the handle
+@slider-hovered-remainingbar-background-color: #fff;// Background color for part of bar of hovered slider after (to the right or above) the handle
+@slider-hoveredButton-background-color: #fff;		// Background color of slider increment/decrement buttons when mouse is over slider but not over the buttons
+@slider-focused-fullbar-background-color: #abd6ff;	// Background color for part of bar of focused slider before (to the left or below) the handle
+@slider-focused-remainingbar-background-color: #fff;// Background color for part of bar of focused slider after (to the right or above) the handle
+@slider-button-hovered-background-color: #cfe5fa;	// Background color of slider increment/decrement buttons when mouse is over the buttons
+@slider-button-pressed-background-color: #abd6ff;	// Background color of slider increment/decrement buttons while button is depressed
+
+// Select, ComboBox
+@select-dropdownitem-background-color: #fff;			// Background color for items in the drop down list of a ComboBox/Select
+@select-dropdownitem-hovered-background-color: #7dbefa;	// Background color for the hovered item in the drop down list of a ComboBox/Select
+@select-matchedtext-background-color: #abd6ff;			// Background color of text in ComboBox drop down that matches typed in phrase
+
+// Menus
+@menu-background-color: #555b61;
+@menu-light-background-color: #eeeded;
+@menu-light-text-color: #212121;
+
+// Calendar
+@calendar-background-color: #f0f2f3;
+@calendar-currentmonth-background-color: #fff;		// Background color for days of the current month
+@calendar-adjacentmonth-background-color: #bec4cb;	// Background color used for days from previous or next month
+@calendar-adjacentmonth-text-color: #fff;		// Text color used for days from previous or next month
+@calendar-date-pressed-border-color: #fff;			// For some reason pressing a day of the month (as opposed to hovering it) makes the border go away, is this intentional?
+@calendar-date-pressed-background-color: @pressed-background-color;
+@calendar-date-selected-border-color: #c4d700;
+@calendar-date-selected-background-color: #abd6ff;
+@calendar-button-hovered-background-color: #e9f4fe;	// for hover or next/previous year, and month drop down (TODO: border and background are built in to calendarArrows.png, can't control from here)
+@calendar-button-hovered-border-color: #fff;		// for hover or next/previous year, and month drop down
+@calendar-button-pressed-background-color: #cfe5fa;
+@calendar-button-pressed-border-color: @pressed-border-color;
+
+
+// ProgressBar
+@progressbar-border-color: #565656;	// Border color of progress bar
+@progressbar-full-background-color:#31c23a;		// Background color for part of progress bar indicating amount completed
+@progressbar-empty-background-color: #909090;		// Background color for part of progress bar indicating amount remaining
+@progressbar-text-color: @text-color;			// Color of progress bar text (ex: "35%").  Must contrast with both empty and full background colors.
+
+// TimePicker
+@timepicker-minorvalue-background-color: #efefef;	// For 3:15, 3:30, 3:45 but not 3:00 or 4:00
+@timepicker-minorvalue-text-color: #818181;
+@timepicker-majorvalue-background-color: #e9f4fe;	// For 3:00, 4:00, 5:00, etc.
+@timepicker-value-hovered-background-color: #7dbefa;
+@timepicker-value-hovered-text-color: @hovered-text-color;
+@timepicker-arrow-hovered-background-color: #abd6ff;
+
+// ColorPalette
+@colorpalette-background-color: #fff;
+@swatch-border-color: @minor-border-color;
+@swatch-hovered-border-color: #000;
+@swatch-selected-border-color: #000;
+
+// Dialog
+@dialog-underlay-color: #fff;			// the thing that grays out the screen when a dialog is shown
+@dialog-titlebar-border-color: #fff;	// Inner border around the title sectionof a Dialog, inside the main border of the Dialog and the border between title and content
+@dialog-titlebar-background-color: #abd6ff;
+
+// BorderContainer
+@splitter-hovered-background-color: #cfe5fa;	// Color of splitter when user hovers it, before mouse down
+@splitter-dragged-background-color: #abd6ff;	// Color of splitter while it's being dragged
+
+// Toolbar
+@toolbar-button-checked-background-color: #fff;								// a toggled-on button in the toolbar
+@toolbar-combobutton-hovered-unhoveredsection-background-color: #f4ffff;	// when user hovers a ComboButton in a Toolbar, the other half of the button turns this color
+@toolbar-button-border-radius: 2px;			// Rounded corner radius for buttons for buttons in toolbar
+
+// DnD
+@dnd-avatar-background-color: #fff;						// Background color of DnD avatar
+@dnd-avatar-header-background-color: #C0C0C0;			// Dragged item border color when it can't be dropped
+@dnd-avatar-candrop-header-background-color: #b3c800;	// Dragged item border color when it can be dropped
+@dnd-dropseparator-color: #769dc0;						// Color of line indicating that user is about to drop between items A & B
+
+// Document level
+@document-text-color: #131313;									// Text color for document itself (text outside of widgets)
+@document-shadedsection-background-color: @bar-background-color;// background color used for <pre>, <code>, and table header rows
+@document-border-color: #d3d3d3;								// Border for <pre>, <code>, tables, etc.
+
+// Mixins
+
+.border-radius (@radius) {
+    -webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.box-shadow (@value) {
+	-webkit-box-shadow: @value;
+	-moz-box-shadow: @value;
+	-ms-box-shadow: @value;
+	-o-box-shadow: @value;
+	box-shadow: @value;
+}
+
+.transition-property (@value) {
+	-webkit-transition-property: @value;
+	-moz-transition-property: @value;
+	-ms-transition-property: @value;
+	-o-transition-property: @value;
+	transition-property: @value;
+}
+
+.transition-property (@value1, @value2) {
+	-webkit-transition-property: @value1, @value2;
+	-moz-transition-property: @value1, @value2;
+	-ms-transition-property: @value1, @value2;
+	-o-transition-property: @value1, @value2;
+	transition-property: @value1, @value2;
+}
+
+.transition-duration (@value) {
+	-webkit-transition-duration: @value;
+	-moz-transition-duration: @value;
+	-ms-transition-duration: @value;
+	-o-transition-duration: @value;
+	transition-duration: @value;
+}
+
+.transition-duration (@value1, @value2) {
+	-webkit-transition-duration: @value1, @value2;
+	-moz-transition-duration: @value1, @value2;
+	-ms-transition-duration: @value1, @value2;
+	-o-transition-duration: @value1, @value2;
+	transition-duration: @value1, @value2;
+}
+
+.transition-timing-function (@value) {
+	-webkit-transition-timing-function: @value;
+	-moz-transition-timing-function: @value;
+	-ms-transition-timing-function: @value;
+	-o-transition-timing-function: @value;
+	transition-timing-function: @value;
+}
+.transition (@value) {
+	-webkit-transition: @value;
+	   -moz-transition: @value;
+		-ms-transition: @value;
+		 -o-transition: @value;
+			transition: @value;
+}
+
+
+//
+// EPiServer
+//
+
+
+// General
+@text-color-soft: #444;	// Softer text color for large text
+@text-color-secondary: #777;
+@text-color-inverted: #e3e3e3;	// Text color on dark backgrounds
+@text-color-error: #f00;
+
+@link-color: #187dcf;
+@bar-border-color: #bfbfbf;
+.epi-functionLink() {
+    color: #777;
+    cursor: pointer;
+    font-size: 11px;
+    text-decoration: underline;
+}
+
+.epi-visibleLink() {
+    color: @link-color;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@pane-outer-border: #858585;
+@pane-inner-border: #bababa;
+@pane-background: #b8c0c5 url("epi/images/intermediatebgPattern.png"); // Sidebars and Dashboard background. Also used for gutters between widgets
+
+@notification-background-success: #d3edd2;
+@notification-background-fail: #f00;
+@notification-background-publishing: #444444;
+@notification-border-success: #57a55a;
+@notification-border-fail: #f00;
+
+@epi-forms-label: #555;
+@epi-form-subheader-color: #344a60;
+
+@epi-notificationBar-background: #fff8aa;
+@epi-notificationBar-border: #f1e96c;
+
+// Interaction color for multiple objects, effecting forms, DND, overlays etc
+// TODO: Re-factor this and the DND variables below after q4 2013 release
+@epi-active-object: #b4c600;
+
+// Status Bar
+@label-color: #808080;
+
+
+// Buttons
+@epi-chromelessButton-border: #d8d8d8;
+
+
+// Input widgets
+@epi-input-border: 1px solid #929ba4;
+@epi-textbox-border-radius: 4px;
+@epi-textbox-hover-border-color: #444;
+
+// CheckBox, RadioButton
+
+
+// TabContainer
+@selected-tab-background-color: #58595b;
+@selected-tab-text-color: @text-color-white;
+
+// Arrow buttons (stand alone, or inside ComboBox / ComboButton / Spinner / etc.
+
+
+// Slider
+
+
+// Select, ComboBox
+@epi-select-line-height: 12px;
+
+// Menus
+@epi-separator-color: #666f79;
+@menu-border-color: #666;
+
+@epi-menuInverted-color: @text-color;
+@epi-menuInverted-disabled-color: #888888;
+@epi-menuInverted-background-color: #f0f2f3;
+@epi-menuInverted-separator-border-color: #d9ddde;
+
+// Calendar
+@calendar-date-selected-text-color: #fff;
+
+// ProgressBar
+
+
+// TimePicker
+
+
+// ColorPalette
+
+
+// Dialog
+@epi-dialog-padding: 16px;
+@epi-dialog-border-color: #999;
+@epi-dialog-inner-border-color: #e6e6e6;
+
+@epi-lfw-dialog-background: #f3f3f3;
+
+@epi-dialog-border-radius: 4px;
+@epi-dialog-shadow-border-radius: 8px;
+
+// IframeWithOverlay
+@epi-viewport-background-color: #999;
+@epi-viewport-content-background-color: #fff;
+
+// BorderContainer
+
+
+// Toolbar
+@epi-toolbar-background: #f8f9f8;
+@epi-toolbar-border: #999;
+
+// Gadget Chrome
+@epi-component-border: #a4a4a4;
+@epi-componentToolbar-background: #f8f9f8;
+@epi-componentToolbar-border: #cdd2d3;
+.epi-componentToolbarBase() {
+    background: @epi-componentToolbar-background;
+    border-top: 1px solid @epi-componentToolbar-border;
+}
+
+// DnD
+@epi-drag-border-active: #b4c600;
+@epi-drag-border-hover: #b4c600;
+
+// Dojox Grid
+@epi-grid-header-border: #aeaeae;
+@epi-grid-row-border: #eeeeee;
+@epi-grid-row-odd: #fff;
+@epi-grid-row-even: #f8f9f9;
+
+
+// Document level
+
+
+// Tree
+@epi-tree-mngr--group-background: #e8e7e3;
+@epi-tree-mngr--group-border: #d8d7d2;
+
+
+// Tooltip
+@epi-invertedTooltip-border-color: #989a9b;
+
+// Mixins
+.sans-serif() { font-family: Arial, Helvetica, Verdana, sans-serif; }
+.serif() { font-family: Georgia, "Times New Roman", serif; }
+.epi-timestampReset() {
+    font-style: normal;
+    font-weight: normal;
+    font-size: inherit;
+    .sans-serif;
+    vertical-align: inherit;
+    padding-top: 0px;
+}
+.font-size(@px, @rem) { font-size: @px + 0px; font-size: @rem + 0rem;}
+
+.svgBackground(@fallbackColor, @backgroundX, @backgroundY, @svgUrl) {
+ 	background: @fallbackColor url(images/gradients/Gradients.png) @backgroundX @backgroundY repeat-x;
+	background: none, url(@svgUrl), @fallbackColor url(images/gradients/Gradients.png) @backgroundX @backgroundY repeat-x;
+	-webkit-background-size: auto 100% !important; // TODO: this is a temporary fix due to webkit currently mishandling background-size. Investigate later.
+	background-size: 100% 100%;
+}
+.gradient (@fallbackColor, @startColor, @endColor) {
+	background-color: @fallbackColor;
+    background-image: -moz-linear-gradient(@startColor, @endColor);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(@startColor, @endColor);
+    background-image: -o-linear-gradient(@startColor, @endColor);
+}
+
+.border-radius-specific (@radius-tl, @radius-tr, @radius-br, @radius-bl) {
+    -webkit-border-top-left-radius: @radius-tl;
+    -webkit-border-top-right-radius: @radius-tr;
+    -webkit-border-bottom-right-radius: @radius-br;
+    -webkit-border-bottom-left-radius: @radius-bl;
+    -moz-border-radius-topleft: @radius-tl;
+    -moz-border-radius-topright: @radius-tr;
+    -moz-border-radius-bottomright: @radius-br;
+    -moz-border-radius-bottomleft: @radius-bl;
+    -ms-border-radius-topleft: @radius-tl;
+    -ms-border-radius-topright: @radius-tr;
+    -ms-border-radius-bottomright: @radius-br;
+    -ms-border-radius-bottomleft: @radius-bl;
+    -o-border-radius-topleft: @radius-tl;
+    -o-border-radius-topright: @radius-tr;
+    -o-border-radius-bottomright: @radius-br;
+    -o-border-radius-bottomleft: @radius-bl;
+    border-top-left-radius: @radius-tl;
+    border-top-right-radius: @radius-tr;
+    border-bottom-right-radius: @radius-br;
+    border-bottom-left-radius: @radius-bl;
+}
+
+.heavy-border(@color: #000000) {
+	border: 3px solid @color;
+}
+
+.box-shadow-specific (@hLength, @vLength, @radius, @spread, @r, @g, @b, @opacity) {
+	-webkit-box-shadow: @hLength @vLength @radius @spread rgba(@r, @g, @b, @opacity);
+	-moz-box-shadow: @hLength @vLength @radius @spread rgba(@r, @g, @b, @opacity);
+	-ms-box-shadow: @hLength @vLength @radius @spread rgba(@r, @g, @b, @opacity);
+	-o-box-shadow: @hLength @vLength @radius @spread rgba(@r, @g, @b, @opacity);
+	box-shadow: @hLength @vLength @radius @spread rgba(@r, @g, @b, @opacity);
+}
+.box-shadow-specific-inset (@hLength, @vLength, @radius, @spread, @r, @g, @b, @opacity) {
+	-webkit-box-shadow: inset @hLength @vLength @radius @spread rgba(@r, @g, @b, @opacity);
+	-moz-box-shadow: inset @hLength @vLength @radius @spread rgba(@r, @g, @b, @opacity);
+	-ms-box-shadow: inset @hLength @vLength @radius @spread rgba(@r, @g, @b, @opacity);
+	-o-box-shadow: inset @hLength @vLength @radius @spread rgba(@r, @g, @b, @opacity);
+	box-shadow: inset @hLength @vLength @radius @spread rgba(@r, @g, @b, @opacity);
+}
+.text-shadow-specific (@hLength, @vLength, @radius, @r, @g, @b, @opacity) {
+    text-shadow: @hLength @vLength @radius rgba(@r, @g, @b, @opacity);
+}
+
+.border-box() {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.clearfix() {
+    &:before, &:after { content: ""; display: table; }
+    &:after { clear: both; }
+    zoom: 1;
+}
+.scaleX(@value) {
+    -webkit-transform: scaleX(@value);
+       -moz-transform: scaleX(@value);
+        -ms-transform: scaleX(@value);
+         -o-transform: scaleX(@value);
+            transform: scaleX(@value);
+}
+.transition (@value) {
+	-webkit-transition: @value;
+	   -moz-transition: @value;
+	    -ms-transition: @value;
+	     -o-transition: @value;
+	        transition: @value;
+}
+.transform(@string){
+	-webkit-transform: @string;
+	   -moz-transform: @string;
+		-ms-transform: @string;
+		 -o-transform: @string;
+			transform: @string;
+}
+.transform-origin(@y, @x) {
+	-webkit-transform-origin: @y @x;
+	   -moz-transform-origin: @y @x;
+	    -ms-transform-origin: @y @x;
+	     -o-transform-origin: @y @x;
+	        transform-origin: @y @x;
+}
+
+.arrow() {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.arrowTop(@width, @r,@g,@b,@a) {
+    border-top: none;
+    border-right: @width solid rgba(255,255,255,0);
+    border-bottom: @width solid rgba(@r,@g,@b,@a);
+    border-left: @width solid rgba(255,255,255,0);
+    height: 0;
+    width: 0;
+}
+.arrowRight(@width, @r,@g,@b,@a) {
+    border-top: @width solid rgba(255,255,255,0);
+    border-right: none;
+    border-bottom: @width solid  rgba(255,255,255,0);
+    border-left: @width solid rgba(@r,@g,@b,@a);
+    height: 0;
+    width: 0;
+}
+.arrowBottom(@width, @r,@g,@b,@a) {
+    border-top: @width solid rgba(@r,@g,@b,@a);
+    border-right: @width solid  rgba(255,255,255,0);
+    border-bottom: none;
+    border-left: @width solid rgba(255,255,255,0);
+    height: 0;
+    width: 0;
+}
+.arrowLeft(@width, @r,@g,@b,@a) {
+    border-top: @width solid rgba(255,255,255,0);
+    border-right: @width solid rgba(@r,@g,@b,@a);
+    border-bottom: @width solid  rgba(255,255,255,0);
+    border-left: none;
+    height: 0;
+    width: 0;
+}
+
+.column(@columns, @gap) {
+    -webkit-column-count: @columns;
+       -moz-column-count: @columns;
+         -o-column-count: @columns;
+        -ms-column-count: @columns;
+            column-count: @columns;
+
+    -webkit-column-gap: @gap + 0px;
+       -moz-column-gap: @gap + 0px;
+         -o-column-gap: @gap + 0px;
+        -ms-column-gap: @gap + 0px;
+            column-gap: @gap + 0px;
+}
+
+
+// Gadgets
+@epi-gadget-background: #f8f9f9;
+@epi-gadget-secondary-background: #eff2f2;
+@epi-gadget-secondary-border: #cdd2d0;
+
+
+
+// Gradients and colors
+@epi-status-background-black: #333;
+@epi-status-background-green: #8cb700;
+@epi-status-border-green: darken(@epi-status-background-green, 10%);
+@epi-status-background-yellow: #ffde00;
+@epi-status-border-yellow: darken(@epi-status-background-yellow, 10%);
+@epi-status-background-red: #ff5705;
+@epi-status-border-red: darken(@epi-status-background-red, 10%);
+@epi-status-background-orange: #ffa400;
+@epi-status-border-orange: darken(@epi-status-background-orange, 10%);
+@epi-status-background-blue: #23b4e9;
+@epi-status-border-blue: darken(@epi-status-background-blue, 10%);
+
+@epi-status-border-green: #7ca600;
+@epi-status-border-red: #e65000;
+
+@epi-selected-item: #c7d500;
+
+.epi-applicationBackground() {
+	.box-shadow-specific-inset (0, 10px, 10px, 0px, 135, 135, 130, 0.05);
+	background: #ebebe6 url("epi/images/iframe_background.png");
+	background: url("epi/images/iframe_spotlight.png") center center, #ebebe6 url("epi/images/iframe_background.png");
+	background-size: cover, auto;
+}
+.epi-selectedItemBackground() {
+    .svgBackground(@epi-selected-item,0px,-2300px,'images/gradients/selected_item.svg');
+    color: @text-color;
+}
+.epi-selectedItemInactiveBackground() {
+    background: #c0c0c0;
+    color: @text-color;
+}
+.epi-applicationBackgroundInverted() {
+}
+
+// Buttons colors
+	// Flat button, medium gray 2013
+	@epi-button-flat-background: #dadad4;
+
+    // Default: flat near-white 2012
+    @epi-button-fallback: #e4e4e4;
+    @epi-button-text-color: #333;
+    @epi-button-border-color: #768388;
+	@epi-button-text-shadow: rgba(0,0,0,0);
+
+	    // A button inside a button, currently only ExpandoButton: grey 2012
+        @epi-button-Child-fallback: #d7d7d7;
+        @epi-button-Child-text-color: #333;
+        @epi-button-Child-border-color: #aeb7b7;
+        @epi-button-Child-text-shadow: rgba(255,255,255,0.5);
+
+    // Salt: blue 2011
+    @epi-button-Salt-fallback: #1ab4f3;
+    @epi-button-Salt-text-color: #032f41;
+    @epi-button-Salt-border-color: #06658c;
+    @epi-button-Salt-text-shadow: rgba(255,255,255,0.25);
+
+    // Sweet: green 2011
+    @epi-button-Sweet-fallback: #9dcc22;
+    @epi-button-Sweet-text-color: #253d00;
+    @epi-button-Sweet-border-color: #4d6c00;
+    @epi-button-Sweet-text-shadow: rgba(255,255,255,0.25);
+
+    // Sour: orange 2011
+    @epi-button-Sour-fallback: #ff3aa9;
+    @epi-button-Sour-text-color: #ffffff;
+    @epi-button-Sour-border-color: #184FA2;
+    @epi-button-Sour-text-shadow: rgba(0,0,0,0);
+
+    // Bitter: red 2011
+    @epi-button-Bitter-fallback: #ff3aa9;
+    @epi-button-Bitter-text-color: #ffffff;
+    @epi-button-Bitter-border-color: #184FA2;
+    @epi-button-Bitter-text-shadow: rgba(0,0,0,0);
+
+    // Umami: slightly transparent blue 2011
+    @epi-button-Umami-fallback: rgba(0,0,0,0);
+    @epi-button-Umami-text-color: #ffffff;
+    @epi-button-Umami-border-color: rgba(53,64,68,0.55);
+    @epi-button-Umami-text-shadow: rgba(0,0,0,0);
+
+
+
+@epi-dialog-background-color-start: #e5e5e5;
+@epi-dialog-background-color-end: #c1c1c1;
+@epi-dialog-background-color-fallback: #e5e5e5;
+
+@epi-menu-background-color-Default-start: #4f8bff;
+@epi-menu-background-color-Default-end: #4984f1;
+@epi-menu-background-color-Default-fallback: #4984f1;
+
+@epi-menu-background-color-Default-Active-start: #2c95f6;
+@epi-menu-background-color-Default-Active-end: #2489e6;
+@epi-menu-background-color-Default-Active-fallback: #2890ee;
+
+@epi-menu-background-color-Default-Disabled-start: #93c4f5;
+@epi-menu-background-color-Default-Disabled-end: #85b2e9;
+@epi-menu-background-color-Default-Disabled-fallback: #93c4f5;
+
+
+@epi-input-arrow-background-color-start: #e8e8e8;
+@epi-input-arrow-background-color-end: #cfcfcf;
+@epi-input-arrow-background-color-fallback: #dedede;
+
+@epi-input-arrow-background-color-Active-start: #1E61C7;
+@epi-input-arrow-background-color-Active-end: #57aefa;
+@epi-input-arrow-background-color-Active-fallback: #3984f7;
+
+@epi-input-arrow-background-color-Disabled-start: #93c4f5;
+@epi-input-arrow-background-color-Disabled-end: #85b2e9;
+@epi-input-arrow-background-color-Disabled-fallback: #93c4f5;
+
+@epi-select-background-color-start: #ffffff;
+@epi-select-background-color-end: #ececec;
+@epi-select-background-color-fallback: #ffffff;
+
+@epi-content-search-box-background-color: #F8F8F8;
+@epi-content-list-background-color: #ffffff;

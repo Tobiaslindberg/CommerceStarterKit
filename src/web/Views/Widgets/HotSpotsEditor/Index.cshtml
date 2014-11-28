@@ -1,0 +1,25 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.HotSpotsEditorViewModel
+<div class="hotspotseditor-wrapper">
+	<div class="hotspotseditor @Model.Language">
+		<input type="hidden" class="value" data-dojo-attach-point="hotspots" />
+		
+		<div class="epi-gadgetInnerToolbar">
+			<div class="toolbar">
+				<span class="new hotspot" title="@Model.NewHotSpotText">@Model.NewHotSpotText</span>
+				<span class="trash" title="@Model.DeleteHotSpotText">
+					<span class="icon epi-iconTrash"></span>
+					@Model.DeleteHotSpotText
+				</span>
+				<span class="link-to-product hidden">
+					<span class="icon epi-iconReferences"></span>
+					@Model.LinkToProductText
+					<span class="control hidden" data-dojo-attach-point="linkToProduct"></span>
+				</span>
+			</div>
+		</div>
+		<div class="image-container">
+			<div class="hotspots"></div>
+			<div class="image"><img src="${_currentContext.previewUrl}" style="max-width: 100%;" /></div>
+		</div>
+	</div>
+</div>

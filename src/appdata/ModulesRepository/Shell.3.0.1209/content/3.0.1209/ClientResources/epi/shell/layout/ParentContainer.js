@@ -1,0 +1,2 @@
+//>>built
+define("epi/shell/layout/ParentContainer",["dojo/_base/declare","epi/shell/layout/GroupContainer"],function(_1,_2){return _1([_2],{templateString:"<div class='epi-containerLayout clearfix'>                            <h2>${label}</h2>                            <ul data-dojo-attach-point='containerNode'></ul>                        </div>"});});

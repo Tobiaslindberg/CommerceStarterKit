@@ -1,0 +1,53 @@
+﻿@using OxxCommerceStarterKit.Web.Helpers
+@using OxxCommerceStarterKit.Web.Models.Files
+@using OxxCommerceStarterKit.Web.Models.ViewModels
+@model OxxCommerceStarterKit.Web.Models.ViewModels.ProductTeaserBlockViewModel
+@{
+	Layout = null;
+
+	bool isInEditMode = Html.IsInEditMode();
+}
+@if (Model != null)
+{
+	if (isInEditMode)
+	{
+		<div class="hidden">@Html.PropertyFor(m => m.BlockContent.Product)</div>
+	}
+	<a href="@(Model.BlockContent.Product != null ? Url.ContentUrl(Model.BlockContent.Product) : "")">
+		
+		@if (Model.HasImage == false)
+		{
+			<img class="img-responsive no-image" src="/siteassets/system/no-image.png" />
+		}
+		else
+		{
+			<div @Html.EditAttributes(m => m.BlockContent.Image)>
+				@if (Model.ImageContent as ImageFile != null)
+			{
+                var imageFileViewModel = new ImageViewModel((ImageFile)Model.ImageContent, Model.Language);
+				imageFileViewModel.Url += Html.GetBlockImageWidth(Model.Tag);
+				imageFileViewModel.IsMobile = this.Request.Browser.IsMobileDevice;
+					@Html.Partial("~/Views/ImageFile/Index.cshtml", imageFileViewModel)
+			}
+			else
+			{
+				@Html.PropertyFor(m => m.BlockContent.Image)
+			}
+			</div>
+		}
+
+
+		<div class="image-text @(((!string.IsNullOrEmpty(Model.BlockContent.ImageTitle)) || (!string.IsNullOrEmpty(Model.BlockContent.ImageText))) ? "" : "hidden")" @(string.IsNullOrEmpty(Model.CustomColor) ? "" : "style=" + Model.CustomColor)>
+			<div class="text heading" @Html.EditAttributes(m => m.BlockContent.ImageTitle)>@Model.BlockContent.ImageTitle</div>
+			<div class="text" @Html.EditAttributes(m => m.BlockContent.ImageText)>@Model.BlockContent.ImageText</div>
+		</div>
+		@if (isInEditMode)
+		{
+			<div class="hidden">
+				@Html.PropertyFor(m => m.BlockContent.ImageTextColor)
+				@Html.PropertyFor(m => m.BlockContent.ImageTextBackgroundColor)
+				@Html.PropertyFor(m => m.BlockContent.ImageTextBackgroundTransparency)
+			</div>
+		}
+	</a>
+}

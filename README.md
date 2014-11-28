@@ -1,4 +1,3 @@
-CommerceStarterKit
-==================
-We have liftoff.
-
+# Commerce Starterkit
+...
+We're working on the documentation, please be patient.

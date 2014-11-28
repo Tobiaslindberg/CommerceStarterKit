@@ -1,0 +1,34 @@
+﻿@using OxxCommerceStarterKit.Web.Extensions
+@using OxxCommerceStarterKit.Web.Helpers
+@model OxxCommerceStarterKit.Core.Objects.LoginForm
+
+<div id="loginRegistration">
+
+	<h2>@Html.Translate("/common/account/loginheader")</h2>
+
+	@using (Html.BeginForm("Login", "Login", ViewContext.GetCombinedRouteValues(new { }), FormMethod.Post, UrlHelpers.AnonymousObjectToHtmlAttributes(new { id = "loginForm" })))
+	{
+		<div class="form-group">
+			@Html.LabelFor(m => m.Username)
+			@Html.TextBoxFor(m => m.Username, new { @placeholder = Html.Translate("/common/account/username_placeholder"), @class = "form-control" })
+			@Html.ValidationMessageFor(m => m.Username, string.Format(Html.Translate("/common/validation/required"), Html.Translate("/common/account/username").Replace(":", "")))
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(m => m.Password)
+			@Html.PasswordFor(m => m.Password, new { @placeholder = Html.Translate("/common/account/password_placeholder"), @class = "form-control" })
+			@Html.ValidationMessageFor(m => m.Password, string.Format(Html.Translate("/common/validation/required"), Html.Translate("/common/account/password").Replace(":", "")))
+		</div>
+		<div class="form-group">
+			@Html.CheckBoxFor(m => m.RememberMe)
+			@Html.LabelFor(m => m.RememberMe)
+		</div>
+		<div class="form-group">
+			@Html.ValidationMessageFor(m => m.ValidationMessage)
+		</div>
+		<div class="form-group clearfix">
+			<input type="submit" id="loginSubmit" class="btn btn-default" value="@Html.Translate("/common/account/signin")" />
+		</div>
+	}
+
+</div>

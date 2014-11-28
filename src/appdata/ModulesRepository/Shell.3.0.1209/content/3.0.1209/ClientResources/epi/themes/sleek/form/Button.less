@@ -1,0 +1,690 @@
+/* Button | DropDownButton | ComboButton | ToggleButton
+ * 
+ * Styling Buttons mainly includes:
+ * 
+ * 1. Containers
+ *      .dijitButton
+ *      .dijitDropDownButton
+ *      .dijitComboButton
+ *      .dijitButtonNode - common button/arrow wrapper shared across all three button types 
+ *
+ * 2. Button text
+ *      .dijitButtonText
+ * 
+ * 3. Arrows - only for DropDownButton and ComboButton
+ *      There are total four directions arrows - down, left, right, up:
+ *      .dijitArrowButtonInner - down arrow by default
+ *      .dijitLeftArrowButton .dijitArrowButtonInner - left arrow
+ *      .dijitRightArrowButton .dijitArrowButtonInner - right arrow
+ *      .dijitUpArrowButton .dijitArrowButtonInner - up arrow
+ * 
+ * 4. States - Hover, Active, Disabled, e.g.
+ *      .dijitButtonHover .dijitButtonNode
+ *      .dijitButtonActive .dijitButtonNode
+ *      .dijitButtonDisabled .dijitButtonNode
+ *
+ *      .dijitDisabled .dijitArrowButtonInner  - disabled arrow states 
+ */
+
+@import "../variables";
+
+.Sleek .noShow { display: none; }
+
+.Sleek .dijitButtonNode {
+    /* rules for dijit.form.*Button widgets and arrow nodes on ComboBox, Spinner etc. */
+    .transition-property(background-color);
+    .transition-duration(.3s);
+}
+
+.Sleek .dijitButton .dijitButtonNode,
+.Sleek .dijitDropDownButton .dijitButtonNode,
+.Sleek .dijitComboButton .dijitButtonNode,
+.Sleek .dijitToggleButton .dijitButtonNode,
+.Sleek .epi-expandoButton {
+    /* rules for the dijit.form.*Button widgets (see also ComboButton section below) */
+    /* General for all buttons */
+    .border-radius(@button-border-radius);
+    padding: 2px 4px;
+    
+    /* Default button */
+    border: 1px solid @epi-button-border-color;
+    box-shadow: 0 1px 0 0 rgba(255, 255,255, 0), inset 0 1px 0 rgba(255, 255,255, 0), inset 0 -1px 0 rgba(255, 255,255, 0);
+    color: @epi-button-text-color;
+    .svgBackground(@epi-button-fallback,0px,-2300px,'images/gradients/button_default.svg');
+}
+
+
+.Sleek .Salt.dijitButton .dijitButtonNode,
+.Sleek .Salt.dijitDropDownButton .dijitButtonNode,
+.Sleek .Salt.dijitComboButton .dijitButtonNode,
+.Sleek .Salt.dijitToggleButton .dijitButtonNode {
+    border-color: @epi-button-Salt-border-color;
+    box-shadow: 0 1px 0 rgba(255, 255,255, 0), 0 1px 0 rgba(255, 255,255, 0) inset;
+    color: @epi-button-Salt-text-color;
+    .svgBackground(@epi-button-Salt-fallback,0px,-2300px,'images/gradients/button_salt.svg');
+    text-shadow: 0 1px 0 @epi-button-Salt-text-shadow;
+}
+
+
+.Sleek .Sweet.dijitButton .dijitButtonNode,
+.Sleek .Sweet.dijitDropDownButton .dijitButtonNode,
+.Sleek .Sweet.dijitComboButton .dijitButtonNode,
+.Sleek .Sweet.dijitToggleButton .dijitButtonNode {
+    border-color: @epi-button-Sweet-border-color;
+    box-shadow: 0 1px 0 rgba(255, 255,255, 0), 0 1px 0 rgba(255, 255,255, 0) inset;
+    color: @epi-button-Sweet-text-color;
+    .svgBackground(@epi-button-Sweet-fallback,0px,-2300px,'images/gradients/button_sweet.svg');
+    text-shadow: 0 1px 0 @epi-button-Sweet-text-shadow;
+}
+
+.Sleek .Sour.dijitButton .dijitButtonNode,
+.Sleek .Sour.dijitDropDownButton .dijitButtonNode,
+.Sleek .Sour.dijitComboButton .dijitButtonNode,
+.Sleek .Sour.dijitToggleButton .dijitButtonNode {
+    border-color: @epi-button-Sour-border-color;
+    box-shadow: 0 1px 0 rgba(255, 255,255, 0), 0 1px 0 rgba(255, 255,255, 0) inset;
+    color: @epi-button-Sour-text-color;
+    .svgBackground(@epi-button-Sour-fallback,0px,-2300px,'images/gradients/button_sour.svg');
+    text-shadow: 0 -1px 0 @epi-button-Sour-text-shadow;
+}
+
+.Sleek .Bitter.dijitButton .dijitButtonNode,
+.Sleek .Bitter.dijitDropDownButton .dijitButtonNode,
+.Sleek .Bitter.dijitComboButton .dijitButtonNode,
+.Sleek .Bitter.dijitToggleButton .dijitButtonNode {
+    border-color: @epi-button-Bitter-border-color;
+    box-shadow: 0 1px 0 rgba(255, 255,255, 0), 0 1px 0 rgba(255, 255,255, 0) inset;
+    color: @epi-button-Bitter-text-color;
+    .svgBackground(@epi-button-Bitter-fallback,0px,-2300px,'images/gradients/button_bitter.svg');
+    text-shadow: 0 -1px 0 @epi-button-Bitter-text-shadow;
+}
+.Sleek .Umami.dijitButton .dijitButtonNode,
+.Sleek .Umami.dijitDropDownButton .dijitButtonNode,
+.Sleek .Umami.dijitComboButton .dijitButtonNode,
+.Sleek .Umami.dijitToggleButton .dijitButtonNode {
+    border-color: @epi-button-Umami-border-color;
+    box-shadow: 0 1px 0 rgba(255, 255,255, 0.25), 0 0 3px 0px rgba(83, 94, 101, 0.6) inset; /* Update the color */
+    color: @epi-button-Umami-text-color;
+    .svgBackground(@epi-button-Umami-fallback,0px,-2300px,'images/gradients/button_umami.svg');
+    text-shadow: 0 -1px 0 @epi-button-Umami-text-shadow;
+}
+
+.Sleek .smallButton.dijitButton .dijitButtonNode,
+.Sleek .smallButton.dijitDropDownButton .dijitButtonNode,
+.Sleek .smallButton.dijitComboButton .dijitButtonNode,
+.Sleek .smallButton.dijitToggleButton .dijitButtonNode {
+    font-size: 10px;
+    padding: 1px 3px;
+}    
+
+.Sleek .dijitButton .dijitButtonNode .dijitIcon { 
+    background-size: auto auto;
+}
+
+.Sleek .dijitComboButton .dijitArrowButton {
+    border-left-width: 0;
+    padding: 4px 2px 4px 2px;	/* TODO: still needed? */
+}
+
+/*arrow styles for down/up8/left/right directions*/
+.Sleek .dijitArrowButtonInner {
+    width: 23px;
+    height: 15px;
+    margin: 0 auto;
+    background-image:url("images/buttonArrows.png");
+    background-repeat:no-repeat;
+    background-position:-47px 50%;
+}
+.Sleek .Umami .dijitArrowButtonInner,
+.Sleek .Salt .dijitArrowButtonInner,
+.Sleek .Sweet .dijitArrowButtonInner,
+.Sleek .Sour .dijitArrowButtonInner,
+.Sleek .Bitter .dijitArrowButtonInner {
+    background-image: url("images/buttonArrows_inv.png"); /* EPi */
+}    
+.Sleek .dijitLeftArrowButton .dijitArrowButtonInner {
+    background-position: -77px 53%;
+}
+.Sleek .dijitRightArrowButton .dijitArrowButtonInner {
+    background-position: -26px 53%;
+}
+.Sleek .dijitUpArrowButton .dijitArrowButtonInner {
+    background-position: 0 53%;
+}
+.Sleek .dijitDisabled .dijitArrowButtonInner {
+    background-position: -151px 53%;
+}
+.Sleek .dijitDisabled .dijitLeftArrowButton .dijitArrowButtonInner {
+    background-position: -177px 53%;
+}
+.Sleek .dijitDisabled .dijitRightArrowButton .dijitArrowButtonInner {
+    background-position: -126px 53%;
+}
+.Sleek .dijitDisabled .dijitUpArrowButton .dijitArrowButtonInner {
+    background-position: -100px 53%;
+}
+
+.Sleek .dijitButtonText {
+    height: 16px;
+    line-height: 16px;
+    padding: 0 .3em;
+    text-align: center;
+}
+
+/* hover status */
+.Sleek .dijitButtonHover .dijitButtonNode,
+.Sleek .dijitDropDownButtonHover .dijitButtonNode,
+.Sleek .dijitComboButton .dijitButtonNodeHover, 
+.Sleek .dijitComboButton .dijitDownArrowButtonHover,
+.Sleek .dijitToggleButtonHover .dijitButtonNode {
+    background-color: @button-hovered-background-color;
+    color:@text-color;
+    .transition-duration(.2s);
+}
+
+/* checked status */
+.Sleek .dijitButtonActive .dijitButtonNode, 
+.Sleek .dijitDropDownButtonActive .dijitButtonNode,
+.Sleek .dijitComboButtonActive .dijitButtonNode,
+.Sleek .dijitToggleButtonActive .dijitButtonNode {
+    .svgBackground(@epi-button-fallback,0px,-2300px,'images/gradients/button_default_active.svg');
+    .transition-duration(.1s);
+}
+
+.Sleek .Salt.dijitButtonActive .dijitButtonNode, 
+.Sleek .Salt.dijitDropDownButtonActive .dijitButtonNode,
+.Sleek .Salt.dijitComboButtonActive .dijitButtonNode,
+.Sleek .Salt.dijitToggleButtonActive .dijitButtonNode {
+    .svgBackground(@epi-button-Salt-fallback,0px,-2300px,'images/gradients/button_salt_active.svg');
+}
+.Sleek .Sweet.dijitButtonActive .dijitButtonNode, 
+.Sleek .Sweet.dijitDropDownButtonActive .dijitButtonNode,
+.Sleek .Sweet.dijitComboButtonActive .dijitButtonNode,
+.Sleek .Sweet.dijitToggleButtonActive .dijitButtonNode {
+    .svgBackground(@epi-button-Sweet-fallback,0px,-2300px,'images/gradients/button_sweet_active.svg');
+}
+.Sleek .Sour.dijitButtonActive .dijitButtonNode, 
+.Sleek .Sour.dijitDropDownButtonActive .dijitButtonNode,
+.Sleek .Sour.dijitComboButtonActive .dijitButtonNode,
+.Sleek .Sour.dijitToggleButtonActive .dijitButtonNode {
+    .svgBackground(@epi-button-Sour-fallback,0px,-2300px,'images/gradients/button_sour_active.svg');
+}
+.Sleek .Bitter.dijitButtonActive .dijitButtonNode, 
+.Sleek .Bitter.dijitDropDownButtonActive .dijitButtonNode,
+.Sleek .Bitter.dijitComboButtonActive .dijitButtonNode,
+.Sleek .Bitter.dijitToggleButtonActive .dijitButtonNode {
+    .svgBackground(@epi-button-Bitter-fallback,0px,-2300px,'images/gradients/button_bitter_active.svg');
+}
+.Sleek .Umami.dijitButtonActive .dijitButtonNode, 
+.Sleek .Umami.dijitDropDownButtonActive .dijitButtonNode,
+.Sleek .Umami.dijitComboButtonActive .dijitButtonNode,
+.Sleek .Umami.dijitToggleButtonActive .dijitButtonNode {
+    .svgBackground(@epi-button-Umami-fallback,0px,-2300px,'images/gradients/button_umami_active.svg');
+}
+
+/* disabled status */
+.Sleek .dijitButtonDisabled,
+.Sleek .dijitDropDownButtonDisabled,
+.Sleek .dijitComboButtonDisabled,
+.Sleek .dijitToggleButtonDisabled {
+    background-image: none;
+    outline: none;
+}
+.Sleek .dijitButtonDisabled .dijitButtonNode,
+.Sleek .dijitDropDownButtonDisabled .dijitButtonNode,
+.Sleek .dijitComboButtonDisabled .dijitButtonNode,
+.Sleek .dijitToggleButtonDisabled .dijitButtonNode {
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    text-shadow: 0;
+}
+
+.Sleek .dijitComboButtonDisabled .dijitArrowButton{ 
+    border-left-width: 0;
+}
+/* for ComboButton */
+.Sleek table.dijitComboButton {
+    border-collapse: separate;	/* override dijit.css so that ComboBox rounded corners work */
+}
+
+.dj_ie6 .Sleek .dijitButtonNode {
+    background-image: none;
+}
+
+.Sleek .dijitComboButton .dijitStretch {
+    .border-radius(@button-border-radius 0 0 @button-border-radius);
+}
+.Sleek .dijitComboButton .dijitArrowButton {
+    .border-radius(0 @button-border-radius @button-border-radius 0);
+}
+
+/*============================*/
+/* EPi */
+/*============================*/
+.Sleek .epi-boldButton .dijitButtonText {
+    font-weight: bold;
+}
+.Sleek .epi-mediumButton .dijitButtonNode {
+    padding: 0px;
+} 
+.Sleek .epi-mediumButton .dijitButtonText {
+    height: 24px;
+    line-height: 24px;
+    padding: 0 .3em;
+}
+
+// .epi-chromeless* is our "unstyled" widget classes. No chrome at all
+.Sleek {
+    .epi-chromelessButton {
+		&.dijitButton {
+			margin: 0;
+		}
+        .dijitButtonNode {
+            border: 1px solid rgba(0,0,0,0);
+            background: transparent;
+            padding: 0;
+            .border-radius(0);
+            font-size: 1em;
+            color: #353535;
+            box-shadow: none;
+            text-shadow: none;
+        }
+
+        &.epi-chromelessButton--icon-only {
+            .dijitButtonText {
+                display: none;
+            }
+        }
+
+        .dijitArrowButtonInner {
+            display: none;
+        }
+
+		.epi-chromelessLinkButton {
+			margin: 0;
+
+			.dijitButtonContents {
+				padding: 0;
+			}
+
+			.dijitButtonText,
+			.dijitButtonNode {
+				border: none;
+				height: auto;
+				line-height: inherit;
+				padding: 0;
+				text-align: left;
+			}
+		}
+    }
+}
+    
+
+// .epi-flat* is our "flat" widget classes. This gives a flat color background plate. Can be used as a modifier class with epi-chromeless*
+// ex. class="epi-chromelessbutton epi-flatButton"
+.Sleek {
+	.epi-flatButton {
+		.dijitButtonNode {
+			background: @epi-button-flat-background;
+			.border-radius(@button-border-radius);
+			padding: 1px 12px 4px;
+		}
+	}
+}
+
+.Sleek .epi-groupedButtonContainer {
+    display: inline-block;
+    margin-right: 0.2em;
+    vertical-align: middle;
+
+	&.dijitToolbar { padding: 0; }
+
+	.dijitButton {
+		margin: 0;
+
+		.dijitButtonNode {
+			border-left: none; /* EPi border has to be removed on the left side because ie8 doesnt support last-child */
+			border-radius: 0px;
+		}
+		&:first-child .dijitButtonNode {
+			.border-radius-specific(@epi-textbox-border-radius, 0px, 0px, @epi-textbox-border-radius);
+			border-left: 1px solid @epi-button-border-color;
+		}
+		&:last-child .dijitButtonNode {
+			.border-radius-specific(0px, @epi-textbox-border-radius, @epi-textbox-border-radius, 0px);
+		}
+	}
+
+	.Umami.dijitButton:first-child .dijitButtonNode {
+		border-left: 1px solid @epi-button-Umami-border-color;
+	}
+
+	.epi-flatButton {
+		.dijitButtonNode {
+			margin-right: 1px;
+		}
+		
+		&:first-child .dijitButtonNode {
+			border-left: none;
+		}
+		&:last-child .dijitButtonNode {
+			border-left: none;
+			margin-right: 0;
+		}
+	}
+}
+
+.Sleek .epi-fullWidthButton {
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 24px;
+    margin-left: 0;
+    position: relative;
+    text-align: center; 
+    width: 100%;
+}
+
+/* Specific Buttons */
+
+/* Help button used in Dialogs */
+.Sleek .epi-helpButton .dijitButtonNode {
+    background: transparent url("images/help_button.png") center left no-repeat;
+    width:20px;
+    min-width:20px !important;
+}
+    
+.Sleek .epi-helpButton .dijitButtonText {
+    padding: 3px 0 3px 25px;
+    text-align: left;
+}
+
+/* Lock and add Gadgets used in sidebar toolbar */
+.Sleek .dijitToggleButton .dijitIcon.epi-lockIcon {
+    background: transparent url("images/icons/icon_lock_sprite.png") 0px 1px no-repeat;
+    height: 13px;
+    width: 14px;
+}
+.Sleek .dijitToggleButtonChecked .dijitIcon.epi-lockIcon {
+    background-position: 0px -48px;
+}
+
+.Sleek .epi-addIcon .dijitIcon, 
+.Sleek .dijitIcon.epi-addIcon  {
+    background: transparent url("images/icons/icon_add.png") 0px 2px no-repeat;
+    height: 14px;
+    width: 14px;
+}
+.Sleek .epi-editViewToggleBtn {
+    float: right;
+}
+.Sleek .epi-disabledDropdownArrow .dijitArrowButtonInner {
+    display: none;
+}
+
+/* Toolbar ------------------------------------------------------------- */
+
+.Sleek .dijitToolbar .epi-groupedButtonContainer,
+.Sleek .dijitToolbar .epi-toolbarGroup:last-child,
+.Sleek .dijitToolbar .epi-spaceToolbarSeparator,
+.Sleek .dijitToolbar .dijitButton,
+.Sleek .dijitToolbar .dijitComboButton,
+.Sleek .dijitToolbar .dijitDropDownButton,
+.Sleek .dijitToolbar .dijitToolbarSeparator,
+.Sleek .dijitDialogPaneActionBar .dijitButton
+{
+    margin-right: 8px;
+}
+
+.Sleek .dijitToolbar .epi-groupedButtonContainer .dijitButton,
+.Sleek .dijitToolbar .epi-spaceToolbarSeparator:last-child,
+.Sleek .dijitToolbar .dijitButton:last-child,
+.Sleek .dijitToolbar .dijitDropDownButton:last-child,
+.Sleek .dijitToolbar .dijitComboButton:last-child
+{
+    margin-right: 0;
+}
+
+.Sleek .dijitToolbar .epi-trailingContainer
+{
+    float: right;
+}
+
+.Sleek .dijitToolbar .epi-floatleftContainer
+{
+    float: left;
+}
+
+.Sleek .dijitToolbar .epi-spaceToolbarSeparator
+{
+    padding: 0 5px;
+}
+
+/* Expand Icon -------------------------------------------------------- */
+
+/* Collapsed */
+.Sleek .dijitToggleButton .dijitIcon.epi-togglePaneIcon {
+    background: transparent url("images/icons/expandPaneIcon.png") 0 0 no-repeat;
+    height: 12px;
+    width: 12px;
+}
+
+.Sleek .dijitToggleButton.dijitToggleButtonHover .dijitIcon.epi-togglePaneIcon {
+    background-position: 0 -50px;
+}
+
+/* Expanded */
+.Sleek .dijitToggleButtonChecked .dijitIcon.epi-togglePaneIcon {
+    background-position: 0px -112px;
+}
+
+.Sleek .dijitToggleButtonChecked.dijitToggleButtonHover .dijitIcon.epi-togglePaneIcon {
+    background-position: 0px -162px;
+}
+
+/* Toggle Button */
+.Umami.dijitToggleButton.dijitToggleButtonChecked .dijitButtonNode {
+    box-shadow: 0 1px 0 rgba(255, 255,255, 0.25), 0 10px 18px 0px rgba(83, 94, 101, 0.9) inset; /* Update the color */
+    opacity: 1;
+}
+
+/* Delete Icon -------------------------------------------------------- */
+.Sleek .dijitIcon.epi-deleteIcon {
+    background: transparent url("images/icons/deleteIcon-tiny.png") 0 0 no-repeat;
+    height: 12px;
+    width: 12px;
+}
+
+.Sleek .dijitButtonHover .dijitIcon.epi-deleteIcon {
+    background-position: 0 -50px;
+}
+
+/* Autosave -------------------------------------------------------- */
+.Sleek .dijitToolbar 
+{
+    .epi-autoSaveButton { 
+        border: 1px solid #FFF;
+        background-color: #FFF;
+        background-image: none;
+        border-radius: 3px;
+        color: @epi-button-text-color;
+        display: inline-block;
+
+        &.dijitDisabled .dijitButtonNode {
+            opacity: 1;
+        }
+
+        .dijitButtonNode { 
+            border: none;
+            background-color: transparent;
+            background-image: none;
+            border-radius: none;
+            box-shadow: none;
+            white-space: normal;
+        }
+
+        span.epi-inlineButtonLink {
+            text-decoration: underline;
+            color: @link-color;
+            vertical-align: top;
+        }
+
+        .dijitStretch {
+            white-space: normal;
+        }
+
+        .dijitButtonText{
+            height: auto;
+        }
+    }
+
+    .epi-autoSaveButton {
+
+        &.epi-autosave-hover {
+            border: 1px solid #768388;
+            color: @epi-button-text-color;
+            .svgBackground(@epi-button-fallback,0px,-2300px,'images/gradients/button_default.svg');
+            text-shadow: @epi-button-text-shadow;
+        }
+
+        &.epi-autosave-saving {
+            border: 1px solid #cbcbcb;
+            background-color: #eee;
+            .transition(.5s);
+        }
+
+        &.epi-autosave-error {
+            border: 1px solid #b70400;
+            background-color: #dd4629;
+            .transition(.5s);
+            
+            .dijitButtonNode {
+                color: #fff;
+                .transition(.5s);
+            }
+        }
+
+        &.epi-autosave-saved {
+            border: 1px solid rgba(0,0,0,0);
+            background-color: rgba(255,255,255,0);
+            .transition(3s);
+        }
+    }
+
+    .epi-autosave-hidden {
+        display: none !important;
+    }
+}
+
+/* ExpandoButton ------------------------------------------------------ */
+.Sleek {
+    .epi-globalToolbar .epi-toolbarLeading .epi-expandoButton li .epi-mediumButton {
+        margin: 0;
+    }
+    
+    .epi-expandoButton {
+        // Resets from inherited styles
+        padding: 0;
+        .dijitToggleButton, .dijitButton, .dijitDropDownButton, .dijitComboButton { float: left; margin: 0; } 
+        list-style: none;
+        overflow: hidden;
+		vertical-align: top;
+        
+		> li {
+			max-width: 40px;
+			white-space: nowrap; 
+
+			.transition(all .7s);
+		}
+        li {
+            display: inline-block;
+            height: 26px;
+            overflow: hidden;
+
+            &.epi-leftSeparator {
+                border-left: 1px solid @epi-button-border-color;
+            }
+        }
+
+        .epi-expandoButtonActiveNode {
+            background-color: #a1c724;
+            line-height: 2em;
+            padding: 0 10px;
+            text-overflow: nowrap;
+            width: auto;
+            color: #243200;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+            .box-shadow-specific-inset (0, 3px, 6px, 0, 139, 173, 26, 0.35);
+        }
+
+        .epi-expandoButtonTextNode {
+            line-height: 1.9em;
+            padding: 0;
+            text-overflow: nowrap;
+            width: auto;
+            color: @text-color;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+
+			.dijitButtonNode { vertical-align: top; }
+        }
+        .epi-expandoButtonLangSelected .dijitButtonText {
+            background: @epi-status-background-blue;
+            .border-radius(1px);
+            color: @text-color-white;
+            height: auto;
+            line-height: 15px;
+            padding: 2px 4px;
+        }
+
+        ul {
+            border-left: 1px solid @epi-button-border-color;
+            color: @epi-button-Salt-text-color;
+			display: inline-block;
+            height: 26px; // Button height +2 for borders
+            list-style: none;
+            overflow: hidden;
+            
+			.svgBackground(@epi-button-Child-fallback,0px,-2300px,'images/gradients/button_child.svg');
+            text-shadow: 0 1px 0 @epi-button-Child-text-shadow;
+
+        }
+        .epi-expandoButtonParentNodeOpen {
+            
+            ul { 
+                border-left: 1px solid @epi-button-border-color;
+                border-right: none;
+            }
+        }
+        
+        .dijitButtonNode { padding: 0 5px; }
+		.dijitIcon, .dijitButtonText { vertical-align: top; }
+    }
+}
+
+/* Pane Toggle Buttons  ------------------------------------------------------ */
+.Sleek { 
+    .epi-leadingToggleButton,
+    .epi-trailingToggleButton {
+        .dijitButtonNode {
+            background: #555b62;
+            background-image: none;
+            border: 1px solid #555b62;
+            
+            .dijitButtonContents {
+                padding-left: 7px;
+                padding-right: 7px;
+            }
+        }
+    }
+    .epi-leadingToggleButton.epi-mediumButton {
+        
+        .dijitButtonNode {
+            .border-radius-specific(0, @button-border-radius, @button-border-radius, 0);
+        }
+    }
+    .epi-trailingToggleButton.epi-mediumButton {
+        
+        .dijitButtonNode {
+            .border-radius-specific(@button-border-radius, 0, 0, @button-border-radius);
+        }
+    }
+}

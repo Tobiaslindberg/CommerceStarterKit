@@ -1,0 +1,2 @@
+//>>built
+require({cache:{"url:epi-cms/widget/templates/ReadOnlyDateTimeEditor.html":"<div class=\"dijit dijitReset dijitInline dijitLeft\" data-dojo-attach-point=\"valueNode\"></div>"}});define("epi-cms/widget/ReadOnlyDateTimeEditor",["dojo/_base/declare","dijit/_Widget","dijit/_TemplatedMixin","epi/datetime","dojo/text!./templates/ReadOnlyDateTimeEditor.html"],function(_1,_2,_3,_4,_5){return _1([_2,_3],{templateString:_5,value:null,_setValueAttr:function(_6){this._set("value",_6);if(_6){this.valueNode.innerHTML=_4.toUserFriendlyHtml(_6);}}});});

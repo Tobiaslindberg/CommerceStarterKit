@@ -1,0 +1,8 @@
+﻿@using OxxCommerceStarterKit.Web.Models.ViewModels.Simple
+@model OxxCommerceStarterKit.Web.Models.Catalog.FashionStoreSubLandingNodeContent
+@{
+	Layout = null;
+	var viewModel = new LandingNodeViewModel(Model, Request);
+	viewModel.MaxItems = 3;
+}
+@Html.Partial("~/Views/Shared/PagePartials/_LandingNode.cshtml", viewModel)

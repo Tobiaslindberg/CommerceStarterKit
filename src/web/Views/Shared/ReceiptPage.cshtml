@@ -1,0 +1,27 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.ReceiptViewModel
+
+<div class="cart-page receipt-page">
+
+	<a href="javascript:print();" class="print">@Html.Translate("/common/receipt/print")</a>
+
+	<h1>@Model.CurrentPage.Name</h1>
+
+	<p>@Html.Translate("/common/accountpages/order_table_headers/number") @Model.Order.OrderNumber @(!string.IsNullOrEmpty(Model.Order.ErpOrderNumber) ? " / " + Model.Order.ErpOrderNumber : "")</p>
+
+	@if (!string.IsNullOrEmpty(Model.CheckoutMessage))
+	{
+		<div class="alert alert-warning">@Model.CheckoutMessage</div>
+	}
+
+	<div class="cart">
+		@if (Model.Order != null) { 
+			@Html.Partial("_ReceiptOrder", Model.Order)
+		}
+		<div class="clearfix thanks">
+			<h2>@Html.PropertyFor(m => m.ThankYouTitle)</h2>
+			@Html.PropertyFor(m => m.ThankYouText)
+		</div>
+
+	</div>
+
+</div>

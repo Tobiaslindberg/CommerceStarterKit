@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="Nederlands" id="nl">
+    <common>
+      <visitorgroups>
+        <criteria>
+          <userattribute>
+            <anymonth>Elke willekeurige maand</anymonth>
+            <anyyear>Elk willekeurig jaar</anyyear>
+            <attributenamenotselected>Selecteer een attribuut.</attributenamenotselected>
+            <category>Community-criteria</category>
+            <description>Criterium voor gebruikersattribuut</description>
+            <displayName>Gebruikersattribuut</displayName>
+            <false>onwaar</false>
+            <lowerboundgreaterthanupperbound>Waarde voor ondergrens moet lager zijn dan of gelijk zijn aan waarde voor bovengrens.</lowerboundgreaterthanupperbound>
+            <true>waar</true>
+          </userattribute>
+        </criteria>
+      </visitorgroups>
+    </common>
+  </language>
+</languages>

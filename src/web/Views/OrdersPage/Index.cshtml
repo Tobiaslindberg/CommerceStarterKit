@@ -1,0 +1,58 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.OrdersPageViewModel
+@{
+	Layout = "~/Views/Shared/_MyPageLayout.cshtml";
+	ViewBag.Title = Model.CurrentPage.Name;
+}
+@if (Model != null)
+{
+	<div class="orders-page">
+		<h1>@string.Format(Html.Translate("/common/accountpages/title"), Model.CustomerName)</h1>
+
+		<h2>@Html.Translate("/common/accountpages/orders_title")</h2>
+
+		<div class="orders header">
+			<div class="row">
+				<div class="col-xs-4 col-sm-4">
+					@Html.Translate("/common/accountpages/order_table_headers/number")
+				</div>
+				<div class="col-xs-4 col-sm-6">
+					@Html.Translate("/common/accountpages/order_table_headers/date")
+				</div>
+				<div class="col-xs-4 col-sm-2 status">
+					@Html.Translate("/common/accountpages/order_table_headers/status")
+				</div>
+			</div>
+		</div>
+		<div class="orders">
+			@if (Model.Orders != null)
+			{
+				foreach (var order in Model.Orders)
+				{
+					<div class="order" data-toggle="collapse" data-target="#ordernumber-@order.OrderNumber">
+						<div class="row">
+							<div class="col-xs-4 col-sm-4">
+								@order.OrderNumber @(!string.IsNullOrEmpty(order.ErpOrderNumber) ? " / " + order.ErpOrderNumber : "")
+							</div>
+							<div class="col-xs-4 col-sm-6">
+								@order.OrderDate.ToString("dd.MM.yyyy")
+							</div>
+							<div class="col-xs-4 col-sm-2 status">
+								@order.Status
+							</div>
+						</div>
+					</div>
+					<div class="clearfix order-details collapse" id="ordernumber-@order.OrderNumber">
+						<div class="receipt-page">
+							<div class="cart">
+								@Html.Partial("_ReceiptOrder", order)
+								<a class="chevron pull-right" data-toggle="collapse" data-target="#ordernumber-@order.OrderNumber">
+									<span class="glyphicon glyphicon-chevron-up"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				}
+			}
+		</div>
+	</div>
+}

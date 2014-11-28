@@ -1,0 +1,15 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.CartItemModel
+@{
+    var chrome = (Chrome)ViewBag.Chrome;
+}
+@if (Model.CanBuyEntry)
+{
+    <div class="add-to-cart-form" ng-init="init('@chrome.Language','@Model.Code','@Model.Name',1,'@Model.ImageUrl','@Model.ColorImageUrl', '@Model.Color','@Model.Size', '@Model.Description','@Model.ArticleNumber','@Model.WineRegion')">
+        <input type="text" name="Quantity" ng-model="product.quantity" class="quantity" />
+        <input type="button" class="btn btn-success btn-sm" value="@Html.Translate("/common/product/add_to_cart")" ng-click="addToCart(product)" />
+        <input type="button" class="btn btn-default btn-sm" value="@Html.Translate("/common/product/add_to_wishlist")" ng-click="addToWishlist(product)" />
+        <div class="loader" ng-show="loaderVisible === true"><img src="@Url.Content("~/Content/Images/ajax-loader-lightbg-ts.gif")" /></div>
+        <div class="response" ng-show="addedToCartMessageVisible === true">@Html.Translate("/common/product/add_to_cart_complete")</div>
+        <div class="response" ng-show="addedToWishlistMessageVisible === true">@Html.Translate("/common/product/add_to_wishlist_complete")</div>
+    </div>
+}

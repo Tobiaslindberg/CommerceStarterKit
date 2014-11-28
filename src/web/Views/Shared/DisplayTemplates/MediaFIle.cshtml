@@ -1,0 +1,30 @@
+﻿@using EPiServer.Core
+@using EPiServer.ServiceLocation
+@using EPiServer.Web.Routing
+@using OxxCommerceStarterKit.Web.Models.Files
+@model EPiServer.Core.ContentReference
+@*See http://tedgustaf.com/blog/2014/4/render-image-properties-in-episerver-75/*@
+@{
+	Layout = null;
+}
+@if (!ContentReference.IsNullOrEmpty(Model))
+{
+	var contentLoader = ServiceLocator.Current.GetInstance<EPiServer.IContentLoader>();
+	var content = contentLoader.Get<IContent>(Model);
+	if (content != null && content is ImageFile)
+	{
+		var imageFile = (ImageFile)content;
+	    @Html.Action("Image", "ImageFile", new { currentContent = imageFile, extraImageUrlParameters = ViewData["extraImageUrlParameters"] })
+	}
+	else
+	{
+		@Image()
+	}
+}
+
+@helper Image()
+{
+<img src="@(ServiceLocator.Current.GetInstance<UrlResolver>().GetUrl(Model) + (ViewData["extraImageUrlParameters"]))" alt=""
+	  @(ViewData.ContainsKey("Width") ? "width='" + @ViewData["Width"] + "'" : "")
+	  @(ViewData.ContainsKey("Height") ? "height='" + @ViewData["Height"] + "'" : "") />
+}

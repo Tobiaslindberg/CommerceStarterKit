@@ -1,0 +1,15 @@
+﻿@using OxxCommerceStarterKit.Web.Extensions
+@model OxxCommerceStarterKit.Web.Models.ViewModels.ICatalogViewModel<EPiServer.Commerce.Catalog.ContentTypes.EntryContentBase>
+@{
+    ViewBag.Title = "Catalog";
+}
+
+<h2>Catalog Entry</h2>
+<br />
+@Html.AssetImage(Model.CatalogContent)
+@*
+    @Html.Partial("_BuyItem", new CartItemModel(Model.CatalogContent))
+    @Html.Partial("_WishListItem", new CartItemModel(Model.CatalogContent))
+*@
+@Html.Partial("_CatalogCategories", Model)
+@Html.Partial("_CatalogEntries", Model)

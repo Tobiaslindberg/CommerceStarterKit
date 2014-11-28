@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+    <language name="English" id="en">
+        <enums>
+            <episerver>
+                <visitorgroupscriteriapack>
+                    <submissionstatus>
+                        <hassubmitted>Has submitted</hassubmitted>
+                        <hasnotsubmitted>Has not submitted</hasnotsubmitted>
+                    </submissionstatus>
+                </visitorgroupscriteriapack>
+            </episerver>
+        </enums>
+        <visitorgroupscriteriapack>
+            <xformcriterion>
+                <category>Site Criteria</category>
+                <displayname>Submitted Form</displayname>
+                <description>Criterion that checks if the visitor has submitted a specific xform in this session</description>
+                <submissionstatus>Submission Status</submissionstatus>
+                <selectedxform>Selected XForm</selectedxform>
+            </xformcriterion>
+        </visitorgroupscriteriapack>
+    </language>
+</languages>

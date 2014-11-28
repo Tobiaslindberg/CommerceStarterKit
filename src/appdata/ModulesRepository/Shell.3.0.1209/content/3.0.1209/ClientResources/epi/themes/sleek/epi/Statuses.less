@@ -1,0 +1,288 @@
+﻿@import "../variables";
+
+/*
+        The classes are a direct mapping to the items status enum (status number / icon number in sprite):
+		NotCreated (New page not edited) = 0 / 5
+		Rejected = 1 / 7
+		CheckedOut (Saved, not published) = 2 / 5
+		CheckedIn (Ready to publish)= 3 / 6
+		Published = 4 / 1
+		PreviouslyPublished = 5 / 5
+		DelayedPublish = 6 / 4
+
+        Due to different markup in different locations each class needs the .epi-statusIndicatorIcon both as a sibling and child-class
+*/
+
+.Sleek {
+    .epi-statusIndicator {
+        margin: 0 8px 0 0;
+
+        .epi-statusIndicator {
+            margin: 0;
+        }
+
+        &:focus {
+            outline: none !important;
+        }
+    }
+
+    .epi-statusContainer {
+        padding: 5px 8px;
+        .border-radius-specific(3px, 0, 0, 3px);
+
+        .dijitIcon {
+            margin-top: -4px;
+        }
+    }
+
+    .epi-statusArrow {
+        .arrowRight(13px, 255,255,255,0);
+        height: 0;
+        width: 0;
+    }
+
+    .epi-noStatusArrow() {
+        .epi-statusArrow {
+            display: none !important;
+        }
+    }
+
+    .epi-statusIndicatorTransparent() {
+        .epi-statusContainer {
+            color: @text-color;
+            background: transparent;
+            margin-right: 5px;
+        }
+        .epi-noStatusArrow();
+    }
+
+    .epi-statusIndicator {
+        /* Not published yet */
+        &.epi-statusIndicatorNotPublishedYet {
+            .epi-statusContainer {
+                color: @text-color-white;
+                background: @epi-status-background-blue;
+            }
+
+            .epi-statusArrow {
+                border-left-color: @epi-status-background-blue;
+            }
+        }
+        /* No changes to publish */
+        &.epi-statusIndicatorNoChangeToPublish {
+            .epi-statusIndicatorTransparent();
+        }
+        /* Changes to be published */
+        &.epi-statusIndicatorChangesToPublish {
+            .epi-statusContainer {
+                color: @text-color-white;
+                background: @epi-status-background-blue;
+            }
+
+            .epi-statusArrow {
+                border-left-color: @epi-status-background-blue;
+            }
+        }
+        /* Waiting for approval */
+        &.epi-statusIndicatorWaitingForApproval {
+            .epi-statusContainer {
+                color: @text-color;
+                background: @epi-status-background-yellow;
+                text-shadow: 0 1px 0 rgba(255,255,255,0.1);
+            }
+
+            .epi-statusArrow {
+                border-left-color: @epi-status-background-yellow;
+            }
+        }
+        /* Ready to be published */
+        &.epi-statusIndicatorReadyToPublish {
+            .epi-statusContainer {
+                color: @text-color;
+                background: @epi-status-background-yellow;
+                text-shadow: 0 1px 0 rgba(255,255,255,0.1);
+            }
+
+            .epi-statusArrow {
+                border-left-color: @epi-status-background-yellow;
+            }
+        }
+        /* Published */
+        &.epi-statusIndicatorPublished {
+            .epi-statusContainer {
+                color: @text-color-white;
+                background: @epi-status-background-green;
+                .border-radius(3px);
+                padding-right: 12px;
+                text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+            }
+        }
+        /* Scheduled Publish */
+        &.epi-statusIndicatorScheduledPublish {
+            .epi-statusContainer {
+                color: @text-color;
+                background: @epi-status-background-yellow;
+                .border-radius(3px);
+                padding-right: 12px;
+                text-shadow: 0 1px 0 rgba(255,255,255,0.1);
+            }
+
+            .epi-noStatusArrow();
+        }
+        /* Previously Published */
+        &.epi-statusIndicatorPreviouslyPublished {
+            .epi-statusIndicatorTransparent();
+        }
+        /* Expired */
+        &.epi-statusIndicatorExpired {
+            .epi-statusIndicatorTransparent();
+        }
+        /* Expiring */
+        &.epi-statusIndicatorExpiring {
+            background: @epi-status-background-red;
+            border: 1px solid @epi-status-border-red;
+            .border-box();
+
+            .epi-notificationBarText {
+                text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+                color: @text-color-white;
+            }
+
+            &.epi-notificationBarWithBorders {
+                border-color: @epi-status-border-red;
+            }
+        }
+        /* Not expiring */
+        &.epi-statusIndicatorNotExpiring {
+            background: @epi-status-background-green;
+            border: 1px solid @epi-status-border-green;
+            .border-box();
+
+            .epi-notificationBarText {
+                text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+                color: @text-color-white;
+            }
+        }
+        /* InUse */
+        &.epi-statusIndicatorInUse {
+            .epi-statusContainer {
+                color: @text-color-white;
+                background: @epi-status-background-orange;
+                .border-radius(3px);
+                padding-right: 12px;
+                text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+
+            &.epi-notificationBarWithBorders {
+                border-color: @epi-status-border-orange;
+            }
+            }
+
+            .epi-statusArrow {
+                display: none !important;
+            }
+        }
+        
+        /* Warning */
+        &.epi-statusIndicatorWarning {
+            color: @text-color;
+            background: @epi-status-background-yellow;
+            text-shadow: 0 1px 0 rgba(255,255,255,0.1);
+
+            &.epi-notificationBarWithBorders {
+                border-color: @epi-status-border-yellow;
+            }
+        }
+
+        /* OK */
+        &.epi-statusIndicatorOk {
+            color: @text-color-white;
+            background: @epi-status-background-green;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+
+            &.epi-notificationBarWithBorders {
+                border-color: @epi-status-border-green;
+            }
+        }
+    }
+    /* Page Tree Notifications */
+    .epi-statusIndicatorIcon {
+        background: url("images/statusIcons.png");
+        display: inline-block;
+        height: 16px;
+        margin: -2px -4px 0 -3px;
+        vertical-align: middle;
+        width: 16px;
+    }
+
+    .dijitTreeNode .epi-statusIndicatorIcon {
+        margin-top: 8px;
+    }
+
+    .dijitTreeNode .epi-statusIndicator4 {
+        display: none;
+    }
+
+    .epi-statusIndicator0 {
+        background-position: 0 -128px;
+    }
+
+    .dijitTreeNode .epi-statusIndicator0 {
+        background-position: -16px -129px;
+    }
+
+    .epi-statusIndicator1 {
+        background-position: 0 -192px;
+    }
+
+    .dijitTreeNode .epi-statusIndicator1 {
+        background-position: -16px -193px;
+    }
+
+    .epi-statusIndicator2 {
+        background-position: 0 -128px;
+    }
+
+    .dijitTreeNode .epi-statusIndicator2 {
+        background-position: -16px -129px;
+    }
+
+    .epi-statusIndicator3 {
+        background-position: 0 -160px;
+    }
+
+    .dijitTreeNode .epi-statusIndicator3 {
+        background-position: -16px -161px;
+    }
+
+    .epi-statusIndicator4 {
+        background-position: 0 0px;
+    }
+
+    .dijitTreeNode .epi-statusIndicator4 {
+        background-position: -16px -1px;
+    }
+
+    .epi-statusIndicator5 {
+        background-position: 0 -128px;
+    }
+
+    .dijitTreeNode .epi-statusIndicator5 {
+        background-position: -16px -129px;
+    }
+
+    .epi-statusIndicator6 {
+        background-position: 0 -96px;
+    }
+
+    .dijitTreeNode .epi-statusIndicator6 {
+        background-position: -16px -97px;
+    }
+
+    .epi-statusIndicator7 {
+        background-position: 0 -64px;
+    }
+
+    .dijitTreeNode .epi-statusIndicator7 {
+        background-position: -16px -65px;
+    }
+}

@@ -1,0 +1,181 @@
+﻿body.epi-loginBody {
+    background: white url(../images/BodyBg.png) repeat-x top;
+    font-family: Arial, Verdana, Sans-Serif;
+    font-size: 96%;
+    color: #333;    
+}
+
+.epi-loginContent h1 {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+    text-decoration: none;
+    color: #666;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0 0 12px 0;
+    font-weight: normal;
+}
+
+.epi-loginContainer p, .epi-loginContainer label, .epi-loginContainer form {
+    padding: 0;
+    margin: 0;
+}
+
+.epi-button-container {
+	margin-top:20px;
+}
+
+.epi-checkbox-container {
+	width:100%;
+	float:left;
+	margin-top: 20px;
+}
+
+.epi-float-left {
+	float: left;
+}
+
+/* Outer button wrapper. Adds button background and top/bottom borders. */ 
+span.epi-button {
+	background: url("../images/BaseSprite.png") left -944px repeat-x;
+	background-color: #2f2e2f;
+	border-top: 1px solid #898a8d;
+	border-bottom: 1px solid #898a8d;
+	border-width: 1px 0;
+	display: inline-block;
+	margin: auto 0.5em auto 0; /* LTR */
+	vertical-align: text-bottom;
+}
+
+/* Inner button wrapper. Creates the rounded corner effect. */ 
+span.epi-button-child {
+    border-color: #898a8d;
+	border-style: solid;
+	border-width: 0 1px;	
+	display: block;
+	margin: 0 -1px;
+	_margin: 0;
+}
+
+/* The actual input button item. Adds default width/height and padding.  */
+.epi-button-child-item {
+	background-color: transparent;
+	border: medium none;
+	cursor: pointer;
+	min-height: 1.5em;
+	min-width: 2em;
+	overflow: visible;
+	padding: 3px 0.75em;
+	color: #fff;
+}
+
+.epi-button-highlight {
+	background: url("../images/BaseSprite.png") left -1072px repeat-x;
+	background-color: #d3d3d3;
+	border-bottom: 1px solid #4e4e4e;
+	border-top: 1px solid #4e4e4e;
+}
+
+/* Custom style to highlight button focus in Mozilla  */
+button:focus::-moz-focus-inner,
+input[type="reset"]:focus::-moz-focus-inner,
+input[type="button"]:focus::-moz-focus-inner,
+input[type="submit"]:focus::-moz-focus-inner,
+input[type="file"] > input[type="button"]:focus::-moz-focus-inner {
+  border-color: White;
+}
+
+/* Login Box ---------------- */
+
+.epi-loginContainer {
+    position: absolute;
+    font-family: Arial, Verdana, Sans-Serif;
+    top: 50%;
+    left: 50%;
+    margin-left: -290px;
+    margin-top: -14.2em;
+    width: 580px;
+    min-height: 400px;
+    text-align:left;
+    border-radius: 10px; 
+    border: 1px solid #878787;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    background: #fff url("../images/episerver-artwork.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    
+}
+.epi-loginTop {
+    height: 10px;
+}
+.epi-loginMiddle {
+}
+.epi-loginBottom {
+    height: 10px;
+}
+.epi-loginContent {
+    padding: 200px 20px 20px 30px;
+}
+
+.epi-credentialsContainer {
+    margin-bottom: 5px;
+    margin-top:4px;
+    overflow: hidden;
+}
+
+.epi-credentialsContainer-logout {
+    margin: 4em 0;
+}
+
+/* Links and Forms ---------------- */
+
+.epi-loginContainer a, .epi-loginContainer a:link, .epi-loginContainer a:active {
+    color: #999;
+    text-decoration: none;
+}
+
+.epi-loginContainer a:hover, .epi-loginContainer a:visited {
+    color: #208bcb;
+    text-decoration: underline;
+}
+
+.epi-loginLogo {
+    background-image: url(../images/episerver-logo.png);
+    background-repeat: no-repeat;
+    height: 20px;
+    text-indent: -9999px;
+}
+
+.epi-loginForm {
+    padding: 0;
+    margin: 20px 0 10px 0;
+}
+
+.epi-inputText {
+	border: 1px solid #999;
+	color: #444;
+	font-size: 14px;
+	width: 205px;
+	margin-right:8px;
+	padding: 6px;
+	border-radius: 2px;
+}
+
+.epi-inputButton {
+    border: 1px solid #82858a;
+    color: #e8e8e8;
+    background: #434343 url(../images/BtnBg.png);
+    background-repeat: repeat-x;
+    background-position: bottom left;
+    text-shadow: #000 0 1px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding: 0 5px;
+    margin-left: 3px;
+    height: 20px;
+}    
+
+.epi-checkbox input {
+	padding-left: 0;
+	margin-left: 0;
+	width: 15px;
+}

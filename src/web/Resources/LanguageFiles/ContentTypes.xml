@@ -1,0 +1,929 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+	<language name="Norwegian" id="no">
+		<contenttypes>
+			<articlepage>
+				<name>Artikkel</name>
+				<description>Innholdsområde i toppen, tittel, ingress, tekst og et innholdsområde i bunn</description>
+				<properties>
+					<bodycontent>
+						<caption>Innholdsområde bunn</caption>
+					</bodycontent>
+				</properties>
+			</articlepage>
+			<blogpage>
+				<name>Blogg</name>
+				<description>Innholdsområde i toppen, titel i ramme med undertekst, og et innholdsområde i bunn</description>
+				<properties>
+					<bodycontent>
+						<caption>Innholdsområde bunn</caption>
+					</bodycontent>
+				</properties>
+			</blogpage>
+			<shoppingcategorypage>
+				<name>Produkt listeside</name>
+				<description>Lister ut produkter i angitte kategorier. Filtere på venstre side.</description>
+				<properties>
+					<pagesubheader>
+						<caption>Tekst over produktlisten</caption>
+					</pagesubheader>
+					<catalognodes>
+						<caption>Hent produkter fra disse kateogiene</caption>
+					</catalognodes>
+					<numberofproductstoshow>
+						<caption>Antall produkter som hentes</caption>
+					</numberofproductstoshow>
+					<topcontentarea>
+						<caption>Innholdsområde øverst</caption>
+					</topcontentarea>
+					<bottomcontentarea>
+						<caption>Innholdsområde bunn</caption>
+					</bottomcontentarea>
+				</properties>
+			</shoppingcategorypage>
+			<cartsimplemodulepage>
+				<name>Handlekurv</name>
+				<description>Handlekurv</description>
+			</cartsimplemodulepage>
+			<wishlistpage>
+				<name>Ønskeliste</name>
+				<description>Viser kundens ønskeliste</description>
+			</wishlistpage>
+			<personalinformationpage>
+				<name>Kontoinformasjonside</name>
+				<description>Gir kunden mulighet til å endre sine adresser</description>
+			</personalinformationpage>
+			<orderspage>
+				<name>Ordrehistorikk</name>
+				<description>Viser kundens ordre</description>
+			</orderspage>
+			<checkoutpage>
+				<name>Kasse</name>
+				<description>Kassen hvor kunden fyller ut adresser og velger betalingsmåte</description>
+				<properties>
+					<termsarticle>
+						<caption>Kjøpsvilkår</caption>
+						<help>Artikkel for innhold i kjøpsvilkårlenken</help>
+					</termsarticle>
+				</properties>
+			</checkoutpage>
+			<searchpage>
+				<name>Søkesiden</name>
+				<description>Vise søkeresultater etter produkter og artikler</description>
+				<properties>
+					<numberofproductstoshow>
+						<caption>Antall produkter som vises som standard</caption>
+						<help>Hvis ikke satt, så er standarden 9</help>
+					</numberofproductstoshow>
+					<numberofarticlestoshow>
+						<caption>Antall artikler som vises som standard</caption>
+						<help>Hvis ikke satt så er standarden 5</help>
+					</numberofarticlestoshow>
+				</properties>
+			</searchpage>
+			<receiptpage>
+				<name>Kvittering</name>
+				<description>Kvitteringsside for etter at man har betalt i kassen</description>
+				<properties>
+					<thankyoutitle>
+						<caption>Takk for handelen tittel</caption>
+					</thankyoutitle>
+					<thankyoutext>
+						<caption>Takk for handelen tekst</caption>
+					</thankyoutext>
+				</properties>
+			</receiptpage>
+			<changepasswordpage>
+				<name>Endre passord</name>
+				<description>Side for å endre passord</description>
+				<properties>
+					<updatedpassword>
+						<caption>Oppdatert passord tekst</caption>
+					</updatedpassword>
+				</properties>
+			</changepasswordpage>
+			<loginpage>
+				<name>Logg inn</name>
+				<description>Side for å logge inn</description>
+				<properties>
+					<logincontent>
+						<caption>Påloggingsside</caption>
+					</logincontent>
+					<resetpasswordcontent>
+						<caption>Glemt passord side</caption>
+					</resetpasswordcontent>
+					<sentpasswordtokencontent>
+						<caption>Glemt passord epost sendt side</caption>
+					</sentpasswordtokencontent>
+					<requestpasswordcontent>
+						<caption>Lag nytt passord side</caption>
+					</requestpasswordcontent>
+					<requestpasswordsubject>
+						<caption>Glemt passord e-posttittel</caption>
+					</requestpasswordsubject>
+					<requestpasswordexisting>
+						<caption>Glemt passord e-postinnhold</caption>
+					</requestpasswordexisting>
+					<loggedinpage>
+						<caption>Videresendt til denne siden når innlogget</caption>
+					</loggedinpage>
+				</properties>
+			</loginpage>
+			<dibspaymentpage>
+				<name>Dibs betalingsside</name>
+				<properties>
+					<paymentmethod>
+						<caption>Betalingsmetode</caption>
+					</paymentmethod>
+				</properties>
+			</dibspaymentpage>
+			<registerpage>
+				<name>Registrer bruker side</name>
+				<description>Registeringsskjema for brukere</description>
+				<properties>
+					<prebodycontent>
+						<caption>Innhold på siden</caption>
+					</prebodycontent>
+					<emailsubject>
+						<caption>Velkomst e-post tittel</caption>
+					</emailsubject>
+					<emailbody>
+						<caption>Velkomst e-post tekst</caption>
+					</emailbody>
+				</properties>
+			</registerpage>
+			<icontentdata>
+				<properties>
+					<listviewimage>
+						<caption>Listevising bilde</caption>
+						<help></help>
+					</listviewimage>
+					<listviewtext>
+						<caption>Listevising tekst</caption>
+						<help>Dersom denne er tom, så vil intro benyttes</help>
+					</listviewtext>
+					<prebodycontent>
+						<caption>Innholdsområde øverst</caption>
+					</prebodycontent>
+					<pagetitle>
+						<caption>Tittel</caption>
+					</pagetitle>
+					<subpagetitle>
+						<caption>Undertittel</caption>
+					</subpagetitle>
+					<intro>
+						<caption>Ingress</caption>
+					</intro>
+					<body>
+						<caption>Brødtekst</caption>
+					</body>
+					<bodycontent>
+						<caption>Innholdsområde</caption>
+					</bodycontent>
+					<pagesubheader>
+						<caption>ikke i bruk</caption>
+					</pagesubheader>
+				</properties>
+			</icontentdata>
+			<notificationsettings>
+				<name>E-postinnstillinger</name>
+				<description>Her kan du sette e-postavsender, og redigere tekst over og under alle epostene sendt fra nettbutikken</description>
+				<properties>
+					<mailheader>
+						<caption>E-post topptekst</caption>
+					</mailheader>
+					<mailfooter>
+						<caption>E-post bunntekst</caption>
+					</mailfooter>
+					<from>
+						<caption>E-post avsender</caption>
+					</from>
+				</properties>
+			</notificationsettings>
+			<htmlblock>
+				<name>HTML tekstblokk</name>
+				<description>En blokk hvor HTML tekst kan legges inn</description>
+				<properties>
+					<html>
+						<caption>Innhold</caption>
+					</html>
+				</properties>
+			</htmlblock>
+			<onetwocolumnsblock>
+				<name>1+2 kolonner blokk</name>
+				<description>2 kolonner - 33% og 66%</description>
+				<properties>
+					<leftcolumn>
+						<caption>Venstre kolonne - 33%</caption>
+					</leftcolumn>
+					<rightcolumn>
+						<caption>Høyre kolonne - 66%</caption>
+					</rightcolumn>
+				</properties>
+			</onetwocolumnsblock>
+			<pagelistblock>
+				<name>Liste over artikler og blogger</name>
+				<description>Avansert blokk for å hente ut artikler og blogger i listevising</description>
+				<properties>
+					<count>
+						<caption>Maks antall artikler</caption>
+					</count>
+					<sortorder>
+						<caption>Sortering</caption>
+					</sortorder>
+					<root>
+						<caption>Hent fra mappe</caption>
+					</root>
+					<pagetypefilter>
+						<caption>Filtrer på type</caption>
+					</pagetypefilter>
+					<categorylist>
+						<caption>Filtrer på kategori</caption>
+					</categorylist>
+					<recursive>
+						<caption>Søk i undermapper</caption>
+					</recursive>
+				</properties>
+			</pagelistblock>
+			<productteaserblock>
+				<name>Produkt visningsblokk</name>
+				<description>En blokk med bilde og lenke til et produkt. Kan ha bildetekst.</description>
+				<properties>
+					<image>
+						<caption>Bilde</caption>
+					</image>
+					<product>
+						<caption>Lenker til</caption>
+					</product>
+					<imagetitle>
+						<caption>Bildetekst tittel (valgfritt)</caption>
+					</imagetitle>
+					<imagetext>
+						<caption>Bildetekst (valgfritt)</caption>
+					</imagetext>
+					<imagetextcolor>
+						<caption>Bildetekst farge (#rrggbb) (valgfritt)</caption>
+					</imagetextcolor>
+					<imagetextbackgroundcolor>
+						<caption>Bildetekst bakgrunnsfarge (#rrggbb) (valgfritt)</caption>
+					</imagetextbackgroundcolor>
+					<imagetextbackgroundtransparency>
+						<caption>Bildetekst bakgrunn gjennomsiktighet (%) (valgfritt)</caption>
+					</imagetextbackgroundtransparency>
+				</properties>
+			</productteaserblock>
+			<sliderblock>
+				<name>Bildekarusell</name>
+				<description>Karusellen roterer bildene fra høyre til venstre</description>
+				<properties>
+					<items>
+						<caption>ikke i bruk</caption>
+					</items>
+					<images>
+						<caption>Bilder</caption>
+					</images>
+				</properties>
+			</sliderblock>
+			<socialmedialinkblock>
+				<name>Sosiale medier blokk</name>
+				<description>Brukes i rammemalen for ikon og lenke til sosiale medier</description>
+				<properties>
+					<title>
+						<caption>Tittel</caption>
+					</title>
+					<link>
+						<caption>Lenker til</caption>
+					</link>
+					<cssclass>
+						<caption>CSS klasse for å angi ikon</caption>
+					</cssclass>
+				</properties>
+			</socialmedialinkblock>
+			<buttonwithhelplinkblock>
+				<name>Knapp med ekstra ?-knapp</name>
+				<description>Brukes i rammemalen for knapp i footer</description>
+				<properties>
+					<text>
+						<caption>Tekst i knapp</caption>
+					</text>
+					<link>
+						<caption>Knapp lenker til</caption>
+					</link>
+					<helplink>
+						<caption>Hjelpeknapp lenker til</caption>
+					</helplink>
+				</properties>
+			</buttonwithhelplinkblock>
+			<twocolumnsblock>
+				<name>2 kolonner blokk</name>
+				<description>2 kolonner - 50%</description>
+				<properties>
+					<leftcolumn>
+						<caption>Venstre kolonne - 50%</caption>
+					</leftcolumn>
+					<rightcolumn>
+						<caption>Høyre kolonne - 50%</caption>
+					</rightcolumn>
+				</properties>
+			</twocolumnsblock>
+			<vimeoblock>
+				<name>Vimeo video blokk</name>
+				<description>Viser embed video fra Vimeo</description>
+				<properties>
+					<vimeovideolink>
+						<caption>Lenke til videoside på Vimeo</caption>
+					</vimeovideolink>
+					<heading>
+						<caption>Ikke i bruk</caption>
+					</heading>
+					<videotext>
+						<caption>Ikke i bruk</caption>
+					</videotext>
+					<coverimage>
+						<caption>Forhåndsvisningsbilde</caption>
+					</coverimage>
+				</properties>
+			</vimeoblock>
+			<youtubeblock>
+				<name>YouTube video blokk</name>
+				<description>Viser embed video fra YouTube</description>
+				<properties>
+					<youtubevideolink>
+						<caption>Lenke til videoside på YouTube</caption>
+					</youtubevideolink>
+					<heading>
+						<caption>Ikke i bruk</caption>
+					</heading>
+					<videotext>
+						<caption>Ikke i bruk</caption>
+					</videotext>
+					<coverimage>
+						<caption>Forhåndsvisningsbilde</caption>
+					</coverimage>
+				</properties>
+			</youtubeblock>
+			<viddlerblock>
+				<name>Viddler video blokk</name>
+				<description>Viser embed video fra Viddler</description>
+				<properties>
+					<viddleervideolink>
+						<caption>Lenke til videoside på Viddler</caption>
+					</viddleervideolink>
+					<heading>
+						<caption>Ikke i bruk</caption>
+					</heading>
+					<videotext>
+						<caption>Ikke i bruk</caption>
+					</videotext>
+					<coverimage>
+						<caption>Forhåndsvisningsbilde</caption>
+					</coverimage>
+				</properties>
+			</viddlerblock>
+			<fashionproductcontent>
+				<name>Produkt</name>
+				<description>Produkt med redigerbare felter</description>
+				<properties>
+					<descriptivecolor>
+						<caption>Beskrivende farge</caption>
+					</descriptivecolor>
+					<facetcolor>
+						<caption>Farge</caption>
+					</facetcolor>
+					<colorcode>
+						<caption>Fargekode</caption>
+					</colorcode>
+					<sizetype>
+						<caption>Størrelsestype</caption>
+					</sizetype>
+					<sizedescription>
+						<caption>Størrese beskrivelse</caption>
+					</sizedescription>
+					<sizeunit>
+						<caption>Størrelse enhet</caption>
+					</sizeunit>
+					<fit>
+						<caption>Passform</caption>
+					</fit>
+					<showinlist>
+						<caption>Vis i produktliste</caption>
+					</showinlist>
+					<newitemtext>
+						<caption>Nyhet</caption>
+					</newitemtext>
+					<sizeandfit>
+						<caption>Størrelse og passform</caption>
+					</sizeandfit>
+					<detailsandmaintenance>
+						<caption>Detaljer og behandling</caption>
+					</detailsandmaintenance>
+					<description>
+						<caption>Beskrivelse</caption>
+					</description>
+					<salescounter>
+						<caption>Antall solgte</caption>
+					</salescounter>
+				</properties>
+			</fashionproductcontent>
+			<newsletterunsubscribepage>
+				<name>Nyhetsbrevavmelding</name>
+				<description>Side hvor bruker melder seg av kundeklubb</description>
+				<properties>
+					<title>
+						<caption>Tittel</caption>
+					</title>
+					<mainbody>
+						<caption>Tekst på siden</caption>
+					</mainbody>
+				</properties>
+			</newsletterunsubscribepage>
+			<newsletterpage>
+				<name>Nyhetsbrev</name>
+				<description>Sett sammen en side og send den til brukere</description>
+				<properties>
+					<title>
+						<caption>Tittel</caption>
+					</title>
+					<lead>
+						<caption>Ingress</caption>
+					</lead>
+					<mainimage>
+						<caption>Hovedbilde</caption>
+					</mainimage>
+					<mainbody>
+						<caption>Hovedtekst</caption>
+					</mainbody>
+					<callout>
+						<caption>Beskjed</caption>
+					</callout>
+					<maincontentarea>
+						<caption>Innholdsområde</caption>
+					</maincontentarea>
+				</properties>
+			</newsletterpage>
+		</contenttypes>
+	</language>
+	<language name="English" id="en">
+		<contenttypes>
+			<articlepage>
+				<name>Article Page</name>
+				<description>Content area on top, title, intro, text and a content area at the bottom</description>
+				<properties>
+					<bodycontent>
+						<caption>Content area bottom</caption>
+					</bodycontent>
+				</properties>
+			</articlepage>
+			<blogpage>
+				<name>Blog Page</name>
+				<description>Content area on top, title with border and subtext, and a content area at the bottom</description>
+				<properties>
+					<bodycontent>
+						<caption>Content area bottom</caption>
+					</bodycontent>
+				</properties>
+			</blogpage>
+			<shoppingcategorypage>
+				<name>Product list page</name>
+				<description>List or products from chosen categories. Filters on the left side.</description>
+				<properties>
+					<pagesubheader>
+						<caption>Text on top of product list</caption>
+					</pagesubheader>
+					<catalognodes>
+						<caption>Get products from these categories</caption>
+					</catalognodes>
+					<numberofproductstoshow>
+						<caption>Number of products to show</caption>
+					</numberofproductstoshow>
+					<topcontentarea>
+						<caption>Content area top</caption>
+					</topcontentarea>
+					<bottomcontentarea>
+						<caption>Content area bottom</caption>
+					</bottomcontentarea>
+				</properties>
+			</shoppingcategorypage>
+			<cartsimplemodulepage>
+				<name>Cart page</name>
+				<description>The shopping cart</description>
+			</cartsimplemodulepage>
+			<wishlistpage>
+				<name>Wish list page</name>
+				<description>Shows the customer's wish list</description>
+			</wishlistpage>
+			<personalinformationpage>
+				<name>Account page</name>
+				<description>Shows the users account settings</description>
+			</personalinformationpage>
+			<checkoutpage>
+				<name>Checkout Page</name>
+				<description>The checkout page</description>
+				<properties>
+					<termsarticle>
+						<caption>Terms and conditions</caption>
+						<help>Article for Terms and conditions modal window</help>
+					</termsarticle>
+				</properties>
+			</checkoutpage>
+			<orderspage>
+				<name>Orders page</name>
+				<description>Lists the users orders</description>
+			</orderspage>
+			<searchpage>
+				<name>Search page</name>
+				<description>Shows search results for products and articles</description>
+				<properties>
+					<numberofproductstoshow>
+						<caption>Number of items to show</caption>
+						<help>If not set, 9 is default</help>
+					</numberofproductstoshow>
+					<numberofarticlestoshow>
+						<caption>Number of articles to show</caption>
+						<help>If not set, 5 is default</help>
+					</numberofarticlestoshow>
+				</properties>
+			</searchpage>
+			<receiptpage>
+				<name>Receipt page</name>
+				<description>Page shown after payment is complete</description>
+				<properties>
+					<thankyoutitle>
+						<caption>Thanks for shopping title</caption>
+					</thankyoutitle>
+					<thankyoutext>
+						<caption>Thanks for shopping text</caption>
+					</thankyoutext>
+				</properties>
+			</receiptpage>
+			<changepasswordpage>
+				<name>Change password page</name>
+				<description>Page where the customer can change the password</description>
+				<properties>
+					<updatedpassword>
+						<caption>Updated password text</caption>
+					</updatedpassword>
+				</properties>
+			</changepasswordpage>
+			<loginpage>
+				<name>Log in page</name>
+				<description>Page where the customer can log in</description>
+				<properties>
+					<logincontent>
+						<caption>Login page text</caption>
+					</logincontent>
+					<resetpasswordcontent>
+						<caption>Forgot password page text</caption>
+					</resetpasswordcontent>
+					<sentpasswordtokencontent>
+						<caption>Forgot password email sent text</caption>
+					</sentpasswordtokencontent>
+					<requestpasswordcontent>
+						<caption>Reset password page text</caption>
+					</requestpasswordcontent>
+					<requestpasswordsubject>
+						<caption>Forgot password email subject</caption>
+					</requestpasswordsubject>
+					<requestpasswordexisting>
+						<caption>Forgot password email text</caption>
+					</requestpasswordexisting>
+					<loggedinpage>
+						<caption>Send user to this page after login</caption>
+					</loggedinpage>
+				</properties>
+			</loginpage>
+			<dibspaymentpage>
+				<name></name>
+				<properties>
+					<paymentmethod>
+						<caption>Payment method</caption>
+					</paymentmethod>
+				</properties>
+			</dibspaymentpage>
+			<registerpage>
+				<name>Register user page</name>
+				<description>Registration page for new customers</description>
+				<properties>
+					<prebodycontent>
+						<caption>Page content above the registration form</caption>
+					</prebodycontent>
+					<emailsubject>
+						<caption>Welcome email subject</caption>
+					</emailsubject>
+					<emailbody>
+						<caption>Welcome email body</caption>
+					</emailbody>
+				</properties>
+			</registerpage>
+			<icontentdata>
+				<properties>
+					<listviewimage>
+						<caption>List view image</caption>
+						<help></help>
+					</listviewimage>
+					<listviewtext>
+						<caption>List view text</caption>
+						<help>If empty, then the intro will be used instead</help>
+					</listviewtext>
+					<prebodycontent>
+						<caption>Content area top</caption>
+					</prebodycontent>
+					<pagetitle>
+						<caption>Title</caption>
+					</pagetitle>
+					<subpagetitle>
+						<caption>Sub title</caption>
+					</subpagetitle>
+					<intro>
+						<caption>Intro</caption>
+					</intro>
+					<body>
+						<caption>Body text</caption>
+					</body>
+					<bodycontent>
+						<caption>Content area</caption>
+					</bodycontent>
+					<pagesubheader>
+						<caption>not in use</caption>
+					</pagesubheader>
+				</properties>
+			</icontentdata>
+			<notificationsettings>
+				<name>Email settings</name>
+				<description>A node where you can set sender, header and footer on the emails sent from this system</description>
+				<properties>
+					<mailheader>
+						<caption>Email header</caption>
+					</mailheader>
+					<mailfooter>
+						<caption>Email footer</caption>
+					</mailfooter>
+					<from>
+						<caption>Email from</caption>
+					</from>
+				</properties>
+			</notificationsettings>
+			<htmlblock>
+				<name>HTML text block</name>
+				<description>A block where you can enter HTML text</description>
+				<properties>
+					<html>
+						<caption>Content</caption>
+					</html>
+				</properties>
+			</htmlblock>
+			<onetwocolumnsblock>
+				<name>1+2 columns block</name>
+				<description>2 columns - 33% and 66%</description>
+				<properties>
+					<leftcolumn>
+						<caption>Left column - 33%</caption>
+					</leftcolumn>
+					<rightcolumn>
+						<caption>Right column - 66%</caption>
+					</rightcolumn>
+				</properties>
+			</onetwocolumnsblock>
+			<pagelistblock>
+				<name>List of articles and blogs</name>
+				<description>Advanced block to get list of articles and blogs</description>
+				<properties>
+					<count>
+						<caption>Max number of articles</caption>
+					</count>
+					<sortorder>
+						<caption>Sort</caption>
+					</sortorder>
+					<root>
+						<caption>Source folder</caption>
+					</root>
+					<pagetypefilter>
+						<caption>Filter by page type</caption>
+					</pagetypefilter>
+					<categorylist>
+						<caption>Filter by category</caption>
+					</categorylist>
+					<recursive>
+						<caption>Include subfolders</caption>
+					</recursive>
+				</properties>
+			</pagelistblock>
+			<productteaserblock>
+				<name>Product teaser block</name>
+				<description>A block with image and text promoting a product.</description>
+				<properties>
+					<image>
+						<caption>Image</caption>
+					</image>
+					<product>
+						<caption>Links to</caption>
+					</product>
+					<imagetitle>
+						<caption>Image text title (optional)</caption>
+					</imagetitle>
+					<imagetext>
+						<caption>Image text (optional)</caption>
+					</imagetext>
+					<imagetextcolor>
+						<caption>Image text color (#rrggbb) (optional)</caption>
+					</imagetextcolor>
+					<imagetextbackgroundcolor>
+						<caption>Image text background color (#rrggbb) (optional)</caption>
+					</imagetextbackgroundcolor>
+					<imagetextbackgroundtransparency>
+						<caption>Image text background transparency (%) (optional)</caption>
+					</imagetextbackgroundtransparency>
+				</properties>
+			</productteaserblock>
+			<sliderblock>
+				<name>Image carusel</name>
+				<description>Slides images from right to left</description>
+				<properties>
+					<items>
+						<caption>Not in use</caption>
+					</items>
+					<images>
+						<caption>Images</caption>
+					</images>
+				</properties>
+			</sliderblock>
+			<socialmedialinkblock>
+				<name>Social media block</name>
+				<description>Used in the footer to show icon and link to social media</description>
+				<properties>
+					<title>
+						<caption>Title</caption>
+					</title>
+					<link>
+						<caption>Link</caption>
+					</link>
+					<cssclass>
+						<caption>CSS class to specify image</caption>
+					</cssclass>
+				</properties>
+			</socialmedialinkblock>
+			<buttonwithhelplinkblock>
+				<name>Button with extra ? button</name>
+				<description>Used in the footer to control the buttons in the footer</description>
+				<properties>
+					<text>
+						<caption>Text on the button</caption>
+					</text>
+					<link>
+						<caption>Link for the button</caption>
+					</link>
+					<helplink>
+						<caption>Link for help button</caption>
+					</helplink>
+				</properties>
+			</buttonwithhelplinkblock>
+			<twocolumnsblock>
+				<name>2 columns block</name>
+				<description>2 columns - 50%</description>
+				<properties>
+					<leftcolumn>
+						<caption>Left column - 50%</caption>
+					</leftcolumn>
+					<rightcolumn>
+						<caption>Right column - 50%</caption>
+					</rightcolumn>
+				</properties>
+			</twocolumnsblock>
+			<vimeoblock>
+				<name>Vimeo video block</name>
+				<description>Shows embed video from Vimeo</description>
+				<properties>
+					<vimeovideolink>
+						<caption>Link to video page on Vimeo</caption>
+					</vimeovideolink>
+					<heading>
+						<caption>Not used</caption>
+					</heading>
+					<videotext>
+						<caption>Not used</caption>
+					</videotext>
+					<coverimage>
+						<caption>Preview image</caption>
+					</coverimage>
+				</properties>
+			</vimeoblock>
+			<youtubeblock>
+				<name>YouTube video block</name>
+				<description>Shows embed video from YouTube</description>
+				<properties>
+					<youtubevideolink>
+						<caption>Link to video page on YouTube</caption>
+					</youtubevideolink>
+					<heading>
+						<caption>not used</caption>
+					</heading>
+					<videotext>
+						<caption>not used</caption>
+					</videotext>
+					<coverimage>
+						<caption>Preview image</caption>
+					</coverimage>
+				</properties>
+			</youtubeblock>
+			<viddlerblock>
+				<name>Viddler video block</name>
+				<description>Viser embed video fra Viddler</description>
+				<properties>
+					<viddleervideolink>
+						<caption>Link to video page on Viddler</caption>
+					</viddleervideolink>
+					<heading>
+						<caption>not used</caption>
+					</heading>
+					<videotext>
+						<caption>not used</caption>
+					</videotext>
+					<coverimage>
+						<caption>Preview image</caption>
+					</coverimage>
+				</properties>
+			</viddlerblock>
+			<fashionproductcontent>
+				<name>Product</name>
+				<description>Product with editable fields</description>
+				<properties>
+					<descriptivecolor>
+						<caption>Descriptive color</caption>
+					</descriptivecolor>
+					<facetcolor>
+						<caption>Color</caption>
+					</facetcolor>
+					<colorcode>
+						<caption>Color code</caption>
+					</colorcode>
+					<sizetype>
+						<caption>Size type</caption>
+					</sizetype>
+					<sizedescription>
+						<caption>Size description</caption>
+					</sizedescription>
+					<sizeunit>
+						<caption>Size unit</caption>
+					</sizeunit>
+					<fit>
+						<caption>Fit</caption>
+					</fit>
+					<showinlist>
+						<caption>Show in product list</caption>
+					</showinlist>
+					<newitemtext>
+						<caption>New item text</caption>
+					</newitemtext>
+					<sizeandfit>
+						<caption>Size and fit</caption>
+					</sizeandfit>
+					<detailsandmaintenance>
+						<caption>Details and maintenance</caption>
+					</detailsandmaintenance>
+					<description>
+						<caption>Description</caption>
+					</description>
+				</properties>
+			</fashionproductcontent>
+			<salescounter>
+				<caption>Number of sold items</caption>
+			</salescounter>
+			<newsletterunsubscribepage>
+				<name>Newsletter unsubscribe page</name>
+				<description>Page where user can unsubscribe from the Customer Club</description>
+				<properties>
+					<title>
+						<caption>Title</caption>
+					</title>
+					<mainbody>
+						<caption>Text</caption>
+					</mainbody>
+				</properties>
+			</newsletterunsubscribepage>
+			<newsletterpage>
+				<name>Newsletter</name>
+				<description>Put together a page and send it to users</description>
+				<properties>
+					<title>
+						<caption>Title</caption>
+					</title>
+					<lead>
+						<caption>Lead text</caption>
+					</lead>
+					<mainimage>
+						<caption>Main image</caption>
+					</mainimage>
+					<mainbody>
+						<caption>Main body</caption>
+					</mainbody>
+					<callout>
+						<caption>Call out</caption>
+					</callout>
+					<maincontentarea>
+						<caption>Content area</caption>
+					</maincontentarea>
+				</properties>
+			</newsletterpage>
+		</contenttypes>
+	</language>
+</languages>

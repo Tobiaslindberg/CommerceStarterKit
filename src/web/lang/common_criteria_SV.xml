@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="svenska" id="sv">
+    <common>
+      <visitorgroups>
+        <criteria>
+          <userattribute>
+            <anymonth>Obestämd månad</anymonth>
+            <anyyear>Obestämt år</anyyear>
+            <attributenamenotselected>Välj ett attribut</attributenamenotselected>
+            <category>Community-kriterier</category>
+            <description>Kriterium för användarattribut</description>
+            <displayName>Användarattribut</displayName>
+            <false>falskt</false>
+            <lowerboundgreaterthanupperbound>Lägsta gränsvärde måste vara lägre än eller lika med högsta gränsvärde.</lowerboundgreaterthanupperbound>
+            <true>sant</true>
+          </userattribute>
+        </criteria>
+      </visitorgroups>
+    </common>
+  </language>
+</languages>

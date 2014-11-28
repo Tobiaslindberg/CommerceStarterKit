@@ -1,0 +1,49 @@
+﻿@model OxxCommerceStarterKit.Core.Objects.Address
+@{
+    Layout = null;
+}
+<div class="form-group">
+    @Html.LabelFor(m => m.FirstName)
+    @Html.EditorFor(m => m.FirstName, new { @class = "form-control firstname" })
+    @Html.ValidationMessageFor(m => m.FirstName)
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.LastName)
+    @Html.EditorFor(m => m.LastName, new { @class = "form-control lastname" })
+    @Html.ValidationMessageFor(m => m.LastName)
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.StreetAddress)
+    @Html.EditorFor(m => m.StreetAddress, new { @class = "form-control streetaddress", ng_model = "shippingAddressStreetAddress", ng_change = "refreshDeliveryLocations()",
+												 ng_init = string.Format("initShippingAddress('{0}', '{1}', '{2}', {3})", Model.StreetAddress, Model.ZipCode, Model.City, string.IsNullOrWhiteSpace(Model.DeliveryServicePoint) ? "undefined" : Model.DeliveryServicePoint)
+})
+    @Html.ValidationMessageFor(m => m.StreetAddress)
+</div>
+<div class="form-group form-inline zip">
+	<div class="form-group">
+		@Html.LabelFor(m => m.ZipCode)
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(m => m.City)
+	</div>
+</div>
+<div class="form-inline">
+    <div class="form-group">
+        @Html.EditorFor(m => m.ZipCode, new { @class = "form-control zipcode", ng_model = "shippingAddressPostalCode", ng_change = "refreshDeliveryLocations()" })
+        @Html.ValidationMessageFor(m => m.ZipCode)
+    </div>
+    <div class="form-group">
+        @Html.EditorFor(m => m.City, new { @class = "form-control city", ng_model = "shippingAddressCity", ng_change = "refreshDeliveryLocations()"  })
+        @Html.ValidationMessageFor(m => m.City)
+    </div>
+</div>
+@if (ViewData.ModelState.ContainsKey("ShippingAddress.DeliveryServicePoint") && 0 < ViewData.ModelState["ShippingAddress.DeliveryServicePoint"].Errors.Count)
+{
+    <div ng-show="showDeliveryServicePointValidationMessage()" class="field-validation-error">@ViewData.ModelState["ShippingAddress.DeliveryServicePoint"].Errors.First().ErrorMessage</div>
+}
+<div class="delivery-location" ng-show="shippingAddressPostalCode.trim() && shippingAddressCity.trim()">
+	<h3>@Html.Translate("/common/accountpages/delivery_service_point")</h3>
+	<img src="/Content/Images/ajax-loader-lightbg-ts.gif" ng-show="getDeliveryLocationsTimeout || getDeliveryLocations">
+	<div ng-show="showDeliveryLocationError()" class="field-validation-error">@Html.Translate("/common/accountpages/no_delivery_service_point_found")</div>
+	<div id="delivery-locations"></div>
+</div>

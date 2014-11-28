@@ -1,0 +1,38 @@
+﻿@using OxxCommerceStarterKit.Core
+@model string
+           
+@{
+    @*string placeholdertext = ViewData.ModelMetadata.AdditionalValues.ContainsKey(Constants.ViewData.PlaceholderData) ? 
+        ViewData.ModelMetadata.AdditionalValues[Constants.ViewData.PlaceholderData].ToString() :
+        ViewData.ModelMetadata.DisplayName;
+
+    var angularmodel = ViewData["angular"];
+
+    if (angularmodel != null)
+    {
+        @Html.TextBoxFor(m => m, new {@placeholder = @placeholdertext, @class = ViewData["class"], data_ng_model = @angularmodel})
+    }
+    else
+    {
+          @Html.TextBoxFor(m => m, new { @placeholder = @placeholdertext, @class = ViewData["class"] })
+    }*@
+    
+    foreach (var k in new ViewDataDictionary<string>(ViewData))
+    {
+        var hyphenated = k.Key.Replace('_', '-');
+
+        if (k.Key != hyphenated)
+        {
+            ViewData.Remove(k.Key);
+            ViewData[hyphenated] = k.Value;
+        }
+    }
+
+    if (!ViewData.ContainsKey("placeholder"))
+    {
+        ViewData["placeholder"] = ViewData.ModelMetadata.AdditionalValues.ContainsKey(Constants.ViewData.PlaceholderData) ? ViewData.ModelMetadata.AdditionalValues[Constants.ViewData.PlaceholderData].ToString() : ViewData.ModelMetadata.DisplayName;
+    }
+    
+    @Html.TextBoxFor(m => m, ViewData)
+}
+

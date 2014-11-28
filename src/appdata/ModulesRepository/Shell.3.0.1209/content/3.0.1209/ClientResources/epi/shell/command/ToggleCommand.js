@@ -1,0 +1,2 @@
+//>>built
+define("epi/shell/command/ToggleCommand",["dojo/_base/declare","epi/shell/command/_Command"],function(_1,_2){return _1([_2],{property:null,active:false,_execute:function(){var _3=this.property,_4=!this.active;this.model.set(_3,_4);this.set("active",_4);},_onModelChange:function(){var _5=this.model,_6=_5&&_5[this.property],_7=typeof _6=="boolean";this.set("canExecute",_7);this.set("active",_7&&_6);}});});

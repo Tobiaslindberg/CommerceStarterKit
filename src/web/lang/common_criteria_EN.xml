@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="English" id="en">
+    <common>
+      <visitorgroups>
+        <criteria>
+          <userattribute>
+            <anymonth>Any month</anymonth>
+            <anyyear>Any year</anyyear>
+            <attributenamenotselected>Please select an attribute</attributenamenotselected>
+            <category>Community Criteria</category>
+            <description>User Attribute Criterion</description>
+            <displayName>User Attribute</displayName>
+            <false>false</false>
+            <lowerboundgreaterthanupperbound>Lower bound value must be less than or equal to upper bound value.</lowerboundgreaterthanupperbound>
+            <true>true</true>
+          </userattribute>
+        </criteria>
+      </visitorgroups>
+    </common>
+  </language>
+</languages>

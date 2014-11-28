@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+    <language name="English" id="en">
+        <visitorgroupscriteriapack>
+            <timeperiodcriterion>
+                <category>Time and Place Criteria</category>
+                <displayname>Time Period</displayname>
+                <description>Matches when the current time and date is in the time period specified</description>
+                <time>Time</time>
+                <date>Date</date>
+                <from>From:</from>
+                <to>To:</to>
+            </timeperiodcriterion>
+        </visitorgroupscriteriapack>
+    </language>
+</languages>

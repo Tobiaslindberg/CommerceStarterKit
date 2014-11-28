@@ -1,0 +1,25 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.PageListBlockItemViewModel
+<div class="page-item">
+	@if (Model.ImageUrl != null)
+	{
+		<div class="image">
+			<a href="@Url.ContentUrl(Model.ContentLink)">
+				@if (!string.IsNullOrEmpty(Model.ImageUrl)) { 
+				<img src="@(Model.ImageUrl)" class="img-responsive" />
+				}
+				else
+				{
+					<img src="/siteassets/system/no-image.png" />
+				}
+			</a>
+		</div>
+	}
+	<div class="text">
+		<a class="name" href="@Url.ContentUrl(Model.ContentLink)">@Model.Title</a>
+		@if (!string.IsNullOrEmpty(Model.Text))
+		{
+			<p>@Model.Text</p>
+		}
+	</div>
+</div>
+

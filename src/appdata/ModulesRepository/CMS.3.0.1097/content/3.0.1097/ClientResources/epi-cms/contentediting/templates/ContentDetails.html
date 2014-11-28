@@ -1,0 +1,32 @@
+﻿<div class="epi-containerLayout">
+    <ul>
+        <li class="epi-formsRow">
+            <label>${resources.visibleto.title}</label>
+            <div class="epi-formsWidgetWrapper">
+                <span data-dojo-attach-point="visibleToNode" class="dijitInline"></span>
+                <div data-dojo-type="dijit/form/Button" data-dojo-attach-point="manageAccessRightsButton" data-dojo-attach-event="onClick: _onManageAccessRightsClick" class="epi-chromelessButton epi-chromelessLinkButton epi-functionLink epi-valign--top">${resources.manage}</div>
+            </div>
+        </li>
+        <li class="epi-formsRow">
+            <label>${resources.existinglanguages}</label>
+            <div class="epi-formsWidgetWrapper">
+                <span data-dojo-attach-point="languagesNode" class="dijitInline"></span>
+            </div>
+        </li>
+        <li class="epi-formsRow">
+            <label>${resources.idandtypename}</label> 
+            <div class="epi-formsWidgetWrapper">
+                <span data-dojo-attach-point="idNode" class="dijitInline"></span>, <span data-dojo-attach-point="typeNode" class="dijitInline"></span>
+            </div>
+        </li>
+        <li class="epi-formsRow">
+            <label></label>
+            <div class="epi-formsWidgetWrapper">
+                <div data-dojo-attach-point="dropdownButton" data-dojo-type="dijit/form/DropDownButton" class="dijit dijitReset dijitInline epi-mediumButton">
+                    <span>${resources.toolsbutton.label}</span>
+                    <div data-dojo-type="dijit/DropDownMenu" data-dojo-attach-point="additionalActionsMenu"></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

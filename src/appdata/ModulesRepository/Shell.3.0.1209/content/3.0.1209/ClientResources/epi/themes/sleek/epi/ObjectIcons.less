@@ -1,0 +1,50 @@
+﻿// Set Up 
+@icon_size-small: 16;
+@icon_size-medium: 24;
+@icon_size-large: 32;
+
+.objectIcons(@iconSize, @y: 1, @x: 0) {
+    @posY: (@iconSize * @y);
+    @posX: (@iconSize * @x);
+
+    background: url('images/icons/objectIcons@{iconSize}x@{iconSize}.png') -@posX + 0px -@posY + 0px no-repeat;
+    height: @iconSize + 0px;
+    width: @iconSize + 0px;
+}
+
+.icons_list-small(@x) {
+    .epi-iconObjectRoot                         { .objectIcons(@icon_size-small, 1, @x); }
+    .epi-iconObjectTrash                        { .objectIcons(@icon_size-small, 2, @x); }
+    .epi-iconObjectStart                        { .objectIcons(@icon_size-small, 3, @x); }
+    .epi-iconObjectPage                         { .objectIcons(@icon_size-small, 4, @x); }
+    .epi-iconObjectContainer                    { .objectIcons(@icon_size-small, 5, @x); }
+    .epi-iconObjectInternalLink                 { .objectIcons(@icon_size-small, 6, @x); }
+    .epi-iconObjectExternalLink                 { .objectIcons(@icon_size-small, 7, @x); }
+    .epi-iconObjectNoLink                       { .objectIcons(@icon_size-small, 8, @x); }
+    .epi-iconObjectFetchContent                 { .objectIcons(@icon_size-small, 9, @x); }
+    .epi-iconObjectContainerFetchContent        { .objectIcons(@icon_size-small, 10, @x); }
+    .epi-iconObjectSharedBlock                  { .objectIcons(@icon_size-small, 11, @x); }
+    .epi-iconObjectFolder                       { .objectIcons(@icon_size-small, 12, @x); }
+    .epi-iconObjectFolderOpen                   { .objectIcons(@icon_size-small, 13, @x); }
+    .epi-iconObjectCatalog                      { .objectIcons(@icon_size-small, 14, @x); }
+    .epi-iconObjectCategory                     { .objectIcons(@icon_size-small, 15, @x); }
+    .epi-iconObjectProduct                      { .objectIcons(@icon_size-small, 16, @x); }
+    .epi-iconObjectVariation                    { .objectIcons(@icon_size-small, 17, @x); }
+    .epi-iconObjectPackage                      { .objectIcons(@icon_size-small, 18, @x); }
+    .epi-iconObjectBundle                       { .objectIcons(@icon_size-small, 19, @x); }
+    .epi-iconObjectUnknown                      { .objectIcons(@icon_size-small, 20, @x); }
+    .epi-iconObjectImage                        { .objectIcons(@icon_size-small, 21, @x); }
+    .epi-iconObjectFolderAllSites               { .objectIcons(@icon_size-small, 22, @x); }
+    .epi-iconObjectFolderThisSite               { .objectIcons(@icon_size-small, 23, @x); }
+    .epi-iconObjectPageContextual               { .objectIcons(@icon_size-small, 24, @x); }
+    .epi-iconObjectSharedBlockContextual        { .objectIcons(@icon_size-small, 25, @x); }
+    .epi-iconObjectOptimizingBlockContextual    { .objectIcons(@icon_size-small, 25, @x); }
+    .epi-iconObjectProductContextual            { .objectIcons(@icon_size-small, 26, @x); }
+    .epi-iconObjectContainerContextual          { .objectIcons(@icon_size-small, 27, @x); }
+    .epi-iconObjectVideo                        { .objectIcons(@icon_size-small, 28, @x); }
+}
+
+// Usage
+.Sleek {
+    .icons_list-small(0);
+}

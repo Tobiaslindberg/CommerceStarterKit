@@ -1,0 +1,22 @@
+﻿@using OxxCommerceStarterKit.Web.Helpers
+@model OxxCommerceStarterKit.Web.Models.ViewModels.PageListBlockViewModel
+@{
+	Layout = null;
+	int pages = Model.Pages.Count();
+	int columns = 12 / (pages > 0 && pages < 3 ? pages : 3);
+}
+@Html.FullRefreshPropertiesMetaData(new[] { "Count", "SortOrder", "Root", "PageTypeFilter", "CategoryFilter", "Recursive" })
+<div class="border"></div>
+<div class="row pages">
+	@foreach (var page in Model.Pages) {
+		page.ImageExtraUrlParameters = Html.GetImageWidth("col-sm-" + columns);
+		<div class="col-xs-6 col-sm-@(columns)">
+			@Html.Partial("PagePartials/_PageListItem", page)
+		</div>
+	}
+</div>
+<script type="text/javascript">
+	$(function () {
+	    commercestarterkit.equalHeight('.pagelistblock .page-item .text', 80, 30);
+	});
+</script>

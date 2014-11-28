@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+    <language name="en" id="en">
+        <enums>
+            <episerver>
+                <visitorgroupscriteriapack>
+                    <selectedlanguagecondition>
+                        <isviewingin>Is</isviewingin>
+                        <isnotviewingin>Is Not</isnotviewingin>
+                    </selectedlanguagecondition>
+                </visitorgroupscriteriapack>
+            </episerver>
+        </enums>
+        <visitorgroupscriteriapack>
+            <selectedlanguagecriterion>
+                <category>Site Criteria</category>
+                <displayname>Selected Language</displayname>
+                <description>Inspects the language that the user is viewing a page in when using fallbacks</description>
+                <condition>Condition</condition>
+                <selectedlangauge>Selected Language</selectedlangauge>
+            </selectedlanguagecriterion>
+        </visitorgroupscriteriapack>
+    </language>
+</languages>

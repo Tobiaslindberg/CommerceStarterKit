@@ -1,0 +1,13 @@
+﻿<SequentialWorkflowActivity x:Class="EPiCode.Commerce.Workflow.Admin.POSplitShipmentsWorkflow"
+                            x:Name="POSplitShipmentsWorkflow"
+                            xmlns:ns0="clr-namespace:EPiCode.Commerce.Workflow.Activities;Assembly=EPiCode.Commerce.Workflow.Activities, Culture=neutral, PublicKeyToken=null"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+  <ns0:GetFulfillmentWarehouseActivity PickupWarehouseInShipment="{ActivityBind POSplitShipmentsWorkflow,Path=PickupWarehouseInShipment}"
+                                       Warnings="{ActivityBind POSplitShipmentsWorkflow,Path=Warnings}"
+                                       OrderGroup="{ActivityBind POSplitShipmentsWorkflow,Path=OrderGroup}"
+                                       x:Name="GetFulfillmentWarehouse" />
+  <ns0:ShipmentSplitActivity x:Name="shipmentSplitActivity1"
+                             OrderGroup="{ActivityBind POSplitShipmentsWorkflow,Path=OrderGroup}"
+                             Warnings="{ActivityBind POSplitShipmentsWorkflow,Path=Warnings}" />
+</SequentialWorkflowActivity>

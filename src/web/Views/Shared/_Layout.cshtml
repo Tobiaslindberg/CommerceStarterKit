@@ -1,0 +1,100 @@
+﻿@using EPiServer.Framework.Web.Mvc.Html
+@using EPiServer.Security
+@using OxxCommerceStarterKit.Web.Business
+@using OxxCommerceStarterKit.Web.Helpers
+@using OxxCommerceStarterKit.Web.Models.PageTypes
+@{
+    var chrome = (Chrome)ViewBag.Chrome;
+}
+<!DOCTYPE html>
+<html lang="no" ng-app="productApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-config" content="none" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" type="image/ico" href="" />
+    <!--[if lt IE 9]>
+      <script src="@Url.Content("~/Scripts/libraries/html5shiv.js")"></script>
+      <script src="@Url.Content("~/Scripts/libraries/respond.min.js")"></script>
+    <![endif]-->
+    @Styles.Render("~/Content/css")
+    <link media="print" href="@Url.Content("~/Content/css/print.css")" rel="stylesheet" type="text/css" />
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("Head", false)
+    @Html.RequiredClientResources(EPiServer.Framework.Web.RenderingTags.Header)
+    @{
+        SettingsBlock settings = SiteConfiguration.Current().Settings;
+        if (settings != null)
+        {
+            if (string.IsNullOrEmpty(settings.HeaderScripts) == false)
+            {
+                @Html.Raw(settings.HeaderScripts)
+            }
+        }
+    }
+</head>
+<body>
+    @Html.RenderEPiServerQuickNavigator()
+    
+    @if (chrome.ShowWarning)
+    {
+        @Html.Partial("SetupWarning")
+    }
+
+    <header role="banner" class="header">
+        @Html.Partial("_Header", chrome)
+    </header>
+    <div class="container drop-shadow">
+        <section role="main" class="page">
+            <div class="container">
+                <div id="productDialog" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <a href="javascript:;" class="close" role="button">@Html.Translate("/common/layout/close_dialog")</a>
+                            <div class="modal-body product-page"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="sizeGuideDialog" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <a href="javascript:;" class="close" role="button">Close</a>
+                            <div class="modal-body"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="lightbox" class="lightbox fade" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="lightbox-dialog">
+                        <div class="lightbox-content">
+                            <a href="javascript:;" class="close" role="button">@Html.Translate("/common/layout/close_dialog")</a>
+                            <img src="about:blank">
+                        </div>
+                    </div>
+                </div>
+                @RenderBody()
+            </div>
+        </section>
+    </div>
+    <footer role="contentinfo" class="footer">
+        @Html.Partial("_Footer", chrome)
+    </footer>
+
+    <script src="~/Scripts/libraries/jquery-migrate-1.2.1.min.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryui")
+    @*  @Scripts.Render("~/bundles/jqueryval")*@
+    <script src="~/Scripts/js/components/login.js"></script>
+
+    @Scripts.Render("~/bundles/general")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/angular_app")
+    <script type="text/javascript">
+        Oxx.AjaxUtils.sitePath = '@Url.Content("~/")';
+        Oxx.AjaxUtils.language = '@chrome.Language';
+    </script>
+    @RenderSection("scripts", required: false)
+    @Html.RequiredClientResources(EPiServer.Framework.Web.RenderingTags.Footer)
+</body>
+</html>

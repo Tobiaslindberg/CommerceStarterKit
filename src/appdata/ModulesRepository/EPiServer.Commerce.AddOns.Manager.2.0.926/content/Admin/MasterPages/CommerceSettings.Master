@@ -1,0 +1,19 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CommerceSettings.master.cs" Inherits="EPiServer.Commerce.AddOns.Manager.MasterPages.CommerceSettings, EPiServer.Commerce.AddOns.Manager" MasterPageFile="~/MasterPages/CommerceSite.Master" %>
+<%@ Import Namespace="EPiServer.Shell.Navigation" %>
+<%@ Import Namespace="EPiServer.Shell"%>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeaderContent" runat="server">
+    <script type="text/javascript" src="<%= Paths.ToShellResource("ClientResources/EPi/Views/Settings/Settings.js") %>"></script>
+    <asp:ContentPlaceHolder ID="HeaderContent" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+        <div id="epi-applicationBodySidebar">
+                <%= Html.LocalMenu(MenuPaths.User + "/LocalCommerceSettingsMenu")%>
+        </div>
+        <div id="epi-applicationBodyMainWrapper">
+            <div id="epi-applicationBodyMain">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            </div>
+        </div>
+</asp:Content>

@@ -1,0 +1,6 @@
+﻿@using OxxCommerceStarterKit.Web.Extensions
+@model EPiServer.Commerce.Catalog.ContentTypes.EntryContentBase
+
+<a href="@Url.ContentUrl(Model.ContentLink)">
+	<img src="@Html.AssetUrl(Model)/thumbnail" />
+</a>

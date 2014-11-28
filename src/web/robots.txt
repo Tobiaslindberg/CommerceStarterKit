@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# The sitemap must be an absolute URL
+# sitemap: http://mysite.com/sitemap.xml

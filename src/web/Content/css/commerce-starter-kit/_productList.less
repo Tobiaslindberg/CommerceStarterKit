@@ -1,0 +1,160 @@
+@import "_variables.less";
+.product-list, .fashionproductcontent, .wineskucontent {
+	h2 {
+		margin-bottom: 1em;
+		font-family: @fontSerif;
+	}
+
+	margin-bottom: 30px;
+    .three {
+        .product:nth-child(3n+1) {
+            clear: left;
+        }
+    }
+    .five {
+        .product:nth-child(5n+1) {
+            clear: left;
+        }
+        .product {
+            width: 20%;
+			.name {
+				font-size: 16px;
+			}
+        }
+    }
+	.product {
+		margin-bottom: 20px;
+		position: relative;
+        
+
+		h3 {
+			font-family: @fontSerif;
+			text-align: center;
+			font-size: 20px;
+			margin-bottom: 0;
+            margin-top:0;
+		}
+
+		.image {
+			text-align: center;
+            margin-bottom: 1em;
+		}
+		img {
+			margin: 0 auto;
+			max-height: 252px;
+			width: auto;
+		}
+        .newitemtext {
+			text-align: center;
+            color: #999;
+        }		
+		.price {
+			font-size: 16px;
+			font-family: @fontSerif;
+			text-align: center;
+		}
+	}
+}
+
+// Override For Different Block Sizes (Display Options)
+
+.wineskucontent.half {
+    .product {
+        .price{
+            font-size: 16px;
+			font-family: @fontSerif;
+			text-align: center;
+
+        }
+    }
+}
+
+.product-list-page {
+    margin-top: 30px;
+    h1 {
+        line-height: 28px;
+        border-bottom: 1px solid #dedede;
+        margin-bottom: 20px;
+        padding-right: 55px;
+    }
+    h3 {
+        margin: 0 0 10px 0;
+		font-size: 16px;
+    }
+    h4 {
+        margin: 0 0 5px;
+        font-weight: bold;
+		font-size: 16px;
+    }
+    .checkbox-list {
+        border-top: 1px solid #dedede;
+        padding: 12px 0;
+		margin-bottom: 20px;
+    }
+    label {
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 22px;
+        margin: 0 0 10px;
+    }
+    .top-controls {
+        float: right;
+        margin-top: -37px;
+    }
+    .collection {
+        margin-bottom: 20px;
+        h3 {
+            padding: 0 0 3px;
+            border-bottom: 1px solid #dedede;
+            font-weight: bold;
+        }
+         ul {
+            padding: 0 0 6px;
+            margin: 0;
+        }
+         li {
+            list-style-type: none;
+            line-height: 22px;
+        }
+         li.active {
+            font-weight: bold;
+        }
+    }
+}
+
+
+
+.view-selector {
+    width: 53px;
+    height: 14px;
+    overflow: hidden;
+    .view-three {
+        float: left;
+        margin-right: 4px;
+        cursor: pointer;
+        span {
+            width: 7px;
+            height: 11px;
+        }
+    }
+    .selected {
+        span {
+            background-color: #999999;
+        }
+    }
+    span {
+        display: block;
+        float: left;
+        overflow: hidden;
+        background-color: #cccccc;
+        margin-right: 1px;
+    }
+    .view-five {
+        cursor: pointer;
+        span {
+            width: 4px;
+            height: 5px;
+            margin-bottom: 1px;
+        }
+    }
+}

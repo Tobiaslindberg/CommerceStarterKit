@@ -1,0 +1,2 @@
+//>>built
+define("epi-cms/contentediting/editors/model/CollectionEditorItemModel",["dojo/_base/declare","dojo/_base/lang","dojo/Stateful"],function(_1,_2,_3){return _1([_3],{_itemData:null,name:null,fromItemData:function(_4){_2.mixin(this,_4);this._itemData=_4;this.name=this.name||this._itemData.toString();},toItemData:function(){var _5={};for(var _6 in this._itemData){if(this._itemData.hasOwnProperty(_6)){_5[_6]=this.get(_6);}}return _5;}});});

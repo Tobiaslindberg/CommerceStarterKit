@@ -1,0 +1,2 @@
+//>>built
+define("epi-cms/form/UrlValidationTextBoxModel",["dojo/_base/declare","dojo/_base/lang","epi/Url"],function(_1,_2,_3){return _1([],{validator:function(_4,_5){var re=new RegExp("^(https://?|http://|ftp://|file://|\\\\).+$","i");return re.test(_4);},validateUrl:function(_6){_6=_6?_2.trim(_6):"";if(_6===""){return _6;}var _7="file://";var _8=new _3(_6);if(_6.indexOf("//")===0){_6=_7+_6.substr(_6.indexOf("//")+2);}else{if(_6.indexOf("\\\\")===0){_6=_7+_6.substr(_6.indexOf("\\\\")+2);}else{if(!(_8.scheme)){_6="http://"+_6;}}}return _6;}});});

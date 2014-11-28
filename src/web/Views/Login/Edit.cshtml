@@ -1,0 +1,20 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.LoginViewModel
+
+<h3>@Html.Translate("/contenttypes/loginpage/properties/logincontent/caption")</h3>
+@Html.PropertyFor(m => m.CurrentPage.LoginContent)
+
+<h3>@Html.Translate("/contenttypes/loginpage/properties/resetpasswordcontent/caption")</h3>
+@Html.PropertyFor(m => m.CurrentPage.ResetPasswordContent)
+
+<h3>@Html.Translate("/contenttypes/loginpage/properties/sentpasswordtokencontent/caption")</h3>
+@Html.PropertyFor(m => m.CurrentPage.SentPasswordTokenContent)
+
+<h3>@Html.Translate("/contenttypes/loginpage/properties/requestpasswordcontent/caption")</h3>
+@Html.PropertyFor(m => m.CurrentPage.RequestPasswordContent)
+
+<h3>@Html.Translate("/contenttypes/loginpage/properties/requestpasswordsubject/caption")</h3>
+@Html.PropertyFor(m => m.CurrentPage.RequestPasswordSubject)
+
+<h3>@Html.Translate("/contenttypes/loginpage/properties/requestpasswordexisting/caption")</h3>
+@Html.PropertyFor(m => m.CurrentPage.RequestPasswordExisting)
+<div>Enter [RETURNURL] for placing tokenized url.</div>

@@ -1,0 +1,22 @@
+﻿<div class="clearfix three" ng-class="{ 'five': nrOfColumns === 5, 'three': nrOfColumns !== 5 }">
+    <div class="product col-xs-6 col-sm-4" ng-repeat="product in products">
+        <div class="image">
+            <a href="{{ product.ProductUrl }}">
+                <img class="img-responsive" ng-src="{{product.DefaultImageUrl}}?preset=largethumbnail" />
+            </a>
+        </div>
+		<div class="newitemtext" ng-show ="product.NewItemText">{{product.NewItemText}}</div>
+        <h2 class="name">{{ product.DisplayName }}</h2>
+        <div class="price">
+            {{ product.DefaultPrice }}
+			<span class="member-price" ng-show="product.CustomerClubPrice">@Html.Translate("/common/product/member_price"): {{product.CustomerClubPrice}}</span>
+			<span class="sale-price" ng-show="product.DiscountedPrice">@Html.Translate("/common/product/sale_price"): {{product.DiscountedPrice}}</span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <button class="center-block" style="float: none !important;" ng-click="LoadMore()" ng-show="showMore">
+        @Html.Translate("/common/productlist/show_more")
+    </button>
+</div>

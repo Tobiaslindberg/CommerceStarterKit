@@ -1,0 +1,31 @@
+﻿<SequentialWorkflowActivity x:Class="EPiCode.Commerce.Workflow.Admin.POSaveChangesWorkflow"
+                            x:Name="POSaveChangesWorkflow"
+                            xmlns:ns0="clr-namespace:EPiCode.Commerce.Workflow.Activities;Assembly=EPiCode.Commerce.Workflow.Activities, Culture=neutral, PublicKeyToken=null"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+  <IfElseActivity x:Name="ifElseActivity2">
+    <IfElseBranchActivity x:Name="ifElseBranchActivity2">
+      <IfElseBranchActivity.Condition>
+        <CodeCondition Condition="CheckInstoreInventory" />
+      </IfElseBranchActivity.Condition>
+      <ns0:AdjustInstoreInventoryActivity PickupWarehouseInShipment="{ActivityBind POSaveChangesWorkflow,Path=PickupWarehouseInShipment}"
+                                          Warnings="{ActivityBind POSaveChangesWorkflow,Path=Warnings}"
+                                          Description="Adjusts In Store Inventory."
+                                          OrderGroup="{ActivityBind POSaveChangesWorkflow,Path=OrderGroup}"
+                                          x:Name="AdjustInstoreInventoryActivity" />
+    </IfElseBranchActivity>
+    <IfElseBranchActivity x:Name="ifElseBranchActivity3">
+      <ns0:AdjustInventoryActivity Description="Adjusts Inventory."
+                                   x:Name="adjustInventoryActivity2"
+                                   OrderGroup="{ActivityBind POSaveChangesWorkflow,Path=OrderGroup}"
+                                   Warnings="{x:Null}" />
+    </IfElseBranchActivity>
+  </IfElseActivity>
+  <ns0:ProcessPaymentActivity Warnings="{ActivityBind POSaveChangesWorkflow,Path=Warnings}"
+                              OrderGroup="{ActivityBind POSaveChangesWorkflow,Path=OrderGroup}"
+                              Payment="{x:Null}"
+                              x:Name="processPaymentActivity1" />
+  <ns0:CalculateTotalsActivity x:Name="calculateTotalsActivity1"
+                               OrderGroup="{ActivityBind POSaveChangesWorkflow,Path=OrderGroup}"
+                               Warnings="{ActivityBind POSaveChangesWorkflow,Path=Warnings}" />
+</SequentialWorkflowActivity>

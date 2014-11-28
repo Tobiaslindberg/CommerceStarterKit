@@ -1,0 +1,55 @@
+@import "_variables.less";
+.checkout-page {
+    .addresses {
+        padding: 15px 10px 50px;
+    }
+    .payment-methods-title {
+        margin-top: 19px;
+        margin-bottom: 19px;
+        padding: 0 12px;
+        h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+    }
+    .payment-methods {
+        margin-bottom: 19px;
+        margin-top: 19px;
+    }
+    .payment-method:first-child {
+        border-left: 1px solid #dedede;
+    }
+    .payment-method {
+        border-top: 1px solid #dedede;
+        border-bottom: 1px solid #dedede;
+        border-right: 1px solid #dedede;
+        background-color: white;
+        float: left;
+        padding: 20px 0 0 25px;
+        width: 184px;
+        height: 93px;
+        .image {
+            height: 40px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input[type=radio] {
+            vertical-align: top;
+        }
+    }
+    .terms {
+        label {
+            font-weight: normal;
+        }
+        input {
+            margin-left: 10px;
+            margin-right: 5px;
+        }
+        .terms-error {
+            color: #ff0000;
+        }
+    }
+    & > .buttons {
+        margin-top: 19px;
+    }
+}

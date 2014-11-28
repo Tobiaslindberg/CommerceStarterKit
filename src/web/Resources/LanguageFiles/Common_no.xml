@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+	<language name="Norwegian" id="no">
+		<common>
+			<validation>
+				<required>{0} må fylles ut</required>
+				<compare>{0} og {1} er ulike.</compare>
+				<compare_passwords>Passordene er ikke like</compare_passwords>
+			</validation>
+			<layout>
+				<search_label>Søk</search_label>
+				<search_placeholder>Søk</search_placeholder>
+				<search_button>Søk</search_button>
+				<open_menu>Åpne meny</open_menu>
+				<close_dialog>Lukk</close_dialog>
+			</layout>
+			<account>
+				<loginheader>Eksisterende bruker</loginheader>
+				<registerheader>Registrer ny bruker</registerheader>
+				<username>E-post:</username>
+				<password>Passord:</password>
+				<password_repeat>Bekreft passord:</password_repeat>
+				<username_placeholder>Skriv inn e-postadresse</username_placeholder>
+				<password_placeholder>Skriv inn passord</password_placeholder>
+				<password_repeat_placeholder>Gjenta passord</password_repeat_placeholder>
+				<rememberme>Husk meg</rememberme>
+				<signin>Logg inn</signin>
+				<signout>Logg ut</signout>
+				<register>Registrer ny bruker her</register>
+				<forgot_password>Glemt passord</forgot_password>
+				<reset_password>Tilbakestill passord</reset_password>
+				<login_error>Feil brukernavn eller passord</login_error>
+				<register_error_unique_username>E-postadressen er allerede registert</register_error_unique_username>
+				<register_error>Ugyldig brukernavn</register_error>
+				<too_weak_password>Passordet er for svakt</too_weak_password>
+				<nonexisting_account>Din e-postadresse er ikke registrert i vårt system</nonexisting_account>
+				<interests>
+					<title>Interesseområder:</title>
+					<man>Menn</man>
+					<woman>Kvinner</woman>
+				</interests>
+				<memberclub>
+					<join_label>Bli med i medlemsklubb:</join_label>
+					<join_club_option>Ja</join_club_option>
+					<dont_join_club_option>Nei</dont_join_club_option>
+				</memberclub>
+			</account>
+			<cart>
+				<move_to_wishlist>Flytt til ønskeliste</move_to_wishlist>
+				<move_wishlist_to_cart>Flytt hele listen til handlekurven</move_wishlist_to_cart>
+				<share_wishlist>Del ønskelisten</share_wishlist>
+				<move_to_cart>Flytt til handlekurv</move_to_cart>
+				<remove_from_cart>Fjern</remove_from_cart>
+				<product_table_headers>
+					<product>Produkt</product>
+					<description>Beskrivelse</description>
+					<color>Farge</color>
+					<size>Størrelse</size>
+					<quantity>Antall</quantity>
+					<price>Pris</price>
+					<article_number>Art.nr.</article_number>
+				</product_table_headers>
+				<products>Produkter samlet</products>
+				<shipping>Frakt</shipping>
+				<taxes>Herav MVA</taxes>
+				<total>Totalt</total>
+				<discount>Rabatt</discount>
+				<empty_cart>Tøm kurv</empty_cart>
+				<goto_payment>Til kasse</goto_payment>
+				<personal_info>Personopplysninger</personal_info>
+				<article_number>Artnr.:</article_number>
+				<no_products>Handlekurven er tom</no_products>
+				<discount_code_label>Rabattkode:</discount_code_label>
+				<discount_code_add>Legg til</discount_code_add>
+				<quantity_one>stk</quantity_one>
+				<quantity_many>stk</quantity_many>
+				<quantity_suffix>stk</quantity_suffix>
+				<coupon_codes>
+					<add_label>Rabattkode:</add_label>
+					<add>Legg til</add>
+					<applied_label>Rabattkoder lagt til: </applied_label>
+					<error_already_used>Rabattkoden er allerede lagt til</error_already_used>
+					<error_invalid>Rabattkoden er ikke gyldig</error_invalid>
+				</coupon_codes>
+			</cart>
+			<accountpages>
+				<title>Hei {0}!</title>
+				<personal_data_title>Dine personopplysninger</personal_data_title>
+				<change_password_title>Endre passord</change_password_title>
+				<shipping_address_title>Leveringsadresse:</shipping_address_title>
+				<billing_address_title>Faktureringsadresse:</billing_address_title>
+				<placeholder>
+					<firstname>Skriv inn fornavn</firstname>
+					<lastname>Skriv inn etternavn</lastname>
+					<address>Skriv inn adresse</address>
+					<zipcode>Postnummer</zipcode>
+					<city>Sted</city>
+					<email>E-post</email>
+					<phone>Telefon (med landkode)</phone>
+					<old_password>Nåværende passord</old_password>
+					<new_password>Nytt passord</new_password>
+					<repeat_password>Gjenta nytt passord</repeat_password>
+					<zip>Postnummer</zip>
+				</placeholder>
+				<firstname_label>Fornavn</firstname_label>
+				<lastname_label>Etternavn</lastname_label>
+				<address_label>Adresse</address_label>
+				<zipcode_label>Postnummer</zipcode_label>
+				<city_label>Sted</city_label>
+				<missing_delivery_service_point>Mangler utleveringssted</missing_delivery_service_point>
+				<no_delivery_service_point_found>Fant ingen utleveringssteder. Har du stavet riktig?</no_delivery_service_point_found>
+				<delivery_service_point>Utleveringssted:</delivery_service_point>
+				<email_label>E-post:</email_label>
+				<phone_label>Telefon:</phone_label>
+				<save>Lagre</save>
+				<send>Send</send>
+				<old_password_label>Nåværende passord</old_password_label>
+				<new_password_label>Nytt passord</new_password_label>
+				<repeat_password_label>Gjenta passord</repeat_password_label>
+				<orders_title>Din ordrehistorikk:</orders_title>
+				<order_table_headers>
+					<number>Ordrenr.:</number>
+					<date>Dato:</date>
+					<status>Status:</status>
+				</order_table_headers>
+			</accountpages>
+			<checkout>
+				<placeholder>
+					<socialsecuritynumber>Personnummer</socialsecuritynumber>
+					<email>E-post adresse</email>
+					<phone>Telefon (med landkode)</phone>
+					<password>Passord</password>
+					<confirmpassword>Bekreft passord</confirmpassword>
+				</placeholder>
+				<payment_methods_title>Betalingsmåte</payment_methods_title>
+				<ssn_label>Personnummer:</ssn_label>
+				<ssn_text>Personnummer må oppgis ved bestilling med faktura, eller ved delbetaling</ssn_text>
+				<create_password>Lag nytt passord (valgfritt):</create_password>
+				<place_order>Gå til betaling</place_order>
+				<copy_address_fields>Samme leveringsadresse som faktureringsadresse</copy_address_fields>
+				<terms_label>Jeg godtar {kjøpsvilkårene}</terms_label>
+				<terms_error>Du må godta kjøpsvilkårene</terms_error>
+			</checkout>
+			<product>
+				<add_to_wishlist>Legg i ønskeliste</add_to_wishlist>
+				<add_to_wishlist_complete>Lagt til i ønskelisten</add_to_wishlist_complete>
+				<add_to_cart>Legg i handlekurven</add_to_cart>
+				<add_to_cart_complete>Lagt til i handlekurven</add_to_cart_complete>
+				<share>Del:</share>
+				<show_fullscreen>Vis fullskjerm</show_fullscreen>
+				<cross_sell>Passer med</cross_sell>
+				<click_to_zoom>Trykk for å zoome</click_to_zoom>
+				<member_price>Medlemspris</member_price>
+				<sale_price>Salg</sale_price>
+				<out_of_stock>Utsolgt</out_of_stock>
+				<in_stock>på lager</in_stock>
+				<similar_products>Tilsvarende produkter</similar_products>
+				<color>Farge</color>
+				<colors>
+					<white>hvit</white>
+					<beige>beige</beige>
+					<yellow>gul</yellow>
+					<red>rød</red>
+					<blue>blå</blue>
+					<green>grønn</green>
+					<brown>brun</brown>
+					<grey>grå</grey>
+					<black>sort</black>
+				</colors>
+				<about_the_product>Om produktet</about_the_product>
+		<details>Detaljer</details>
+				<size_and_fit>Størrelse &amp; passform</size_and_fit>
+				<details_and_treatment>Detaljer &amp; behandling</details_and_treatment>
+				<delivery_and_return>Levering &amp; retur</delivery_and_return>
+				<price>Pris</price>
+				<sizeguide>Trykk her for å se størrelsesguide</sizeguide>
+		<wine>
+		  <about_the_product>Om vinen</about_the_product>
+		  <year>Årgang</year>
+		  <grapemix>Råstoff</grapemix>
+		  <alcohol>Alkohol</alcohol>
+		  <closure>Stengning</closure>
+		  <color>Farge</color>
+		  <maturity>Lagringsgrad</maturity>
+		  <region>Distrikt</region>
+		  <size>Størrelse</size>
+		  <country>Land</country>
+		  <taste>Karakteristikk</taste>
+		  <brand>Produsent</brand>
+		</wine>
+			</product>
+			<productlist>
+				<collections_title>Kolleksjon</collections_title>
+				<filters_title>Filtrering</filters_title>
+				<fit_title>Passform</fit_title>
+				<colors_title>Farger</colors_title>
+				<sizes_title>Størrelser</sizes_title>
+				<show_more>Vis flere produkter</show_more>
+				<all_product_categories>Alle kategorier</all_product_categories>
+				<all_fits>Alle passformer</all_fits>
+				<all_colors>Alle farger</all_colors>
+				<all_sizes>Alle størrelser</all_sizes>
+				<regions_title>Regioner</regions_title>
+				<all_regions>Alle regioner</all_regions>
+				<grapemix_title>Druetyper</grapemix_title>
+				<all_grapes>Alle druer</all_grapes>
+				<countries_title>Land</countries_title>
+				<all_countries>Alle land</all_countries>
+			</productlist>
+			<articlelist>
+				<show_more>Vis flere artikler</show_more>
+			</articlelist>
+			<search>
+				<search_button>Søk</search_button>
+				<search_textbox>Søkeord</search_textbox>
+				<search_textbox_placeholder>Skriv inn søkeord</search_textbox_placeholder>
+				<products_title>“{0}” Vi fant &lt;strong&gt;{{{{totalResult}}}}&lt;/strong&gt; resultater</products_title>
+				<articles_title>“{0}” Vi fant &lt;strong&gt;{{{{articlesTotalResult}}}}&lt;/strong&gt; artikler</articles_title>
+				<read_more>Les mer</read_more>
+			</search>
+			<receipt>
+				<print>Skriv ut kvittering</print>
+				<size_prefix>Str.</size_prefix>
+				<email>
+					<subject>Ordrebekreftelse - Ordrenummer: {0}</subject>
+					<title>Kvittering</title>
+				</email>
+				<shipment>
+					<title>Pakkesporing</title>
+				</shipment>
+			</receipt>
+			<store_search>
+				<button>Søk</button>
+				<placeholder>Finn din butikk</placeholder>
+				<validation>Må fylles ut</validation>
+			</store_search>
+			<social>
+				<follow_title>Følg oss</follow_title>
+			</social>
+			<newsletter_unsubscribe>
+				<email_label>Din e-postadresse</email_label>
+				<email_placeholder>Skriv inn din e-postadresse</email_placeholder>
+				<email_validation_error>Må være en gyldig e-postadresse</email_validation_error>
+				<submit>Meld av</submit>
+				<success_response>Du er nå avmeldt</success_response>
+				<not_registered>Din e-postadresse er ikke registrert i vårt system</not_registered>
+				<newsletter_text>Meld deg av nyhetsbrevet</newsletter_text>
+			</newsletter_unsubscribe>
+		</common>
+	</language>
+</languages>

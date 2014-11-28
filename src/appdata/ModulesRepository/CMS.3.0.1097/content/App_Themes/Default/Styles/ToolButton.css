@@ -1,0 +1,351 @@
+﻿/********************************************************************/
+/**  Common Tool button style  **************************************/
+/********************************************************************/
+span.epi-cmsButton, 
+span.epitoolbutton, 
+span.epi-cmsButton img, 
+span.epitoolbutton img, 
+span.epitoolbuttonmousedown img, 
+span.epi-cmsButton a img, 
+span.epitoolbutton a img, 
+span.epitoolbutton a img, 
+span.epitoolbuttonmousedown a img, 
+span.epitoolbutton input,
+span.epi-cmsButton input[type="image"], 
+span.epitoolbutton input[type="image"],
+span.epi-cmsButton input[type="image"], 
+span.epitoolbutton input[type="image"],
+span.epi-cmsButton img+input,
+span.epitoolbutton img+input,
+span.epi-cmsButton img+input[value],
+span.epitoolbutton img+input[value],
+span.epitoolbuttonmousedown,
+.epi-cmsButton input, 
+.epi-cmsButtonmousedown input {
+    cursor: pointer;
+}
+
+span.epi-cmsButton, 
+span.epi-cmsButtondisabled {
+	background-image: url("../Images/Tools/ToolButtonBg.gif");
+	background-repeat: repeat-x;
+    background-position: left top;
+    border: 1px solid #8D8D8D;
+	display: inline-block; /* Triggering hasLayout in IE */
+    overflow: visible;
+	white-space: nowrap;
+	padding: 2px;
+	margin-right: 5px;
+}
+
+span.epitoolbutton, 
+span.epitoolbuttondisabled {
+	position: relative;
+	background-image: url("../Images/Tools/ToolButtonBg.gif");
+	background-repeat : repeat-x;
+	background-position: left top;
+	font-size: 19px;
+	line-height: 25px;
+	border: 1px solid #8D8D8D;
+	border-bottom-color: #8D8D8D;
+	overflow: visible;
+	white-space: nowrap;
+	margin-right: 5px;
+}
+
+span.epi-cmsButton img, 
+span.epi-cmsButtondisabled img,
+span.epitoolbutton img, 
+span.epitoolbuttondisabled img, 
+span.epitoolbuttonmousedown img {
+	left: 2px;
+	position: relative;
+	margin-right: -18px;
+	border: 0;
+	-moz-user-select:none;
+	z-index: 0;
+}
+
+/* Help button (old commandtool) in commandwindow */
+span.epi-cmsButton a img, 
+span.epi-cmsButtondisabled a img,
+span.epitoolbutton a img, 
+span.epitoolbuttondisabled a img, 
+span.epitoolbuttonmousedown a img {
+	vertical-align: top;
+	margin-right: 0;
+	left: 0;
+}
+
+span.epitoolbutton input, 
+span.epitoolbuttondisabled input {
+	vertical-align:top;
+	font-size: 11px;
+	line-height: 22px;
+	height: 24px;
+	border: 0;
+	background-color: transparent;
+    overflow: visible;
+    padding: 0 2px;
+    margin-top: 1px;
+}
+
+span.epi-cmsButton input[type="image"], 
+span.epi-cmsButtondisabled input[type="image"],
+span.epitoolbutton input[type="image"],
+span.epitoolbuttondisabled input[type="image"] {
+	position: relative;
+}
+
+span.epi-cmsButton img+input,
+span.epi-cmsButtondisabled img+input,
+span.epitoolbutton img+input,
+span.epitoolbuttondisabled img+input,
+span.epitoolbuttonmousedown img+input,
+span.epi-cmsButtonmousedown img+input {
+	padding-right: 2px;
+	padding-left: 14px;
+	*padding-left: 24px;
+	vertical-align: top;
+	background-image: url(../Images/Tools/Clear.gif); /* so that <input> with <img> before it can be click/dragable */
+    position: relative;
+}
+
+span.epi-cmsButton img+input[value],
+span.epi-cmsButtondisabled img+input[value],
+span.epitoolbutton img+input[value],
+span.epitoolbuttondisabled img+input[value] {
+	padding-left: 20px;
+}
+
+span.epi-cmsButtondisabled, 
+span.epitoolbuttondisabled {
+    background-image: none;
+	filter: alpha(opacity = 50);
+	opacity: 0.5;
+}
+
+/* position: relative screws with opacity inheritance from <span> in IE7+ */
+span.epi-cmsButtondisabled img,
+span.epi-cmsButtondisabled input[type="image"],
+span.epi-cmsButtondisabled img+input,
+span.epitoolbuttondisabled img,
+span.epitoolbuttondisabled input[type="image"],
+span.epitoolbuttondisabled img+input {
+	*filter: alpha(opacity = 50);
+}
+
+span.epitoolbuttonmousedown {
+	background-image: none;
+	background-color: #fff;
+}
+
+/* Toolbar */
+.epitoolbararea {
+	background-image: url("../Images/General/ToolbarBg.gif");
+	background-repeat: repeat-x;
+	padding: 2px 0;
+}
+
+/* toolbar on page */
+.epi-toolbarOnPage {
+    border-bottom: 1px solid #8B8B8B;
+    padding: 0.2em 0;
+    overflow: hidden;
+    width: 100%;
+}
+.epi-setHeightToolbar {
+    height: 20px;
+    padding-top: 5px;
+}
+/* ToolbuttonContainer css */
+div.epitoolbuttoncontainer {
+	float: left;
+	padding-left: 0.3em;
+	height: 24px;
+}
+
+div.epitoolbuttoncontainer.epitoolbuttoncontainerright {
+	float: right !important;
+}
+
+/* Makes a help button align next to toolbuttons */
+span.epi-helpBtnWrapper img {
+    vertical-align: middle;
+    #padding-bottom: 6px;
+}
+
+div.epitoolbuttoncontainernarrowmargin {
+	margin-right: 0;
+}
+
+div.epitoolbuttoncontainernoborder div.epitoolbuttoncontaineritem {
+    border-right: 0px !important;   
+}
+
+.epiemptybackground div.epitoolbuttoncontainer {
+	background-position: 0% -28px;
+	height: 24px;
+}
+
+div.epitoolbuttoncontaineritem {
+	float: left;
+	white-space: nowrap;
+	padding-right: 4px;
+	border-right: 1px solid #b2b2b2;
+	height: 24px;
+}
+
+.epiemptybackground div.epitoolbuttoncontaineritem {
+	background-position: 100% -28px;
+}
+
+/* ToolButtons in a container */
+div.epitoolbuttoncontaineritem span.epitoolbutton, 
+div.epitoolbuttoncontaineritem span.epitoolbuttondisabled, 
+div.epitoolbuttoncontaineritem span.epitoolbuttonmousedown,
+div.epitoolbuttoncontaineritem span.epi-cmsButton, 
+div.epitoolbuttoncontaineritem span.epi-cmsButtondisabled {
+	border: 1px solid transparent; 
+	background-image: none;
+	margin-left: 0;
+}
+
+
+div.epitoolbuttoncontaineritem span.epitoolbutton:hover,
+div.epitoolbuttoncontaineritem span.epi-cmsButton:hover {	
+	border: 1px solid #ccc;
+	background: #efefef;
+}
+
+
+/* Tool Buttons (input) */
+.epi-cmsButton input, 
+.epi-cmsButtonmousedown input,
+.epi-cmsButtondisabled input {
+    border: 0;
+    background-color: transparent;
+    vertical-align: middle;
+    overflow: visible;
+    height: 18px;
+    }
+
+/* Tool Buttons and Image Editor Buttons with Icons */
+input.epi-cmsButton-tools, 
+input.epi-cmsButton-imageEditor {
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: 18px;
+    width: 18px;
+    overflow: visible;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    }
+
+/* Tool Button Icons */
+input.epi-cmsButton-tools {
+    background-image: url(../Images/Tools/SpriteTools.png);
+    _background-image: url(../Images/Tools/SpriteTools.gif);
+}
+
+/* Tool and Image Editor Buttons w/Text */
+input.epi-cmsButton-text {
+    padding-left: 20px;
+    width: auto;
+    min-width: 20px;
+}
+
+/* Positioning for Tool Button Sprite */
+.epi-cmsButton-Add{ background-position: 0 0;  } 
+.epi-cmsButton-AddFile{ background-position: 0 -118px;  } 
+.epi-cmsButton-AddFiles{ background-position: 0 -236px;  } 
+.epi-cmsButton-AddOff{ background-position: 0 -354px;  } 
+.epi-cmsButton-AddUser{ background-position: 0 -472px;  } 
+.epi-cmsButton-AddUserGroup{ background-position: 0 -590px;  } 
+.epi-cmsButton-AdminMode{ background-position: 0 -708px;  } 
+.epi-cmsButton-ArrowLeft{ background-position: 0 -826px;  } 
+.epi-cmsButton-ArrowRight{ background-position: 0 -944px;  } 
+.epi-cmsButton-Cancel{ background-position: 0 -1062px;  } 
+.epi-cmsButton-Check{ background-position: 0 -1180px;  } 
+.epi-cmsButton-CheckBoxOff{ background-position: 0 -1298px;  } 
+.epi-cmsButton-CheckBoxOn{ background-position: 0 -1416px;  } 
+.epi-cmsButton-CheckOff{ background-position: 0 -1534px;  } 
+.epi-cmsButton-CheckinVersion{ background-position: 0 -1652px;  } 
+.epi-cmsButton-Compare{ background-position: 0 -1770px;  } 
+.epi-cmsButton-Copy{ background-position: 0 -1888px;  } 
+.epi-cmsButton-CopyToClipboard{ background-position: 0 -2006px;  } 
+.epi-cmsButton-CreateFolder{ background-position: 0 -2124px;  } 
+.epi-cmsButton-Cut{ background-position: 0 -2242px;  } 
+.epi-cmsButton-DelayPublish{ background-position: 0 -2360px;  } 
+.epi-cmsButton-Delete{ background-position: 0 -2478px;  } 
+.epi-cmsButton-DeleteFolder{ background-position: 0 -2596px;  } 
+.epi-cmsButton-DeleteLanguage{ background-position: 0 -2714px;  } 
+.epi-cmsButton-DeleteOff{ background-position: 0 -2832px;  } 
+.epi-cmsButton-Down{ background-position: 0 -2950px;  } 
+.epi-cmsButton-DownOff{ background-position: 0 -3068px;  } 
+.epi-cmsButton-Edit{ background-position: 0 -3186px;  } 
+.epi-cmsButton-EditMode{ background-position: 0 -3304px;  } 
+.epi-cmsButton-EditOff{ background-position: 0 -3422px;  } 
+.epi-cmsButton-Export{ background-position: 0 -3540px;  } 
+.epi-cmsButton-Favorite{ background-position: 0 -3658px;  } 
+.epi-cmsButton-File{ background-position: 0 -3776px;  } 
+.epi-cmsButton-FileManagement{ background-position: 0 -3894px;  } 
+.epi-cmsButton-FolderUp{ background-position: 0 -4012px;  } 
+.epi-cmsButton-Help{ background-position: 0 -4130px;  } 
+.epi-cmsButton-Import{ background-position: 0 -4248px;  } 
+.epi-cmsButton-LanguageOverview{ background-position: 0 -4366px;  } 
+.epi-cmsButton-LanguagePage{ background-position: 0 -4484px;  } 
+.epi-cmsButton-LanguageProperty{ background-position: 0 -4602px;  } 
+.epi-cmsButton-LanguageSettings{ background-position: 0 -4720px;  } 
+.epi-cmsButton-Locked{ background-position: 0 -4838px;  } 
+.epi-cmsButton-LogOut{ background-position: 0 -4956px;  } 
+.epi-cmsButton-MySettings{ background-position: 0 -5074px;  } 
+.epi-cmsButton-NewFile{ background-position: 0 -5192px;  } 
+.epi-cmsButton-NewPage{ background-position: 0 -5310px;  } 
+.epi-cmsButton-OpenInWindow{ background-position: 0 -5428px;  } 
+.epi-cmsButton-Paste{ background-position: 0 -5546px;  } 
+.epi-cmsButton-Print{ background-position: 0 -5664px;  } 
+.epi-cmsButton-Property{ background-position: 0 -5782px;  } 
+.epi-cmsButton-Publish{ background-position: 0 -5900px;  } 
+.epi-cmsButton-QuickEdit{ background-position: 0 -6018px;  } 
+.epi-cmsButton-Redo{ background-position: 0 -6136px;  } 
+.epi-cmsButton-Refresh{ background-position: 0 -6254px;  } 
+.epi-cmsButton-RenameFolder{ background-position: 0 -6372px;  } 
+.epi-cmsButton-Report{ background-position: 0 -6490px;  } 
+.epi-cmsButton-ReportCenter{ background-position: 0 -6608px;  } 
+.epi-cmsButton-Revert{ background-position: 0 -6724px;  } 
+.epi-cmsButton-Save{ background-position: 0 -6842px;  } 
+.epi-cmsButton-SavePublish{ background-position: 0 -6960px;  } 
+.epi-cmsButton-SaveShow{ background-position: 0 -7078px;  } 
+.epi-cmsButton-Search{ background-position: 0 -7196px;  } 
+.epi-cmsButton-Security{ background-position: 0 -7314px;  } 
+.epi-cmsButton-StickyEditOff{ background-position: 0 -7432px;  } 
+.epi-cmsButton-StickyEditOn{ background-position: 0 -7550px;  } 
+.epi-cmsButton-Undo{ background-position: 0 -7668px;  } 
+.epi-cmsButton-Unlocked{ background-position: 0 -7786px;  } 
+.epi-cmsButton-Up{ background-position: 0 -7904px;  } 
+.epi-cmsButton-UpOff{ background-position: 0 -8022px;  } 
+.epi-cmsButton-ViewMode{ background-position: 0 -8140px;  } 
+.epi-cmsButton-Warning{ background-position: 0 -8258px;  } 
+.epi-cmsButton-Window{ background-position: 0 -8376px;  } 
+.epi-cmsButton-WindowSplit{ background-position: 0 -8494px;  } 
+.epi-cmsButton-Workflow{ background-position: 0 -8610px;  } 
+.epi-cmsButton-WorkflowInformation{ background-position: 0 -8728px;  } 
+.epi-cmsButton-WorkflowView{ background-position: 0 -8846px;  } 
+
+/* Image Editor Button Icons */
+input.epi-cmsButton-imageEditor {
+    background-image: url(../Images/Tools/SpriteImageEditor.png);
+    _background-image: url(../Images/Tools/SpriteImageEditor.gif);
+}
+
+/* Positioning for Image Editor Sprite */
+.epi-cmsButton-crop { background-position: 0 0; } 
+.epi-cmsButton-fliph { background-position: 0 -118px; } 
+.epi-cmsButton-flipv { background-position: 0 -236px; } 
+.epi-cmsButton-resize { background-position: 0 -354px; } 
+.epi-cmsButton-rotateccw { background-position: 0 -472px; } 
+.epi-cmsButton-rotatecw { background-position: 0 -590px; } 
+.epi-cmsButton-transform { background-position: 0 -708px; } 

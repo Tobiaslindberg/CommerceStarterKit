@@ -1,0 +1,2 @@
+//>>built
+define("epi-cms/conversion/PropertyDateConverter",["dojo/_base/declare","dojo/date/locale","epi/datetime"],function(_1,_2,_3){return _1(null,{sourceDataType:"epi.cms.propertydate",targetDataType:"runtimeType",registerDefaultConverters:function(_4){_4.registerConverter(this.sourceDataType,this.targetDataType,this);},convert:function(_5,_6,_7){if(_7&&_5===this.sourceDataType&&_6===this.targetDataType){var _8=_3.deserialize(_7);var _9=_2.format(_8,{});return _2.parse(_9,{});}return null;}});});

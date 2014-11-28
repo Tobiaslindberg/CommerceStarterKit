@@ -1,0 +1,114 @@
+﻿
+<div class="filters" ng-cloak>
+	<h4>@Html.Translate("/common/productlist/filters_title") <a href="javascript:;" class="visible-xs glyphicon glyphicon-chevron-down" data-toggle="collapse" data-target="#id8971263"> </a></h4>
+	<div id="id8971263" class="collapse" ng-class="(windowWidth >= 768) ? 'in' : ''">
+		<div class="checkbox-list category" ng-show="ShowMainCategoryFacets">
+			<div ng-repeat="mainCategory in mainCategoryFacets">
+				<label class="checkbox" for="{{mainCategory.Name}}">
+					<input type="checkbox" name="{{mainCategory.Name}}" id="{{mainCategory.Name}}" ng-click="updateMainCategorySelection($event, mainCategory.Name)" ng-model="mainCategory.Selected" />
+					{{mainCategory.Name}} ({{mainCategory.Count}})
+				</label>
+			</div>
+		</div>
+		<div class="checkbox-list category" ng-show="ShowCategoriesAsCheckboxes">
+			<label class="checkbox" for="selectAllCagetories" ng-cloak>
+				<input type="checkbox" id="selectAllCagetories" name="selectAllCagetories" ng-model="categoriesSelectedAll" ng-disabled="categoriesSelectedAll" ng-click="checkAll(selectedProductCategories)" />
+				@Html.Translate("/common/productlist/all_product_categories")
+			</label>
+			<div ng-repeat="productCategory in productCategories">
+				<label class="checkbox" for="{{productCategory.Id}}" ng-cloak>
+					<input type="checkbox" name="{{productCategory.Id}}" id="{{productCategory.Id}}" ng-click="updateProductSelection($event, productCategory.Id)" ng-model="productCategory.Selected" />
+					<span ng-bind="productCategory.Name"></span> (<span ng-bind="productCategory.Count"></span>)
+				</label>
+			</div>
+		</div>
+		<div ng-show="productFitFacets.length" class="checkbox-list fit">
+			<h4>@Html.Translate("/common/productlist/fit_title")</h4>
+			<label class="checkbox" for="selectAllFits" ng-cloak>
+				<input type="checkbox" id="selectAllFits" name="selectAllFits" ng-model="fitSelectAll" ng-disabled="fitSelectAll" ng-click="checkAll(selectedFitFacets)" />
+				@Html.Translate("/common/productlist/all_fits")
+			</label>
+			<div ng-repeat="productFit in productFitFacets">
+				<label class="checkbox" for="{{productFit.Name}}">
+					<input type="checkbox" name="{{productFit.Name}}" id="{{productFit.Name}}" ng-click="updateFitSelection($event, productFit.Name)" ng-model="productFit.Selected" />
+					{{productFit.Name}} ({{productFit.Count}})
+				</label>
+			</div>
+		</div>
+	    <div ng-show="productColorFacets.length" class="checkbox-list colors">
+	        <h4>@Html.Translate("/common/productlist/colors_title")</h4>
+	        <label class="checkbox" for="selectAllColors" ng-cloak>
+	            <input type="checkbox" name="selectAllColors" id="selectAllColors" ng-model="colorSelectedAll" ng-disabled="colorSelectedAll" ng-click="checkAll(selectedColorFacets)" />
+	            @Html.Translate("/common/productlist/all_colors")
+	        </label>
+	        <div ng-repeat="productColor in productColorFacets">
+	            <label class="checkbox" for="{{productColor.Name}}">
+	                <input type="checkbox" name="{{productColor.Name}}" id="{{productColor.Name}}" ng-click="updateColorSelection($event, productColor.Name)" ng-model="productColor.Selected" />
+	                {{productColor.Name}} ({{productColor.Count}})
+	            </label>
+	        </div>
+	    </div>
+        @*Country facets*@
+	    <div ng-show="productCountryFacets.length" class="checkbox-list countries">
+	        <h4>@Html.Translate("/common/productlist/countries_title")</h4>
+	        <label class="checkbox" for="selectAllCountries" ng-cloak>
+                <input type="checkbox" name="selectAllCountries" id="selectAllCountries" ng-model="countriesSelectedAll" ng-disabled="countriesSelectedAll" ng-click="checkAll(selectedCountryFacets)" />
+	            @Html.Translate("/common/productlist/all_countries")
+	        </label>
+            <div ng-repeat="country in productCountryFacets">
+                <label class="checkbox" for="{{country.Name}}">
+                    <input type="checkbox" name="{{country.Name}}" id="{{country.Name}}" ng-click="updateCountrySelection($event, country.Name)" ng-model="country.Selected" />
+                    {{country.Name}} ({{country.Count}})
+                </label>
+            </div>
+	    </div>
+        @*Region facets*@
+        <div ng-show="productRegionFacets.length" class="checkbox-list regions">
+            <h4>@Html.Translate("/common/productlist/regions_title")</h4>
+            <label class="checkbox" for="selectAllRegions" ng-cloak>
+                <input type="checkbox" name="selectAllRegions" id="selectAllRegions" ng-model="regionsSelectedAll" ng-disabled="regionsSelectedAll" ng-click="checkAll(selectedRegionFacets)" />
+                @Html.Translate("/common/productlist/all_regions")
+            </label>
+            <div ng-repeat="region in productRegionFacets">
+                <label class="checkbox" for="{{region.Name}}">
+                    <input type="checkbox" name="{{region.Name}}" id="{{region.Name}}" ng-click="updateRegionSelection($event, region.Name)" ng-model="region.Selected" />
+                    {{region.Name}} ({{region.Count}})
+                </label>
+            </div>
+        </div>
+        <div ng-show="productGrapeFacets.length" class="checkbox-list grapes">
+            <h4>@Html.Translate("/common/productlist/grapemix_title")</h4>
+            <label class="checkbox" for="selectAllGrapes" ng-cloak>
+                <input type="checkbox" name="selectAllGrapes" id="selectAllGrapes" ng-model="grapesSelectedAll" ng-disabled="grapesSelectedAll" ng-click="checkAll(selectedGrapeFacets)" />
+                @Html.Translate("/common/productlist/all_grapes")
+            </label>
+            <div ng-repeat="grape in productGrapeFacets">
+                <label class="checkbox" for="{{grape.Name}}">
+                    <input type="checkbox" name="{{grape.Name}}" id="{{grape.Name}}" ng-click="updateGrapeSelection($event, grape.Name)" ng-model="grape.Selected" />
+                    {{grape.Name}} ({{grape.Count}})
+                </label>
+            </div>
+        </div>
+		<div ng-show="allSizeFacetLists.length" class="checkbox-list sizes">
+			<h4>@Html.Translate("/common/productlist/sizes_title")</h4>
+			<label class="checkbox" for="selectAllSizes" ng-cloak>
+				<input type="checkbox" name="selectAllSizes" id="selectAllSizes" ng-model="sizeSelectAll" ng-disabled="sizeSelectAll" ng-click="checkAll(selectedSizeFacets)" />
+				@Html.Translate("/common/productlist/all_sizes")
+			</label>
+			<accordion close-others="true">
+				@*If there is only one list with sizes, the list should default be open*@
+				<accordion-group ng-repeat="sizeFacetList in allSizeFacetLists" is-open="sizeFacetList.SomeIsSelected || allSizeFacetLists.length == 1">
+					<accordion-heading>
+						{{sizeFacetList.SizeUnit}}<span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up':sizeFacetList.SomeIsSelected,'glyphicon-chevron-down':!sizeFacetList.SomeIsSelected }"></span>
+					</accordion-heading>
+					<div ng-repeat="productSize in sizeFacetList.SizeFacets">
+						<label class="checkbox" for="{{productSize.Name}}">
+							<input type="checkbox" name="{{productSize.Name}}" id="{{productSize.Name}}" ng-click="updateSizeSelection($event, productSize.Name,sizeFacetList.SizeUnit)" ng-model="productSize.Selected" />
+							{{productSize.Size}} ({{productSize.Count}})
+						</label>
+					</div>
+				</accordion-group>
+			</accordion>
+		</div>
+	</div>
+</div>

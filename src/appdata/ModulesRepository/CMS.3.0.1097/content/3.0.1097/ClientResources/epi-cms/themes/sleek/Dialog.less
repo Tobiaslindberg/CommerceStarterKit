@@ -1,0 +1,23 @@
+﻿.Sleek {
+    .epi-legacyDialog .epi-dialogPaneContent > .epi-firstVisible {
+        padding-top: 0;
+    }
+
+    .epi-readOnlyContentListDialog {
+        .epi-dialogPaneContent {
+            .dijitDialogPaneContentArea {
+                overflow: hidden;
+
+                .epi-thumbnailContentList {
+                    &.dgrid {
+                        height: inherit;
+
+                        .dgrid-content {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

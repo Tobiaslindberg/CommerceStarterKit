@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+    <language name="English" id="en">
+        <visitorgroupscriteriapack>
+            <downloadcriterion>
+                <category>URL Criteria</category>
+                <displayname>Downloaded file</displayname>
+                <virtualpath>Path</virtualpath>
+            </downloadcriterion>
+        </visitorgroupscriteriapack>
+    </language>
+</languages>

@@ -1,0 +1,19 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CommerceShellSettings.master.cs"
+    Inherits="EPiServer.Commerce.AddOns.Manager.MasterPages.CommerceShellSettings, EPiServer.Commerce.AddOns.Manager"
+    MasterPageFile="./CommerceSettings.Master" %>
+
+<asp:content contentplaceholderid="HeaderContent" runat="server">
+    <script type="text/javascript" src="<%= EPiServer.UriSupport.ResolveUrlFromUtilBySettings("javascript/episerverscriptmanager.js") %>"></script>
+    <script type="text/javascript" src="<%= EPiServer.UriSupport.ResolveUrlFromUIBySettings("javascript/system.js") %>"></script>
+    <script type="text/javascript" src="<%= EPiServer.UriSupport.ResolveUrlFromUIBySettings("javascript/system.aspx") %>"></script>
+    <asp:ContentPlaceHolder ID="HeaderContent" runat="server" />
+</asp:content>
+<asp:content contentplaceholderid="MainContent" runat="server">
+    <form runat="server">
+        <div class="epi-contentContainer">
+            <div class="epi-padding epi-overflowHidden">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+        </div>
+    </form>
+</asp:content>

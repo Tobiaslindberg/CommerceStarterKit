@@ -1,0 +1,24 @@
+﻿<SequentialWorkflowActivity x:Class="EPiCode.Commerce.Workflow.CartCheckoutWorkflow" x:Name="CartCheckoutWorkflow" xmlns:ns0="clr-namespace:EPiCode.Commerce.Workflow.Activities;Assembly=EPiCode.Commerce.Workflow.Activities, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<IfElseActivity x:Name="ifElseActivity1">
+		<IfElseBranchActivity x:Name="ifElseBranchActivity1">
+			<IfElseBranchActivity.Condition>
+				<CodeCondition Condition="RunProcessPayment" />
+			</IfElseBranchActivity.Condition>
+			<ns0:ProcessPaymentActivity Warnings="{x:Null}" OrderGroup="{ActivityBind CartCheckoutWorkflow,Path=OrderGroup}" Payment="{x:Null}" x:Name="processPaymentActivity1" />
+		</IfElseBranchActivity>
+	</IfElseActivity>
+	<ns0:CalculateTotalsActivity x:Name="calculateTotalsActivity1" OrderGroup="{ActivityBind CartCheckoutWorkflow,Path=OrderGroup}" Warnings="{x:Null}" />
+	<IfElseActivity x:Name="ifElseActivity2">
+		<IfElseBranchActivity x:Name="ifElseBranchActivity2">
+			<IfElseBranchActivity.Condition>
+				<CodeCondition Condition="CheckInstoreInventory" />
+			</IfElseBranchActivity.Condition>
+			<ns0:AdjustInstoreInventoryActivity PickupWarehouseInShipment="{ActivityBind CartCheckoutWorkflow,Path=PickupWarehouseInShipment}" Warnings="{ActivityBind CartCheckoutWorkflow,Path=Warnings}" Description="Adjusts In Store Inventory." OrderGroup="{ActivityBind CartCheckoutWorkflow,Path=OrderGroup}" x:Name="adjustInstoreInventoryActivity1" />
+		</IfElseBranchActivity>
+		<IfElseBranchActivity x:Name="ifElseBranchActivity3">
+			<ns0:AdjustInventoryActivity Description="Adjusts Inventory." x:Name="adjustInventoryActivity1" OrderGroup="{ActivityBind CartCheckoutWorkflow,Path=OrderGroup}" Warnings="{x:Null}" />
+		</IfElseBranchActivity>
+	</IfElseActivity>
+	<ns0:RecordPromotionUsageActivity UsageStatus="Used" Warnings="{x:Null}" OrderGroup="{ActivityBind CartCheckoutWorkflow,Path=OrderGroup}" x:Name="recordPromotionUsageActivity1" />
+	<ns0:CreatePurchaseOrderActivity x:Name="createPurchaseOrderActivity1" OrderGroup="{ActivityBind CartCheckoutWorkflow,Path=OrderGroup}" Warnings="{ActivityBind CartCheckoutWorkflow,Path=Warnings}" />
+</SequentialWorkflowActivity>

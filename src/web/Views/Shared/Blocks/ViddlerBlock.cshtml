@@ -1,0 +1,20 @@
+﻿@using OxxCommerceStarterKit.Web.Models.ViewModels
+@model OxxCommerceStarterKit.Web.Models.Blocks.ViddlerBlock
+@{
+	string coverImage = "";
+	bool hasCoverImage = Model.HasCoverImage;
+	if (hasCoverImage)
+	{
+		coverImage = Url.ContentUrl(Model.CoverImage);
+	}
+}
+@if (Model.HasVideo)
+{
+	@Html.Partial("_Video", new VideoViewModel()
+{
+	CoverImageUrl = coverImage,
+	HasCoverImage = hasCoverImage,
+	IframeUrl = Model.ViddlerVideo.GetIframeUrl(hasCoverImage),
+	IframeId = "viddler-" + Model.ViddlerVideo.Id
+})
+}

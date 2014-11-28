@@ -1,0 +1,60 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.SearchPageViewModel
+@{
+	ViewBag.Title = Model.CurrentPage.Name;
+}
+<div class="product-list-page search-page">
+	<div class="row" ng-controller="ProductAndSearchController" ng-init="initSearch('@Model.Language', @Model.NumberOfProductsToShow, @Model.NumberOfArticlesToShow, '@Model.SearchedQuery')">
+		<div class="col-sm-3">
+			<aside ng-show="SearchDone" class="box" ng-cloak>
+				@Html.Partial("PagePartials/_Facets")
+			</aside>
+		</div>
+		<div class="col-sm-9">
+			<div class="product-list">
+				<div class="clearfix search-form">
+					@using (Html.BeginForm(null, null, FormMethod.Get, new { @class="form-inline", role="form" }))
+					{
+						<div class="form-group">
+							<label class="sr-only" for="searchPageTextBox">@Html.Translate("/common/search/search_textbox")</label>
+							<input ng-model="queryTerm" type="text" id="searchPageTextBox" name="q" value="@Model.SearchedQuery" ng-keyup="$event.keyCode == 13 ? search() : null" placeholder="@Html.Translate("/common/search/search_textbox_placeholder")" class="form-control">
+						</div>
+						<button ng-click="search();" class="btn btn-default btn-sm">@Html.Translate("/common/search/search_button")</button>
+					}
+
+				</div>
+				<h1>@Html.Raw(string.Format(Html.Translate("/common/search/products_title"), Model.SearchedQuery))</h1>
+				@Html.Partial("PagePartials/_PageColumnsControl")
+				<div ng-show="SearchDone" ng-cloak>
+					@Html.Partial("PagePartials/_ProductList")
+				</div>
+			</div>
+			<div class="loader" ng-show="loaderVisible === true"><img src="@Url.Content("~/Content/Images/ajax-loader-lightbg-ts.gif")" /></div>
+			<div ng-show="SearchDone" class="product-list article-list clearfix" ng-cloak>
+				<h1>@Html.Raw(string.Format(Html.Translate("/common/search/articles_title"), Model.SearchedQuery))</h1>
+				<div class="row article clearfix" ng-repeat="article in articles">
+					<div class="col-sm-2 image {{ article.Image === '' ? 'hidden' : '' }}">
+						<a href="{{article.Url}}">
+							<img class="img-responsive" ng-src="{{ article.Image === '' ? 'about:blank' : article.Image + '?preset=largethumbnail' }}" />
+						</a>
+					</div>
+					<div class="{{ article.Image === '' ? 'col-sm-12' : 'col-sm-10' }}">
+						<h2 class="name">
+							<a href="{{article.Url}}">{{article.DisplayName}}</a>
+						</h2>
+						<div class="text">
+							{{article.Description}}
+							<a href="{{article.Url}}" class="read-more">@Html.Translate("/common/search/read_more")</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix">
+				<button class="center-block" style="float: none !important;" ng-click="LoadMoreArticles()" ng-show="showMoreArticles" ng-cloak>
+					@Html.Translate("/common/articlelist/show_more")
+				</button>
+			</div>
+		</div>
+	</div>
+
+
+</div>

@@ -1,0 +1,2 @@
+//>>built
+define("epi/shell/command/OptionCommand",["dojo/_base/declare","epi/shell/command/_Command"],function(_1,_2){return _1([_2],{options:null,selected:null,property:null,postscript:function(){this.inherited(arguments);this.watch("selected",function(_3,_4,_5){if(_4!==_5){this.execute();}});},_execute:function(){this.model.set(this.property,this.selected);},_onModelChange:function(){var _6=this.model;this.set("canExecute",!!_6);this.set("selected",_6&&_6[this.property]);}});});

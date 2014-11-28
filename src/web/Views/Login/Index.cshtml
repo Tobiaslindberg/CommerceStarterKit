@@ -1,0 +1,24 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.LoginViewModel
+@{
+	ViewBag.Title = Model.CurrentPage.Name;
+}
+<div class="login-page">
+	<h1>@Model.CurrentPage.PageName</h1>
+
+	@Html.PropertyFor(m => m.CurrentPage.LoginContent)
+
+
+	@Html.EditorFor(m => m.LoginForm)
+
+	<div class="links">
+
+		@Html.ActionLink(Html.Translate("/common/account/forgot_password"), "RequestPassword", null, new { @class = "forgot" })
+
+		@if (Model.CurrentPage.RegisterPage != null) { 
+			@Html.ContentLink(Html.Translate("/common/account/register"), Model.CurrentPage.RegisterPage)
+		}
+
+	</div>
+
+
+</div>

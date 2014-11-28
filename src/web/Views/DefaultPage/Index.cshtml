@@ -1,0 +1,22 @@
+﻿@using EPiServer
+@using EPiServer.Core
+@model OxxCommerceStarterKit.Web.Models.ViewModels.IPageViewModel<EPiServer.Core.PageData>
+@{
+    ViewBag.Title = Model.CurrentPage.Name;
+}
+
+<h2>@Model.CurrentPage.Name</h2>
+
+<ul>
+    @foreach (var page in DataFactory.Instance.GetChildren<PageData>(Model.CurrentPage.ContentLink))
+    {
+        <li>
+            @Html.ContentLink(page)
+        </li>
+    }
+</ul>
+@*<div class="row">
+    <div class="col-md-12">
+        @Html.PropertyFor(x => x.CurrentPage.BodyMarkup)
+    </div>
+</div>*@

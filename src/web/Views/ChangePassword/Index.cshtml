@@ -1,0 +1,39 @@
+﻿@using OxxCommerceStarterKit.Web.Helpers
+@model OxxCommerceStarterKit.Web.Models.ViewModels.ChangePasswordViewModel
+@{
+	Layout = "~/Views/Shared/_MyPageLayout.cshtml";
+}
+<div class="change-password">
+	<h1>@string.Format(Html.Translate("/common/accountpages/title"), Model.Firstname)</h1>
+
+
+	@using (Html.BeginForm())
+ {
+		@Html.AntiForgeryToken()
+        
+        @Html.ValidationSummary()
+
+		<h2>@Html.Translate("/common/accountpages/change_password_title")</h2>
+	
+        	<div class="form-group">
+			@Html.LabelForExtended(m => m.ChangePasswordForm.OldPassword)
+			@Html.EditorFor(m => m.ChangePasswordForm.OldPassword, new { @class = "form-control new-password" })
+		</div>
+	
+        
+		<div class="form-group">
+			@Html.LabelForExtended(m => m.ChangePasswordForm.NewPassword)
+			@Html.EditorFor(m => m.ChangePasswordForm.NewPassword, new { @class = "form-control new-password" })
+		</div>
+	
+		<div class="form-group">
+			@Html.LabelForExtended(m => m.ChangePasswordForm.RepeatPassword)
+			@Html.EditorFor(m => m.ChangePasswordForm.RepeatPassword, new { @class = "form-control repeat-password" })
+		</div>
+	
+	
+		<div class="clearfix">
+			<input type="submit" value="@Html.Translate("/common/accountpages/send")" class="btn btn-primary" />
+		</div>
+ }
+</div>

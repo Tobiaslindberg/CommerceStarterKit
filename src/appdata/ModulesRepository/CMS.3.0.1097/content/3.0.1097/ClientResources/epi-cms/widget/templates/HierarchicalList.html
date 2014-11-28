@@ -1,0 +1,25 @@
+﻿<div class="epi-hierarchicalList">
+    <div data-dojo-attach-point="container"
+         data-dojo-type="dijit/layout/BorderContainer"
+         data-dojo-props="gutters: false">
+        <div class="epi-gadgetInnerToolbar"
+             data-dojo-attach-point="searchBox"
+             data-dojo-type="epi-cms/widget/SearchBox"
+             data-dojo-props="region:'top', splitter: false, triggerContextChange: this.triggerContextChange"
+             data-dojo-attach-event="onItemAction:_onSearchAction"></div>
+        <div class="epi-secondaryGadgetContainer epi-gadgetTopContainer"
+             data-dojo-attach-point="tree"
+             data-dojo-type="epi-cms/widget/FolderTree" 
+             data-dojo-props="region:'center', splitter:false, model: this.model.treeStoreModel, showRoot: false, contextMenu: this.contextMenu"></div>
+        <div data-dojo-attach-point="list" class="epi-gadgetBottomContainer"
+             data-dojo-type="epi-cms/widget/ContentList"
+             data-dojo-props="region:'bottom', splitter:true, store: this.model.store, queryOptions: this.model.listQueryOptions, contextMenu: this.contextMenu, resources: this.res">
+            <div data-dojo-attach-point="createContentArea" class="epi-createContentContainer">
+                <div class="epi-createContent">
+                    <span data-dojo-attach-point="createContentAreaIcon" class="dijitReset dijitInline dijitIcon"></span>
+                    <span data-dojo-attach-point="createContentAreaText" class="dijitReset dijitInline epi-createContentText"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

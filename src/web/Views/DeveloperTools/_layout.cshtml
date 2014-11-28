@@ -1,0 +1,35 @@
+﻿@using EPiServer
+@using EPiServer.Framework.Web.Resources
+@using EPiServer.Shell.Navigation
+<html>
+<head>
+    <title>Commerce Developer Tools: @ViewBag.Title</title>
+    @* This must come before ShellCore, or Chrome hangs *@ 
+    <script type="text/javascript" src="~/Scripts/libraries/angular.js"></script>
+
+    @*@Scripts.Render("~/static/common/js/jquery")*@
+    @Html.Raw(ClientResources.RenderResources("ShellCore"))
+    @Html.Raw(ClientResources.RenderResources("ShellWidgets"))
+    @Html.Raw(ClientResources.RenderResources("ShellCoreLightTheme"))
+    @Html.Raw(ClientResources.RenderResources("ShellWidgetsLightTheme"))
+    @Html.Raw(ClientResources.RenderResources("Navigation"))
+
+    <link rel="stylesheet" type="text/css" href="@UriSupport.ResolveUrlBySettings("~/App_Themes/Default/styles/system.css")">
+    <link rel="stylesheet" type="text/css" href="@UriSupport.ResolveUrlBySettings("~/App_Themes/Default/styles/ToolButton.css")">
+    @*<link rel="stylesheet" type="text/css" href="@UriSupport.ResolveUrlFromUIBySettings("ClientResources/Epi/Base/CMS.css")" />*@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+        /* Fix angluarJS and Bootstrap quirks for empty links */
+        .nav, .pagination, .carousel, .panel-title a {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body style="font-size: 12px;width:100%">
+    <div>
+        @Html.Raw(Html.GlobalMenu())
+        @RenderBody()
+    </div>
+</body>
+</html>

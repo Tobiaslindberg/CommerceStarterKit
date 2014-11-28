@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+    <language name="en" id="en">
+        <enums>
+            <episerver>
+                <visitorgroupscriteriapack>
+                    <querystringvaluecondition>
+                        <exists>Exist</exists>
+                        <hasvalue>Has Value</hasvalue>
+                    </querystringvaluecondition>
+                </visitorgroupscriteriapack>
+            </episerver>
+        </enums>
+        <visitorgroupscriteriapack>
+            <querystringcriterion>
+                <category>URL Criteria</category>
+                <displayname>Query String</displayname>
+                <description>Matches the request to see if it contains a querystring key with the specified value</description>
+                <key>Key</key>
+                <condition>Condition</condition>
+                <value>Value</value>
+            </querystringcriterion>
+        </visitorgroupscriteriapack>
+    </language>
+</languages>

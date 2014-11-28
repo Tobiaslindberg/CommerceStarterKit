@@ -1,0 +1,46 @@
+﻿@using OxxCommerceStarterKit.Web.Models.Blocks
+@model OxxCommerceStarterKit.Web.Models.ViewModels.PreviewModel
+@{
+	int i = 0;
+}
+<br />
+<div class="clearfix" id="preview">
+
+	@foreach (var area in Model.Areas)
+	{
+		if ((area.AreaTag != "" && !(Model.PreviewContent is SliderBlock)) ||
+			(area.AreaTag == "" && Model.PreviewContent is SliderBlock))
+		{
+		<div class="row">
+			@if (area.Supported)
+			{
+				@*<a data-toggle="collapse" data-parent="#preview" href="#@area.AreaTag">*@
+					@Html.Partial("TemplateHint", string.Format(Html.Translate("/preview/heading"), Model.PreviewContent.Name, Html.Translate(area.AreaName)))
+				@*</a>*@
+
+			<div class="@*collapse*@ @(i == 0 ? " in" : "" )" id="@area.AreaTag">
+				@Html.DisplayFor(x => area.ContentArea, new { Tag = area.AreaTag })
+			</div>
+
+			}
+			else
+			{
+				@Html.Partial("TemplateHint", string.Format(Html.Translate("/preview/norenderer"), Model.PreviewContent.Name, area.AreaName))
+			}
+		</div>
+		}
+	 i++;
+	}
+
+	@if (!Model.Areas.Any())
+	{
+		@Html.Partial("TemplateHint", string.Format(Html.Translate("/preview/norendereratall"), Model.PreviewContent.Name))
+	}
+</div>
+
+@section scripts {
+	@Scripts.Render("~/bundles/frontpage")
+	<script type="text/javascript">
+        $(function () { commercestarterkit.FrontPage.init('#preview'); });
+	</script>
+}

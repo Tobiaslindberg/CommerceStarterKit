@@ -1,0 +1,2 @@
+//>>built
+define("epi-cms/form/EmailValidationTextBox",["dojo/_base/declare","dojo/_base/lang","epi-cms/form/EmailValidationBase"],function(_1,_2,_3){return _1([_3],{postCreate:function(){this.inherited(arguments);_2.mixin(this.constraints,{allowCruft:true});},_getValueAttr:function(){var _4=this.inherited(arguments);_4=_4?_2.trim(_4):"";if(_4&&_4.indexOf("mailto:")!==0){_4="mailto:"+_4;}return _4;},_setValueAttr:function(_5){_5=_5?_5.replace("mailto:",""):"";this.inherited(arguments);}});});

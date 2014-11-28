@@ -1,0 +1,18 @@
+﻿@using EPiServer.Core
+@using OxxCommerceStarterKit.Web.Helpers
+@{
+    var chrome = (Chrome)ViewBag.Chrome;
+}
+@helper ItemTemplate(HtmlHelpers.MenuItem firstLevelItem) {
+    <dd class="@(firstLevelItem.Page.ContentLink.CompareToIgnoreWorkID(Model.CurrentPage.ContentLink) ? "active" : "")">
+        <a href="@Url.ContentUrl(firstLevelItem.Page.PageLink)" >
+            @firstLevelItem.Page.PageName
+        </a>
+    </dd>
+}
+
+<dl>
+   
+     @Html.MenuList(chrome.AccountPage, ItemTemplate)
+    
+</dl>

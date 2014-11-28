@@ -1,0 +1,35 @@
+﻿@model OxxCommerceStarterKit.Web.Models.Blocks.TwoColumnsBlock
+<table class="row two-columns-block">
+	<tr>
+		<td class="wrapper">
+			<table class="six columns">
+				<tr>
+					<td>
+						<div class="content-area" @Html.EditAttributes(x => x.LeftColumn)>
+							@if (Model.LeftColumn != null)
+							{
+								@Html.Partial("_ContentArea", Model.LeftColumn, ViewData)
+							}
+						</div>
+					</td>
+					<td class="extender"></td>
+				</tr>
+			</table>
+		</td>
+		<td class="wrapper last">
+			<table class="six columns">
+				<tr>
+					<td>
+						<div class="content-area" @Html.EditAttributes(x => x.RightColumn)>
+							@if (Model.RightColumn != null)
+							{
+								@Html.Partial("_ContentArea", Model.RightColumn, ViewData)
+							}
+						</div>
+					</td>
+					<td class="extender"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

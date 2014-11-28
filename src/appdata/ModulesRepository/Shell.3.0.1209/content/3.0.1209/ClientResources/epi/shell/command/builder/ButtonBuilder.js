@@ -1,0 +1,2 @@
+//>>built
+define("epi/shell/command/builder/ButtonBuilder",["dojo/_base/declare","dojo/_base/lang","dijit/form/Button","epi/shell/command/builder/_Builder","../_CommandModelBindingMixin"],function(_1,_2,_3,_4,_5){return _1([_4],{_buttonClass:_1([_3,_5]),_create:function(_6){var _7=_2.mixin({model:_6},this.settings);return new this._buttonClass(_7);}});});

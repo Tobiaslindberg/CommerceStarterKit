@@ -1,0 +1,28 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.Simple.LandingNodeViewModel
+@{ Layout = null; }
+<div class="product-list">
+	<div class="three">
+		@foreach (var product in Model.SearchResults)
+		{
+			<div class="product col-xs-6 col-sm-4">
+				<div class="image">
+					<a href="@product.ProductUrl">
+						<img class="img-responsive" src="@product.DefaultImageUrl" />
+					</a>
+				</div>
+				@if (!string.IsNullOrEmpty(product.NewItemText))
+				{
+					<div class="newitemtext">@product.NewItemText</div>
+				}
+				<h2 class="name">@product.DisplayName</h2>
+				<div class="price">
+					@product.DefaultPrice
+					@if (!string.IsNullOrEmpty(product.DiscountedPrice))
+					{
+						<span class="member-price">@Html.Translate("/common/product/member_price"): @product.DiscountedPrice</span>
+					}
+				</div>
+			</div>
+		}
+	</div>
+</div>

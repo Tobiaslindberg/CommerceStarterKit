@@ -1,0 +1,34 @@
+﻿@using OxxCommerceStarterKit.Web.Extensions
+@model OxxCommerceStarterKit.Web.Models.ViewModels.ICatalogViewModel<EPiServer.Commerce.Catalog.ContentTypes.CatalogContentBase>
+
+@{
+	var products = Model.Products.Value;
+}
+
+@if (products.Any())
+{
+    <div class="product-list">
+        <div class="five">
+            @foreach (var child in products)
+			{
+				if (child.CatalogContent is FashionProductContent)
+				{
+                    @*@Html.Partial("~/Views/Shared/Blocks/FashionProductContent.cshtml", child.CatalogContent, new ViewDataDictionary { { "extraCssClass", "col-sm-4" } })*@
+    <div>
+        TODO: Implement
+    </div>
+                }
+                else
+                {
+                    <div class="col-sm-4">
+                        <h5>@Html.ContentLink(child.CatalogContent)</h5>
+                        <div>@Html.Partial("_AssetImageLink", child.CatalogContent)</div>
+
+                        <div>Price: @Html.UnitPriceRange(child.Variants)</div>
+                        <div>In stock: @Html.InStockRange(child.Variants)</div>
+                    </div>
+				}
+			}
+        </div>
+    </div>
+}

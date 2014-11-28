@@ -1,0 +1,9 @@
+﻿<SequentialWorkflowActivity x:Class="EPiCode.Commerce.Workflow.Admin.POCompleteShipmentWorkflow" 
+                            x:Name="POCompleteShipmentWorkflow" 
+                            xmlns:ns0="clr-namespace:EPiCode.Commerce.Workflow.Activities;Assembly=EPiCode.Commerce.Workflow.Activities, Culture=neutral, PublicKeyToken=null"                             
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<ns0:CapturePaymentActivity x:Name="capturePaymentActivity1" Shipment="{ActivityBind POCompleteShipmentWorkflow,Path=Shipment}" OrderGroup="{ActivityBind POCompleteShipmentWorkflow,Path=OrderGroup}" Warnings="{x:Null}" />
+	<ns0:ProcessPaymentActivity x:Name="processPaymentActivity1" Payment="{x:Null}" OrderGroup="{ActivityBind POCompleteShipmentWorkflow,Path=OrderGroup}" Warnings="{x:Null}" />
+	<ns0:CalculateTotalsActivity Warnings="{x:Null}" OrderGroup="{ActivityBind POCompleteShipmentWorkflow,Path=OrderGroup}" x:Name="calculateTotalsActivity1" />
+</SequentialWorkflowActivity>

@@ -1,0 +1,81 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@RenderSection("Subject", false)</title>
+	@Html.Partial("~/Views/Emails/_inkMinified.css.cshtml")
+	<style type="text/css">
+		body, .body { background-color: white; color: black; }
+		table.header td.center { background: #000000; color: #dcdcdc; padding-top: 20px; padding-bottom: 20px; }
+		table.header td.center h1 { margin: 0; padding: 0; font-size: 36px; font-weight: normal; text-transform: uppercase; letter-spacing: 2px; text-align: center; color: #ccc; }
+		table.header td.center p { margin: 0; padding: 0; font-family: 'serif'; font-size: 16px; font-weight: normal; text-transform: uppercase; letter-spacing: 1px; text-align: center; color: #ccc; }
+		table.footer td.center { padding-top: 10px; padding-bottom: 20px; }
+		table.emailbody { width: 100%; background-color: #fcfcfc; }
+		table.emailbody td.emailinnerbody { padding-top: 20px; padding-bottom: 20px; }
+		table.twelve table.four center { min-width: 180px; }
+		table.columns td table td.wrapper { padding: 10px 20px 0 0; }
+		table.columns td table td.last { padding-right: 0; }
+		h1,h2,h3,h4,h5,h6 { font-family: Georgia, serif; letter-spacing: 0; }
+		h1 { font-size: 22px; margin: 0 0 12px; }
+		h2 { font-size: 18px; margin: 28px 0 3px; }
+		h3 { font-size: 16px; }
+		h4 { font-size: 14px; }
+		h5 { font-size: 13px; }
+		h6 { font-size: 12px; }
+		.emailbody center h2 { text-align: center; }
+		.callout .panel { background: #ECF8FF; border-color: #b9e5ff; }
+		p.intro { line-height: 24px; font-size: 14px; font-family: Arial; }
+		img { max-width: 100%; }
+		.product { text-align: center; }
+		.product .name { text-align: center; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; margin: 0 0 4px; }
+		.product .price { text-align: center; font-family: Arial; font-size: 10px; letter-spacing: 1px; }
+		.product .newitemtext { color: #ff6347; text-transform: uppercase; text-align: center; font-size: 11px; font-family: Arial; padding-top: 2px; }
+		.article-page .name { color: #000; line-height: 24px; }
+		.two-columns-block table.six table.four { width: 80px; }
+		.two-columns-block table.six table.six { width: 130px; }
+		.two-columns-block table.six table.eight { width: 180px; }
+		.two-columns-block table.six table.twelve { width: 280px; }
+
+	</style>
+	<style id="ignore">
+		.col-sm-6 { width: 48%; float: left; margin-right: 2%; margin-bottom: 20px; }
+		.content-area:after { content: ' '; clear: both; display: block; }
+		.col-sm-12 { clear: both; margin-bottom: 20px; }
+		.col-sm-12 .product { width: 32%; margin-right: 2%; float: left; }
+		.col-sm-12 .product:nth-child(3n) { margin-right: 0; }
+		.col-sm-8 { width: 64%; float: left; margin-right: 2.6%; margin-bottom: 20px; }
+		.col-sm-4 { width: 31%; float: left; margin-right: 2.3%; margin-bottom: 20px; }
+		.clearfix { clear: both; }
+		.warning { background-color: #cc4027; color: #fff; }
+		.product .image { text-align: center; }
+		.product .image img, .imagefile img { float: none; display: inline; }
+	</style>
+</head>
+<body>
+	@RenderSection("Top", false)
+	<table class="body">
+		<tr>
+			<td class="center" align="center" valign="top">
+				<center>
+					@Html.Partial("Header")
+					<table class="emailbody">
+						<tr>
+							<td class="emailinnerbody">
+								<table class="container @RenderSection("BodyClass", false)" align="center">
+									<tr>
+										<td>
+											@RenderBody()
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					@Html.Partial("Footer")
+				</center>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.RegisterPageViewModel
+@{
+	ViewBag.Title = Model.CurrentPage.Name;
+}
+<div class="login-page register-page">
+	<h1>@Model.CurrentPage.PageName</h1>
+
+	@Html.PropertyFor(m => m.CurrentPage.PreBodyContent)
+
+	@Html.EditorFor(m => m.RegisterForm)
+</div>
+
+
+@section scripts {
+	@Scripts.Render("~/bundles/registration")
+	<script type="text/javascript">
+        $(function () { commercestarterkit.Registration.init(); });
+	</script>
+}

@@ -1,0 +1,2 @@
+//>>built
+define("epi/shell/command/withConfirmation",["dojo/_base/declare","dojo/_base/lang","dojo/_base/Deferred","epi/shell/widget/dialog/Confirmation"],function(_1,_2,_3,_4){function _5(_6){var _7=new _3(),_8=new _4(_6);_8.connect(_8,"onAction",function(_9){if(_9){_7.resolve();}else{_7.cancel();}});_8.show();return _7;};return function(_a,_b,_c){var _d=_a._execute;_a._execute=function(){function _e(){_3.when(_d.apply(_a,arguments),_f.resolve,_f.cancel);};var _f=new _3();_b=_b||_5;_3.when(_b(_c),_e,_f.cancel);return _f;};return _a;};});

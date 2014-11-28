@@ -1,0 +1,692 @@
+/* claro/form/Common.css */
+
+/*========================= common css =========================*/
+
+@import "../variables";
+
+/* 'dijitTextBox' refers to 'dijit(TextBox|DateTextBox|CurrencyTextBox|...)' */
+
+.Sleek .dijitTextBox,
+.Sleek .dijitInputInner {
+    // .dijitInputInner selector needed for ValidationTextBox on IE6 because <input> doesn't inherit
+    // the color setting from the ancestor div.dijitTextBox
+	color: @text-color;
+}
+
+.Sleek .dijitValidationTextBoxError .dijitValidationContainer {
+	background-color: @erroricon-background-color;
+	background-image: url('images/error.png');
+	background-position: top center;
+	border: solid @erroricon-background-color 0;
+	width: 8px;
+}
+
+.Sleek .dijitTextBoxError .dijitValidationContainer {
+	border-left-width: 1px;
+}
+
+.Sleek .dijitValidationTextBoxError .dijitValidationIcon {
+	width: 0;
+    border: none;
+	background-color: transparent !important; /* so the INPUT doesn't obscure the border in rtl+a11y */
+}
+
+/* Padding for the input area of TextBox based widgets, and corresponding padding for the
+ * down arrow button and the placeholder.   placeholder is explicitly listed  because
+ * dijitPlaceHolder is absolutely positioned, so padding set on dijitInputField
+ * won't affect it
+ */
+.Sleek .dijitTextArea,
+.Sleek .dijitInputField .dijitPlaceHolder {
+    padding: 0 0 @textbox-padding @textbox-padding;
+}
+
+.dijitPlaceHolder { font-style: normal; } /* EPi */
+
+.Sleek .dijitSelect .dijitInputField,
+.Sleek .dijitTextBox .dijitInputField {
+    // Subtract 1px from top/bottom because we add 1px to other nodes, see rules below.
+	// Although we are theoretically only adding 1px to top/bottom browsers seem to pad inputs by 1px on left/right,
+	// although that varies by so compensate for that too.
+	padding: @textbox-padding - 1px  @textbox-padding;
+}
+.dj_gecko .Sleek .dijitTextBox .dijitInputInner,
+.dj_webkit .Sleek .dijitTextBox .dijitInputInner {
+    // Although we are theoretically only adding 1px to top/bottom, some browsers seem to pad inputs by 1px on left/right,
+	// so compensate for that too.
+	// padding: @textbox-padding - 1px;
+}
+
+.Sleek .dijitSelect,
+.Sleek .dijitSelect .dijitButtonContents,
+.Sleek .dijitTextBox,
+.Sleek .dijitTextBox .dijitButtonNode {
+	/* color for (outer) border on *TextBox widgets, and border between input and buttons on ComboBox and Spinner */
+    border: @epi-input-border;
+	.transition-property(background-color, border);
+ 	.transition-duration(.35s);
+}
+.Sleek .dijitTextBox .dijitButtonNode {
+	.border-radius-specific(0px, @epi-textbox-border-radius, @epi-textbox-border-radius, 0px);
+	padding: 1px;
+}
+.Sleek .dijitTextBox,
+.Sleek .dijitTextBox .dijitInputContainer {
+	background-color: @textbox-background-color;
+	.border-radius(@epi-textbox-border-radius);
+}
+
+/* hover */
+.Sleek .dijitTextBoxHover,
+.Sleek .dijitTextBoxHover .dijitButtonNode {
+	border-color: @epi-textbox-hover-border-color;
+ 	.transition-duration(.25s);
+}
+
+/* error state */
+.Sleek .dijitSelectError,
+.Sleek .dijitSelectError .dijitButtonContents,
+.Sleek .dijitTextBoxError,
+.Sleek .dijitTextBoxError .dijitButtonNode {
+	border-color: @error-border-color;
+}
+.Sleek .dijitTextBoxError,
+.Sleek .dijitTextBoxError .dijitInputContainer {
+	background-color: @textbox-error-background-color;
+}
+
+/* focused state */
+.Sleek .dijitSelectFocused,
+.Sleek .dijitSelectFocused .dijitButtonContents,
+.Sleek .dijitTextBoxFocused,
+.Sleek .dijitTextBoxFocused .dijitButtonNode {
+	.epi-focused();
+}
+.Sleek .dijitTextBoxFocused {
+	.epi-focused();
+}
+.Sleek .dijitTextBoxFocused .dijitInputContainer {
+	background: @textbox-focused-background-color;
+}
+
+.Sleek .dijitSelectErrorFocused,
+.Sleek .dijitSelectErrorFocused .dijitButtonContents,
+.Sleek .dijitTextBoxErrorFocused,
+.Sleek .dijitTextBoxErrorFocused .dijitButtonNode {
+	border-color: @error-focused-border-color;
+	.border-radius(@epi-textbox-border-radius);
+}
+
+/* disabled state */
+.Sleek .dijitSelectDisabled,
+.Sleek .dijitSelectDisabled .dijitButtonContents,
+.Sleek .dijitTextBoxDisabled,
+.Sleek .dijitTextBoxDisabled .dijitButtonNode {
+	border-color: @disabled-border-color;
+}
+
+.Sleek .dijitSelectDisabled,
+.Sleek .dijitTextBoxDisabled,
+.Sleek .dijitTextBoxDisabled .dijitInputContainer {
+	background-color: @textbox-disabled-background-color;
+	background-image: none;
+	color: @disabled-text-color;
+}
+
+.dj_webkit .Sleek .dijitDisabled input {
+	/* because WebKit lightens disabled input/textarea no matter what color you specify */
+	color: darken(@disabled-text-color, 5%)
+}
+
+.dj_webkit .Sleek textarea.dijitTextAreaDisabled {
+    /* because WebKit lightens disabled input/textarea no matter what color you specify */
+	color: darken(@disabled-text-color, 40%)
+}
+
+/*========================= for special widgets =========================*/
+
+/* Input boxes with an arrow (for a drop down) */
+
+.Sleek .dijitSelect .dijitArrowButtonInner,
+.Sleek .dijitComboBox .dijitArrowButtonInner {
+	background-image: url("images/commonFormArrows.png");
+	background-position:-35px 53%;
+	background-repeat: no-repeat;
+	margin: 0;
+	width:16px;
+	border: 1px solid rgba(0,0,0,0);
+	.border-radius-specific(0px, @epi-textbox-border-radius, @epi-textbox-border-radius, 0px);
+}
+
+.Sleek .dijitComboBox .dijitArrowButtonInner {
+	border: 1px solid @arrowbutton-inner-border-color;	// white gutter around the arrow button
+}
+
+.Sleek .dijitToolbar .dijitComboBox .dijitArrowButtonInner {
+	border: none;
+}
+
+.Sleek .dijitToolbar .dijitComboBox .dijitArrowButtonInner {
+	border: none;
+}
+
+/* Add 1px vertical padding to the <input> where user types and the validation icon,
+   to match the 1px border on arrow button */
+.Sleek {
+    .dijitSelectLabel,
+    .dijitTextBox .dijitInputInner,
+    .dijitValidationTextBox .dijitValidationContainer {
+        padding: 2px 0;
+    }
+
+    .dijitTextBox .dijitInputInner {
+        width: 90% !important;
+	}
+}
+
+
+.Sleek .dijitComboBox .dijitButtonNode {
+    .svgBackground(@epi-input-arrow-background-color-fallback,0px,-2300px,'images/gradients/combobox.svg');
+}
+
+/* Arrow "hover" effect:
+ * The arrow button should change color whenever the mouse is in a position such that clicking it
+ * will toggle the drop down.   That's either (1) anywhere over the ComboBox or (2) over the arrow
+ * button, depending on the openOnClick setting for the widget.
+ */
+.Sleek .dijitComboBoxOpenOnClickHover .dijitButtonNode,
+.Sleek .dijitComboBox .dijitDownArrowButtonHover {
+	background-color:@arrowbutton-hovered-background-color;
+}
+.Sleek .dijitComboBoxOpenOnClickHover .dijitArrowButtonInner,
+.Sleek .dijitComboBox .dijitDownArrowButtonHover .dijitArrowButtonInner {
+	background-position:-70px 53%;
+}
+
+/* Arrow Button change when drop down is open */
+.Sleek .dijitComboBox .dijitHasDropDownOpen {
+    .svgBackground(@epi-input-arrow-background-color-fallback,0px,-2300px,'images/gradients/combobox_active.svg');
+}	
+.Sleek .dijitComboBox .dijitHasDropDownOpen .dijitArrowButtonInner {
+	background-position:-70px 53%;
+}
+
+/* disabled state */
+.Sleek div.dijitComboBoxDisabled .dijitArrowButtonInner {
+	/* specific selector set to override background-position setting from Button.js
+	 * (.Sleek .dijitComboBoxDisabled .dijitArrowButtonInner) */
+	background-position:0 50%;
+	background-color:@disabled-background-color;
+}
+.Sleek .dijitComboBoxDisabled .dijitButtonNode { border: 1px solid rgba(0,0,0,0); }
+
+/*========================= hacks for browsers =========================*/
+/* it seems the input[type="hidden"] has a height (16px) too... this may cause the widget's height calculate error */
+.dj_ff3 .Sleek .dijitInputField input[type="hidden"] {
+	display: none;
+	height: 0;
+	width: 0;
+}
+
+.dj_iequirks .Sleek .dijitComboBox .dijitHasDropDownOpen {
+	padding: 1px 0;
+}
+
+.dj_borderbox .Sleek .dijitComboBox .dijitHasDropDownOpen .dijitArrowButtonInner {
+	width:18px;
+}
+
+.dj_borderbox .Sleek .dijitComboBoxFocused .dijitHasDropDownOpen .dijitArrowButtonInner {
+	width:16px;
+}
+
+
+/*============================*/
+/* EPi */
+/*============================*/
+
+/* General helper classes */
+@epi-input-margin: 6px;
+
+.epi-input-margin--left { margin-left: @epi-input-margin !important; }
+.epi-input-margin--right { margin-right: @epi-input-margin !important; }
+
+
+/* Needed to override Shell legacy styling */
+.Sleek {
+	.dijitInputContainer { overflow: visible; }
+	.dijitValidationTextBox .dijitInputContainer { overflow: hidden; }
+}
+
+.Sleek .dijitTextArea {
+	font: inherit;
+	padding: @textbox-padding;
+    white-space: normal;
+}
+
+.Sleek textarea.epi-inline-edit {
+	.epi-focused();
+    .border-radius(@epi-textbox-border-radius);
+    min-height: 1em;
+}
+
+.Sleek { 
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+      color: #a9a9a9;
+    }
+    input:-moz-placeholder, textarea:-moz-placeholder {
+      color: #a9a9a9;
+    }
+}
+.Sleek .dijitTextBox.epi-searchInput {
+    background: @textbox-background-color url("images/search.png") center right no-repeat;
+	.border-radius(30px);
+    
+    input[type="text"]::-ms-clear {
+        display: none;
+    }
+}
+.Sleek .dijitTextBox.epi-searchInput .dijitInputContainer {
+    background: transparent;
+    padding-right: 25px;
+}
+.Sleek .dijitTextBox.epi-searchInput .dijitPlaceHolder {
+    padding: 6px 5px 4px 10px;
+}
+.Sleek .dijitTextBox.epi-searchInput.dijitTextBoxFocused .dijitInputContainer {
+	.border-radius(30px);
+    padding-right: 0;
+}
+
+.Sleek .epi-form ul li {
+	display: block;
+	margin-bottom: 0.5em;
+}
+.Sleek .epi-form ul li label {
+	display: inline-block;
+	width: 100px;
+}
+.Sleek {
+    .epi-contentDetails {
+        color: @text-color-inverted;
+        .svgBackground(#506165,0px,-2300px,'images/gradients/inverted_background.svg');
+        padding: 22px 15px 5px 15px; 
+        position: relative;
+        .text-shadow-specific (0, -1px, 0, 0, 0, 0, .25);
+
+        table {
+            margin-bottom: 10px;
+
+            td {
+                padding: 2px 40px 2px 0;
+                
+                .epi-table-label {
+                    color: darken(@text-color-inverted, 15%);
+                }   
+            } 
+        }
+        
+        a { 
+            color: lighten(@link-color, 10%);
+            cursor: pointer;
+            margin-right: 10px;
+            text-decoration: underline;
+            .text-shadow-specific (0,0,0,0,0,0,0);
+            
+            &:hover { color: lighten(@link-color, 10%); }
+        }
+
+        .dijitMenu {
+            background-color: transparent;
+            border: 0;
+            margin: -1px 0;
+        }
+        .epi-floatleft {
+            float: left;
+        }
+    }
+}
+
+/* Ribbon */
+.Sleek {
+    .epi-ribbon {
+        color: @text-color-inverted;
+	    min-width: 89px;
+	    position: absolute;
+	    right: 10px;
+	    text-align: center;
+	    top: 0;
+	    z-index: 3;
+    }		
+    .epi-stitch {
+	    background: url('../epi/images/stitch.png') top left repeat-y;
+	    height: 76px;
+	    width: 1px;
+	    position: absolute;
+	    top: 0;
+	    z-index: 2;
+    }
+    .epi-stitch-left { left: 3px; }
+    .epi-stitch-right { right: 3px; }
+
+    .epi-ribbonTop {
+	    padding: 10px 15px 20px;
+	    overflow: hidden;
+	    
+	    .epi-ribbonLabel {
+            color: darken(@text-color-inverted, 15%);            
+        }
+        .epi-ribbonId {
+	        display: block;
+	        font-size: 2em;
+	        .serif;
+	        line-height: .8;
+        }
+    }
+    .epi-ribbonBottom {
+        //If you change the height you will also need to change the rotation of the .epi-ribbonBottomPieces
+	    height: 35px; 
+	    position: relative;
+	    overflow: hidden;
+	    
+	    .epi-ribbonBottomPiece {
+	        position: absolute;
+	        top: -100px;
+	        width: 100%;
+	        height: 100px;
+	        .box-shadow-specific (0px, 2px, 5px, 0px, 0, 0, 0, 0.2);
+        }
+		
+        .epi-ribbonBottomPiece-left {
+	        left: -50%;
+	        .transform-origin (bottom, right);
+	    
+	        // If you change the rotation you will also need to change the height of .epi-ribbonBottom
+	        -webkit-transform: rotate(-16deg);
+		       -moz-transform: rotate(-16deg);
+		        -ms-transform: rotate(-16deg);
+		         -o-transform: rotate(-16deg);
+			        transform: rotate(-16deg);
+        }
+        .epi-ribbonBottomPiece-right {
+	        right: -50%;
+	        .transform-origin (bottom, left);
+	    
+	        -webkit-transform: rotate(16deg);
+		       -moz-transform: rotate(16deg);
+		        -ms-transform: rotate(16deg);
+		         -o-transform: rotate(16deg);
+			        transform: rotate(16deg);
+        }
+    }
+    
+    .epi-ribbonTop,
+    .epi-ribbonBottomPiece {
+	    background: #3C3C3C;
+    }
+}
+/*============================*/
+/* Form Structure */
+/*============================*/
+
+.Sleek {
+    .epi-formContainer {
+        background: @pane-background-color;
+		min-height: 100%;
+		
+        .epi-containerLayoutTab {
+            overflow: auto;
+        }
+    }
+
+    .epi-containerLayout {
+        background: @pane-background-color;
+        .border-box;
+        overflow: hidden;
+        padding: 15px 0;
+        
+        .epi-containerLayout { padding: 0; }
+        
+        .epi-parentContainer {
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 15px;
+            padding: 0 10px 10px;
+        }
+    
+        .epi-formsRow { 
+            clear: both;
+            display: block;
+            margin-bottom: 3px;
+            overflow: hidden;
+            padding: 4px 0;
+            white-space: nowrap;
+        
+            label {
+                color: @epi-forms-label;
+                display: inline-block;
+                float: left;
+                margin: 0 20px 0 12px;
+                padding-top: 4px;
+                vertical-align: middle;
+                white-space: normal;
+                width: 140px;
+
+				.dijitIcon { 
+					margin-left: 5px; 
+					float: right;
+					opacity: 0.45;
+				}
+            }
+
+
+            &.epi-formsRow--fullWidthValue {
+                > label {
+                    float: none;
+					width: auto;
+                }
+                .epi-formsWidgetWrapper {
+					margin: 0 20px 0 12px;
+                }
+            }
+            &,
+            .epi-formsWidgetWrapper {
+                line-height: 17px;
+            }
+            .epi-formsWidgetWrapper {
+                padding: 4px 1px 0 0;
+                
+                .dijitInline { vertical-align: baseline; }
+                .dijitInputContainer .dijitInline,
+                .dijitSelect .dijitSelectLabel,
+                .dijitButtonContents .dijitInline,
+                .dijitTextBox,
+                .dijitButton { vertical-align: middle; }
+            }
+			
+            li {
+				label { 
+					margin-left: 0; 
+					display: block; 
+				}
+			}
+
+			.epi-content-area-editor { 
+				margin: 0;
+			}
+			
+            .dijitSelect {
+                margin-left: 0;
+            }
+        }
+        h2 {
+            display: block;
+            font-size: 1.5em;
+            padding-bottom: 5px;
+			margin: 0 0 9px 5px;
+        }
+        h3 {
+            border-bottom: 1px solid #d9ddde;
+            
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 0 0 1em 5px;
+        }
+		
+		& > .dijitButton { margin: 1em 0 0 170px; }
+    }
+
+	// Needed for bug #106086
+	.dijitDialog .epi-formsRow .epi-formsWidgetWrapper { display: inline-block; }
+
+    .dijitDialogPaneContent {
+        h2,
+        h3 { margin-left: 0; }
+        
+        .epi-containerLayout .epi-formsRow label {
+            margin: 0 20px 5px 0;
+            padding-left: 0;
+            text-align: left;
+        }
+    }
+    .epi-formsDescriptionHeader {
+       margin: 1em 0 1em 15px;
+    }
+    .epi-formsHeaderContainer {
+        .border-box;
+        border: 1px solid @bar-border-color;
+        margin: 0 15px 15px;
+        padding: 6px;
+        
+        h2 {
+            display: inline;
+            margin: 0;
+        }
+    }
+}
+
+/* Group Toggle */
+.Sleek {
+      .epi-groupToggle {
+			background: #d4d4d4 url('images/toggleArrow.png') center center no-repeat;
+			.border-radius(15px);
+			display: none;
+			height: 31px;
+			line-height: 31px;
+			margin: 0 12px -5px 0;
+			width: 31px;
+			
+			-webkit-transition: background-color .3s ease-out, -webkit-transform .2s ease-out;
+			   -moz-transition: background-color .3s ease-out, -moz-transform .2s ease-out;
+			    -ms-transition: background-color .3s ease-out, -ms-transform .2s ease-out;
+			     -o-transition: background-color .3s ease-out, -o-transform .2s ease-out;
+			        transition: background-color .3s ease-out, transform .2s ease-out;
+			
+			-webkit-transform: rotate(0deg);
+			   -moz-transform: rotate(0deg);
+				-ms-transform: rotate(0deg);
+				 -o-transform: rotate(0deg);
+					transform: rotate(0deg);
+			
+		}
+		.epi-groupToggle:hover {
+			background-color: #898989;					
+			
+			.transition (.3s ease-out);
+			
+			-webkit-transform: rotate(-90deg);
+			   -moz-transform: rotate(-90deg);
+				-ms-transform: rotate(-90deg);
+				 -o-transform: rotate(-90deg);
+					transform: rotate(-90deg);
+		}
+}
+
+/* Checkbox List */
+.Sleek {
+    .epi-checkBoxList span {
+        display: block;
+        margin-bottom: 6px;
+        overflow: hidden;
+        white-space: nowrap;
+            
+        .dijitCheckBox { vertical-align: top; }
+    }
+
+    .epi-containerLayout .epi-formsRow .epi-checkBoxList {
+        .column(3,20);
+        display: block;
+        max-width: 800px;
+        overflow: hidden;
+        
+        label {
+            float: none;
+            margin: 0 15px 0 0;
+            overflow: hidden;
+            padding: 0 0 0 5px;
+            vertical-align: baseline;
+            width: auto;
+        }
+        
+        // IE 10 will support css columns
+        .dj_ie7 &,
+        .dj_ie8 &,
+        .dj_ie9 & {
+            display: inline-block;
+            white-space: normal;
+                    
+            span {
+                display: inline-block;
+            }
+        }
+
+		&.dijitError {
+			border: 1px solid @error-border-color;
+		}
+    }
+
+    .dijitDialog .epi-checkBoxList label {
+        padding: 0 0 0 5px;
+    }
+}
+
+/* DND */
+.Sleek {
+    &.dojoDndCopy,
+    &.dojoDndMove {
+        .epiTinyMCEEditor .epiTinyMCEEditor {
+            border: 2px dashed @epi-drag-border-active;
+            margin: -1px;
+
+            &.epiTinyMCEEditorHover {
+                border: 3px solid @epi-drag-border-hover;
+                margin: -2px;
+            }
+        }
+
+		.epi-dropArea,
+        .dijitTextBox.dojoDndContainer {
+            background: rgba(197,213,0,0.5);
+            border: 1px dashed @epi-drag-border-active;
+        }
+		.epi-dropArea,
+        .dijitTextBox.dijitHover {
+            border: 1px solid @epi-drag-border-hover;
+        }
+    }
+
+    &.dojoDndCopy,
+    &.dojoDndMove {
+        .dojoDndTargetDisabled {
+            &.dijitTextBox {
+                background-color: @textbox-background-color;
+                border: @epi-input-border;
+            }
+        }
+        .epi-dropTargetDisabled {
+            &.epiTinyMCEEditor .epiTinyMCEEditor {
+                border: solid 1px @border-color;
+                margin: 0px;
+            }
+        }
+    }
+}

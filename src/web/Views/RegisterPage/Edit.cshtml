@@ -1,0 +1,10 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.RegisterPageViewModel
+
+<h3>@Html.Translate("/contenttypes/registerpage/properties/prebodycontent/caption")</h3>
+@Html.PropertyFor(m => m.CurrentPage.PreBodyContent)
+
+<h3>@Html.Translate("/contenttypes/registerpage/properties/emailsubject/caption")</h3>
+@Html.PropertyFor(m => m.CurrentPage.EmailSubject)
+
+<h3>@Html.Translate("/contenttypes/registerpage/properties/emailbody/caption")</h3>
+@Html.PropertyFor(m => m.CurrentPage.EmailBody)

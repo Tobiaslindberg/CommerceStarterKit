@@ -1,0 +1,19 @@
+﻿@using EPiServer.Commerce.SpecializedProperties
+@using OxxCommerceStarterKit.Web.Extensions
+@model IVariationViewModel<EPiServer.Commerce.Catalog.ContentTypes.VariationContent>
+@{
+    ViewBag.Title = "Catalog";
+}
+
+<h2>Catalog Variation</h2>
+@Html.PropertyFor(x => x.CatalogContent.DisplayName)
+<br />
+@Html.AssetImage(Model.ContentWithAssets)
+
+
+    
+@Html.Partial("_Inventory", Model.Inventory.Value ?? new Inventory())
+@Html.Partial("_Price", new PriceModel(Model.Price))
+
+@*@Html.Partial("_BuyItem", new CartItemModel(Model.CatalogContent))
+@Html.Partial("_WishListItem", new CartItemModel(Model.CatalogContent))*@

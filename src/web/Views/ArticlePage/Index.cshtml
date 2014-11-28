@@ -1,0 +1,24 @@
+﻿@using OxxCommerceStarterKit.Web.Helpers
+@model OxxCommerceStarterKit.Web.Models.ViewModels.IPageViewModel<OxxCommerceStarterKit.Web.Models.PageTypes.ArticlePage>
+@{
+	ViewBag.Title = Model.CurrentPage.Name;
+}
+<div class="article-page">
+	<div class="pre-content">
+		@Html.PropertyFor(x => x.CurrentPage.PreBodyContent, new { EditContainerClass = "overflow-hidden", CssClass = "row" })
+	</div>
+	@if(!string.IsNullOrEmpty(Model.CurrentPage.PageTitle) || Html.IsInEditMode()) {
+	<h1>@Html.PropertyFor(m => m.CurrentPage.PageTitle)</h1>
+	}
+
+	@if(Model.CurrentPage.Intro != null || Html.IsInEditMode()) {
+	<div class="intro">@Html.PropertyFor(m => m.CurrentPage.Intro)</div>
+    }
+	<div class="body">
+		@Html.PropertyFor(m => m.CurrentPage.BodyText)
+	</div>
+
+	<div class="body-content">
+		@Html.PropertyFor(x => x.CurrentPage.BodyContent, new { EditContainerClass = "overflow-hidden", CssClass = "row" })
+	</div>
+</div>

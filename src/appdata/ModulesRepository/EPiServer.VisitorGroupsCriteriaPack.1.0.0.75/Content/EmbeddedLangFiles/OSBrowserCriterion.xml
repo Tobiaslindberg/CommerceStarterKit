@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+    <language name="English" id="en">
+        <visitorgroupscriteriapack>
+            <osbrowsercriterion>
+                <category>Technical Criteria</category>
+                <displayname>OS &amp; Browser</displayname>
+                <description>Match Operating sytem &amp; Browser name with specified value</description>
+                <operatingsytem>Operating System</operatingsytem>
+                <browser>Browser</browser>
+                <others>Others</others>
+            </osbrowsercriterion>
+        </visitorgroupscriteriapack>
+    </language>
+</languages>

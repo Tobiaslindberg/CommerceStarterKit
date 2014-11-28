@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="norsk" id="no">
+    <common>
+      <visitorgroups>
+        <criteria>
+          <userattribute>
+            <anymonth>Enhver måned</anymonth>
+            <anyyear>Ethvert år</anyyear>
+            <attributenamenotselected>Velg et attributt</attributenamenotselected>
+            <category>Community-kriterier</category>
+            <description>Brukerattributtkriterium</description>
+            <displayName>Brukerattributt</displayName>
+            <false>false</false>
+            <lowerboundgreaterthanupperbound>Nedre grenseverdi må være mindre enn eller lik øvre grenseverdi.</lowerboundgreaterthanupperbound>
+            <true>true</true>
+          </userattribute>
+        </criteria>
+      </visitorgroups>
+    </common>
+  </language>
+</languages>

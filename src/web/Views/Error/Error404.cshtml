@@ -1,0 +1,44 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.ErrorPageViewModel
+@{
+	if (!Model.HasDatabase)
+	{
+		Layout = "~/Views/Shared/_LayoutNoDb.cshtml";
+	}
+	
+	string title = Html.TranslateFallback("/errors/error404/title", "Page Not Found");
+	string htmlText = Html.TranslateFallback("/errors/error404/text", "We're sorry, but the page you requested could not be found");
+	string urlLabel = Html.TranslateFallback("/errors/error404/url_label", "You were looking for:");
+	string cameFromLabel = Html.TranslateFallback("/error/error404/came_from_label", "You came from:");
+
+	if (Model.CurrentPage != null)
+	{
+		if (!string.IsNullOrEmpty(Model.CurrentPage.Settings.FileNotFoundPageTitle))
+		{
+			title = Model.CurrentPage.Settings.FileNotFoundPageTitle;
+		}
+		if (Model.CurrentPage.Settings.FileNotFoundPageText != null && !string.IsNullOrEmpty(Model.CurrentPage.Settings.FileNotFoundPageText.ToString())) {
+			htmlText = Model.CurrentPage.Settings.FileNotFoundPageText.ToString();
+		}
+	}
+	ViewBag.Title = "404 - " + Model.CurrentPage.Name;
+}
+<div class="article-page error-page">
+
+	<h1>@title</h1>
+
+	<div class="url">
+		<p>@urlLabel</p>
+		<div class="url-address">@Model.NotFoundUrl
+		@if (Model.Referer != null)
+		{
+			<br/>@cameFromLabel @Model.Referer
+		}
+		</div>
+	</div>	
+	<div class="body">
+		@Html.Raw(htmlText)
+	</div>
+
+	
+
+</div>

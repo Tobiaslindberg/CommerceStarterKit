@@ -1,0 +1,61 @@
+﻿Content-Type: text/html; charset=utf-8
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@RenderSection("Subject", false)</title>
+	@Html.Partial("_inkMinified.css")
+	<style type="text/css">
+		body, .body { background-color: white; color: black; }
+		table.header td.center { background: #000000; color: #dcdcdc; padding-top: 20px; padding-bottom: 20px; }
+		table.header td.center h1 { margin: 0; padding: 0; font-size: 36px; font-weight: normal; text-transform: uppercase; letter-spacing: 2px; text-align: center; color: #ccc; }
+		table.header td.center p { margin: 0; padding: 0; font-family: 'serif'; font-size: 16px; font-weight: normal; text-transform: uppercase; letter-spacing: 1px; text-align: center; color: #ccc; }
+		table.footer td.center { padding-top: 10px; padding-bottom: 20px; }
+		table.emailbody { width: 100%; background-color: #fcfcfc; }
+		table.emailbody td.emailinnerbody { padding-top: 20px; padding-bottom: 20px; }
+		h1,h2,h3,h4,h5,h6 { font-family: Georgia, serif; letter-spacing: 0; }
+		h1 { font-size: 22px; margin: 0 0 12px; }
+		h2 { font-size: 18px; margin: 28px 0 3px; }
+		h3 { font-size: 16px; }
+		h4 { font-size: 14px; }
+		h5 { font-size: 13px; }
+		h6 { font-size: 12px; }
+		.receipt { background-color: white; border: 1px solid #dedede; }
+		.receipt .receipt-header h1 { margin: 0; }
+		.receipt .receipt-header p { margin: 0; }
+		.receipt .date p { text-align: right; }
+		.receipt .lineitem > td { border-top: 1px solid #dedede; }
+		.receipt .money-column { text-align: right; }
+		.receipt .sums > td { border-top: 1px solid #dedede; }
+		.receipt .sums-total .sum { font-weight: bold; }
+		.receipt .sums-total > td { border-top: 1px solid #dedede; }
+		.receipt .addresses > td { border-top: 1px solid #dedede; }
+	</style>
+</head>
+<body>
+	<table class="body">
+		<tr>
+			<td class="center" align="center" valign="top">
+				<center>
+					@Html.Partial("Header.Html")
+					<table class="emailbody">
+						<tr>
+							<td class="emailinnerbody">
+								<table class="container @RenderSection("BodyClass", false)" align="center">
+									<tr>
+										<td>
+											@RenderBody()
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					@Html.Partial("Footer.Html")
+				</center>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

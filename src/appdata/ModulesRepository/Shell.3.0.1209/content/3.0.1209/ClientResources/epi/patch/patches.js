@@ -1,0 +1,2 @@
+//>>built
+define("epi/patch/patches",["./dijit/form/_FormMixin","./dijit/form/NumberSpinner","./dijit/_HasDropDown","./dojox/form/uploader/plugins/HTML5","./dijit/tree/Tree","./dijit/Dialog","./dijit/focus","./dojo/dnd/Selector","./dojo/store/Observable","./dojo/window"],function(){return {};});

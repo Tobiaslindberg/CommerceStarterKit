@@ -1,0 +1,11 @@
+﻿<SequentialWorkflowActivity x:Class="EPiCode.Commerce.Workflow.CheckAndReserveInstorePickupWorkflow"
+                            x:Name="CheckAndReserveInstorePickupWorkflow"
+                            xmlns:ns0="clr-namespace:EPiCode.Commerce.Workflow.Activities;Assembly=EPiCode.Commerce.Workflow.Activities, Culture=neutral, PublicKeyToken=null"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+  <ns0:CheckInstoreInventoryActivity PickupWarehouseInShipment="{ActivityBind CheckAndReserveInstorePickupWorkflow,Path=PickupWarehouseInShipment}"
+                                     Warnings="{ActivityBind CheckAndReserveInstorePickupWorkflow,Path=Warnings}"
+                                     Description="Checks Inventory for in-store pickup and reserves items accordingly."
+                                     OrderGroup="{ActivityBind CheckAndReserveInstorePickupWorkflow,Path=OrderGroup}"
+                                     x:Name="checkInstoreInventoryActivity1" />
+</SequentialWorkflowActivity>

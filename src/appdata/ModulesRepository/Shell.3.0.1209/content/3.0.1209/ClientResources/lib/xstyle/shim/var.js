@@ -1,0 +1,2 @@
+//>>built
+define("xstyle/shim/var",[],function(_1){return {onFunction:function(_2,_3,_4){var _5=_4;do{var _6=_5.variables&&_5.variables[_2];_5=_5.parent;}while(!_6);_4.addSheetRule(_4.selector,_2+": "+_4.get(_2).replace(/var\([^)]+\)/g,_6));}};});

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+	<language name="English" id="en">
+		<displaychannels>
+			<displaychannel name="mobile">
+				<name>Mobile</name>
+			</displaychannel>
+			<displaychannel name="web">
+				<name>Web</name>
+			</displaychannel>
+		</displaychannels>
+		<displayoptions>
+			<full>Full</full>
+			<wide>Wide (66%)</wide>
+			<half>Half (50%)</half>
+			<narrow>Narrow (33%)</narrow>
+			<slider>Front page slider</slider>
+		</displayoptions>
+		<resolutions>
+			<standard>Standard (1366x768)</standard>
+			<ipadhorizontal>iPad horizontal (1024x768)</ipadhorizontal>
+			<iphonevertical>iPhone vertical (320x568)</iphonevertical>
+			<androidvertical>Android vertical (480x800)</androidvertical>
+		</resolutions>
+	</language>
+	<language name="Norwegian" id="no">
+		<displaychannels>
+			<displaychannel name="mobile">
+				<name>Mobil</name>
+			</displaychannel>
+			<displaychannel name="web">
+				<name>Web</name>
+			</displaychannel>
+		</displaychannels>
+		<displayoptions>
+			<full>Full</full>
+			<wide>Bred (66%)</wide>
+			<half>Halv (50%)</half>
+			<narrow>Smal (33%)</narrow>
+			<slider>Forside slider</slider>
+		</displayoptions>
+		<resolutions>
+			<standard>Standard (1366x768)</standard>
+			<ipadhorizontal>iPad horisontal (1024x768)</ipadhorizontal>
+			<iphonevertical>iPhone vertikal (320x568)</iphonevertical>
+			<androidvertical>Android vertikal (480x800)</androidvertical>
+		</resolutions>
+	</language>
+</languages>

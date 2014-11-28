@@ -1,0 +1,41 @@
+@import "_variables.less";
+.search {
+    position: relative;
+    padding: 0;
+
+    input[type=text] {
+        margin-right: 15px;
+        margin-top: 10px;
+    }
+
+    input[type=submit] {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        z-index: 10;
+        padding: 0 4px 0 4px;
+        height: 25px;
+        border: none;
+        cursor: pointer;
+    }
+}
+ 
+.search-page {
+    .search-form {
+        margin-bottom: 12px;
+		input[type=text] {
+			height: 34px;
+			line-height: 34px;
+		}
+    }
+
+	.name a {
+		color: #3e3f3a;
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+	.search input[type=text] {
+		width: 145px;
+	}
+}

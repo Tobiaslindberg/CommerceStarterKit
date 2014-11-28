@@ -1,0 +1,2 @@
+//>>built
+define("epi-cms/contentediting/ViewSettingsNotification",["dojo/_base/declare","epi-cms/contentediting/ContentActionSupport","epi-cms/contentediting/_ContentEditingNotification","epi/i18n!epi/cms/nls/episerver.cms.contentediting.viewsettingsnotification"],function(_1,_2,_3,_4){return _1([_3],{_onExecuteSuccess:function(_5){var _6=_5.viewModel.contentData&&_5.viewModel.contentData.accessMask<=_2.accessLevel.Read,_7=_6&&_5.viewSetting.get("enabled")&&_5.viewSetting.hasVisitorGroup();this._setNotification(_7?{content:_4.visitorgroups.noaccessright}:null);}});});

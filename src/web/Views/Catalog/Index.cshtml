@@ -1,0 +1,9 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.ICatalogViewModel<EPiServer.Commerce.Catalog.ContentTypes.CatalogContent>
+@{
+    ViewBag.Title = "Catalog";
+}
+
+<h2>Catalog</h2>
+@Html.Partial("_CatalogCategories", Model)
+@Html.Partial("_CatalogEntries", Model)
+

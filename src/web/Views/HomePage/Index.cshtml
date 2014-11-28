@@ -1,0 +1,14 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.IPageViewModel<OxxCommerceStarterKit.Web.Models.PageTypes.HomePage>
+@{
+	ViewBag.Title = Model.CurrentPage.Name;
+}
+<div id="frontpage">
+@Html.PropertyFor(x => x.CurrentPage.BodyContent, new { EditContainerClass = "overflow-hidden", CssClass = "clearfix" })
+</div>
+
+@section scripts {
+	@Scripts.Render("~/bundles/frontpage")
+<script type="text/javascript">
+    $(function () { commercestarterkit.FrontPage.init('#frontpage'); });
+</script>
+}

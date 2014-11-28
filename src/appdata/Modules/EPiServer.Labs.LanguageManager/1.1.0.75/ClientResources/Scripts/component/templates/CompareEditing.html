@@ -1,0 +1,51 @@
+﻿<div >
+    <div data-dojo-type="dijit/layout/BorderContainer"
+        data-dojo-props="gutters: false, liveSplitters: false"
+        data-dojo-attach-point="layoutContainer">
+
+        <div data-dojo-attach-point="toolbar"
+            data-dojo-type="epi-cms/contentediting/EditToolbar"
+            data-dojo-props="region:'top'">
+        </div>
+        <div data-dojo-attach-point="notificationBar"
+            data-dojo-type="epi-cms/contentediting/NotificationBar"
+            data-dojo-props="region:'top'"
+            style="border-top: 1px solid #999; margin-top: 10px;">
+
+            <div class="epi-notificationBarItem">
+                <div class="epi-notificationBarText" data-dojo-attach-point="contentContainer">
+                    <p data-dojo-attach-point="textContainer"></p>
+                </div>
+                <div class="epi-notificationBarButtonContainer" data-dojo-attach-point="buttonContainer">
+                    <div data-dojo-attach-point="dropDownButton" data-dojo-type="dijit/form/DropDownButton"
+                        data-dojo-props="label: '${res.replaceselectedcontent}', 'class': 'epi-mediumButton'">
+                        <div data-dojo-attach-point="dropDownMenu" data-dojo-type="dijit/DropDownMenu">
+                            <div data-dojo-type="dijit/MenuItem" data-dojo-attach-point="duplicateContentMenuItem" data-dojo-attach-event="onClick:_copyFieldValue">${res.duplicatecontent}</div>
+                            <div data-dojo-type="dijit/MenuItem" data-dojo-attach-point="autoTranslateMenuItem" data-dojo-attach-event="onClick:_copyAndTranslateFieldValue">${res.autotranslate}</div>
+                        </div>
+                    </div>
+
+                    <a class='epi-visibleLink' data-dojo-attach-event="onclick:_onCancel">${res.closecompare}</a>
+                </div>
+            </div>
+        </div>
+
+        <div data-dojo-type="dijit/layout/BorderContainer"
+            data-dojo-props="design:'sidebar', gutters:true, liveSplitters:true, region: 'center'"
+            data-dojo-attach-point="container">
+
+            <div data-dojo-type="dijit/layout/ContentPane"
+                data-dojo-props="splitter:true, region:'leading'"
+                style="width: 50%; overflow: auto;"
+                class="compareEditingPane compareEditingLeftPane"
+                data-dojo-attach-point="leftForm">
+            </div>
+            <div data-dojo-type="dijit/layout/ContentPane"
+                data-dojo-props="splitter:true, region:'center'"
+                style="width: 50%; overflow: auto;"
+                class="compareEditingPane compareEditingRightPane"
+                data-dojo-attach-point="rightForm">
+            </div>
+        </div>
+    </div>
+</div>

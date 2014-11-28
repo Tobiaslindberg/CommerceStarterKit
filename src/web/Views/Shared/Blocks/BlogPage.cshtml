@@ -1,0 +1,13 @@
+﻿@using OxxCommerceStarterKit.Web.Helpers
+@using OxxCommerceStarterKit.Web.Models.ViewModels
+@model OxxCommerceStarterKit.Web.Models.PageTypes.BlogPage
+@{
+	Layout = null;
+	var page = new PageListBlockItemViewModel(Model);
+	var tag = ViewData["Tag"] as string;
+	page.ImageExtraUrlParameters = Html.GetImageWidth(tag);
+}
+<div class="page-partial">
+	@Html.Partial("PagePartials/_PageListItem", page)
+</div>
+

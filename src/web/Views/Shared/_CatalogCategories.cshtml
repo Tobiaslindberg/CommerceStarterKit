@@ -1,0 +1,14 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.ICatalogViewModel<EPiServer.Commerce.Catalog.ContentTypes.CatalogContentBase>
+    
+@if(Model.ChildCategories.Value.Any())
+{
+    <h3>Categories</h3>
+    <div class="topMenu">
+        <ul>
+            @foreach (var child in Model.ChildCategories.Value)
+            {
+                <li>@Html.ContentLink(child)</li>
+            }
+        </ul>
+    </div>
+}

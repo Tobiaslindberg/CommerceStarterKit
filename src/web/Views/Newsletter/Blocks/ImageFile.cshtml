@@ -1,0 +1,22 @@
+﻿@model OxxCommerceStarterKit.Web.Models.ViewModels.ImageViewModel
+@{
+	Layout = null;
+}
+@if (!string.IsNullOrEmpty(Model.ExternalLink))
+{
+	<a href="@Model.ExternalLink" @(string.IsNullOrEmpty(Model.ExternalLinkTarget) ? "" : "target=" + Model.ExternalLinkTarget)>
+		@Image()
+	</a>
+}
+else
+{
+	@Image()
+}
+@if (!string.IsNullOrEmpty(Model.Description))
+{
+	<div class="image-description">@Model.Description</div>
+}
+@helper Image()
+{
+	<img src="@Model.Url" alt="@(string.IsNullOrEmpty(Model.Description) ? Model.Name : Model.Description)" title="@Model.Copyright" class="image-file img-responsive" />
+}

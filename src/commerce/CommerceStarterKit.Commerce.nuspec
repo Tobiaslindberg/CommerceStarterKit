@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+    <metadata>
+        <id>CommerceStarterKit.Commerce</id>
+        <version>$version$</version>
+        <title>Commerce Starter Kit Commerce Manager Site</title>
+        <owners>EPiServer Community</owners>
+        <authors>OXX, EPiServer Norway</authors>
+        <projectUrl>https://www.coderesort.com/p/commercestarterkit/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>EPiServer Commerce Manager web site for the Commerce Starter Kit</description>
+        <tags>episerver commerce starterkit</tags>
+    </metadata>
+    <files>
+        <!-- These files are added in addition to the ones in the project.
+             See: http://docs.octopusdeploy.com/display/OD/OctoPack+to+include+BuildEvent+files
+        -->
+        <file src="modulesbin\**\*.*"
+              target="modulesbin\" />
+        <file src="App_GlobalResources\**\*.*"
+              target="App_GlobalResources\" />
+        <file src="Apps\**\*.*"
+              target="Apps\" />
+        <file src="Configs\**\*.*"
+              target="Configs\" />
+    </files>
+</package>

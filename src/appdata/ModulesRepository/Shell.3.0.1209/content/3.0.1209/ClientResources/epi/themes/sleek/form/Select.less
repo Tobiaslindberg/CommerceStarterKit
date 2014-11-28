@@ -1,0 +1,202 @@
+/* Select
+ * 
+ * Styling Select mainly includes:
+ * 
+ * 1. Containers
+ * 		.dijitSelect - for border, background-color
+ * 		.dijitButtonContents - for border
+ *
+ * 2. Arrow
+ * 		.dijitArrowButton - for border, padding and background-color|image
+ * 		.dijitArrowButtonInner - for border, background-color|image, display and width|height
+ * 
+ * 3. Menu
+ * 		.dijitSelectMenu .* - for border, padding
+ * 
+ * 4. Various states
+ * 		.dijitSelectHover|.dijitSelectFocused|.dijitSelectDisabled .* - for border, padding and background-color|image 
+ */
+
+@import "../variables";
+
+.Sleek .dijitSelect .dijitButtonText {
+	padding: @textbox-padding;
+    line-height: @epi-select-line-height;
+    min-width: 25px;
+}
+
+/* normal status */
+.Sleek .dijitSelect {
+	border: 1px solid @border-color;
+	background-color: @textbox-background-color;
+	border-collapse: separate;
+	.border-radius(@epi-textbox-border-radius);
+}
+.dj_ie6 .Sleek .dijitSelect,
+.dj_ie6 .Sleek .dijitSelect .dijitButtonNode {
+	background-image:none;
+}
+
+.Sleek .dijitSelect .dijitButtonContents {
+	border: 0 solid @border-color;
+	border-right-width: 1px;
+    .svgBackground(@epi-select-background-color-fallback,0px,-2300px,'images/gradients/select.svg');
+	.border-radius-specific(@epi-textbox-border-radius, 0px, 0px, @epi-textbox-border-radius);
+}
+
+.Sleek .dijitSelect .dijitArrowButton {
+	padding: 0 1px 1px 1px;
+	border: none;
+	.border-radius-specific(0px, @epi-textbox-border-radius, @epi-textbox-border-radius, 0px);
+    .svgBackground(@epi-input-arrow-background-color-fallback,0px,-2300px,'images/gradients/combobox.svg');
+	width: 18px;
+}
+
+.Sleek .dijitSelect .dijitArrowButton .dijitArrowButtonInner {
+	background-image: url("images/commonFormArrows.png");
+	background-position:-35px 70%;
+	background-repeat: no-repeat;
+	.border-radius(@epi-textbox-border-radius);
+	width:16px;
+	height:16px;
+}
+
+/* hover status */
+.Sleek .dijitSelectHover {
+	border: 1px solid @epi-textbox-hover-border-color;
+}
+
+.Sleek .dijitSelectHover .dijitButtonContents {
+	border-color:@epi-textbox-hover-border-color;
+}
+
+.Sleek .dijitSelectHover .dijitArrowButton {
+	background-color:@arrowbutton-hovered-background-color;
+}
+.Sleek .dijitSelectHover .dijitArrowButton .dijitArrowButtonInner {
+	background-position:-70px 70%;
+}
+
+/* focused status */
+.Sleek .dijitSelectFocused {
+	border: 1px solid @focused-border-color;
+}
+.Sleek .dijitSelectFocused .dijitButtonContents {
+	border-color:@focused-border-color;
+}
+.Sleek .dijitSelectFocused .dijitArrowButton {
+    .svgBackground(@epi-input-arrow-background-color-fallback,0px,-2300px,'images/gradients/combobox.svg');
+	border: none;
+	padding: 0 1px;
+}
+.Sleek .dijitSelectFocused .dijitArrowButton .dijitArrowButtonInner {
+	background-position:-70px 70%;
+	margin-bottom: 1px;
+}
+
+/* disable status */
+.Sleek .dijitSelectDisabled {
+	border: 1px solid @disabled-border-color;
+	background-color: @disabled-background-color;
+	background-image: none;
+	color: @disabled-text-color;
+}
+.Sleek .dijitSelectDisabled .dijitArrowButton { 
+	background-color: @disabled-background-color;
+}
+.Sleek .dijitSelectDisabled .dijitArrowButton .dijitArrowButtonInner {
+	background-position:0 70%
+}
+
+/* Dropdown menu style for select */
+
+.Sleek .dijitSelectMenu td.dijitMenuItemIconCell,
+.Sleek .dijitSelectMenu td.dijitMenuArrowCell { 
+	/* so that arrow and icon cells from MenuItem are not displayed */
+	display: none;  
+}
+.Sleek .dijitSelectMenu td.dijitMenuItemLabel {
+	/* line up menu text with text in select box (in LTR and RTL modes) */
+	padding: @textbox-padding;
+}
+
+.Sleek .dijitSelectMenu .dijitMenuSeparatorTop {
+	border-bottom:1px solid @focused-border-color;
+}
+
+
+
+// .epi-chromeless* is our "unstyled" widget classes. No chrome at all
+.Sleek {
+    .epi-chromelessSelect {
+		&.dijitSelect {
+            border: 1px solid rgba(0,0,0,0);
+            background: transparent;
+            padding: 0;
+            .border-radius(0);
+            font-size: 1em;
+            color: #353535;
+            box-shadow: none;
+            text-shadow: none;
+		}
+		&.dijitButton {
+			margin: 0;
+		}
+        .dijitButtonNode {
+            background: transparent;
+            padding: 0;
+            .border-radius(0);
+            font-size: 1em;
+            color: #353535;
+            box-shadow: none;
+            text-shadow: none;
+        }
+		.dijitButtonText {
+			min-width: 0;
+		}
+		.dijitButtonContents {
+			background-color: transparent;
+			background-image: none;
+            border: 1px solid rgba(0,0,0,0);
+		}
+		.dijitInputField { padding: 3px 5px 4px; }
+
+        .dijitArrowButton {
+            background: none;
+
+
+			.dijitArrowButtonInner {
+				background-position: -35px 50%;
+			}
+        }
+
+		&.dijitSelectFocused {
+			.dijitButtonContents {
+				.box-shadow(none);
+			}
+			.dijitArrowButtonInner {
+				margin-bottom: 0;
+			}
+		}
+    }
+}
+// Dojo apparently style their dropdowns for IE using browser sniffing which needs to be overridden and normalized
+.dj_ie .Sleek .epi-chromelessSelect.dijitSelect .dijitSelectLabel { line-height: 12px; }
+
+// .epi-flat* is our "flat" widget classes. This gives a flat color background plate. Can be used as a modifier class with epi-chromeless*
+// ex. class="epi-chromelessbutton epi-flatButton"
+.Sleek {
+	.epi-flatSelect {
+		.dijitButtonContents {
+			background: @epi-button-flat-background;
+		}
+		.dijitArrowButton {
+			background: @epi-button-flat-background;
+			.border-radius-specific(0px, @button-border-radius, @button-border-radius, 0px);
+		}
+		.dijitButtonText {
+			//min-width: 25px;
+		}
+		
+	}
+}

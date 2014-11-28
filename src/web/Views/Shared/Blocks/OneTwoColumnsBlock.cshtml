@@ -1,0 +1,9 @@
+﻿@model OxxCommerceStarterKit.Web.Models.Blocks.OneTwoColumnsBlock
+<div class="row">
+	<div class="col-sm-4 left">
+		@Html.PropertyFor(m => m.LeftColumn, new { EditContainerClass = "overflow-hidden", CssClass = "row" })
+	</div>
+	<div class="col-sm-8 right">
+		@Html.PropertyFor(m => m.RightColumn, new { EditContainerClass = "overflow-hidden", CssClass = "row" })
+	</div>
+</div>

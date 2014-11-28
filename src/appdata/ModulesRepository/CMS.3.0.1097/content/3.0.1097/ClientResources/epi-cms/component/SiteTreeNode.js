@@ -1,0 +1,2 @@
+//>>built
+define("epi-cms/component/SiteTreeNode",["dojo/dom-class","epi-cms/widget/_ContentTreeNode"],function(_1,_2){return dojo.declare([_2],{_updateItemClasses:function(_3){this.inherited(arguments);if(_3.isLanguageNode&&!_3.isAvailable){_1.add(this.domNode,"epi-st-disabledRow");}else{_1.remove(this.domNode,"epi-st-disabledRow");}if(!_3.isLanguageNode){_1.add(this.iconNode,"epi-iconObjectStart");}}});});

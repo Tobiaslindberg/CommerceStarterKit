@@ -1,0 +1,38 @@
+﻿@using OxxCommerceStarterKit.Core.Extensions
+@using OxxCommerceStarterKit.Web.Models.PageTypes
+@model EPiServer.SpecializedProperties.LinkItemCollection
+@{
+	// TODO: Move logic out of view and into Controller or Chrome
+	// var settings = (Chrome)ViewBag.Chrome;
+	Layout = null;
+	bool showCountersOnLinks = ViewData["ShowCountsOnLinks"] != null;
+}
+@if (Model != null)
+{
+	if (showCountersOnLinks)
+	{
+		
+		var contentLoader = EPiServer.ServiceLocation.ServiceLocator.Current.GetInstance<EPiServer.IContentLoader>();
+		var homePage = contentLoader.Get<HomePage>(new EPiServer.Core.ContentReference(EPiServer.Core.ContentReference.StartPage.ID));
+		var wishListId = homePage.Settings.WishListPage.ID;
+		var cartId = homePage.Settings.CartPage.ID;
+		foreach (var page in Model.ToPages())
+		{
+			string css = "";
+			if (page.ContentLink.ID == wishListId) { css = "wishlist-counter"; }
+			if (page.ContentLink.ID == cartId) { css = "cart-counter"; }
+			<li>
+				<a href="@Url.ContentUrl(page.ContentLink)">@(page.Name)<span class="@css" style="display:none;">&nbsp;(<span class="val"></span>)</span></a>
+			</li>
+		}
+	}
+	else
+	{
+		foreach (var link in Model)
+		{
+			<li>
+				@Html.ContentLink(link)
+			</li>
+		}
+	}
+}

@@ -1,0 +1,26 @@
+﻿@using EPiServer.Commerce.Catalog.ContentTypes
+@using OxxCommerceStarterKit.Core.Extensions
+@model NodeContent
+
+
+
+<div class="product-list-page">
+    
+    
+    <div id="equalHeights" class="row" ng-controller="ProductAndSearchController" ng-init="init('@Model.Name',@CommerceContentExtensions.GetMainCategory(Model, ViewBag.Language), '@ViewBag.Language', 10)">
+        <div class="col-md-3">
+            <aside class="box">
+                <div class="collection" ng-cloak>
+                    <h3>@Html.Translate("/common/productlist/collections_title")</h3>
+                </div>
+                @Html.Partial("PagePartials/_Facets")
+            </aside>
+        </div>
+
+        <div class="col-md-9 product-list" ng-cloak>
+            <h1 @Html.EditAttributes(x => x.DisplayName)>@Model.DisplayName</h1>
+			@Html.Partial("PagePartials/_PageColumnsControl")
+            @Html.Partial("PagePartials/_ProductList")
+        </div>
+    </div>
+</div>

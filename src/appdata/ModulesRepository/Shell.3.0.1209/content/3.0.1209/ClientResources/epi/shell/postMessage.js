@@ -1,0 +1,2 @@
+//>>built
+define("epi/shell/postMessage",["dojo/Evented","dojo/on"],function(_1,on){var _2=new _1(),_3,_4,_5={setContext:function(_6){_4=_6;_7();},publish:function(_8,_9){var i=0,_a=_b().frames;for(;i<_a.length;i++){_a[i].postMessage({id:_8,data:_9},"*");}},subscribe:function(_c,_d){return _2.on.apply(_2,arguments);}};function _b(){return _4||window.top;};function _7(){_3&&_3.remove();_3=on(_b(),"message",function(_e){var _f=_e.data;_f&&_f.id&&_2.emit.apply(_2,[_f.id,_f.message]);},false);};_7();return _5;});

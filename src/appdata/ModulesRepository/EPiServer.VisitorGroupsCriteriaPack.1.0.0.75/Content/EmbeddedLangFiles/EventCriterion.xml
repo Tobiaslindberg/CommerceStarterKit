@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+    <language name="English" id="en">
+        <enums>
+            <episerver>
+                <visitorgroupscriteriapack>
+                    <repeattype>
+                        <never>Never</never>
+                        <everymonth>Every Month</everymonth>
+                        <everyyear>Every Year</everyyear>
+                    </repeattype>
+                </visitorgroupscriteriapack>
+            </episerver>
+        </enums>
+        <visitorgroupscriteriapack>
+            <eventcriterion>
+                <category>Time and Place Criteria</category>
+                <displayname>Event</displayname>
+                <description>Match specific period time</description>
+                <starttime>Start Time</starttime>
+                <endtime>End Time</endtime>
+                <repeattype>Recurrence</repeattype>
+            </eventcriterion>
+        </visitorgroupscriteriapack>
+    </language>
+</languages>

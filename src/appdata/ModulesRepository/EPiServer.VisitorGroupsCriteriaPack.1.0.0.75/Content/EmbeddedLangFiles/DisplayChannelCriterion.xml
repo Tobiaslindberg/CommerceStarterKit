@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+    <language name="English" id="en">
+        <visitorgroupscriteriapack>
+            <displaychannelcriterion>
+                <category>Technical Criteria</category>
+                <displayname>Display channel</displayname>
+                <description>Criterion that matches the display channel</description>
+                <channelname>Channel name</channelname>
+            </displaychannelcriterion>
+        </visitorgroupscriteriapack>
+    </language>
+</languages>

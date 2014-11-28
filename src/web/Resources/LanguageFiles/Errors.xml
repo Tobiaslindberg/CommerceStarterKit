@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+	<language name="English" id="en">
+		<errors>
+			<error404>
+				<title>Page Not Found</title>
+				<text>We're sorry, but the page you requested could not be found.</text>
+				<url_label>You were looking for:</url_label>
+				<came_from_label>You came from:</came_from_label>
+			</error404>
+			<error500>
+				<title>An error occured</title>
+				<text>We're sorry, but the page you requested has generated an error. Please try again later.</text>
+			</error500>
+		</errors>
+	</language>
+	<language name="Norwegian" id="no">
+		<errors>
+			<error404>
+				<title>Siden ble ikke funnet</title>
+				<text>Vi beklager men siden ble ikke funnet på den oppgitte adressen</text>
+				<url_label>Ønsket adresse:</url_label>
+				<came_from_label>Du kom fra:</came_from_label>
+			</error404>
+			<error500>
+				<title>Det skjedde en feil</title>
+				<text>Vi beklager men denne siden genererte en feil. Prøv igjen senere.</text>
+			</error500>
+		</errors>
+	</language>
+</languages>

@@ -1,0 +1,68 @@
+﻿/* Import original CSS */
+@import url("../../../patch/dojox/grid/resources/Grid.css");
+@import "../variables";
+
+/* Sleek specific styling */
+
+/* EPi the following styles are SPECIFIC and should be targeted at ID's (ex #leading, #trailing) or classes (ex .epi-sidebarPane) when available */
+.Sleek .dojoxExpandoRight .dojoxGridHeader .dojoxGridCell {
+    border-top: none;
+}
+
+.Sleek .dojoxGridHeader { background: #e4e4e4; }
+.Sleek .dojoxGridHeader .dojoxGridCell {
+    border: 1px solid @epi-grid-header-border;
+    border-right: none;
+	.svgBackground(#e4e4e4,0px,-2300px,'../images/gradients/grid_header.svg');
+}
+.Sleek .dojoxGridHeader .dojoxGridCell:first-child {
+    border-left: none;
+}
+.Sleek .dojoxGridMasterView .dojoxGridCell {
+    padding: 5px 3px;
+} 
+.Sleek .dojoxGridHeader .dojoxGridCellOver {
+    padding-bottom: 2px;
+}
+
+.Sleek .dojoxGridRow { 
+    background: @epi-grid-row-odd;
+    border: none;
+}
+.Sleek .dojoxGridRow {
+    cursor: pointer;
+}
+.Sleek .dojoxGridRowOdd { background: @epi-grid-row-even; }
+
+.Sleek .dojoxGridRowPublished {
+    color: #0e9200;
+}
+.Sleek .dojoxGridRowBlock {
+    padding-left: 8px;
+}
+.Sleek .epi-focused .dojoxGridContent .dojoxGridRowSelected {
+	.svgBackground(#c7d500,0px,-2300px,'../images/gradients/selected_item.svg');
+    color: @text-color;
+}
+.Sleek .dojoxGridContent .dojoxGridRowSelected {
+	.epi-selectedItemInactiveBackground;
+}
+.Sleek .dojoxGridCell,
+.Sleek .dojoxGridCellFocus.dojoxGridCellOver {
+    border: none;
+}
+
+.Sleek .dojoxGridColCaption { display: inline; }
+
+.Sleek th.dojoxGridCell { font-weight: normal; }
+.Sleek .dojoxGridCellText { padding: 3px 0; }
+/*=======================================*/
+/* EPi */
+/*=======================================*/
+
+
+/* wrapped  */
+.Sleek .epi-wrapped .dojoxGridHeader .dojoxGridCell  {
+    border-top: 0px !important;
+    font-weight: normal;
+}

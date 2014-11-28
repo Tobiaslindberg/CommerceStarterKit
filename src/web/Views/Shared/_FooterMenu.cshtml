@@ -1,0 +1,15 @@
+﻿@model IEnumerable<EPiServer.Core.PageData>
+@{
+	Layout = null;
+}
+@if (Model != null)
+{
+	<ul>
+		@foreach (var link in Model.ToList())
+  {
+			<li>
+				@Html.ContentLink(link)
+			</li>
+  }
+	</ul>
+}

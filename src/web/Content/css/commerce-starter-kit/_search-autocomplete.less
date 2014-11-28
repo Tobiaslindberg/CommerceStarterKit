@@ -1,0 +1,49 @@
+@import "_variables.less";
+.search-autocomplete {
+    padding: 10px;
+    min-width: 200px;
+    h3 {
+        border-bottom: 1px solid #dedede;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0 0 5px;
+        padding-bottom: 5px;
+        text-transform: uppercase;
+    }
+    .ui-menu-item.product {
+        border-bottom: 1px solid #dedede;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+        padding-top: 5px;
+		font-family: @fontSerif;
+        a {
+            padding: 0 0 0 80px;
+			line-height: 20px;
+        }
+        img {
+            float: left;
+            vertical-align: top;
+            margin-right: 10px;
+            margin-left: -80px;
+            max-height: 70px;
+            max-width: 70px;
+        }
+    }
+    .ui-menu-item {
+        a {
+            padding: 0;
+        }
+    }
+}
+.ui-menu {
+    .ui-menu-item {
+        a {
+            text-decoration: none;
+            display: block;
+            padding: 2px .4em;
+            line-height: 1.5;
+            min-height: 0;
+            font-weight: normal;
+        }
+    }
+}

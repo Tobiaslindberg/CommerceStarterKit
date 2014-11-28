@@ -1,0 +1,1311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1502E55F-A6D6-490F-8AE9-2E83F768BE44}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OxxCommerceStarterKit.Web</RootNamespace>
+    <AssemblyName>OxxCommerceStarterKit.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <TargetFrameworkProfile />
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <WebGreaseLibPath>..\..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputPath>bin\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputPath>bin\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\BasePartialContent\" />
+    <Folder Include="Views\ImportEPiServerData\" />
+    <Folder Include="Views\NodeContentPartial\" />
+    <Folder Include="Views\PaymentBase\" />
+    <Folder Include="Views\WineSKUPartial\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientResources\Scripts\editors\TagSelector.js" />
+    <Content Include="ClientResources\Scripts\editors\HotSpotsEditor.js" />
+    <Content Include="ClientResources\Scripts\select2\css\select2-spinner.gif" />
+    <Content Include="ClientResources\Scripts\select2\css\select2.css" />
+    <Content Include="ClientResources\Scripts\select2\css\select2.png" />
+    <Content Include="ClientResources\Scripts\select2\css\select2x2.png" />
+    <Content Include="ClientResources\Scripts\select2\select2.js" />
+    <Content Include="Content\css\commerce-starter-kit\_variables.less" />
+    <None Include="Content\css\commerce-starter-kit\_mypage.less" />
+    <None Include="Content\css\commerce-starter-kit\_header.less" />
+    <None Include="Content\css\commerce-starter-kit\_search-autocomplete.less" />
+    <Content Include="Content\css\editorNames.css">
+      <DependentUpon>editorNames.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\editorNames.min.css">
+      <DependentUpon>editorNames.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\hotspotseditor\hotspotseditor.css" />
+    <Content Include="Content\css\hotspotseditor\hotspotseditor.min.css" />
+    <Content Include="Content\css\print.css" />
+    <Content Include="Content\css\print.min.css" />
+    <Content Include="Content\Images\commerce-shop-logo.png" />
+    <Content Include="Content\Images\paymentMethods\pay by credit card.png" />
+    <Content Include="Content\Images\paymentMethods\pay by phone.png" />
+    <Content Include="Content\Images\StartShop.png" />
+    <Content Include="Plugins\CommerceTools\Prices\UpdatePrices.aspx" />
+    <Content Include="Plugins\CommerceTools\static\css\bootstrap-datepicker.css" />
+    <Content Include="Plugins\CommerceTools\static\css\bootstrap-datepicker3.css" />
+    <Content Include="Plugins\CommerceTools\static\css\bootstrap-theme.css" />
+    <Content Include="Plugins\CommerceTools\static\css\bootstrap-theme.min.css" />
+    <Content Include="Plugins\CommerceTools\static\css\bootstrap-timepicker.min.css" />
+    <Content Include="Plugins\CommerceTools\static\css\bootstrap.css" />
+    <Content Include="Plugins\CommerceTools\static\css\bootstrap.min.css" />
+    <Content Include="Plugins\CommerceTools\static\css\epioverride.css" />
+    <Content Include="Plugins\CommerceTools\static\css\jquery.simple-dtpicker.css" />
+    <Content Include="Plugins\CommerceTools\static\scripts\bootstrap-datepicker.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\bootstrap-timepicker.min.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\bootstrap.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\bootstrap.min.js" />
+    <Content Include="modules\_protected\Shell\web.config" />
+    <Content Include="modules\_protected\Shell\EPiServer.Shell.UI.zip" />
+    <Content Include="modules\_protected\CMS\web.config" />
+    <Content Include="modules\_protected\CMS\EPiServer.Cms.Shell.UI.zip" />
+    <Content Include="modules\_protected\EPiServer.Commerce.UI\EPiServer.Commerce.UI.zip" />
+    <Content Include="modules\_protected\EPiServer.Commerce.Shell\EPiServer.Commerce.Shell.zip" />
+    <Content Include="CommerceStarterKit.Web.nuspec" />
+    <Content Include="Content\css\editorNames.less" />
+    <None Include="Content\css\print.less" />
+    <None Include="Content\css\hotspotseditor\hotspotseditor.less" />
+    <None Include="Plugins\CommerceTools\static\scripts\jquery-1.9.0.intellisense.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\jquery-1.9.0.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\jquery-1.9.0.min.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\jquery-ui-1.11.1.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\jquery-ui.min-1.11.1.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\jquery.simple-dtpicker.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Plugins\CommerceTools\static\scripts\priceplugin.js" />
+    <Content Include="connectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="connectionStrings.TestCloud.config">
+      <DependentUpon>connectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\commerce-starter-kit.css" />
+    <Content Include="Content\css\commerce-starter-kit.min.css">
+      <DependentUpon>commerce-starter-kit.css</DependentUpon>
+    </Content>
+    <None Include="Content\css\commerce-starter-kit\blocks\_productTeaserBlock.less" />
+    <None Include="Content\css\commerce-starter-kit\blocks\_video.less" />
+    <None Include="Content\css\commerce-starter-kit\_bootstrap-lightbox.less" />
+    <None Include="Content\css\commerce-starter-kit\_box.less" />
+    <None Include="Content\css\commerce-starter-kit\_cart.less" />
+    <None Include="Content\css\commerce-starter-kit\_checkout.less" />
+    <None Include="Content\css\commerce-starter-kit\_footer.less" />
+    <None Include="Content\css\commerce-starter-kit\_hotSpotImage.less" />
+    <None Include="Content\css\commerce-starter-kit\_product.less" />
+    <None Include="Content\css\commerce-starter-kit\_productDialog.less" />
+    <None Include="Content\css\commerce-starter-kit\_productList.less" />
+    <None Include="Content\css\commerce-starter-kit\_search.less" />
+    <None Include="Content\css\commerce-starter-kit\_slider.less" />
+    <Content Include="Content\css\flexslider\flexslider.css" />
+    <Content Include="Content\css\flexslider\fonts\flexslider-icon.svg" />
+    <Content Include="Content\css\flexslider\images\bg_play_pause.png" />
+    <Content Include="Content\css\jquery.multiselect.css" />
+    <Content Include="Content\css\jqueryui\images\animated-overlay.gif" />
+    <Content Include="Content\css\jqueryui\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Content\css\jqueryui\images\ui-bg_flat_0_000000_40x100.png" />
+    <Content Include="Content\css\jqueryui\images\ui-bg_flat_100_eeeeee_40x100.png" />
+    <Content Include="Content\css\jqueryui\images\ui-bg_flat_100_ffffff_40x100.png" />
+    <Content Include="Content\css\jqueryui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\css\jqueryui\images\ui-icons_000000_256x240.png" />
+    <Content Include="Content\css\jqueryui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\css\jqueryui\jquery-ui-1.10.4.custom.css" />
+    <Content Include="Content\css\jqueryui\jquery-ui-1.10.4.custom.min.css" />
+    <Content Include="Content\easyzoom.css" />
+    <Content Include="Content\Images\ajax-loader-darkbg.gif" />
+    <Content Include="Content\Images\ajax-loader-lightbg-ts.gif" />
+    <Content Include="Content\Images\ajax-loader-lightbg.gif" />
+    <Content Include="Content\Images\body-background.png" />
+    <Content Include="Content\Images\close-button.png" />
+    <Content Include="Content\Images\EditorThumbnails\Editor-thumbnail.png" />
+    <Content Include="Content\Images\header-gradient.png" />
+    <Content Include="Content\Images\header-mainmenu-background.png" />
+    <Content Include="Content\Images\hotspots\hotspot.en.png" />
+    <Content Include="Content\Images\hotspots\hotspot.no.png" />
+    <Content Include="Content\Images\paymentMethods\klarna.png" />
+    <Content Include="Content\Images\paymentMethods\delbetaling.png" />
+    <Content Include="Content\Images\paymentMethods\dibs.png" />
+    <Content Include="Content\Images\paymentMethods\postoppkrav.png" />
+    <Content Include="Content\Images\search.png" />
+    <Content Include="Content\Images\slider-arrows.png" />
+    <Content Include="Content\Images\social-media.png" />
+    <Content Include="Content\Images\up-arrow.png" />
+    <Content Include="Content\Images\video-starter.png" />
+    <Content Include="Content\ink\ink.css" />
+    <Content Include="EPiServerLog.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="global.asax" />
+    <Content Include="IndexingService\IndexingService.svc" />
+    <Content Include="lang\bvnerrorhandler.xml" />
+    <Content Include="lang\bvnerrorhandlerDE.xml" />
+    <Content Include="lang\bvnerrorhandlerDK.xml" />
+    <Content Include="lang\bvnerrorhandlerEN-GB.xml" />
+    <Content Include="lang\bvnerrorhandlerEN.xml" />
+    <Content Include="lang\bvnerrorhandlerNO.xml" />
+    <Content Include="lang\bvnerrorhandlerSV.xml" />
+    <Content Include="lang\EPiCode.Newsletter.EN.xml" />
+    <Content Include="lang\EPiCode.Newsletter.NO.xml" />
+    <Content Include="modulesbin\EPiServer.Commerce.AddOns.Manager.dll" />
+    <Content Include="modulesbin\EPiServer.GoogleAnalytics.dll" />
+    <Content Include="modulesbin\EPiServer.Labs.LanguageManager.dll" />
+    <Content Include="modulesbin\EPiServer.Packaging.CmdAPI.dll" />
+    <Content Include="modulesbin\EPiServer.Packaging.dll" />
+    <Content Include="modulesbin\EPiServer.Packaging.UI.dll" />
+    <Content Include="modulesbin\EPiServer.VisitorGroupsCriteriaPack.dll" />
+    <Content Include="modulesbin\NuGet.Core.dll" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Content\Images\BaseSprite.png" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Content\Images\Gradients.png" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Content\Images\gray_border.png" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Content\Images\navigate_close.png" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Content\Images\navigate_open.png" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Content\Images\SpriteTools.png" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Content\RedirectGadget.css" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Scripts\jquery.blockUI.js" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Scripts\jquery.form.js" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Views\Redirect\Administer.ascx" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Views\Redirect\Ignored.ascx" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Views\Redirect\Index.ascx" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Views\Redirect\Menu.ascx" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Views\Redirect\Pager.ascx" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Views\Redirect\Redirects.ascx" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Views\Redirect\Referers.ascx" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Views\Redirect\Suggestions.ascx" />
+    <Content Include="modules\epicode.newsletter\content\css\bootstrap.min.css" />
+    <Content Include="modules\epicode.newsletter\content\css\cms-ui.css" />
+    <Content Include="modules\epicode.newsletter\content\css\newsletterstyle.css" />
+    <Content Include="modules\epicode.newsletter\content\css\newsletterstyle.min.css" />
+    <Content Include="modules\epicode.newsletter\content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="modules\epicode.newsletter\content\images\ajax-loader.gif" />
+    <Content Include="modules\epicode.newsletter\content\images\Closed.gif" />
+    <Content Include="modules\epicode.newsletter\content\images\Editing.gif" />
+    <Content Include="modules\epicode.newsletter\content\images\mailbox_full.png" />
+    <Content Include="modules\epicode.newsletter\content\images\newsletter.gif" />
+    <Content Include="modules\epicode.newsletter\content\images\Sending.gif" />
+    <Content Include="modules\epicode.newsletter\content\images\sendingindicator.gif" />
+    <Content Include="modules\epicode.newsletter\content\images\userguide\UG-Add-Recipients-400.png" />
+    <Content Include="modules\epicode.newsletter\content\images\userguide\UG-Clean-List-400.png" />
+    <Content Include="modules\epicode.newsletter\content\images\userguide\UG-CreateNewPage-400.png" />
+    <Content Include="modules\epicode.newsletter\content\images\userguide\UG-Editing-Newsletter-444.png" />
+    <Content Include="modules\epicode.newsletter\content\images\userguide\UG-Newsletter-Details-500.png" />
+    <Content Include="modules\epicode.newsletter\content\images\userguide\UG-OpenDetails-205.png" />
+    <Content Include="modules\epicode.newsletter\content\images\userguide\UG-Ready-To-Send-500.png" />
+    <Content Include="modules\epicode.newsletter\content\images\userguide\UG-Send-Test-400.png" />
+    <Content Include="modules\epicode.newsletter\content\js\bootstrap.js" />
+    <Content Include="modules\epicode.newsletter\content\js\bootstrap.min.js" />
+    <Content Include="modules\epicode.newsletter\content\js\jquery-2.0.3.min.js" />
+    <Content Include="modules\epicode.newsletter\content\js\jsrender.js" />
+    <Content Include="modules\epicode.newsletter\content\js\jsrender.min.js" />
+    <Content Include="modules\epicode.newsletter\plugin\Admin\NewsLetterInstall.aspx" />
+    <Content Include="modules\epicode.newsletter\plugin\Admin\SendPageAsMailConfig.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\GettingStarted.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\GettingStarted.aspx" />
+    <Content Include="modules\epicode.newsletter\plugin\Jobs\AddWorkItems.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\Jobs\CreateJob.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\Jobs\EnvironmentVerification.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\Jobs\JobEdit.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\Jobs\JobEdit.aspx" />
+    <Content Include="modules\epicode.newsletter\plugin\Jobs\JobEditStandAlone.aspx" />
+    <Content Include="modules\epicode.newsletter\plugin\Jobs\JobStatus.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\Jobs\MiscActions.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\Jobs\RemoveWorkItems.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\Jobs\WorkItemsEdit.aspx" />
+    <Content Include="modules\epicode.newsletter\plugin\Lists.aspx" />
+    <Content Include="modules\epicode.newsletter\plugin\Newsletters.aspx" />
+    <Content Include="modules\epicode.newsletter\plugin\PluginStyles.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\RecipientItemProviders\EPiServerGroupProvider.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\RecipientItemProviders\RecipientProvider.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\RecipientItemProviders\TextImportProvider.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\RecipientLists\AddRecipients.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\RecipientLists\ListEdit.aspx" />
+    <Content Include="modules\epicode.newsletter\plugin\RecipientLists\NewRecipientList.aspx" />
+    <Content Include="modules\epicode.newsletter\plugin\RecipientLists\RecipientItemsEdit.aspx" />
+    <Content Include="modules\epicode.newsletter\plugin\RecipientLists\RecipientListDeleted.aspx" />
+    <Content Include="modules\epicode.newsletter\plugin\RecipientLists\RemoveRecipients.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\StatusMessage.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\WorkItemProviders\CommerceUsersProvider.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\WorkItemProviders\EPiServerGroupProvider.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\WorkItemProviders\RecipientProvider.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\WorkItemProviders\RecipientRemoveProvider.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\WorkItemProviders\TextImportProvider.ascx" />
+    <Content Include="modules\epicode.newsletter\plugin\WorkItemProviders\TextRemoveProvider.ascx" />
+    <Content Include="modules\epicode.newsletter\preview.aspx" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Resources\LanguageFiles\Common_en.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\LanguageFiles\Common_no.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\LanguageFiles\Display.xml" />
+    <Content Include="Resources\LanguageFiles\Errors.xml" />
+    <Content Include="Resources\LanguageFiles\EditorHints.xml" />
+    <Content Include="Resources\LanguageFiles\ContentTypes.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\LanguageFiles\HotSpots.xml" />
+    <Content Include="Resources\LanguageFiles\_ReadMe.txt" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\app\Search\AutoCompleteContoller.js" />
+    <Content Include="Scripts\app\shopping\ArticleService.js" />
+    <Content Include="Scripts\app\shopping\HandleCartService.js" />
+    <Content Include="Scripts\app\shopping\CartController.js" />
+    <Content Include="Scripts\app\shopping\SimilarProductsController.js" />
+    <Content Include="Scripts\js\Oxx\AjaxUtils.js" />
+    <Content Include="Scripts\js\Oxx\HotSpotsEditor\HotSpot.js" />
+    <Content Include="Scripts\js\starterkit.js" />
+    <Content Include="Scripts\js\Components\CheckoutPage.js" />
+    <Content Include="Scripts\js\Components\HelpDialog.js" />
+    <Content Include="Scripts\js\Components\Product.js" />
+    <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\shopping\OnLastRepeatDirective.js" />
+    <Content Include="Scripts\app\shopping\ProductService.js" />
+    <Content Include="Scripts\app\shopping\ProductAndSearchController.js" />
+    <Content Include="Scripts\js\Components\login.js" />
+    <Content Include="Scripts\js\Components\ProductDialog.js" />
+    <Content Include="Scripts\js\Components\Registration.js" />
+    <Content Include="Scripts\js\Components\SizeGuideDialog.js" />
+    <Content Include="Scripts\js\Oxx\HotSpotsEditor.js" />
+    <Content Include="Scripts\js\Components\WebComponent\HotSpot.js" />
+    <Content Include="Scripts\libraries\accounting.js" />
+    <Content Include="Scripts\libraries\accounting.min.js" />
+    <Content Include="Scripts\libraries\angular-resource.js" />
+    <Content Include="Scripts\libraries\angular-resource.min.js" />
+    <Content Include="Scripts\libraries\angular.js" />
+    <Content Include="Scripts\libraries\angular.min.js" />
+    <Content Include="Scripts\libraries\angular.min.js.map" />
+    <Content Include="Content\css\flexslider\fonts\flexslider-icon.eot" />
+    <Content Include="Content\css\flexslider\fonts\flexslider-icon.ttf" />
+    <Content Include="Content\css\flexslider\fonts\flexslider-icon.woff" />
+    <None Include="Content\css\commerce-starter-kit.less" />
+    <Content Include="Content\css\commerce-starter-kit.css.map">
+      <DependentUpon>commerce-starter-kit.css</DependentUpon>
+    </Content>
+    <Content Include="Plugins\CommerceTools\static\css\bootstrap-theme.css.map" />
+    <Content Include="Plugins\CommerceTools\static\css\bootstrap.css.map" />
+    <Content Include="Plugins\CommerceTools\static\scripts\jquery-1.9.0.min.map" />
+    <Content Include="Scripts\libraries\angular-resource.min.js.map" />
+    <Content Include="License.config" />
+    <Content Include="modules\BVNetwork.FileNotFound.RedirectGadget\Views\Web.config" />
+    <Content Include="module.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="modules\epicode.newsletter\plugin\Web.config" />
+    <Content Include="modules\epicode.newsletter\module.config" />
+    <Content Include="modules\epicode.newsletter\content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="modules\epicode.newsletter\content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="modules\epicode.newsletter\content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="modules\epicode.newsletter\content\css\newsletterstyle.less" />
+    <None Include="Properties\PublishProfiles\Temp.pubxml" />
+    <None Include="Scripts\libraries\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\libraries\angular-mocks.js" />
+    <Content Include="Scripts\libraries\bootstrap-lightbox.js" />
+    <Content Include="Scripts\libraries\bootstrap.js" />
+    <Content Include="Scripts\libraries\bootstrap.min.js" />
+    <Content Include="Scripts\libraries\easyzoom.js" />
+    <Content Include="Scripts\libraries\jquery-2.1.0.js" />
+    <Content Include="Scripts\libraries\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\libraries\jquery-2.1.0.min.map" />
+    <None Include="Scripts\libraries\_references.js" />
+    <Content Include="Scripts\js\Oxx\ObjectUtils.js" />
+    <Content Include="Scripts\js\Components\FrontPage.js" />
+    <Content Include="Scripts\js\Components\WebComponent\CheckboxListFilter.js" />
+    <Content Include="Scripts\js\Components\WebComponent\HotSpotImage.js" />
+    <Content Include="Scripts\libraries\html5shiv.js" />
+    <Content Include="Scripts\libraries\jquery-1.11.0.old.min.js" />
+    <Content Include="Scripts\libraries\jquery-migrate-1.2.1.js" />
+    <Content Include="Scripts\libraries\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\libraries\jquery-plugins.js" />
+    <Content Include="Scripts\libraries\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="Scripts\libraries\jquery.equalheights.min.js" />
+    <Content Include="Scripts\libraries\jquery.flexslider-min.js" />
+    <Content Include="Scripts\libraries\jquery.multiselect.min.js" />
+    <Content Include="Scripts\libraries\jquery.touchSwipe.min.js" />
+    <Content Include="Scripts\libraries\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\libraries\jquery.validate.min.js" />
+    <Content Include="Scripts\libraries\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\libraries\respond.min.js" />
+    <Content Include="Scripts\libraries\ui-bootstrap-0.10.0.js" />
+    <Content Include="Scripts\libraries\ui-bootstrap-0.10.0.min.js" />
+    <Content Include="Scripts\libraries\ui-bootstrap-tpls-0.10.0.js" />
+    <Content Include="Scripts\libraries\ui-bootstrap-tpls-0.10.0.min.js" />
+    <Content Include="WarmMeUp\WarmMeUp.exe" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\Shared\_FooterMenu.cshtml" />
+    <Content Include="Views\FashionStoreSubLandingNodeContent\Index.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\Blocks\SocialMediaLinkBlock.cshtml" />
+    <Content Include="Views\Shared\_MainMenu.cshtml" />
+    <Content Include="Views\Shared\Blocks\SliderBlock.cshtml" />
+    <Content Include="Views\ImageFile\Index.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\Blocks\YouTubeBlock.cshtml" />
+    <Content Include="Views\Preview\Index.cshtml" />
+    <Content Include="Views\Shared\TemplateError.cshtml" />
+    <Content Include="Views\Shared\TemplateHint.cshtml" />
+    <Content Include="Views\ShoppingCategory\Index.cshtml" />
+    <Content Include="Views\Login\Authenticated.cshtml" />
+    <Content Include="Views\Login\EditorTemplates\LoginForm.cshtml" />
+    <Content Include="Views\RegisterPage\EditorTemplates\RegisterForm.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\DibsPayment\Index.cshtml" />
+    <Content Include="Views\PersonalInformation\Index.cshtml" />
+    <Content Include="Views\Shared\Blocks\VimeoBlock.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Address.cshtml" />
+    <Content Include="Views\Shared\_MyPageLayout.cshtml" />
+    <Content Include="Views\Shared\_SubNavigation.cshtml" />
+    <Content Include="Views\ChangePassword\Index.cshtml" />
+    <Content Include="Views\Login\RequestPassword.cshtml" />
+    <Content Include="Views\Login\SentForgotPassword.cshtml" />
+    <Content Include="Views\Login\ResetPassword.cshtml" />
+    <Content Include="Views\FashionProductContent\_Product.cshtml" />
+    <Content Include="Views\Login\Edit.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\string.cshtml" />
+    <Content Include="Views\Shared\_SocialBar.cshtml" />
+    <Content Include="Views\FashionStyleContent\Index.cshtml" />
+    <Content Include="Views\ChangePassword\PasswordChanged.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\password.cshtml" />
+    <Content Include="Views\Checkout\Index.cshtml" />
+    <Content Include="Views\SearchPage\Index.cshtml" />
+    <Content Include="Views\Shared\PagePartials\_ItemList.cshtml" />
+    <Content Include="Views\Shared\PagePartials\_CartTotal.cshtml" />
+    <Content Include="Views\Shared\PagePartials\_PaymentMethods.cshtml" />
+    <Content Include="Views\Shared\PagePartials\_Facets.cshtml" />
+    <Content Include="Views\Shared\PagePartials\_ProductList.cshtml" />
+    <Content Include="Views\ArticlePage\Index.cshtml" />
+    <Content Include="Views\Shared\Blocks\HtmlBlock.cshtml" />
+    <Content Include="Views\Shared\Blocks\OneTwoColumnsBlock.cshtml" />
+    <Content Include="Views\BlogPage\Index.cshtml" />
+    <Content Include="Views\PageListBlock\Index.cshtml" />
+    <Content Include="Views\Shared\Blocks\TwoColumnsBlock.cshtml" />
+    <Content Include="Views\Shared\_RelatedProduct.cshtml" />
+    <Content Include="Views\Shared\ReceiptPage.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Address.cshtml" />
+    <Content Include="Views\Shared\_SimilarProducts.cshtml" />
+    <Content Include="Views\OrdersPage\Index.cshtml" />
+    <Content Include="Views\Shared\_ReceiptOrder.cshtml" />
+    <Content Include="Views\Shared\Blocks\ArticlePage.cshtml" />
+    <Content Include="Views\Shared\PagePartials\_PageListItem.cshtml" />
+    <Content Include="Views\Shared\Blocks\BlogPage.cshtml" />
+    <Content Include="Views\NodeContent\Index.cshtml" />
+    <Content Include="Views\Shared\PagePartials\_PageColumnsControl.cshtml" />
+    <Content Include="Views\Shared\Blocks\ViddlerBlock.cshtml" />
+    <Content Include="Views\Shared\_Video.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MediaFile.cshtml" />
+    <Content Include="Views\Emails\Welcome.Html.cshtml" />
+    <Content Include="Views\Emails\Welcome.cshtml" />
+    <Content Include="Views\Emails\ResetPassword.Html.cshtml" />
+    <Content Include="Views\Emails\ResetPassword.cshtml" />
+    <Content Include="Views\Emails\Receipt.Html.cshtml" />
+    <Content Include="Views\Emails\Receipt.cshtml" />
+    <Content Include="Views\Emails\Header.Html.cshtml" />
+    <Content Include="Views\Emails\Footer.Html.cshtml" />
+    <Content Include="Views\Emails\_ViewStart.cshtml" />
+    <Content Include="Views\MediaFolderPartial\Index.cshtml" />
+    <Content Include="Views\Shared\Blocks\FashionStoreSubLandingNodeContent.cshtml" />
+    <Content Include="Views\Shared\Blocks\FashionStoreLandingNodeContent.cshtml" />
+    <Content Include="Views\Shared\Blocks\ButtonWithHelpLinkBlock.cshtml" />
+    <Content Include="Views\NotificationSettings\Index.cshtml" />
+    <Content Include="Views\Emails\_Layout.Html.cshtml" />
+    <Content Include="Views\Emails\_InkMinified.css.cshtml" />
+    <Content Include="Views\RegisterPage\Edit.cshtml" />
+    <Content Include="Views\RegisterPage\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AddressWithDeliveryServicePoint.cshtml" />
+    <Content Include="Views\Shared\PagePartials\_LandingNode.cshtml" />
+    <Content Include="Views\Emails\DeliveryReceipt.Html.cshtml" />
+    <Content Include="Views\Emails\DeliveryReceipt.cshtml" />
+    <Content Include="Views\Newsletter\_ViewStart.cshtml" />
+    <Content Include="Views\Newsletter\_Layout.cshtml" />
+    <Content Include="Views\Newsletter\Footer.cshtml" />
+    <Content Include="Views\Newsletter\Header.cshtml" />
+    <Content Include="Views\Newsletter\Newsletter1.cshtml" />
+    <Content Include="Views\Newsletter\Blocks\FashionStoreSubLandingNodeContent.cshtml" />
+    <Content Include="Views\Newsletter\Blocks\FashionStoreLandingNodeContent.cshtml" />
+    <Content Include="Views\Newsletter\Blocks\_LandingNode.cshtml" />
+    <Content Include="Views\Newsletter\_ContentArea.cshtml" />
+    <Content Include="Views\Newsletter\Blocks\FashionProductContent.cshtml" />
+    <Content Include="Views\Error\Error404.cshtml" />
+    <Content Include="Views\Error\Error500.cshtml" />
+    <Content Include="Views\Shared\_LayoutNoDb.cshtml" />
+    <Content Include="Views\Widgets\HotSpotsEditor\Index.cshtml" />
+    <Content Include="Views\Widgets\web.config" />
+    <Content Include="Views\ProductTeaserBlock\Index.cshtml" />
+    <Content Include="Views\NewsletterUnsubscribePage\Index.cshtml" />
+    <Content Include="Views\Newsletter\Blocks\ImageFile.cshtml" />
+    <Content Include="Views\Newsletter\Blocks\TwoColumnsBlock.cshtml" />
+    <Content Include="Views\Shared\_DashboardLayout.cshtml" />
+    <Content Include="Views\CommerceReports\Index.cshtml" />
+    <Content Include="Views\CommerceReports\MappedAssets.cshtml" />
+    <Content Include="Views\CommerceReports\LatestOrders.cshtml" />
+    <Content Include="Views\WineSKUContent\Index.cshtml" />
+    <Content Include="Views\DeveloperTools\MetaClass\Index.cshtml" />
+    <Content Include="Views\DeveloperTools\Index.cshtml" />
+    <Content Include="Views\Shared\ProductPartials\_ProductListView.cshtml" />
+    <Content Include="Views\WineProductSearchBlock\Index.cshtml" />
+    <Content Include="Views\Shared\ProductPartials\_ProductListViewFull.cshtml" />
+    <Content Include="Views\Shared\ProductPartials\_ProductListViewHalf.cshtml" />
+    <Content Include="Views\DibsPayment\CancelPayment.cshtml" />
+    <Content Include="Views\Shared\Blocks\HtmlBlock.Full.cshtml" />
+    <Content Include="Views\Shared\SetupWarning.cshtml" />
+    <Content Include="Views\WineProductSearchBlock\FindError.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Jeeves|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DEBUG_JEEVES</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49883</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49883/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BVNetwork.EPi404, Version=3.1.1.14788, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\BVN.404Handler.3.1.1\content\bin\BVNetwork.EPi404.dll</HintPath>
+    </Reference>
+    <Reference Include="BVNetwork.EPiSendMail, Version=3.0.8.40733, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiCode.Newsletter.3.0.8\lib\net45\BVNetwork.EPiSendMail.dll</HintPath>
+    </Reference>
+    <Reference Include="BVNetwork.EPiSendMail.CommerceProvider, Version=3.0.8.27764, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiCode.Newsletter.Commerce.3.0.8\lib\net45\BVNetwork.EPiSendMail.CommerceProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="BVNetwork.FileNotFound.RedirectGadget, Version=3.1.1.14789, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\BVN.404Handler.3.1.1\content\bin\BVNetwork.FileNotFound.RedirectGadget.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\packages\Castle.Windsor.3.2.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CMS">
+      <HintPath>..\..\packages\EPiServer.CMS.UI.Core.7.15.0\lib\net45\CMS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CsQuery, Version=1.3.3.249, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\CsQuery.1.3.4\lib\net40\CsQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiCode.Commerce.RestService, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiCode.Commerce.RestApi.1.0.3.0\lib\net45\EPiCode.Commerce.RestService.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiCode.GoogleAnalytics.UniversalTracking, Version=1.0.5428.38538, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiCode.GoogleAnalytics.UniversalTracking.1.0.5428.38538\lib\net45\EPiCode.GoogleAnalytics.UniversalTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiCode.SqlBlobProvider, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiCode.SqlBlobProvider.1.1.1.0\lib\net40\EPiCode.SqlBlobProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer">
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.ApplicationModules">
+      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.ApplicationModules.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.BaseLibrary">
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.BaseLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Business.Commerce">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\EPiServer.Business.Commerce.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Cms.Shell.UI">
+      <HintPath>..\..\packages\EPiServer.CMS.UI.Core.7.15.0\lib\net45\EPiServer.Cms.Shell.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Commerce.Internal.Migration">
+      <HintPath>..\..\packages\EPiServer.Commerce.UI.8.1.0\lib\net45\EPiServer.Commerce.Internal.Migration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Commerce.Shell">
+      <HintPath>..\..\packages\EPiServer.Commerce.UI.8.1.0\lib\net45\EPiServer.Commerce.Shell.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Commerce.UI">
+      <HintPath>..\..\packages\EPiServer.Commerce.UI.8.1.0\lib\net45\EPiServer.Commerce.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Configuration">
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Data">
+      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Data.Cache">
+      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.Data.Cache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Enterprise">
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.Enterprise.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Events">
+      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.Events.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Find, Version=8.7.0.1103, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiServer.Find.8.7.0.1103\lib\net40\EPiServer.Find.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Cms, Version=8.7.0.1103, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiServer.Find.Cms.8.7.0.1103\lib\net40\EPiServer.Find.Cms.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Framework, Version=8.7.0.1103, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiServer.Find.Framework.8.7.0.1103\lib\net40\EPiServer.Find.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Optimizations">
+      <HintPath>..\..\packages\EPiServer.Find.Cms.8.7.0.1103\lib\net40\EPiServer.Find.Optimizations.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Statistics, Version=8.7.0.1103, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiServer.Find.Cms.8.7.0.1103\lib\net40\EPiServer.Find.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.UI, Version=8.7.0.1103, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiServer.Find.Cms.8.7.0.1103\lib\net40\EPiServer.Find.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Framework">
+      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.GoogleAnalytics, Version=1.4.1.7514, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\EPiServer.GoogleAnalytics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EPiServer.GoogleAnalytics.Commerce">
+      <HintPath>..\lib\EPiServer.GoogleAnalytics.Commerce.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.ImageLibrary">
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.ImageLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Implementation">
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.Implementation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Licensing">
+      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.Licensing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.LinkAnalyzer">
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.LinkAnalyzer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Shell">
+      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.Shell.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Shell.UI">
+      <HintPath>..\..\packages\EPiServer.CMS.UI.Core.7.15.0\lib\net45\EPiServer.Shell.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.UI">
+      <HintPath>..\..\packages\EPiServer.CMS.UI.Core.7.15.0\lib\net45\EPiServer.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Web.WebControls">
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.Web.WebControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.WorkflowFoundation">
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.WorkflowFoundation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.XForms">
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageResizer">
+      <HintPath>..\..\packages\ImageResizer.3.4.2\lib\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Mvc">
+      <HintPath>..\..\packages\ImageResizer.Mvc.3.4.3\lib\ImageResizer.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Plugins.DiskCache">
+      <HintPath>..\..\packages\ImageResizer.Plugins.DiskCache.3.4.3\lib\ImageResizer.Plugins.DiskCache.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Plugins.EPiServerBlobReader">
+      <HintPath>..\..\packages\ImageResizer.Plugins.EPiServerBlobReader.1.0.3\lib\net40\ImageResizer.Plugins.EPiServerBlobReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\packages\DotNetZip.1.9.1.8\lib\net20\Ionic.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.BusinessFoundation">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.BusinessFoundation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.BusinessFoundation.Data">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.BusinessFoundation.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.Commerce">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.Commerce.Marketing.Validators">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.Marketing.Validators.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.Commerce.Plugins.Payment">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.Plugins.Payment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.Commerce.Plugins.Shipping">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.Plugins.Shipping.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.Commerce.Website">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.Website.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.Commerce.Workflow">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.Workflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.Commerce.Workflow.Activities">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.Workflow.Activities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.DataProvider">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.DataProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.FileUploader">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.FileUploader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.MetaDataPlus">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.MetaDataPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.Search">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Search.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.Search.Extensions">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Search.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.Search.LuceneSearchProvider">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Search.LuceneSearchProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.SqlDataProvider">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.SqlDataProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mediachase.WebConsoleLib">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.WebConsoleLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nsoftware.IBizPay">
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\nsoftware.IBizPay.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Postal">
+      <HintPath>..\..\packages\Postal.0.9.2\lib\net40\Postal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PreMailer.Net, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\PreMailer.Net.1.2.6\lib\net40\PreMailer.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Shell">
+      <HintPath>..\..\packages\EPiServer.CMS.UI.Core.7.15.0\lib\net45\Shell.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.1.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.1.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configs\baf.config" />
+    <Content Include="Configs\baf.data.manager.config" />
+    <Content Include="Configs\baf.data.metaobject.config" />
+    <Content Include="Configs\baf.library.folders.config" />
+    <Content Include="Configs\ecf.app.config" />
+    <Content Include="Configs\ecf.asset.config" />
+    <Content Include="Configs\ecf.catalog.config" />
+    <Content Include="Configs\ecf.cms.config" />
+    <Content Include="Configs\ecf.customer.config" />
+    <Content Include="Configs\ecf.customization.config" />
+    <Content Include="Configs\ecf.marketing.config" />
+    <Content Include="Configs\ecf.order.config" />
+    <Content Include="Configs\ecf.security.config" />
+    <Content Include="Configs\ecf.ssl.config" />
+    <Content Include="Configs\ecf.workflow.config" />
+    <Content Include="Configs\Mediachase.Search.config" />
+    <Content Include="Configs\Mediachase.Search.Filters.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\ArticleSearchController.cs" />
+    <Compile Include="Api\AutocompleteSearchController.cs" />
+    <Compile Include="Api\BaseApiController.cs" />
+    <Compile Include="Api\TagController.cs" />
+    <Compile Include="Api\CartController.cs" />
+    <Compile Include="Api\CheckoutController.cs" />
+    <Compile Include="Api\PaymentMethodRestStore.cs" />
+    <Compile Include="Api\ShoppingController.cs" />
+    <Compile Include="Api\SimilarProductsController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Business\AccessDeniedHandler.cs" />
+    <Compile Include="Business\Activator.cs" />
+    <Compile Include="Business\Analytics\RequireEnhancedCommercePlugin.cs" />
+    <Compile Include="Business\Analytics\AnonymizeIpAddressPlugin.cs" />
+    <Compile Include="Business\Analytics\GoogleAnalyticsTracking.cs" />
+    <Compile Include="Business\Analytics\InitializeAnalytics.cs" />
+    <Compile Include="Business\Analytics\UniversalAnalyticsInteraction.cs" />
+    <Compile Include="Business\Analytics\UniversalSyntaxEx.cs" />
+    <Compile Include="Business\Channels\DisplayResolutionBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Channels\DisplayResolutions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Channels\MobileChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\Channels\WebChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business\ContentExtensions.cs" />
+    <Compile Include="Business\CurrentMarketFromStartPage.cs" />
+    <Compile Include="Business\CurrentMarketProfile.cs" />
+    <Compile Include="Business\Initialization\CatalogEventListener.cs" />
+    <Compile Include="Business\Initialization\CommerceCachePrimer.cs" />
+    <Compile Include="Business\Initialization\CustomizedRenderingInitialization.cs" />
+    <Compile Include="Business\Initialization\CustomModelMetadataProvider.cs" />
+    <Compile Include="Business\Initialization\DependencyResolverInitialization.cs" />
+    <Compile Include="Business\Initialization\IndexingEventInitialization.cs" />
+    <Compile Include="Business\Initialization\MetadataInitialization.cs" />
+    <Compile Include="Business\Initialization\SearchFieldInitialization.cs" />
+    <Compile Include="Business\PageContextActionFilter.cs" />
+    <Compile Include="Business\Rendering\ICustomCssInContentArea.cs" />
+    <Compile Include="Business\Rendering\IDefaultDisplayOption.cs" />
+    <Compile Include="Business\Rendering\ContentAreaWithDefaultsRenderer.cs" />
+    <Compile Include="Business\Rendering\SiteViewEngine.cs" />
+    <Compile Include="Business\Rendering\TemplateCoordinator.cs" />
+    <Compile Include="Business\RequireSSLAttribute.cs" />
+    <Compile Include="Business\SiteConfiguration.cs" />
+    <Compile Include="Business\StructureMapDependencyResolver.cs" />
+    <Compile Include="Business\Tools.cs" />
+    <Compile Include="Business\UIDescriptor\CatalogContentUiDescriptor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\ImportEPiServerDataController.cs" />
+    <Compile Include="Controllers\Admin\DeveloperToolsController.cs" />
+    <Compile Include="Controllers\BasePartialContentController.cs" />
+    <Compile Include="Controllers\FashionProductPartialController.cs" />
+    <Compile Include="EditorDescriptors\TinyMcePlugins\AllowExtendedAttributes.cs" />
+    <Compile Include="Extensions\PriceExtensions.cs" />
+    <Compile Include="Models\ViewModels\Email\NotificationSettings.cs" />
+    <Compile Include="Models\ViewModels\Payment\CancelPaymentViewModel.cs" />
+    <Compile Include="Controllers\WineProductSearchBlockController.cs" />
+    <Compile Include="EditorDescriptors\Attributes\TagSelectorApiAttribute.cs" />
+    <Compile Include="EditorDescriptors\SelectionFactories\WineClosureSelectionFactory.cs" />
+    <Compile Include="EditorDescriptors\SelectionFactories\WineColorSelectionFactory.cs" />
+    <Compile Include="EditorDescriptors\SelectionFactories\WineSizeSelectionFactory.cs" />
+    <Compile Include="EditorDescriptors\TagSelectorEditorDescriptor.cs" />
+    <Compile Include="Helpers\PriceHelper.cs" />
+    <Compile Include="Models\Blocks\Base\FindBaseBlockType.cs" />
+    <Compile Include="Models\Blocks\WineProductSearchBlock.cs" />
+    <Compile Include="EditorDescriptors\FloatingEditorDescriptor.cs" />
+    <Compile Include="EditorDescriptors\SelectionFactories\GenericSelectionFactory.cs" />
+    <Compile Include="Models\CustomProperties\PropertyTagList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\ViewModels\ChromeLanguageInfo.cs" />
+    <Compile Include="Models\ViewModels\ProductListViewModel.cs" />
+    <Compile Include="Models\ViewModels\Simple\LandingNodeViewModel.cs" />
+    <Compile Include="Models\ViewModels\Simple\Product.cs" />
+    <Compile Include="Models\ViewModels\Simple\ProductVariant.cs" />
+    <Compile Include="Plugins\CommerceTools\Menu.cs" />
+    <Compile Include="Plugins\CommerceTools\Prices\UpdatePrices.aspx.cs">
+      <DependentUpon>UpdatePrices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Plugins\CommerceTools\Prices\UpdatePrices.aspx.designer.cs">
+      <DependentUpon>UpdatePrices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Admin\CommerceReportsController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ChangePasswordController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\DefaultCatalogContentController.cs" />
+    <Compile Include="Controllers\DefaultPageController.cs" />
+    <Compile Include="Controllers\DibsPaymentController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\FashionProductContentController.cs" />
+    <Compile Include="Controllers\FashionStoreLandingNodeController.cs" />
+    <Compile Include="Controllers\FashionStoreSubLandingNodeController.cs" />
+    <Compile Include="Controllers\HotSpotsEditorController.cs" />
+    <Compile Include="Controllers\ImageFileController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MediaFolderPartialController.cs" />
+    <Compile Include="Controllers\NewsletterController.cs" />
+    <Compile Include="Controllers\NewsletterUnsubscribePageController.cs" />
+    <Compile Include="Controllers\NodeContentController.cs" />
+    <Compile Include="Controllers\OrdersPageController.cs" />
+    <Compile Include="Controllers\CommerceControllerBase.cs" />
+    <Compile Include="Controllers\PageListBlockController.cs" />
+    <Compile Include="Controllers\NodeContentPartialController.cs" />
+    <Compile Include="Controllers\PaymentBaseController.cs" />
+    <Compile Include="Controllers\ProductTeaserBlockController.cs" />
+    <Compile Include="Controllers\ReceiptPageController.cs" />
+    <Compile Include="Controllers\RegisterPageController.cs" />
+    <Compile Include="Controllers\WineSKUContentController.cs" />
+    <Compile Include="EditorDescriptors\ColorSelectionFactory.cs" />
+    <Compile Include="EditorDescriptors\HotSpotsEditorDescriptor.cs" />
+    <Compile Include="EditorDescriptors\ProductColor.cs" />
+    <Compile Include="Extensions\ListItemCollectionExtensions.cs" />
+    <Compile Include="Extensions\PageDataExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Jobs\ExportOrderJob.cs" />
+    <Compile Include="Jobs\IReportProgress.cs" />
+    <Compile Include="Jobs\ISetStatus.cs" />
+    <Compile Include="Models\Blocks\ButtonWithHelpLinkBlock.cs" />
+    <Compile Include="Models\Blocks\Contracts\IIndexableContent.cs" />
+    <Compile Include="Models\Blocks\HtmlBlock.cs" />
+    <Compile Include="Models\Blocks\OneTwoColumnsBlock.cs" />
+    <Compile Include="Models\Blocks\PageListBlock.cs" />
+    <Compile Include="Models\Blocks\TwoColumnsBlock.cs" />
+    <Compile Include="Models\Blocks\ViddlerBlock.cs" />
+    <Compile Include="Models\Catalog\IFacetBrand.cs" />
+    <Compile Include="Models\Catalog\IInfoModelNumber.cs" />
+    <Compile Include="Models\Catalog\WineSKUContent.cs" />
+    <Compile Include="Models\Catalog\WineStoreLandingNodeContent.cs" />
+    <Compile Include="Models\FindModels\FashionVariant.cs" />
+    <Compile Include="Models\PageTypes\ArticlePage.cs" />
+    <Compile Include="Models\PageTypes\BlogPage.cs" />
+    <Compile Include="Models\PageTypes\NewsletterPage.cs" />
+    <Compile Include="Models\PageTypes\NewsletterUnsubscribePage.cs" />
+    <Compile Include="Models\PageTypes\RegisterPage.cs" />
+    <Compile Include="Models\PageTypes\System\ReceiptPage.cs" />
+    <Compile Include="Models\ViewModels\CartItemListViewModel.cs" />
+    <Compile Include="Models\ViewModels\Chrome.cs" />
+    <Compile Include="Models\ViewModels\ContentFolderViewModel.cs" />
+    <Compile Include="Models\ViewModels\ErrorPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\HotSpotsEditorViewModel.cs" />
+    <Compile Include="Models\ViewModels\MergedProductViewModel.cs" />
+    <Compile Include="Controllers\PageControllerBase.cs" />
+    <Compile Include="Controllers\PreviewController.cs" />
+    <Compile Include="Controllers\SearchPageController.cs" />
+    <Compile Include="Models\ShippingMethodAndRate.cs" />
+    <Compile Include="Controllers\ShoppingCategoryController.cs" />
+    <Compile Include="Controllers\VariationContentController.cs" />
+    <Compile Include="Controllers\WishListPageController.cs" />
+    <Compile Include="EditorDescriptors\PaymentMethodEditorDescriptor.cs" />
+    <Compile Include="EditorDescriptors\PaymentMethodSelectionFactory.cs" />
+    <Compile Include="Extensions\ViewContextExtensions.cs" />
+    <Compile Include="global.asax.cs">
+      <DependentUpon>global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FindHelper.cs" />
+    <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Helpers\UrlHelpers.cs" />
+    <Compile Include="Business\Initialization\Initialization.cs" />
+    <Compile Include="Jobs\FindIndexCatalog.cs" />
+    <Compile Include="Jobs\RepublishMediaJob.cs" />
+    <Compile Include="Models\Blocks\ProductTeaserBlock.cs" />
+    <Compile Include="Models\Blocks\Base\SiteBlockData.cs" />
+    <Compile Include="Models\Blocks\SliderBlock.cs" />
+    <Compile Include="Models\Blocks\SocialMediaLinkBlock.cs" />
+    <Compile Include="Models\Blocks\VimeoBlock.cs" />
+    <Compile Include="Models\Blocks\YouTubeBlock.cs" />
+    <Compile Include="Models\Catalog\Base\ProductBase.cs" />
+    <Compile Include="Models\Catalog\DepartmentNodeWithItemsContent.cs" />
+    <Compile Include="Models\Catalog\DepartmentNodeWithProductsContent.cs" />
+    <Compile Include="Models\Catalog\DepartmentStoreLandingNodeContent.cs" />
+    <Compile Include="Models\Catalog\FashionItemContent.cs" />
+    <Compile Include="Models\Catalog\FashionProductContent.cs" />
+    <Compile Include="Models\Catalog\FashionStoreLandingNodeContent.cs" />
+    <Compile Include="Models\Catalog\FashionStoreSubLandingNodeContent.cs" />
+    <Compile Include="Extensions\CommerceHtmlHelperExtensions.cs" />
+    <Compile Include="Models\Files\GenericFile.cs" />
+    <Compile Include="Models\Files\ImageFile.cs" />
+    <Compile Include="Models\FindModels\FindProduct.cs" />
+    <Compile Include="Models\PageTypes\PersonalInformationPage.cs" />
+    <Compile Include="Models\PageTypes\CartSimpleModulePage.cs" />
+    <Compile Include="Models\PageTypes\ChangePasswordPage.cs" />
+    <Compile Include="Models\PageTypes\CommerceSampleModulePage.cs" />
+    <Compile Include="Models\PageTypes\Payment\DibsPaymentPage.cs" />
+    <Compile Include="Models\PageTypes\ShoppingCategoryPage.cs" />
+    <Compile Include="Models\PageTypes\SitePage.cs" />
+    <Compile Include="Models\PageTypes\DefaultPage.cs" />
+    <Compile Include="Models\PageTypes\HomePage.cs" />
+    <Compile Include="Models\PageTypes\LoginPage.cs" />
+    <Compile Include="Models\PageTypes\OrdersPage.cs" />
+    <Compile Include="Models\PageTypes\SearchPage.cs" />
+    <Compile Include="Models\PageTypes\SettingsBlock.cs" />
+    <Compile Include="Models\PageTypes\ShoppingOverviewPage.cs" />
+    <Compile Include="Models\PageTypes\System\CheckoutPage.cs" />
+    <Compile Include="Models\PageTypes\WishListPage.cs" />
+    <Compile Include="Models\ViewModels\CartItemModel.cs" />
+    <Compile Include="Models\ViewModels\CartModel.cs" />
+    <Compile Include="Models\ViewModels\CatalogContentViewModel.cs" />
+    <Compile Include="Models\ViewModels\ChangePasswordViewModel.cs" />
+    <Compile Include="Models\ViewModels\CheckoutViewModel.cs" />
+    <Compile Include="Models\ViewModels\FashionProductViewModel.cs" />
+    <Compile Include="Models\ViewModels\NewsletterUnsubscribeViewModel.cs" />
+    <Compile Include="Models\ViewModels\NewsletterViewModel.cs" />
+    <Compile Include="Models\ViewModels\OrdersPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\PageListBlockItemViewModel.cs" />
+    <Compile Include="Models\ViewModels\PageListBlockViewModel.cs" />
+    <Compile Include="Models\ViewModels\PriceModel.cs" />
+    <Compile Include="Models\ViewModels\ProductTeaserBlockViewModel.cs" />
+    <Compile Include="Models\ViewModels\ReceiptViewModel.cs" />
+    <Compile Include="Models\ViewModels\RegisterPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\ResetPasswordViewModel.cs" />
+    <Compile Include="Models\ViewModels\ForgotPasswordViewModel.cs" />
+    <Compile Include="Models\ViewModels\Contracts\IBaseCatalogViewModel.cs" />
+    <Compile Include="Models\ViewModels\Contracts\ICatalogViewModel.cs" />
+    <Compile Include="Models\ViewModels\Contracts\ImageViewModel.cs" />
+    <Compile Include="Models\ViewModels\Contracts\IPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\Contracts\IProductViewModel.cs" />
+    <Compile Include="Models\ViewModels\Contracts\IVariationViewModel.cs" />
+    <Compile Include="Models\ViewModels\LazyProductViewModelCollection.cs" />
+    <Compile Include="Models\ViewModels\LazyVariationViewModelCollection.cs" />
+    <Compile Include="Models\ViewModels\LoginViewModel.cs" />
+    <Compile Include="Models\ViewModels\PageViewModel.cs" />
+    <Compile Include="Models\ViewModels\Payment\DibsPaymentViewModel.cs" />
+    <Compile Include="Controllers\PersonalInformationController.cs" />
+    <Compile Include="Models\ViewModels\PersonalInformationViewModel.cs" />
+    <Compile Include="Models\ViewModels\PreviewModel.cs" />
+    <Compile Include="Models\ViewModels\ProductViewModel.cs" />
+    <Compile Include="Models\ViewModels\SearchPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\SelectListItem.cs" />
+    <Compile Include="Models\ViewModels\SelectMarketModel.cs" />
+    <Compile Include="Models\ViewModels\ShoppingCategoryViewModel.cs" />
+    <Compile Include="Models\ViewModels\SocialBarViewModel.cs" />
+    <Compile Include="Models\ViewModels\VariationViewModel.cs" />
+    <Compile Include="Models\ViewModels\VideoViewModel.cs" />
+    <Compile Include="Models\ViewModels\WineSKUViewModel.cs" />
+    <Compile Include="Models\ViewModels\WishListModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResetPassword\IResetPasswordRepository.cs" />
+    <Compile Include="ResetPassword\IResetPasswordService.cs" />
+    <Compile Include="ResetPassword\ResetPasswordModel.cs" />
+    <Compile Include="ResetPassword\ResetPasswordRepository.cs" />
+    <Compile Include="ResetPassword\ResetPasswordService.cs" />
+    <Compile Include="Jobs\ResetPasswordTokenCleanupJob.cs" />
+    <Compile Include="Services\Email\EmailService.cs" />
+    <Compile Include="Services\Email\IEmailService.cs" />
+    <Compile Include="Services\Email\Models\DeliveryReceipt.cs" />
+    <Compile Include="Services\Email\Models\EmailBase.cs" />
+    <Compile Include="Services\Email\Models\INotificationSettings.cs" />
+    <Compile Include="Services\Email\Models\Receipt.cs" />
+    <Compile Include="Services\Email\Models\ResetPassword.cs" />
+    <Compile Include="Services\Email\Models\Welcome.cs" />
+    <Compile Include="Models\ViewModels\Contracts\IProductListViewModelInitializer.cs" />
+    <Compile Include="Services\PostNord\PostNord.cs" />
+    <Compile Include="Services\ProductService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\CatalogEntry\Index.cshtml" />
+    <Content Include="Views\CatalogNode\Index.cshtml" />
+    <Content Include="Views\Catalog\Index.cshtml" />
+    <Content Include="Views\DefaultPage\Index.cshtml" />
+    <Content Include="Views\DefaultPage\Index.mobile.cshtml" />
+    <Content Include="Views\DepartmentNodeWithItemsContent\Index.cshtml" />
+    <Content Include="Views\DepartmentNodeWithProductsContent\Index.cshtml" />
+    <Content Include="Views\FashionProductContent\Index.cshtml" />
+    <Content Include="Views\HomePage\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_AssetImageLink.cshtml" />
+    <Content Include="Views\Shared\_BuyItem.cshtml" />
+    <Content Include="Views\Shared\_CatalogCategories.cshtml" />
+    <Content Include="Views\Shared\_CatalogEntries.cshtml" />
+    <Content Include="Views\Shared\_CatalogProducts.cshtml" />
+    <Content Include="Views\Shared\_CatalogVariants.cshtml" />
+    <Content Include="Views\Shared\_Inventory.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Price.cshtml" />
+    <Content Include="Views\ShoppingOverviewPage\Index.cshtml" />
+    <Content Include="Views\VariationContent\Index.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\WishListPage\Index.cshtml" />
+    <Content Include="Views\_viewstart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common\Core\CommerceStarterKit.Core.csproj">
+      <Project>{01a92f8f-e704-4f78-8dca-67e76b8a6ccf}</Project>
+      <Name>CommerceStarterKit.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\common\Mediachase.Commerce.Workflow.Activities\EPiCode.Commerce.Workflow.Activities.csproj">
+      <Project>{b7957825-3e86-4ea6-8cf3-9bdf7dc8c7a6}</Project>
+      <Name>EPiCode.Commerce.Workflow.Activities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\common\Mediachase.Commerce.Workflow\EPiCode.Commerce.Workflow.csproj">
+      <Project>{413287f6-d606-4f42-ba25-4377a2c581f9}</Project>
+      <Name>EPiCode.Commerce.Workflow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="..\..\packages\OctoPack.3.0.26\tools\OctoPack.targets" Condition="Exists('..\..\packages\OctoPack.3.0.26\tools\OctoPack.targets')" />
+  <Target Name="EnsureOctoPackImported" BeforeTargets="BeforeBuild" Condition="'$(OctoPackImported)' == ''">
+    <Error Condition="!Exists('..\..\packages\OctoPack.3.0.26\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="You are trying to build with OctoPack, but the NuGet targets file that OctoPack depends on is not available on this computer. This is probably because the OctoPack package has not been committed to source control, or NuGet Package Restore is not enabled. Please enable NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\packages\OctoPack.3.0.26\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="OctoPack cannot be run because NuGet packages were restored prior to the build running, and the targets file was unavailable when the build started. Please build the project again to include these packages in the build. You may also need to make sure that your build server does not delete packages prior to each build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <PropertyGroup>
+    <!-- Force Octopack to add additional files -->
+    <OctoPackEnforceAddingFiles>true</OctoPackEnforceAddingFiles>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)WarmMeUp\WarmMeUp.exe http://localhost:49883/</PostBuildEvent>
+  </PropertyGroup>
+</Project>

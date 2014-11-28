@@ -1,0 +1,22 @@
+﻿@using EPiServer.Commerce.SpecializedProperties
+@using OxxCommerceStarterKit.Web.Models.ViewModels
+@model OxxCommerceStarterKit.Web.Models.ViewModels.ICatalogViewModel<EPiServer.Commerce.Catalog.ContentTypes.CatalogContentBase>
+@if (Model.Variants.Value.Any())
+{
+    <h4>Variants</h4>
+    <div>
+        @foreach (var child in Model.Variants.Value)
+        {
+            <div>
+                <h5>@Html.ContentLink(child.CatalogContent)</h5>
+                <div>@Html.Partial("_AssetImageLink", child.CatalogContent)</div>
+                <div>@Html.Partial("_Inventory", child.Inventory.Value ?? new Inventory())</div>
+                <div>@Html.Partial("_Price", new PriceModel(child.Price))</div>
+            
+                @*TODO: Legg til Add funksjonalitet. BUG*@
+                @*<div>@Html.Partial("_BuyItem", new CartItemModel(child.CatalogContent))</div>*@
+                @*<div>@Html.Partial("_WishListItem", new CartItemModel(child.CatalogContent))</div>*@
+            </div>
+        }
+    </div>
+}

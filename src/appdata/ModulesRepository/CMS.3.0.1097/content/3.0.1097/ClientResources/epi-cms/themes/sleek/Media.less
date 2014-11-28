@@ -1,0 +1,33 @@
+﻿@import "variables.less";
+
+.Sleek {
+    .epi-mediaList {
+        .epi-contentList {
+            .epi-createContentContainer {
+                .epi-createContent {
+                    background: url("images/upload-files-medium.png") no-repeat 16px center transparent;
+                    padding: 8px 10px 8px 55px;
+
+                    .dijitIcon {
+                        display: none;
+                    }
+
+                    .epi-createContentText {
+                        color: @text-color-secondary;
+                        text-align: left;
+                        width: auto;
+                    }
+                }
+                //.epi-createContent
+            }
+            //.epi-createContentContainer
+            &.dgrid {
+                .dgrid-no-data {
+                    padding: 15px 0 0 0;
+                }
+            }
+        }
+        //.epi-contentList
+    }
+    //.epi-mediaList
+}

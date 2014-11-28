@@ -1,0 +1,21 @@
+﻿@model EPiServer.Commerce.Catalog.ContentTypes.EntryContentBase
+<div class="similar-products " ng-controller="SimilarProductsController" ng-init="init('@Model.ContentLink.ID','no')" ng-hide="!visible">
+    <div class="panel-heading">
+        <a class="panel-title" data-toggle="collapse" href="#similar-products">@Html.Translate("/common/product/similar_products")<span class="glyphicon glyphicon-chevron-up pull-right"></span></a>
+    </div>
+    <div class="box collapse in" id="similar-products">
+        <div class="slider">
+            <ul class="slides">
+                <li class="product" ng-repeat="product in similarProducts">
+                    <a href="{{product.Url}}">
+                        <img class="img-responsive" alt="{{product.Name}}" title="{{product.Name}}" ng-src="{{product.Image}}?preset=listsmall" load-dispatcher />
+                    </a>
+					<div class="price" itemprop="price" ng-show="product.DefaultPrice">
+						{{ product.DefaultPrice }}
+						<span class="member-price" ng-show="product.DiscountedPrice">| @Html.Translate("/common/product/member_price"): {{product.DiscountedPrice}}</span>
+					</div>
+				</li>
+            </ul>
+        </div>
+    </div>
+</div>

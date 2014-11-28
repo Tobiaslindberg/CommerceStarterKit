@@ -1,0 +1,33 @@
+﻿@using OxxCommerceStarterKit.Web.Extensions
+@using OxxCommerceStarterKit.Web.Models.ViewModels.Simple
+@model OxxCommerceStarterKit.Web.Models.Catalog.FashionProductContent
+@{
+	Layout = null;
+	
+	var product = new Product(Model);
+	var image = Html.AssetImageUrls(Model).FirstOrDefault();
+	if (image.Contains(","))
+	{
+		image = image.Split(',')[0];
+	}
+	var imageWidth = ViewData["imageWidth"];
+}
+<center class="product">
+	<div class="image">
+		<a href="@Url.ContentUrl(Model.ContentLink)">
+			@if (image != null)
+			{
+				<img class="img-responsive center" src="@(image + imageWidth)" />
+			}
+			else
+			{
+				<img class="img-responsive no-image center" src="/siteassets/system/no-image.png@(imageWidth)">
+			}
+		</a>
+	</div>
+	<div class="newitemtext">@Model.NewItemText &nbsp;</div>
+	<h2 class="name">@product.Name</h2>
+	<div class="price">
+		@Html.Partial("_Price", new PriceModel(product.Price), new ViewDataDictionary(this.ViewData) { { "hideText", true } })
+	</div>
+</center>

@@ -1,0 +1,8 @@
+﻿@model ICatalogViewModel<DepartmentNodeWithItemsContent>
+@{
+    ViewBag.Title = "Catalog";
+}
+
+<h2>Catalog Node</h2>
+@Html.Partial("_CatalogCategories", Model)
+@Html.Partial("_CatalogVariants", Model)

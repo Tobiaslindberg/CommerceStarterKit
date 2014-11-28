@@ -1,0 +1,95 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+@using Mediachase.Commerce.Customers
+@using OxxCommerceStarterKit.Web.Helpers
+@model Chrome
+@{
+    bool isInEditMode = Html.IsInEditMode();
+    
+    ChromeLanguageInfo selectedLanguage = Model.Languages.FirstOrDefault(l => l.Selected == true);
+    if (selectedLanguage == null) // Odd case
+    {
+        selectedLanguage = new ChromeLanguageInfo() {DisplayName = "Unknown", Selected = true};
+    }
+}
+
+<div class="header">
+    <div class="container">
+        <div class="top-menus">
+            <nav role="navigation" class="menu-top menu-top-left">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        @if (this.User.Identity.IsAuthenticated)
+                        {
+                            @Html.ContentLink(@CustomerContext.Current.CurrentContact.FullName, Model.AccountPage ?? ContentReference.StartPage)
+                        }
+                        else
+                        {
+                            @Html.ContentLink(Model.LoginPage)
+                        }
+                    </li>
+                    @if (Model.TopLeftMenu != null)
+                    {
+                        @Html.Partial("_TopMenu", Model.TopLeftMenu)
+                    }
+                </ul>
+            </nav>
+            <nav role="navigation" class="menu-top menu-top-right">
+                <ul class="nav navbar-nav navbar-right">
+                    @Html.Partial("_TopMenu", Model.TopRightMenu, new ViewDataDictionary() { { "ShowCountsOnLinks", true } })
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="@selectedLanguage.IconUrl"/>&nbsp;@selectedLanguage.DisplayName <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            @foreach (var langInfo in Model.Languages)
+                            {
+                                if (langInfo.Selected == false)
+                                {
+                                    if (isInEditMode == false)
+                                    {
+                                        <li><a href="/@langInfo.Url"><img src="@langInfo.IconUrl" />&nbsp;@langInfo.DisplayName</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a href="@langInfo.EditUrl" target="_top"><img src="@langInfo.IconUrl" />&nbsp;@langInfo.DisplayName</a></li>
+                                    }
+                                 }
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="logo">
+            <a href="/"><img class="img-responsive" src="@Model.LogoImageUrl" alt="Logo"></a>
+        </div>
+    </div>
+</div>
+<div class="gradient"></div>
+
+<div class="container">
+    <nav class="navbar navbar-default menu-main" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#starterkit-mainmenu-collapable">
+                <span class="sr-only">@Html.Translate("/common/layout/open_menu")</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse" id="starterkit-mainmenu-collapable">
+            @Html.Partial("_MainMenu")
+            <div class="navbar-form navbar-right search">
+                <form action="@Url.ContentUrl(Model.SearchPage)">
+                    <div class="form-group" ng-controller="AutoCompleteController">
+                        <label class="sr-only" for="SearchText">@Html.Translate("/common/layout/search_label")</label>
+                        <span data-valmsg-replace="true" data-valmsg-for="SearchText" class="field-validation-valid"></span>
+                        @*Todo: Fix language*@
+                        <input id="SearchText" type="text" class="form-control" placeholder="@Html.Translate("/common/layout/search_placeholder")" name="q" data-val-required="@string.Format(Html.Translate("/common/validation/required"), Html.Translate("/common/layout/search_label"))" required="required" data-val="true" ng-init="init('no')" auto-complete />
+                        <input type="submit" value="@Html.Translate("/common/layout/search_button")" role="button" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
+

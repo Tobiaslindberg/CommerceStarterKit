@@ -1,0 +1,118 @@
+@import "_variables.less";
+.big-slider-container {
+    height: 350px;
+}
+
+.big-slider {
+    height: inherit;
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    .flex-direction-nav {
+        position: absolute;
+        bottom: 9px;
+        left: 50%;
+
+        .flex-prev {
+            left: -564px;
+            background-position: -10px 0;
+        }
+
+        a {
+            opacity: 0.8;
+            text-indent: -99999px;
+            background: transparent url("../Images/slider-arrows.png") no-repeat scroll 0 0;
+            width: 10px;
+            height: 21px;
+        }
+
+        .flex-next {
+            right: -564px;
+        }
+    }
+
+    .big-slider-inner {
+        margin-right: -1000px;
+        margin-left: -1000px;
+    }
+
+    .image-container {
+        overflow: hidden;
+        text-align: center;
+
+        .image-centerer {
+            display: inline-block;
+        }
+    }
+}
+
+.slider {
+    overflow: visible;
+    position: relative;
+
+    ul, li {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+
+        img {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            //max-width: 100%;
+        }
+
+        a {
+            color: black;
+        }
+    }
+
+    .product {
+        .price {
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+
+    .flex-direction-nav {
+        a {
+            opacity: 1;
+            top: 52%;
+            width: 20px;
+            outline: none;
+        }
+
+        :before {
+            font-size: 12px;
+        }
+
+        .flex-prev {
+            left: 0;
+            padding-left: 4px;
+            text-align: left;
+        }
+
+        .flex-next {
+            right: 0;
+            padding-right: 4px;
+        }
+    }
+}
+
+.box .slider {
+    margin-left: -@boxPadding;
+    margin-right: -@boxPadding;
+    padding-left: @boxPadding;
+    padding-right: @boxPadding;
+}
+
+@media only screen and (max-width: 767px) {
+    .big-slider-container {
+        height: 250px;
+    }
+}
+
+

@@ -1,0 +1,164 @@
+﻿@model OxxCommerceStarterKit.Core.Objects.SharedViewModels.OrderViewModel
+<div class="clearfix header hidden-xs">
+	<div class="col-sm-2">@Html.Translate("/common/cart/product_table_headers/product")</div>
+	<div class="col-sm-2">@Html.Translate("/common/cart/product_table_headers/article_number")</div>
+	<div class="col-sm-2">@Html.Translate("/common/cart/product_table_headers/color")</div>
+	<div class="col-sm-2">@Html.Translate("/common/cart/product_table_headers/size")</div>
+	<div class="col-sm-2">@Html.Translate("/common/cart/product_table_headers/quantity")</div>
+	<div class="col-sm-2 price">@Html.Translate("/common/cart/product_table_headers/price")</div>
+</div>
+@if (Model != null)
+{
+	if (Model.OrderLines != null)
+	{
+		foreach (var p in Model.OrderLines)
+		{
+			<div class="clearfix order-line">
+				<div class="col-xs-6 col-sm-2">@p.Name</div>
+				<div class="col-xs-6 col-sm-2">
+					<span class="visible-xs">@Html.Translate("/common/cart/article_number")</span> @p.ArticleNumber
+				</div>
+				<div class="col-xs-6 col-sm-2">@p.Color</div>
+				<div class="col-xs-6 col-sm-2">
+					<span class="visible-xs">@Html.Translate("/common/receipt/size_prefix")</span> @p.Size</div>
+				<div class="col-xs-6 col-sm-2">@(p.Quantity)
+					<span class="visible-xs">@(p.Quantity == 1 ? Html.Translate("/common/cart/quantity_one") : Html.Translate("/common/cart/quantity_many"))</span>
+				</div>
+				<div class="col-xs-6 col-sm-2 price">
+					@if (p.Discount > 0)
+					{
+						<del>@Model.FormatMoney(p.Price)</del><br/>
+					}
+					@Model.FormatMoney(p.Price - p.Discount)
+				</div>
+			</div>
+		}
+	}
+
+	<div class="sums clearfix">
+		<div class="col-sm-7 col-md-8 clearfix">
+			<div class="discount-codes clearfix">
+				@if (Model.DiscountCodes != null && Model.DiscountCodes.Any())
+				{
+					<div>
+						<span>@Html.Translate("/common/cart/coupon_codes/applied_label")</span>
+						<span>
+							@Html.Raw(string.Join("</span><span>, ", Model.DiscountCodes.ToArray()))
+						</span>
+					</div>
+				}
+			</div>
+		</div>
+		<div class="col-sm-5 col-md-4">
+			<div class="row">
+				<div class="col-xs-6 text">
+					@Html.Translate("/common/cart/products")
+				</div>
+				<div class="col-xs-6 value">
+					@Model.FormatMoney(Model.TotalLineItemsAmount)
+				</div>
+			</div>
+			@if (Model.Shipping > 0)
+			{
+				<div class="row shipping">
+					<div class="col-xs-6 text">
+						@Html.Translate("/common/cart/shipping")
+					</div>
+					<div class="col-xs-6 value">
+						@Model.FormatMoney(Model.Shipping)
+					</div>
+				</div>
+			}
+			@if (Model.Discount > 0)
+			{
+				<div class="row discount">
+					<div class="col-xs-6 text">
+						@Html.Translate("/common/cart/discount")
+					</div>
+					<div class="col-xs-6 value">
+						@Model.FormatMoney(Model.Discount)
+					</div>
+				</div>
+			}
+			<div class="row taxes">
+				<div class="col-xs-6 text">
+					<div>
+						@Html.Translate("/common/cart/taxes")
+					</div>
+				</div>
+				<div class="col-xs-6 value">
+					<div>@Model.FormatMoney(Model.Tax)</div>
+				</div>
+			</div>
+			<div class="row total">
+				<div class="col-xs-6 text">
+					@Html.Translate("/common/cart/total")
+				</div>
+				<div class="col-xs-6 value">
+					@Model.FormatMoney(Model.TotalAmount)
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix addresses">
+		<div class="col-sm-4 address-field">
+			<h3>
+				@Html.Translate("/common/accountpages/billing_address_title")
+			</h3>
+			@Html.DisplayFor(m => m.BillingAddress)
+		</div>
+		<div class="col-sm-4 address-field">
+			<h3>
+				@Html.Translate("/common/accountpages/shipping_address_title")
+			</h3>
+			@Html.DisplayFor(m => m.ShippingAddress)
+			@if (!string.IsNullOrWhiteSpace(Model.DeliveryLocation))
+			{
+				<div class="delivery-location">
+					<h3>@Html.Translate("/common/accountpages/delivery_service_point")</h3>
+					<p>@Model.DeliveryLocation</p>
+				</div>
+			}
+		</div>
+		<div class="col-sm-4 address-field">
+			<h3>
+				@Html.LabelFor(m => m.Email, @Html.Translate("/common/accountpages/email_label"))
+			</h3>
+			<input type="text" value="@Model.Email" disabled="disabled" />
+			<h3>
+				@Html.LabelFor(m => m.Phone, @Html.Translate("/common/accountpages/phone_label"))
+			</h3>
+			<input type="text" value="@Model.Phone" disabled="disabled" />
+		</div>
+	</div>
+	
+	
+	if (!string.IsNullOrEmpty(Model.PaymentMethod))
+	{
+		<div class="clearfix payment-methods">
+			<h2>@Html.Translate("/common/checkout/payment_methods_title")</h2>
+			<div class="payment-method">
+				<label>
+					<span class="image">
+						<img src="@Url.Content("~/Content/images/paymentMethods/" + Model.PaymentMethod.ToLower() + ".png")" alt="@Model.PaymentMethod" />
+					</span>
+				</label>
+			</div>
+		</div>
+	}
+
+	if (!string.IsNullOrEmpty(Model.ShippingTrackingNumber))
+	{
+		<div class="clearfix shipping">
+
+			<h2>@Html.Translate("/common/receipt/shipment/title")</h2>
+
+			<p>@Model.ShippingTrackingNumber</p>
+
+		</div>
+	}
+}
+else
+{
+	<text>Error - model is null</text>
+}

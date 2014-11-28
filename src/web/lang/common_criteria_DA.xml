@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<languages>
+  <language name="dansk" id="da">
+    <common>
+      <visitorgroups>
+        <criteria>
+          <userattribute>
+            <anymonth>En hvilken som helst måned</anymonth>
+            <anyyear>Et hvilket som helst år</anyyear>
+            <attributenamenotselected>Vælg en attribut</attributenamenotselected>
+            <category>Kriterier for fællesskab</category>
+            <description>Kriterium for brugerattribut</description>
+            <displayName>Brugerattribut</displayName>
+            <false>falsk</false>
+            <lowerboundgreaterthanupperbound>Den nedre grænseværdi skal være mindre end eller lig med den øvre grænseværdi</lowerboundgreaterthanupperbound>
+            <true>sand</true>
+          </userattribute>
+        </criteria>
+      </visitorgroups>
+    </common>
+  </language>
+</languages>
