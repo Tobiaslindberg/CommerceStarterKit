@@ -60,7 +60,7 @@ For the Norwegian market, you can select a pickup location for the order. This i
 Add your consumerId to the `PostNord.ConsumerId` appSettings value in `web.config`:
 
     <appSettings>
-    <add key="PostNord.ConsumerId" value="your-consumer-id-here" />
+    	<add key="PostNord.ConsumerId" value="your-consumer-id-here" />
     <appSettings>
 
 Without the Postnord integration, you should still be able to do a checkout, but you will not be able to demonstrate the pickup location feature.

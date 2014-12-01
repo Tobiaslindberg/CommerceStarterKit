@@ -102,10 +102,7 @@
 					<div class="panel-body">
 						@Html.PropertyFor(p => p.CatalogContent.Description)
 						<p>@Html.Translate("/common/product/color"): <span itemprop="color">@Html.PropertyFor(p => p.CatalogContent.DescriptiveColor)</span></p>
-						<p>Artnr:
-                            <span itemprop="productID">@Model.CatalogContent.Name                             
-                            </span>
-                        </p>
+						<p>@Html.Translate("/common/product/code"): <span itemprop="productID">@Model.CatalogContent.Code</span></p>
 					</div>
 				</div>
 			</div>

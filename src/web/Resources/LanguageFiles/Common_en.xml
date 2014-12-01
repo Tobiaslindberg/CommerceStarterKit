@@ -156,6 +156,7 @@
 				<in_stock>in stock</in_stock>
 				<similar_products>Similar products</similar_products>
 				<color>Color</color>
+                <code>Model No</code>
 				<colors>
 					<white>white</white>
 					<beige>beige</beige>
@@ -168,7 +169,7 @@
 					<black>black</black>
 				</colors>
 				<about_the_product>About the product</about_the_product>
-        <details>Details</details>
+                <details>Details</details>
 				<size_and_fit>Size &amp; fit</size_and_fit>
 				<details_and_treatment>Details &amp; treatment</details_and_treatment>
 				<delivery_and_return>Delivery &amp; returns</delivery_and_return>

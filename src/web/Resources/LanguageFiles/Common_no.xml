@@ -156,6 +156,7 @@
 				<in_stock>på lager</in_stock>
 				<similar_products>Tilsvarende produkter</similar_products>
 				<color>Farge</color>
+                <code>Art.nr.</code>
 				<colors>
 					<white>hvit</white>
 					<beige>beige</beige>

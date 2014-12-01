@@ -68,26 +68,15 @@ namespace OxxCommerceStarterKit.Web.Models.Files
         [UIHint(Constants.UIHint.HotSpotsEditor)]
         public virtual String HotSpotSettings { get; set; }
 
-        //public virtual Blob width370 { get; set; }
-        //public virtual Blob width560 { get; set; }
-        //public virtual Blob width750 { get; set; }
-        //public virtual Blob width1130 { get; set; }
-        //public virtual Blob box370 { get; set; }
-        //public virtual Blob box560 { get; set; }
-        //public virtual Blob box750 { get; set; }
-        //public virtual Blob box1130 { get; set; }
-        //public virtual Blob width580 { get; set; }
-        //public virtual Blob width379 { get; set; }
-        //public virtual Blob width279 { get; set; }
-        //public virtual Blob width179 { get; set; }
-        //public virtual Blob LargeThumbnail { get; set; }
-        //public virtual Blob width110 { get; set; }
-        //public virtual Blob width320 { get; set; }
-        //public virtual Blob ListImage { get; set; }
-        //public virtual Blob RelatedProduct { get; set; }
-        //public virtual Blob SimilarProduct { get; set; }
-        //public virtual Blob SliderImage { get; set; }
-
+        /// <summary>
+        /// Gets or sets the large thumbnail used by Commerce UI
+        /// </summary>
+        /// <remarks>
+        /// You can also inherit from CommerceMedia
+        /// </remarks>
+        [Editable(false)]
+        [ImageDescriptor(Width = 256, Height = 256)]
+        public virtual Blob LargeThumbnail { get; set; }
     }
 
 }
