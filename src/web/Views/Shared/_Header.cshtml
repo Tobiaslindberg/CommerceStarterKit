@@ -5,12 +5,12 @@
 @model Chrome
 @{
     bool isInEditMode = Html.IsInEditMode();
-    
     ChromeLanguageInfo selectedLanguage = Model.Languages.FirstOrDefault(l => l.Selected == true);
     if (selectedLanguage == null) // Odd case
     {
-        selectedLanguage = new ChromeLanguageInfo() {DisplayName = "Unknown", Selected = true};
+        selectedLanguage = new ChromeLanguageInfo() {DisplayName = "Unknown", Selected = true, Url = "/", EditUrl = "/"};
     }
+    string logoLinkUrl = isInEditMode == false ? selectedLanguage.Url : selectedLanguage.EditUrl;
 }
 
 <div class="header">
@@ -60,7 +60,7 @@
             </nav>
         </div>
         <div class="logo">
-            <a href="/"><img class="img-responsive" src="@Model.LogoImageUrl" alt="Logo"></a>
+            <a href="/@logoLinkUrl"><img class="img-responsive" src="@Model.LogoImageUrl" alt="Logo"></a>
         </div>
     </div>
 </div>

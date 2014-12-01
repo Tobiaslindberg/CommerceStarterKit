@@ -7,7 +7,7 @@
 @using OxxCommerceStarterKit.Web.Models.ViewModels
 @model OxxCommerceStarterKit.Web.Models.ViewModels.FashionProductViewModel
 @{
-	var id = Guid.NewGuid();
+	var id = System.Guid.NewGuid();
 	Layout = null;
 	var urlResolver = ServiceLocator.Current.GetInstance<UrlResolver>();
 	
@@ -36,8 +36,8 @@
                             else
                             {
                                 <div class="easyzoom easyzoom--overlay" title="@Html.Translate("/common/product/click_to_zoom")">
-                                    <a href="@(urlResolver.GetUrl(file.ContentLink))">
-                                        <img src="@(urlResolver.GetUrl(file.ContentLink))?preset=listmedium" />
+                                    <a href="@(urlResolver.GetDefaultModeUrl(file.ContentLink))">
+                                        <img src="@(urlResolver.GetDefaultModeUrl(file.ContentLink))?preset=listmedium" />
                                     </a>
                                 </div>
 								<a class="full-screen" href="javascript:;">@Html.Translate("/common/product/show_fullscreen")</a>
@@ -58,13 +58,13 @@
 								{
 									<div class="video-container">
 										<span class="starter disabled"></span>
-										<img src="@(urlResolver.GetUrl(file.ContentLink))?preset=sliderimage" />
+										<img src="@(urlResolver.GetDefaultModeUrl(file.ContentLink))?preset=sliderimage" />
 									</div>
 									
 								}
 								else
 								{
-									<img src="@(urlResolver.GetUrl(file.ContentLink))?preset=sliderimage" />
+									<img src="@(urlResolver.GetDefaultModeUrl(file.ContentLink))?preset=sliderimage" />
 								}
 							</a>
 						</li>

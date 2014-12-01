@@ -1053,6 +1053,7 @@
     <Compile Include="Controllers\FashionProductPartialController.cs" />
     <Compile Include="EditorDescriptors\TinyMcePlugins\AllowExtendedAttributes.cs" />
     <Compile Include="Extensions\PriceExtensions.cs" />
+    <Compile Include="Extensions\UrlExtentions.cs" />
     <Compile Include="Models\ViewModels\Email\NotificationSettings.cs" />
     <Compile Include="Models\ViewModels\Payment\CancelPaymentViewModel.cs" />
     <Compile Include="Controllers\WineProductSearchBlockController.cs" />
