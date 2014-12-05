@@ -11,6 +11,7 @@ Copyright (C) 2013-2014 BV Network AS
 using System;
 using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -18,6 +19,7 @@ using System.Web.Routing;
 using EPiServer.ServiceLocation;
 using EPiServer.Web;
 using log4net;
+using OxxCommerceStarterKit.Web.Controllers;
 
 namespace OxxCommerceStarterKit.Web
 {
