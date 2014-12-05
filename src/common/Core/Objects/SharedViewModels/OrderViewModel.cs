@@ -33,6 +33,7 @@ namespace OxxCommerceStarterKit.Core.Objects.SharedViewModels
 			OrderDate = DateTime.MinValue;
 		    _currentMarket = ServiceLocator.Current.GetInstance<ICurrentMarket>().GetCurrentMarket();
 		}
+
 		public OrderViewModel(PurchaseOrder order)
 			: this()
 		{
@@ -107,7 +108,7 @@ namespace OxxCommerceStarterKit.Core.Objects.SharedViewModels
 				ShippingTrackingNumber = order.OrderForms[0].Shipments[0].ShipmentTrackingNumber;
 			}
 
-			ErpOrderNumber = order.GetStringValue(Constants.Metadata.PurchaseOrder.JeevesId);
+			ErpOrderNumber = order.GetStringValue(Constants.Metadata.PurchaseOrder.BackendOrderNumber);
 		}
 
 

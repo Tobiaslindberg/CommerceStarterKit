@@ -215,65 +215,30 @@ namespace OxxCommerceStarterKit.Web.Controllers
 		{
             /// TODO: Additonal stock check
 		    
-			var contentRepository = ServiceLocator.Current.GetInstance<IContentRepository>();
-			var referenceConverter = ServiceLocator.Current.GetInstance<ReferenceConverter>();
 			var warehouseInventory = ServiceLocator.Current.GetInstance<IWarehouseInventoryService>();
 			var warehouseRepository = ServiceLocator.Current.GetInstance<IWarehouseRepository>();
 
+            /// TODO: Confirm use of default warehouse for your project
             var epiWarehouses = warehouseRepository.List().Where(w => w.Code.Equals("default")).ToList();
 
-
-		    var enumerable = lineItems as IList<LineItem> ?? lineItems.ToList();
-		    var skus = enumerable.Select(i => i.CatalogEntryId).Distinct().ToList();
-
-            ///TODO: Implement without ERP, or document empty handler for custom implementation
-
-//           
-
-
-  //                 var catalogKey = new CatalogKey(AppContext.Current.ApplicationId, v.Sku);
-    //                var stock = v.Stock.Where(s => s.Warehouse.Id == "1" || s.Warehouse.Id == "20").ToList();
-
-//                    foreach (var i in warehouseInventory.ListTotals(new[] { catalogKey }, epiWarehouses))
-//                    {
-//                        if (!stock.Any(s => "Jeeves-" + s.Warehouse.Id == i.WarehouseCode && s.Warehouse.Id == "1"))
-//                            warehouseInventory.Delete(i.CatalogKey);
-//                    }
-
-//                    var warehouse = epiWarehouses.FirstOrDefault(w => w.Code == "Jeeves-1");
-
-//                    if (warehouse != null)
-//                    {
-//                        var quantities = stock.Where(s => s.Quantity.HasValue).ToList();
-
-//                        if (quantities.Any())
-//                        {
-//                            var inventory = warehouseInventory.Get(catalogKey, warehouse);
-
-//                            if (inventory == null)
-//                                inventory = new WarehouseInventory() { CatalogKey = catalogKey, WarehouseCode = warehouse.Code, InStockQuantity = quantities.Select(q => q.Quantity).Sum().Value };
-
-//                            else inventory = new WarehouseInventory(inventory) { InStockQuantity = quantities.Select(q => q.Quantity).Sum().Value };
-
-//                            warehouseInventory.Save(inventory);
-//                        }
-
-//                        else warehouseInventory.Delete(catalogKey, warehouse);
-//                    }
-//                }
-//            }
+            if(lineItems == null || lineItems.Any() == false)
+                return;
 
             // [sku] = quantity, displayname
-            var summary = new Dictionary<string, Tuple<decimal, string>>(); //new Dictionary<Tuple<string, string>, decimal>();
+            var summary = new Dictionary<string, Tuple<decimal, string>>(); 
 
-			foreach (var i in enumerable)
+            foreach (var i in lineItems)
 			{
                 Tuple<decimal, string> quantity;
 
                 if (summary.TryGetValue(i.CatalogEntryId, out quantity))
+                {
                     quantity = new Tuple<decimal, string>(quantity.Item1 + i.Quantity, quantity.Item2);
-
-                else quantity = new Tuple<decimal, string>(i.Quantity, i.DisplayName);
+                }
+                else
+                {
+                    quantity = new Tuple<decimal, string>(i.Quantity, i.DisplayName);
+                }
 
                 summary[i.CatalogEntryId] = quantity;
 			}
@@ -284,7 +249,10 @@ namespace OxxCommerceStarterKit.Web.Controllers
 				var inventory = warehouseInventory.GetTotal(catalogKey, epiWarehouses);
 
 				if (inventory == null || inventory.InStockQuantity < p.Value.Item1)
-					ModelState.AddModelError(string.Empty, "Ikke nok på lager av varianten " + p.Value.Item2 + " (" + p.Key + ")");
+				{
+                    /// TODO: Add language string
+				    ModelState.AddModelError(string.Empty, "Variant is out of stock " + p.Value.Item2 + " (" + p.Key + ")");
+				}
 			}
 		}
 

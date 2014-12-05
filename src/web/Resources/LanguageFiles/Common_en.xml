@@ -225,7 +225,7 @@
 				<print>Print the receipt</print>
 				<size_prefix>Size</size_prefix>
 				<email>
-					<subject>Order confirmation - Tracking number: {0}</subject>
+					<subject>Order confirmation - Order number: {0}</subject>
 					<title>Receipt</title>
 				</email>
 				<shipment>

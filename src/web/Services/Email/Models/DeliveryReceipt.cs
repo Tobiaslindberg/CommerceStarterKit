@@ -8,8 +8,11 @@ Copyright (C) 2013-2014 BV Network AS
 
 */
 
+using System;
 using EPiServer.Framework.Localization;
 using EPiServer.ServiceLocation;
+using Mediachase.Commerce;
+using Mediachase.Commerce.Markets;
 using Mediachase.Commerce.Orders;
 using OxxCommerceStarterKit.Core.Objects.SharedViewModels;
 
@@ -23,38 +26,47 @@ namespace OxxCommerceStarterKit.Web.Services.Email.Models
 		private OrderViewModel _orderViewModel;
 		public OrderViewModel OrderViewModel { get { return _orderViewModel; } }
 
-
 		public string PurchaseOrderNumber { get; set; }
-		public string JeevesOrderNumber { get; set; }
+		public string BackendOrderNumber { get; set; }
 		public string TrackingNumber { get; set; }
 
 		public DeliveryReceipt(PurchaseOrder purchaseOrder)
 		{
-			_purchaseOrder = purchaseOrder;
+		    if (purchaseOrder == null) throw new ArgumentNullException("purchaseOrder cannot be null");
 
+		    _purchaseOrder = purchaseOrder;
 			_orderViewModel = new OrderViewModel(_purchaseOrder);
 
 			To = _orderViewModel.Email;
 
-			var localizationService = ServiceLocator.Current.GetInstance<LocalizationService>();
+            var localizationService = ServiceLocator.Current.GetInstance<LocalizationService>();
+            ICurrentMarket currentMarket = ServiceLocator.Current.GetInstance<ICurrentMarket>();
+            IMarketService marketService = ServiceLocator.Current.GetInstance<IMarketService>();
+            IMarket market = GetMarketForOrder(purchaseOrder, marketService, currentMarket);
 
-            Subject = string.Format("Ordrebekreftelse - Sporingsnummer:", _purchaseOrder.TrackingNumber); // TODO: Hente fra språkfilen. Sett currentculture til kultur til ordren og ikke contexten vi er i nå, som er engelsk.
+            string emailSubject = localizationService.GetStringByCulture("/common/receipt/email/subject", market.DefaultLanguage);
+                
+            Subject = string.Format(emailSubject, _purchaseOrder.TrackingNumber);
+            BackendOrderNumber = _orderViewModel.ErpOrderNumber;
+            PurchaseOrderNumber = _purchaseOrder.TrackingNumber;
 
-			JeevesOrderNumber = _orderViewModel.ErpOrderNumber;
-
-			if (_purchaseOrder != null)
+			// Get first shipment tracking number
+            if (_purchaseOrder.OrderForms != null &&
+				_purchaseOrder.OrderForms.Count > 0 &&
+				_purchaseOrder.OrderForms[0].Shipments != null &&
+				_purchaseOrder.OrderForms[0].Shipments.Count > 0)
 			{
-				PurchaseOrderNumber = _purchaseOrder.TrackingNumber;
-
-
-				if (_purchaseOrder.OrderForms != null &&
-					_purchaseOrder.OrderForms.Count > 0 &&
-					_purchaseOrder.OrderForms[0].Shipments != null &&
-					_purchaseOrder.OrderForms[0].Shipments.Count > 0)
-				{
-					TrackingNumber = _purchaseOrder.OrderForms[0].Shipments[0].ShipmentTrackingNumber;
-				}
+				TrackingNumber = _purchaseOrder.OrderForms[0].Shipments[0].ShipmentTrackingNumber;
 			}
 		}
+
+        protected IMarket GetMarketForOrder(PurchaseOrder purchaseOrder, IMarketService marketService, ICurrentMarket currentMarket)
+        {
+            if (purchaseOrder.MarketId != null && purchaseOrder.MarketId.Value != null)
+            {
+                return marketService.GetMarket(purchaseOrder.MarketId);
+            }
+            return currentMarket.GetCurrentMarket();
+        }
     }
 }

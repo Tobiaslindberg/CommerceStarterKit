@@ -13,6 +13,9 @@ using Mediachase.Commerce.Orders;
 
 namespace OxxCommerceStarterKit.Core.Services
 {
+    /// <summary>
+    /// Exports orders to a backend system (typically an ERP system)
+    /// </summary>
 	public class ExportOrderService : IExportOrderService
 	{
 		public string ExportOrder(PurchaseOrder purchaseOrder)

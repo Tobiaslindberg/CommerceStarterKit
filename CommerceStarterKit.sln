@@ -20,9 +20,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPiCode.Commerce.Workflow.A
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug Jeeves|Any CPU = Debug Jeeves|Any CPU
-		Debug Jeeves|Mixed Platforms = Debug Jeeves|Mixed Platforms
-		Debug Jeeves|x86 = Debug Jeeves|x86
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
 		Debug|x86 = Debug|x86
@@ -31,11 +28,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{01A92F8F-E704-4F78-8DCA-67E76B8A6CCF}.Debug Jeeves|Any CPU.ActiveCfg = Debug Jeeves|Any CPU
-		{01A92F8F-E704-4F78-8DCA-67E76B8A6CCF}.Debug Jeeves|Any CPU.Build.0 = Debug Jeeves|Any CPU
-		{01A92F8F-E704-4F78-8DCA-67E76B8A6CCF}.Debug Jeeves|Mixed Platforms.ActiveCfg = Debug Jeeves|Any CPU
-		{01A92F8F-E704-4F78-8DCA-67E76B8A6CCF}.Debug Jeeves|Mixed Platforms.Build.0 = Debug Jeeves|Any CPU
-		{01A92F8F-E704-4F78-8DCA-67E76B8A6CCF}.Debug Jeeves|x86.ActiveCfg = Debug Jeeves|Any CPU
 		{01A92F8F-E704-4F78-8DCA-67E76B8A6CCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{01A92F8F-E704-4F78-8DCA-67E76B8A6CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01A92F8F-E704-4F78-8DCA-67E76B8A6CCF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -46,11 +38,6 @@ Global
 		{01A92F8F-E704-4F78-8DCA-67E76B8A6CCF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{01A92F8F-E704-4F78-8DCA-67E76B8A6CCF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{01A92F8F-E704-4F78-8DCA-67E76B8A6CCF}.Release|x86.ActiveCfg = Release|Any CPU
-		{20146EB5-4361-4F8F-B81F-FBCF5A0A9F26}.Debug Jeeves|Any CPU.ActiveCfg = Debug Jeeves|Any CPU
-		{20146EB5-4361-4F8F-B81F-FBCF5A0A9F26}.Debug Jeeves|Any CPU.Build.0 = Debug Jeeves|Any CPU
-		{20146EB5-4361-4F8F-B81F-FBCF5A0A9F26}.Debug Jeeves|Mixed Platforms.ActiveCfg = Debug Jeeves|Any CPU
-		{20146EB5-4361-4F8F-B81F-FBCF5A0A9F26}.Debug Jeeves|Mixed Platforms.Build.0 = Debug Jeeves|Any CPU
-		{20146EB5-4361-4F8F-B81F-FBCF5A0A9F26}.Debug Jeeves|x86.ActiveCfg = Debug Jeeves|Any CPU
 		{20146EB5-4361-4F8F-B81F-FBCF5A0A9F26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{20146EB5-4361-4F8F-B81F-FBCF5A0A9F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20146EB5-4361-4F8F-B81F-FBCF5A0A9F26}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -61,11 +48,6 @@ Global
 		{20146EB5-4361-4F8F-B81F-FBCF5A0A9F26}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{20146EB5-4361-4F8F-B81F-FBCF5A0A9F26}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{20146EB5-4361-4F8F-B81F-FBCF5A0A9F26}.Release|x86.ActiveCfg = Release|Any CPU
-		{1502E55F-A6D6-490F-8AE9-2E83F768BE44}.Debug Jeeves|Any CPU.ActiveCfg = Debug Jeeves|Any CPU
-		{1502E55F-A6D6-490F-8AE9-2E83F768BE44}.Debug Jeeves|Any CPU.Build.0 = Debug Jeeves|Any CPU
-		{1502E55F-A6D6-490F-8AE9-2E83F768BE44}.Debug Jeeves|Mixed Platforms.ActiveCfg = Debug Jeeves|Any CPU
-		{1502E55F-A6D6-490F-8AE9-2E83F768BE44}.Debug Jeeves|Mixed Platforms.Build.0 = Debug Jeeves|Any CPU
-		{1502E55F-A6D6-490F-8AE9-2E83F768BE44}.Debug Jeeves|x86.ActiveCfg = Debug Jeeves|Any CPU
 		{1502E55F-A6D6-490F-8AE9-2E83F768BE44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1502E55F-A6D6-490F-8AE9-2E83F768BE44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1502E55F-A6D6-490F-8AE9-2E83F768BE44}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -76,11 +58,6 @@ Global
 		{1502E55F-A6D6-490F-8AE9-2E83F768BE44}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1502E55F-A6D6-490F-8AE9-2E83F768BE44}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1502E55F-A6D6-490F-8AE9-2E83F768BE44}.Release|x86.ActiveCfg = Release|Any CPU
-		{413287F6-D606-4F42-BA25-4377A2C581F9}.Debug Jeeves|Any CPU.ActiveCfg = Debug Jeeves|Any CPU
-		{413287F6-D606-4F42-BA25-4377A2C581F9}.Debug Jeeves|Any CPU.Build.0 = Debug Jeeves|Any CPU
-		{413287F6-D606-4F42-BA25-4377A2C581F9}.Debug Jeeves|Mixed Platforms.ActiveCfg = Debug Jeeves|Any CPU
-		{413287F6-D606-4F42-BA25-4377A2C581F9}.Debug Jeeves|Mixed Platforms.Build.0 = Debug Jeeves|Any CPU
-		{413287F6-D606-4F42-BA25-4377A2C581F9}.Debug Jeeves|x86.ActiveCfg = Debug Jeeves|Any CPU
 		{413287F6-D606-4F42-BA25-4377A2C581F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{413287F6-D606-4F42-BA25-4377A2C581F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{413287F6-D606-4F42-BA25-4377A2C581F9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -91,11 +68,6 @@ Global
 		{413287F6-D606-4F42-BA25-4377A2C581F9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{413287F6-D606-4F42-BA25-4377A2C581F9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{413287F6-D606-4F42-BA25-4377A2C581F9}.Release|x86.ActiveCfg = Release|Any CPU
-		{B7957825-3E86-4EA6-8CF3-9BDF7DC8C7A6}.Debug Jeeves|Any CPU.ActiveCfg = Debug Jeeves|Any CPU
-		{B7957825-3E86-4EA6-8CF3-9BDF7DC8C7A6}.Debug Jeeves|Any CPU.Build.0 = Debug Jeeves|Any CPU
-		{B7957825-3E86-4EA6-8CF3-9BDF7DC8C7A6}.Debug Jeeves|Mixed Platforms.ActiveCfg = Debug Jeeves|Any CPU
-		{B7957825-3E86-4EA6-8CF3-9BDF7DC8C7A6}.Debug Jeeves|Mixed Platforms.Build.0 = Debug Jeeves|Any CPU
-		{B7957825-3E86-4EA6-8CF3-9BDF7DC8C7A6}.Debug Jeeves|x86.ActiveCfg = Debug Jeeves|Any CPU
 		{B7957825-3E86-4EA6-8CF3-9BDF7DC8C7A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B7957825-3E86-4EA6-8CF3-9BDF7DC8C7A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7957825-3E86-4EA6-8CF3-9BDF7DC8C7A6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

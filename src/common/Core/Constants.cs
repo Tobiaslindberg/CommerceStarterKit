@@ -60,7 +60,7 @@ namespace OxxCommerceStarterKit.Core
 
 			public static class PurchaseOrder
 			{
-				public const string JeevesId = "JeevesId";
+                public const string BackendOrderNumber = "BackendOrderNumber";
                 public const string PostNordTrackingId = "PostNordTrackingId";
 				public const string ClassName = "PurchaseOrder";
 			}

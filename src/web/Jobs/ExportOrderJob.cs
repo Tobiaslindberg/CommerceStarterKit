@@ -17,6 +17,7 @@ using EPiServer.Security;
 using EPiServer.ServiceLocation;
 using log4net;
 using Mediachase.Commerce.Orders;
+using OxxCommerceStarterKit.Core;
 using OxxCommerceStarterKit.Core.Services;
 
 namespace OxxCommerceStarterKit.Web.Jobs
@@ -28,7 +29,8 @@ namespace OxxCommerceStarterKit.Web.Jobs
 	}
 
 
-	[ScheduledPlugIn(DisplayName = "Export Orders")]
+	[ScheduledPlugIn(DisplayName = "Export Orders to Backend System", 
+        Description = "Checks all open orders and checks if they are ready to be exported to a back end system for further processing.")]
 	public class ExportOrderJob : JobBase
 	{
 		private bool _stopSignaled;
@@ -48,7 +50,7 @@ namespace OxxCommerceStarterKit.Web.Jobs
 		}
 
 		/// <summary>
-		/// Called when a scheduled job executes
+		/// Retrieves order for export and calls the IExportOrderService for each one
 		/// </summary>
 		/// <returns>A status message to be stored in the database log and visible from admin mode</returns>
 		public override string Execute()
@@ -61,7 +63,10 @@ namespace OxxCommerceStarterKit.Web.Jobs
 			List<ExportOrderInformation> results = new List<ExportOrderInformation>();
 			List<PurchaseOrder> orders = GetOrdersToExport();
 			tmr.Stop();
+
 			_log.DebugFormat("Found {0} orders to export in {1}ms", orders.Count, tmr.ElapsedMilliseconds);
+
+
 			if (_stopSignaled) return "Job was stopped";
 
 			IExportOrderService service = ServiceLocator.Current.GetInstance<IExportOrderService>();
@@ -70,6 +75,7 @@ namespace OxxCommerceStarterKit.Web.Jobs
 			{
 				if (_stopSignaled) return "Job was stopped";
 				OnStatusChanged(string.Format("Exporting order: {0}", purchaseOrder.TrackingNumber));
+
 				results.Add(ExportOrder(purchaseOrder, service));
 			}
 			
@@ -78,6 +84,7 @@ namespace OxxCommerceStarterKit.Web.Jobs
 
 		private ExportOrderInformation ExportOrder(PurchaseOrder purchaseOrder, IExportOrderService service)
 		{
+            // Export to back-end system, and retrieves an external id that is stored on the order
 			string externalOrderNumber = service.ExportOrder(purchaseOrder);
 			_log.DebugFormat("Exported {0} to external system, got {1} back", purchaseOrder.TrackingNumber, externalOrderNumber);
 			
@@ -99,8 +106,13 @@ namespace OxxCommerceStarterKit.Web.Jobs
 			List<PurchaseOrder> orders = new List<PurchaseOrder>();
 			foreach (PurchaseOrder purchaseOrder in activeOrders)
 			{
-                if (string.IsNullOrWhiteSpace(purchaseOrder["JeevesId"] as string))
-					orders.Add(purchaseOrder);
+                // TODO: Identify orders that should be exported to back-end (ERP) system
+                // You need to determine what causes an order to be ready for export.
+                // Suggested approach: Store order id from backend (erp) on order, if the id is null,
+                // it has not been exported yet. Assume you get some sort of tracking id back from your
+                // backend system.
+                if (string.IsNullOrWhiteSpace(purchaseOrder[Constants.Metadata.PurchaseOrder.BackendOrderNumber] as string))
+                    orders.Add(purchaseOrder);
 			}
 
 			return orders;

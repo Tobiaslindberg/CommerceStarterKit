@@ -59,14 +59,11 @@ namespace OxxCommerceStarterKit.Web.Business.Initialization
                MetaDataType.ShortString, 255, true, false);
             JoinField(mdContext, cardTypeName, dibsPaymentClass.Name);
 
-            var jeevesId = CreateMetaField(mdContext, Constants.Metadata.Namespace.Order, Constants.Metadata.PurchaseOrder.JeevesId, MetaDataType.LongString, Int32.MaxValue, true, false);
-			JoinField(mdContext, jeevesId, Constants.Metadata.PurchaseOrder.ClassName);
+            var backEndOrderNumber = CreateMetaField(mdContext, Constants.Metadata.Namespace.Order, Constants.Metadata.PurchaseOrder.BackendOrderNumber, MetaDataType.LongString, Int32.MaxValue, true, false);
+			JoinField(mdContext, backEndOrderNumber, Constants.Metadata.PurchaseOrder.ClassName);
 
             var postNordTrackingId = CreateMetaField(mdContext, Constants.Metadata.Namespace.Order, Constants.Metadata.PurchaseOrder.PostNordTrackingId, MetaDataType.LongString, Int32.MaxValue, true, false);
             JoinField(mdContext, postNordTrackingId, Constants.Metadata.PurchaseOrder.ClassName);
-
-            
-			// TODO: JoinField(mdContext, articleNumber, Constants.Metadata.LineItem.ClassName); -- finne ut tilsvarende for ordre og orderaddress. finne ut for contact, jeevesid.
 
 			var deliveryServicePoint = CreateMetaField(mdContext, Constants.Metadata.Namespace.Order, Constants.Metadata.Address.DeliveryServicePoint, MetaDataType.LongString, Int32.MaxValue, true, false);
 			JoinField(mdContext, deliveryServicePoint, Constants.Metadata.Address.ClassName);
