@@ -113,8 +113,43 @@
                 <asp:Label runat="server" Text="<%$ Resources:SharedStrings, Weight %>"></asp:Label>:</td>
             <td class="FormFieldCell">
                 <asp:TextBox runat="server" Width="250" ID="Weight"></asp:TextBox><br />
-                <asp:RequiredFieldValidator runat="server" ID="WeightRequired" ControlToValidate="Weight" Display="Dynamic" ErrorMessage="<%$ Resources:CatalogStrings, Entry_Weight_Required %>" />
                 <asp:RangeValidator runat="server" ID="WeightRange" ControlToValidate="Weight" MinimumValue="0" MaximumValue="1000000000" Type="Double" Display="Dynamic" ErrorMessage="<%$ Resources:CatalogStrings, Entry_Enter_Valid_Quantity %>"></asp:RangeValidator>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" class="FormSpacerCell">
+            </td>
+        </tr>
+        <tr>
+            <td class="FormLabelCell">
+                <asp:Label runat="server" Text="<%$ Resources:SharedStrings, Length %>"></asp:Label>:</td>
+            <td class="FormFieldCell">
+                <asp:TextBox runat="server" Width="250" ID="Length"></asp:TextBox><br />
+                <asp:RangeValidator runat="server" ID="LengthRange" ControlToValidate="Length" MinimumValue="0" MaximumValue="1000000000" Type="Double" Display="Dynamic" ErrorMessage="<%$ Resources:CatalogStrings, Entry_Enter_Valid_Quantity %>"></asp:RangeValidator>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" class="FormSpacerCell">
+            </td>
+        </tr>
+                <tr>
+            <td class="FormLabelCell">
+                <asp:Label runat="server" Text="<%$ Resources:SharedStrings, Height %>"></asp:Label>:</td>
+            <td class="FormFieldCell">
+                <asp:TextBox runat="server" Width="250" ID="Height"></asp:TextBox><br />
+                <asp:RangeValidator runat="server" ID="HeightRange" ControlToValidate="Height" MinimumValue="0" MaximumValue="1000000000" Type="Double" Display="Dynamic" ErrorMessage="<%$ Resources:CatalogStrings, Entry_Enter_Valid_Quantity %>"></asp:RangeValidator>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" class="FormSpacerCell">
+            </td>
+        </tr>
+                <tr>
+            <td class="FormLabelCell">
+                <asp:Label runat="server" Text="<%$ Resources:SharedStrings, Width %>"></asp:Label>:</td>
+            <td class="FormFieldCell">
+                <asp:TextBox runat="server" Width="250" ID="Width"></asp:TextBox><br />
+                <asp:RangeValidator runat="server" ID="WidthRange" ControlToValidate="Width" MinimumValue="0" MaximumValue="1000000000" Type="Double" Display="Dynamic" ErrorMessage="<%$ Resources:CatalogStrings, Entry_Enter_Valid_Quantity %>"></asp:RangeValidator>
             </td>
         </tr>
         <tr>

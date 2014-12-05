@@ -1,4 +1,7 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<string>" %>
+<%@ Import Namespace="EPiServer.Cms.Shell" %>
+<%@ Import Namespace="BVNetwork.FileNotFound.Redirects" %>
+<%@ Import Namespace="EPiServer.Shell.Web.Mvc.Html" %>
 
 
 

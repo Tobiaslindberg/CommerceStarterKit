@@ -1,8 +1,13 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<BVNetwork.FileNotFound.RedirectIndexViewData>" %>
 <%@ Import Namespace="BVNetwork.FileNotFound.Redirects" %>
+<%@ Import Namespace="BVNetwork.FileNotFound.RedirectGadget" %>
+<%@ Import Namespace="EPiServer.Cms.Shell" %>
 <%@ Import Namespace="EPiServer.Core" %>
+<%@ Import Namespace="EPiServer.Shell.Web.Mvc.Html" %>
+<%@ Import Namespace="BVNetwork.FileNotFound.RedirectGadget.Models" %>
+<%@ Import Namespace="BVNetwork.FileNotFound.DataStore" %>
 
-<!-- <div class="notfound about"> 
+    <!-- <div class="notfound about"> 
     </div>
     -->
     <div>

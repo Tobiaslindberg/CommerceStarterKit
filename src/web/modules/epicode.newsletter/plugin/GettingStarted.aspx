@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"
     CodeBehind="GettingStarted.aspx.cs"
     Inherits="BVNetwork.EPiSendMail.Plugin.GettingStarted" %>
+
+<%@ Import Namespace="BVNetwork.EPiSendMail.DataAccess" %>
 <%@ Register TagPrefix="EPiServerShell" Assembly="EPiServer.Shell" Namespace="EPiServer.Shell.Web.UI.WebControls" %>
 <%@ Register TagPrefix="EPiSendMail" TagName="PluginStyles" Src="PluginStyles.ascx" %>
 <%@ Register TagPrefix="EPiSendMail" TagName="GettingStarted" Src="GettingStarted.ascx" %>

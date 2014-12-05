@@ -1,8 +1,10 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<BVNetwork.FileNotFound.RedirectIndexViewData>" %>
-<%@ Import Namespace="BVNetwork.Bvn.FileNotFound.Data" %>
-<%@ Import Namespace="BVNetwork.FileNotFound.RedirectGadget" %>
 <%@ Import Namespace="BVNetwork.FileNotFound.Redirects" %>
+<%@ Import Namespace="BVNetwork.FileNotFound.RedirectGadget" %>
 <%@ Import Namespace="EPiServer.Core" %>
+<%@ Import Namespace="EPiServer.Shell.Web.Mvc.Html" %>
+<%@ Import Namespace="BVNetwork.FileNotFound.RedirectGadget" %>
+<%@ Import Namespace="BVNetwork.Bvn.FileNotFound.Data" %>
 <script type="text/javascript">
 
     function replaceArrow(inputid) {

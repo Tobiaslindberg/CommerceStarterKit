@@ -1,6 +1,10 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<List<CustomRedirect>>" %>
 <%@ Import Namespace="BVNetwork.FileNotFound.Redirects" %>
+<%@ Import Namespace="BVNetwork.FileNotFound.RedirectGadget" %>
+<%@ Import Namespace="EPiServer.Shell.Web.Mvc.Html" %>
 <%@ Import Namespace="EPiServer.Core" %>
+<%@ Import Namespace="BVNetwork.FileNotFound.RedirectGadget.Models" %>
+<%@ Import Namespace="BVNetwork.FileNotFound.DataStore" %>
 <div class="notfound">
        <div class="epi-formArea">
             <fieldset>

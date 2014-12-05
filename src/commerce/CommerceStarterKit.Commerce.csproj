@@ -3643,11 +3643,15 @@
   </ProjectExtensions>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\AjaxControlToolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AuthorizeNet">
+      <HintPath>..\..\packages\AuthorizeNet.1.8.2\lib\AuthorizeNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
@@ -3658,17 +3662,9 @@
       <HintPath>..\..\packages\Castle.Windsor.3.2.0\lib\net45\Castle.Windsor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ComponentArt.Web.UI">
-      <HintPath>..\..\packages\EPiServer.CommerceManager.8.1.0\lib\net45\ComponentArt.Web.UI.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CuteEditor">
-      <HintPath>..\..\packages\EPiServer.CommerceManager.8.1.0\lib\net45\CuteEditor.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CuteEditor.ImageEditor">
-      <HintPath>..\..\packages\EPiServer.CommerceManager.8.1.0\lib\net45\CuteEditor.ImageEditor.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ComponentArt.Web.UI, Version=2012.1.1016.35, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiServer.CommerceManager.8.5.0\lib\net45\ComponentArt.Web.UI.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
@@ -3677,75 +3673,79 @@
       <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer">
-      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.18.0\lib\net45\EPiServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.ApplicationModules">
-      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.ApplicationModules.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Framework.7.18.0\lib\net45\EPiServer.ApplicationModules.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.BaseLibrary">
-      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.BaseLibrary.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.18.0\lib\net45\EPiServer.BaseLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.Business.Commerce">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\EPiServer.Business.Commerce.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\EPiServer.Business.Commerce.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.Configuration">
-      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.Configuration.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.18.0\lib\net45\EPiServer.Configuration.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.Data">
-      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.Data.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Framework.7.18.0\lib\net45\EPiServer.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.Data.Cache">
-      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.Data.Cache.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Framework.7.18.0\lib\net45\EPiServer.Data.Cache.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.Enterprise">
-      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.Enterprise.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.18.0\lib\net45\EPiServer.Enterprise.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.Events">
-      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.Events.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Framework.7.18.0\lib\net45\EPiServer.Events.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.Framework">
-      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.Framework.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Framework.7.18.0\lib\net45\EPiServer.Framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.ImageLibrary">
-      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.ImageLibrary.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.18.0\lib\net45\EPiServer.ImageLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.Implementation">
-      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.Implementation.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.18.0\lib\net45\EPiServer.Implementation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.Licensing">
-      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.Licensing.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Framework.7.18.0\lib\net45\EPiServer.Licensing.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.LinkAnalyzer">
-      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.LinkAnalyzer.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.18.0\lib\net45\EPiServer.LinkAnalyzer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPiServer.Logging.Log4Net">
+      <HintPath>..\..\packages\EPiServer.Logging.Log4Net.0.1.0\lib\net45\EPiServer.Logging.Log4Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.Shell">
-      <HintPath>..\..\packages\EPiServer.Framework.7.14.2\lib\net45\EPiServer.Shell.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Framework.7.18.0\lib\net45\EPiServer.Shell.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.Web.WebControls">
-      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.Web.WebControls.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.18.0\lib\net45\EPiServer.Web.WebControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.WorkflowFoundation">
-      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.WorkflowFoundation.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.18.0\lib\net45\EPiServer.WorkflowFoundation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EPiServer.XForms">
-      <HintPath>..\..\packages\EPiServer.CMS.Core.7.14.2\lib\net45\EPiServer.XForms.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.CMS.Core.7.18.0\lib\net45\EPiServer.XForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
@@ -3764,83 +3764,83 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.BusinessFoundation">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.BusinessFoundation.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.BusinessFoundation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.BusinessFoundation.Data">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.BusinessFoundation.Data.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.BusinessFoundation.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Mediachase.Cms">
-      <HintPath>..\..\packages\EPiServer.CommerceManager.8.1.0\lib\net45\Mediachase.Cms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Mediachase.Cms, Version=8.5.0.366, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiServer.CommerceManager.8.5.0\lib\net45\Mediachase.Cms.dll</HintPath>
     </Reference>
     <Reference Include="Mediachase.Commerce">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.Commerce.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.Commerce.Marketing.Validators">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.Marketing.Validators.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.Commerce.Marketing.Validators.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.Commerce.Plugins.Payment">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.Plugins.Payment.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.Commerce.Plugins.Payment.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.Commerce.Plugins.Shipping">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.Plugins.Shipping.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.Commerce.Plugins.Shipping.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.Commerce.Website">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.Website.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.Commerce.Website.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.Commerce.Workflow">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.Workflow.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.Commerce.Workflow.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.Commerce.Workflow.Activities">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Commerce.Workflow.Activities.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.Commerce.Workflow.Activities.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Mediachase.ConsoleManager">
-      <HintPath>..\..\packages\EPiServer.CommerceManager.8.1.0\lib\net45\Mediachase.ConsoleManager.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Mediachase.ConsoleManager, Version=8.5.0.366, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiServer.CommerceManager.8.5.0\lib\net45\Mediachase.ConsoleManager.dll</HintPath>
     </Reference>
     <Reference Include="Mediachase.DataProvider">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.DataProvider.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.DataProvider.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.FileUploader">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.FileUploader.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.FileUploader.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.MetaDataPlus">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.MetaDataPlus.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.MetaDataPlus.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.Search">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Search.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.Search.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.Search.Extensions">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Search.Extensions.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.Search.Extensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.Search.LuceneSearchProvider">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.Search.LuceneSearchProvider.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.Search.LuceneSearchProvider.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.SqlDataProvider">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.SqlDataProvider.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.SqlDataProvider.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediachase.WebConsoleLib">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Mediachase.WebConsoleLib.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Mediachase.WebConsoleLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Microsoft.ReportViewer.Common.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Microsoft.ReportViewer.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -3848,15 +3848,11 @@
       <HintPath>..\..\packages\MicrosoftReportViewerWebForms.11.0.0.0\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebForms">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\Microsoft.ReportViewer.WebForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure">
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="NetSpell.SpellChecker">
-      <HintPath>..\..\packages\EPiServer.CommerceManager.8.1.0\lib\net45\NetSpell.SpellChecker.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
@@ -3864,16 +3860,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nsoftware.IBizPay">
-      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.1.0\lib\net45\nsoftware.IBizPay.dll</HintPath>
+      <HintPath>..\..\packages\EPiServer.Commerce.Core.8.5.0\lib\net45\nsoftware.IBizPay.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Postal, Version=0.9.2.0, Culture=neutral, PublicKeyToken=45719375b8b4d528, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Postal.0.9.2\lib\net40\Postal.dll</HintPath>
     </Reference>
-    <Reference Include="RssToolkit">
-      <HintPath>..\..\packages\EPiServer.CommerceManager.8.1.0\lib\net45\RssToolkit.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="RssToolkit, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiServer.CommerceManager.8.5.0\lib\net45\RssToolkit.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
@@ -3926,9 +3922,9 @@
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
-    <Reference Include="Validators">
-      <HintPath>..\..\packages\EPiServer.CommerceManager.8.1.0\lib\net45\Validators.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Validators, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EPiServer.CommerceManager.8.5.0\lib\net45\Validators.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <HintPath>..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>

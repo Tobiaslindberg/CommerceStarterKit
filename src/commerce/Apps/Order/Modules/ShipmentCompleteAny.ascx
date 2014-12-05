@@ -14,7 +14,7 @@
 			<asp:Label ID="Label2" runat="server" Text="<%$ Resources:OrderStrings, Shipment_No_Sign %>"></asp:Label>:
 		    </td>
 			<td class="FormFieldCell">
-				<asp:Label runat="server" ID="ShipmentNoLabel"><%#Eval("ShipmentId") %></asp:Label>
+				<asp:Label runat="server" ID="ShipmentNoLabel" Text='<%#Eval("ShipmentId") %>'></asp:Label>
 			</td>
 		</tr>
 		<tr>

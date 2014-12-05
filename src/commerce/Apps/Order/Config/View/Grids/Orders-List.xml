@@ -8,7 +8,9 @@
 					<Column width="80" allowSorting="true" dataField="OrderGroupId"  headingText="{SharedStrings:ID}" columnType="CustomTemplate" permissions="order:mng:view">
 						<Template id="LinkTemplate" controlUrl="GridTemplates/OrderLinkTemplate.ascx"></Template>
 					</Column>
-					<Column width="200" allowSorting="true" dataField="CustomerName" headingText="{SharedStrings:Customer}"></Column>
+					<Column width="200" allowSorting="true" dataField="CustomerName" headingText="{SharedStrings:Customer}" columnType="CustomTemplate">
+            <Template id="CustomerTemplate" controlUrl="GridTemplates/OrderCustomerTemplate.ascx"></Template>
+          </Column>
 					<Column width="100" allowSorting="true" dataField="Total" headingText="{SharedStrings:Total}" columnType="Currency" currencyCodeField="BillingCurrency" align="Right"></Column>
 					<Column width="150" allowSorting="true" dataField="Status"  headingText="{SharedStrings:Status}" Align="Center" columnType="CustomTemplate">
 						<Template id="OrderStatusTemplate" controlUrl="GridTemplates/OrderStatusTemplate.ascx"></Template>
@@ -17,19 +19,6 @@
 				</Columns>
 			</add>
 		</Grid>
-		<!--<Toolbar>
-			<add>
-				<Menu id="CreateSplitButton" text="{SharedStrings:Create_New}" imageUrl="~/Apps/Shell/styles/Images/new.png" commandName="cmdPermissionCheck" permissions="order:mng:create">
-					<Button id="NewPurchaseOrder" text="{SharedStrings:New_Purchase_Order}" imageUrl="~/Apps/Shell/styles/Images/new.png" commandName="cmdPurchaseOrderNewServer" permissions="order:mng:create"/>
-					<Button id="NewPaymentPlan" text="{SharedStrings:New_Payment_Plan}" imageUrl="~/Apps/Shell/styles/Images/new.png" commandName="cmdPaymentPlanNew" permissions="order:mng:create"/>
-					<Button id="NewShoppingCart" text="{SharedStrings:New_Shopping_Cart}" imageUrl="~/Apps/Shell/styles/Images/new.png" commandName="cmdShoppingCartNew" permissions="order:mng:create"/>
-				</Menu>
-				<Splitter id="ActionsSplitter" commandName="cmdPermissionCheck" permissions="order:mng:create,order:mng:delete"/>
-				<Menu id="MoreActionsSplitButton" text="{SharedStrings:More_Actions}" imageUrl="~/Apps/Shell/styles/Images/toolbar/newtask.gif" commandName="cmdPermissionCheck" permissions="order:mng:delete">
-					<Button id="DeleteSelected" text="{SharedStrings:Delete_Selected}" imageUrl="~/Apps/Shell/styles/Images/toolbar/delete.gif" commandName="cmdOrderDelete" permissions="order:mng:delete"/>
-				</Menu>
-			</add>
-		</Toolbar>-->
 		<Toolbar>
 			<add>
 				<Button id="NewOrderButton" text="{OrderStrings:Order_New}" imageUrl="~/Apps/Shell/styles/Images/new.png" tooltip="{OrderStrings:Order_New}" commandName="cmdPurchaseOrderNewSelect" permissions="order:mng:create"/>

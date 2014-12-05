@@ -173,6 +173,21 @@
         <tr>
             <td colspan="2" class="FormSpacerCell"></td>
         </tr>
+                <tr>
+            <td class="FormLabelCell">
+                <asp:Label ID="Label7" runat="server" Text="<%$ Resources:CatalogStrings, Catalog_Base_Length %>"></asp:Label>:
+            </td>
+            <td class="FormFieldCell">
+                <asp:DropDownList runat="server" ID="BaseLength">
+                    <asp:ListItem Value="" Text="-"></asp:ListItem>
+                    <asp:ListItem Value="cm" Text="<%$ Resources:CatalogStrings, Catalog_In_Centimeters %>"></asp:ListItem>
+                    <asp:ListItem Value="in" Text="<%$ Resources:CatalogStrings, Catalog_In_Inches %>"></asp:ListItem>
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="FormSpacerCell"></td>
+        </tr>
         <tr>
             <td class="FormLabelCell">
                 <asp:Label ID="Label4" runat="server" Text="<%$ Resources:CatalogStrings, Catalog_Other_Languages %>"></asp:Label>:

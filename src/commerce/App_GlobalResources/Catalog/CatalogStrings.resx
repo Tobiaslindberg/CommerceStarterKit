@@ -198,6 +198,9 @@
   <data name="Catalog_Base_Weight" xml:space="preserve">
     <value>Base Weight</value>
   </data>
+  <data name="Catalog_Base_Length" xml:space="preserve">
+    <value>Base Length</value>
+  </data>
   <data name="Catalog_Default_Currency" xml:space="preserve">
     <value>Default Currency</value>
   </data>
@@ -209,6 +212,12 @@
   </data>
   <data name="Catalog_In_Pounds" xml:space="preserve">
     <value>in pounds</value>
+  </data>
+  <data name="Catalog_In_Centimeters" xml:space="preserve">
+    <value>in centimeters</value>
+  </data>
+  <data name="Catalog_In_Inches" xml:space="preserve">
+    <value>in inches</value>
   </data>
   <data name="Catalog_Catalog_Name" xml:space="preserve">
     <value>Catalog Name</value>
@@ -341,6 +350,15 @@
   </data>
   <data name="Entry_Weight_Required" xml:space="preserve">
     <value>&lt;b&gt;Required Field Missing&lt;/b&gt;&lt;br /&gt;Weight is required.</value>
+  </data>
+  <data name="Entry_Height_Required" xml:space="preserve">
+    <value>&lt;b&gt;Required Field Missing&lt;/b&gt;&lt;br /&gt;Height is required.</value>
+  </data>
+  <data name="Entry_Length_Required" xml:space="preserve">
+    <value>&lt;b&gt;Required Field Missing&lt;/b&gt;&lt;br /&gt;Length is required.</value>
+  </data>
+  <data name="Entry_Width_Required" xml:space="preserve">
+    <value>&lt;b&gt;Required Field Missing&lt;/b&gt;&lt;br /&gt;Width is required.</value>
   </data>
   <data name="Entry_Preorder_Qty" xml:space="preserve">
     <value>Preorder Qty</value>

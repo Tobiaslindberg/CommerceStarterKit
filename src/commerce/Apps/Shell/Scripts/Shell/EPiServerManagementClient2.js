@@ -168,21 +168,9 @@
 		eval(this.ContentFrame).theForm.submit();
 	};
 
-	/* Are these functions still used?
-	this.Login = function() {
-	//top.location.href = 'login.aspx';
-	this.getEcfMainFrame.location.href = 'login.aspx';
-	};
-
-	this.Logout = function()
-	{
-	//top.location.href = 'logout.aspx';
-	this.getEcfMainFrame.location.href = 'logout.aspx';
-	};*/
-
 	this.OpenHelp = function()
 	{
-		this.OpenExternal('http://webhelp.episerver.com/commerce/7.5');
+	    this.OpenExternal('http://webhelp.episerver.com/14-1/EN/Default.htm');
     };
 
     this.getEcfMainFrame = function() {

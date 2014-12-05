@@ -3,6 +3,7 @@
     Inherits="BVNetwork.EPiSendMail.Plugin.Admin.NewsLetterInstall" %>
 
 <%@ Import Namespace="BVNetwork.EPiSendMail.Configuration" %>
+
 <%@ Register TagPrefix="EPiServerShell" Namespace="EPiServer.Shell.Web.UI.WebControls" Assembly="EPiServer.Shell" %>
 <%@ Register TagPrefix="EPiSendMail" TagName="PluginStyles" Src="../PluginStyles.ascx" %>
 

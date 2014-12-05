@@ -1,6 +1,6 @@
 <%@ control language="C#" autoeventwireup="true" codebehind="JobStatus.ascx.cs" inherits="BVNetwork.EPiSendMail.Plugin.JobStatus" %>
 <%@ Import Namespace="System.Globalization" %>
-<%@ Import Namespace="BVNetwork.EPiSendMail.Configuration" %>
+<%@ import namespace="BVNetwork.EPiSendMail.Configuration" %>
 <script language="JavaScript">
 <!--
     // Default is every 10 seconds

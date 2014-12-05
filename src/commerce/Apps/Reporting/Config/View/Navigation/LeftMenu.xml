@@ -24,22 +24,7 @@
 				<Link id="CustomerOrderTotals" text="{ReportingStrings:Customers_By_Orders_Total_Report}" iconUrl="~/Apps/Reporting/images/report.png" iconCss="treeIcon" command ="CustomerOrderTotalsReportCommand"/>
 				<Link id="CustomerNumOrders" text="{ReportingStrings:Customers_By_Number_Of_Orders_Report}" iconUrl="~/Apps/Reporting/images/report.png" iconCss="treeIcon" command ="CustomerNumOrdersReportCommand"/>
 			</Link>
-      
 			-->
-          <Link id="Orders"
-                text="Order Reports"
-                order="20"
-                iconUrl="~/Apps/Reporting/images/report-group.png"
-                iconCss="treeIcon"
-                permissions="reporting:mng:view">
-            <Link id="OrdersPerMarket"
-                  text="Orders Per Market/Currency"
-                  order="10"
-                  iconUrl="~/Apps/Reporting/images/report.png"
-                  iconCss="treeIcon"
-                  command ="OrdersReportCommand"
-                  permissions="reporting:mng:view"/>
-          </Link>
 				</Tab>
 			</add>
 		</Tabs>
@@ -50,11 +35,6 @@
 					<ClientScript>CSManagementClient.ChangeView('Reporting', 'Sales')</ClientScript>
 					<EnableHandler type="Mediachase.Commerce.Manager.Apps.Core.CommandHandlers.Common.CommandHandlerBase, Mediachase.ConsoleManager" />
 				</Command>
-        <Command id="OrdersReportCommand">
-          <CommandType>ClientAction</CommandType>
-          <ClientScript>CSManagementClient.ChangeView('Reporting', 'OrderReport')</ClientScript>
-          <EnableHandler type="Mediachase.Commerce.Manager.Apps.Core.CommandHandlers.Common.CommandHandlerBase, Mediachase.ConsoleManager" />
-        </Command>
 				<Command id="LowStockReportCommand">
 					<CommandType>ClientAction</CommandType>
 					<ClientScript>CSManagementClient.ChangeView('Reporting', 'LowStock')</ClientScript>

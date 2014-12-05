@@ -29,23 +29,24 @@
             <td colspan="2" class="FormSpacerCell"></td>
         </tr>
         <tr>
+            <td class="FormLabelCell">Test mode:</td>
+            <td class="FormFieldCell">
+                <div class="margin-form">
+                    <asp:RadioButton Checked="false" runat="server" ID="TestFlagYes" GroupName="TestFlag" /> Yes
+                    <asp:RadioButton Checked="true" runat="server" ID="TestFlagNo" GroupName="TestFlag" /> No
+                </div>
+            </td>
+        </tr>
+	    <tr>
+            <td colspan="2" class="FormSpacerCell"></td>
+        </tr>
+        <tr>
             <td class="FormFieldCell" colspan="2">
                 <fieldset>
                     <legend>
                         <asp:Literal ID="Literal8" runat="server" Text="<%$ Resources:OrderStrings, Regular_Authorize_Payments %>"/>
                     </legend>
                     <table id="RegularPaymentsTable" runat="server">
-                        <tr>
-		                    <td class="FormLabelCell"><asp:Literal ID="Literal10" runat="server" Text="<%$ Resources:SharedStrings, Processing_URL %>" />:</td>
-		                    <td class="FormFieldCell">
-			                    <asp:TextBox Runat="server" ID="ProcessingUrl" Width="300px"></asp:TextBox><br>
-			                    <asp:RequiredFieldValidator ControlToValidate="ProcessingUrl" Display="dynamic" Font-Name="verdana" Font-Size="9pt"
-				                    ErrorMessage="<%$ Resources:OrderStrings, Payment_Processing_Url_Required %>" runat="server" id="Requiredfieldvalidator5"></asp:RequiredFieldValidator>
-		                    </td>
-	                    </tr>
-	                    <tr>
-                            <td colspan="2" class="FormSpacerCell"></td>
-                        </tr>
                         <tr>
 		                    <td class="FormLabelCell"><asp:Literal ID="Literal7" runat="server" Text="<%$ Resources:OrderStrings, Payment_Options %>" />:</td>
 		                    <td class="FormFieldCell">
@@ -71,17 +72,6 @@
                         <asp:Literal ID="Literal3" runat="server" Text="<%$ Resources:OrderStrings, Recurring_Payments %>"/>
                     </legend>
                     <table id="RecurringPaymentsTable" runat="server">
-                        <tr>
-		                    <td class="FormLabelCell"><asp:Literal ID="Literal9" runat="server" Text="<%$ Resources:SharedStrings, Processing_URL %>" />:</td>
-		                    <td class="FormFieldCell">
-			                    <asp:TextBox Runat="server" ID="RecurringProcessingUrl" Width="300px"></asp:TextBox><br>
-			                    <asp:CustomValidator ControlToValidate="RecurringProcessingUrl" Display="dynamic" runat="server" id="RecurringProcessingUrlCustomValidator" Font-Name="verdana" Font-Size="9pt"
-				                    ErrorMessage="<%$ Resources:OrderStrings, Payment_Processing_Url_Required %>" ValidateEmptyText="true"></asp:CustomValidator>
-		                    </td>
-	                    </tr>
-	                    <tr>
-                            <td colspan="2" class="FormSpacerCell"></td>
-                        </tr>
                         <tr>
                             <td class="FormLabelCell">
                                 <asp:Label ID="lblRecurringMethod" runat="server" Text="<%$ Resources:OrderStrings, Recurring_Method %>"></asp:Label>:

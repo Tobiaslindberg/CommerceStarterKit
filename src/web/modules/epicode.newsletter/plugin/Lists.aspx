@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"
     CodeBehind="Lists.aspx.cs"
     Inherits="BVNetwork.EPiSendMail.Plugin.Lists" %>
+
 <%@ Import Namespace="BVNetwork.EPiSendMail.DataAccess" %>
 <%@ Register TagPrefix="EPiServerShell" Assembly="EPiServer.Shell" Namespace="EPiServer.Shell.Web.UI.WebControls" %>
 <%@ Register TagPrefix="EPiSendMail" TagName="PluginStyles" Src="PluginStyles.ascx" %>

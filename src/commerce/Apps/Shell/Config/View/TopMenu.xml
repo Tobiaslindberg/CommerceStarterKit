@@ -52,7 +52,7 @@
 			</Command>
 			<Command id="ECF_Top_Help">
 				<CommandType>ClientAction</CommandType>
-				<ClientScript>CSManagementClient.OpenExternal('http://webhelp.episerver.com/commerce/7.5')</ClientScript>
+				<ClientScript>CSManagementClient.OpenHelp()</ClientScript>
 			</Command>
 			<Command id="ECF_Top_Information">
         <CommandType>OpenWindow</CommandType>

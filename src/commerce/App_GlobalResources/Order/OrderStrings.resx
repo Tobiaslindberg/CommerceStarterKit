@@ -1227,6 +1227,9 @@
   <data name="Shipping_Discount" xml:space="preserve">
     <value>Shipping Discount</value>
   </data>
+    <data name="Shipping_Tax" xml:space="preserve">
+    <value>Shipping Tax</value>
+  </data>
   <data name="Shipping_Discount_Total" xml:space="preserve">
     <value>Shipping Discount Total</value>
   </data>

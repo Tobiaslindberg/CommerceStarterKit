@@ -1,4 +1,7 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Dictionary<string,int>>" %>
+<%@ Import Namespace="BVNetwork.FileNotFound.RedirectGadget" %>
+<%@ Import Namespace="EPiServer.Core" %>
+<%@ Import Namespace="EPiServer.Shell.Web.Mvc.Html" %>
 <div class="notfound">
     <div class="epi-formArea">
         <fieldset>

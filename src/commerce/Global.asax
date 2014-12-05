@@ -1,6 +1,4 @@
 <%@ Application Language="C#" %>
-<%@ Import Namespace="System.IO" %>
-<%@ Import Namespace="System.Reflection" %>
 <%@ Import Namespace="Mediachase.Commerce.Core.Dto" %>
 <%@ Import Namespace="Mediachase.Commerce.Core" %>
 <%@ Import Namespace="EPiServer.ServiceLocation" %>
@@ -11,17 +9,8 @@
 
 <script RunAt="server">
 
-    // protected static ILog _log = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
 	void Application_Start(object sender, EventArgs e)
 	{
-        // TODO: Remove this when you are not going to use LocalDb anymore.
-        ILog log = LogManager.GetLogger("Global");
-        DirectoryInfo dir = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\..\..\db\");
-        log.Debug("Setting data directory for Local DB to: " + dir.FullName);
-        AppDomain.CurrentDomain.SetData("DataDirectory", dir.FullName);
-
-        
         // Code that runs on application startup
 		Application["ComponentArtWebUI_AppKey"] = "This edition of ComponentArt Web.UI is licensed for EPiServer Framework only.";        
 
@@ -36,12 +25,11 @@
 	
 		ctrlPathResolver.Init(resolvedPaths);
 	
+
 		Mediachase.Commerce.Manager.ControlPathResolver.Current = ctrlPathResolver;
 
 		Mediachase.Ibn.Web.UI.Layout.DynamicControlFactory.ControlsFolderPath = "~/Apps/";
 		Mediachase.Ibn.Web.UI.Layout.WorkspaceTemplateFactory.ControlsFolderPath = "~/Apps/";
-
-        LogManager.GetLogger("Global").Info("Starting Commerce Manager Application");
 	}
 	
 	void Application_End(object sender, EventArgs e)
@@ -89,15 +77,14 @@
 		// or SQLServer, the event is not raised.
 
 		//Unlock all user locked objects
-		Mediachase.Commerce.Orders.Managers.OrderGroupLockManager.UnlockAllUserLocks(Mediachase.Commerce.Security.SecurityContext.Current.CurrentContactId);
+		Mediachase.Commerce.Orders.Managers.OrderGroupLockManager.UnlockAllUserLocks(EPiServer.Security.PrincipalInfo.CurrentPrincipal.GetContactId());
 
 	}
 
 	protected void Application_BeginRequest(object sender, EventArgs e)
 	{
 		log4net.ThreadContext.Properties["Hostname"] = HttpContext.Current.Request.UserHostAddress;
-        LogManager.GetLogger("Global").Debug("Running: " + HttpContext.Current.Request.Url.ToString());
-	} 
+	}
 
 	protected void Application_AuthenticateRequest(object sender, EventArgs e)
 	{

@@ -32,6 +32,14 @@
 						<asp:Label ID="lblShippingDiscount" runat="server"></asp:Label>
 					</td>
 				</tr>
+                <tr>
+					<td valign="top" style="font-weight:bold; text-align:right;">
+						<asp:Label ID="Label3" runat="server" Text="<%$ Resources:OrderStrings, Shipping_Tax %>"></asp:Label>:
+					</td>
+					<td valign="top">
+						<asp:Label ID="lblShippingTax" runat="server"></asp:Label>
+					</td>
+				</tr>
 				<tr>
 					<td valign="top" style="font-weight:bold; text-align:right;">
 						<asp:Label ID="Label1" runat="server" Text="<%$ Resources:OrderStrings, Shipment_Total %>"></asp:Label>:
