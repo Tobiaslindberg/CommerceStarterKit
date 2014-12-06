@@ -10,6 +10,7 @@ Copyright (C) 2013-2014 BV Network AS
 
 using System.Linq;
 using System.Web.Mvc;
+using EPiServer.Security;
 using Mediachase.Commerce.Customers;
 using Mediachase.Commerce.Orders;
 using Mediachase.Commerce.Security;
@@ -35,8 +36,7 @@ namespace OxxCommerceStarterKit.Web.Controllers
 		{
 			var model = new OrdersPageViewModel(currentPage);
 			model.CustomerName = CustomerContext.Current.CurrentContact.FirstName;
-
-			var orders = _orderRepository.GetOrdersByUserId(SecurityContext.Current.CurrentUserId);
+            var orders = _orderRepository.GetOrdersByUserId(EPiServer.Security.PrincipalInfo.CurrentPrincipal.GetContactId());
 			model.Orders = orders.OrderByDescending(x => x.Created).Select(x => CreateOrderViewModel(x)).ToList();
 			
 			return View(model);

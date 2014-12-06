@@ -55,7 +55,6 @@
     <Folder Include="Views\WineSKUPartial\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="404NotFound.aspx" />
     <Content Include="ClientResources\Scripts\editors\TagSelector.js" />
     <Content Include="ClientResources\Scripts\editors\HotSpotsEditor.js" />
     <Content Include="ClientResources\Scripts\select2\css\select2-spinner.gif" />
@@ -387,7 +386,6 @@
     <Content Include="Plugins\CommerceTools\static\css\bootstrap.css.map" />
     <Content Include="Plugins\CommerceTools\static\scripts\jquery-1.9.0.min.map" />
     <Content Include="Scripts\libraries\angular-resource.min.js.map" />
-    <Content Include="License.config" />
     <Content Include="module.config">
       <SubType>Designer</SubType>
     </Content>
