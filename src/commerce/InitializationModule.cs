@@ -9,7 +9,7 @@ using log4net;
 namespace OxxCommerceStarterKit.Commerce
 {
     [InitializableModule]
-    [ModuleDependency(typeof(EPiServer.Commerce.Initialization.InitializationModule))]
+    // [ModuleDependency(typeof(EPiServer.Commerce.Initialization.InitializationModule))]
     public class InitializationModule : IConfigurableModule
     {
         // ReSharper disable once InconsistentNaming
@@ -20,6 +20,12 @@ namespace OxxCommerceStarterKit.Commerce
             // Example to show that you can have your own initialization in Commerce Manager too
             // Very useful when you need to customize Commerce Manager or add your own service config
             _log.Debug("Initializing Commerce Manager.");
+
+            // TODO: Remove this when you are not going to use LocalDb anymore.
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\..\..\db\");
+            _log.Debug("Setting data directory for Local DB to: " + dir.FullName);
+            AppDomain.CurrentDomain.SetData("DataDirectory", dir.FullName);
+
         }
 
         public void Preload(string[] parameters) { }
