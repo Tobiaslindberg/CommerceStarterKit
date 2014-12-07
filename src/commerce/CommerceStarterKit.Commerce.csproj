@@ -3666,12 +3666,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\EPiServer.CommerceManager.8.5.0\lib\net45\ComponentArt.Web.UI.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="EPiServer">
       <HintPath>..\..\packages\EPiServer.CMS.Core.7.18.0\lib\net45\EPiServer.dll</HintPath>
       <Private>True</Private>
