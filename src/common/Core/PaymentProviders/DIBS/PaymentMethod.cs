@@ -7,51 +7,18 @@ Copyright (C) 2013-2014 Oxx AS
 Copyright (C) 2013-2014 BV Network AS
 
 */
-
 using EPiServer.Framework.Localization;
 using EPiServer.ServiceLocation;
-using Mediachase.Commerce.Core;
 using Mediachase.Commerce.Orders;
-using Mediachase.Commerce.Orders.Dto;
-using Mediachase.Commerce.Orders.Managers;
 using Mediachase.Commerce.Website;
-using Mediachase.Commerce.Website.BaseControls;
 
 namespace OxxCommerceStarterKit.Core.PaymentProviders.DIBS
 {
     /// <summary>
     ///	Implements User interface for generic gateway
     /// </summary>
-    public partial class PaymentMethod : BaseStoreUserControl, IPaymentOption
-    {  
-        
-        /// <summary>
-        /// Handles the Load event of the Page control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void Page_Load(object sender, System.EventArgs e)
-        {
-            if (Request.Form["paymentprovider"] != null 
-                && Request.Form["paymentprovider"].Equals(DIBSPayment.DIBSSystemName))
-            {
-                ErrorManager.GenerateError(CancelledMessage);
-            }
-
-            if (!IsPostBack)
-            {
-                PaymentMethodDto dibs = PaymentManager.GetPaymentMethodBySystemName(DIBSPayment.DIBSSystemName, SiteContext.Current.LanguageName);
-                string processingUrl = DIBSPaymentGateway.GetParameterByName(dibs, DIBSPaymentGateway.ProcessingUrl).Value;
-                string MD5K1 = DIBSPaymentGateway.GetParameterByName(dibs, DIBSPaymentGateway.MD5Key1).Value;
-                string MD5K2 = DIBSPaymentGateway.GetParameterByName(dibs, DIBSPaymentGateway.MD5Key2).Value;
-
-                if (string.IsNullOrEmpty(processingUrl) || string.IsNullOrEmpty(MD5K1) || string.IsNullOrEmpty(MD5K2))
-                {
-                    ConfigMessage.Text = LocalizationService.GetString("/Commerce/Checkout/DIBS/DIBSSettingsError");
-                }
-            }
-        }
-
+    public class PaymentMethod : IPaymentOption
+    {
         #region IPaymentOption Members
 
         /// <summary>
@@ -72,7 +39,7 @@ namespace OxxCommerceStarterKit.Core.PaymentProviders.DIBS
         /// <returns>bool</returns>
         public Mediachase.Commerce.Orders.Payment PreProcess(OrderForm form)
         {
-            OtherPayment otherPayment = new OtherPayment {TransactionType = TransactionType.Authorization.ToString()};
+            OtherPayment otherPayment = new OtherPayment { TransactionType = TransactionType.Authorization.ToString() };
             return (Mediachase.Commerce.Orders.Payment)otherPayment;
         }
 

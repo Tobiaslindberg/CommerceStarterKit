@@ -323,14 +323,9 @@
     <Compile Include="PaymentProviders\DIBS\ConfigurePayment.ascx.designer.cs">
       <DependentUpon>ConfigurePayment.ascx.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaymentProviders\DIBS\DIBSPayment.aspx.cs">
-      <DependentUpon>DIBSPayment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PaymentProviders\DIBS\DIBSPayment.aspx.designer.cs">
-      <DependentUpon>DIBSPayment.aspx.cs</DependentUpon>
-    </Compile>
+    <Compile Include="PaymentProviders\DIBS\DIBSPayment.cs" />
     <Compile Include="PaymentProviders\DIBS\DIBSPaymentGateway.cs" />
+    <Compile Include="PaymentProviders\DIBS\PaymentMethod.cs" />
     <Compile Include="PaymentProviders\DIBS\DibsPaymentResult.cs" />
     <Compile Include="PaymentProviders\DIBS\EditTab.ascx.cs">
       <DependentUpon>EditTab.ascx</DependentUpon>
@@ -338,13 +333,6 @@
     </Compile>
     <Compile Include="PaymentProviders\DIBS\EditTab.ascx.designer.cs">
       <DependentUpon>EditTab.ascx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PaymentProviders\DIBS\PaymentMethod.ascx.cs">
-      <DependentUpon>PaymentMethod.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PaymentProviders\DIBS\PaymentMethod.ascx.designer.cs">
-      <DependentUpon>PaymentMethod.ascx.cs</DependentUpon>
     </Compile>
     <Compile Include="PaymentProviders\EncryptionCalculator.cs" />
     <Compile Include="PaymentProviders\HmacCalculator.cs" />
@@ -370,11 +358,7 @@
     <Content Include="PaymentProviders\DIBS\ConfigurePayment.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Content Include="PaymentProviders\DIBS\DIBSPayment.aspx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
-    <Content Include="PaymentProviders\DIBS\EditTab.ascx" />
-    <Content Include="PaymentProviders\DIBS\PaymentMethod.ascx">
+    <Content Include="PaymentProviders\DIBS\EditTab.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
   </ItemGroup>
